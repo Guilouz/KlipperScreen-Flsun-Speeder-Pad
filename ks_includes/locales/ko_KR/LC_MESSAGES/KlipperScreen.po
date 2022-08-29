@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: NSteven\n"
 "Language-Team: NSteven\n"
@@ -11,7 +11,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -104,7 +146,7 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "교정됨, 설정을 저장합니다"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "교정 중"
 
 msgid "Calibrating..."
 msgstr "교정 중.."
@@ -773,25 +815,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch가 적용된 오프셋"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "자세한 내용은 /tmp/KlipperScreen.log를 참조하십시오.\n"
-#~ "GitHub에 현재 발생한 이슈를 제출하여 도움을 요청해 주세요"
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "프로브가 오프셋을 찾았습니다"
-
-#~ msgid "Tool"
-#~ msgstr "툴"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "표시할 매크로"
-
-#~ msgid "Z Position"
-#~ msgstr "Z 위치"

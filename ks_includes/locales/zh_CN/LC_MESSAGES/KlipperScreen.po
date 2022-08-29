@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-07-16 23:03+0800\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -16,7 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -50,7 +92,7 @@ msgid "Add Printer"
 msgstr "添加打印机"
 
 msgid "Add profile"
-msgstr ""
+msgstr "-"
 
 msgid "Apply"
 msgstr "应用"
@@ -97,7 +139,7 @@ msgid "Bed Mesh"
 msgstr "热床网格"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "-"
 
 msgid "Calibrate"
 msgstr "校准"
@@ -109,7 +151,7 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "已校准，保存配置后生效"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "校准中"
 
 msgid "Calibrating..."
 msgstr "校准中..."
@@ -778,114 +820,3 @@ msgstr ""
 
 msgid "mm/s²"
 msgstr ""
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch 发现应用的偏移量"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "检查/tmp/KlipperScreen.log以获取更多信息。\n"
-#~ "请在GitHub上提交问题以寻求帮助。"
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "找到探头偏移"
-
-#~ msgid "Tool"
-#~ msgstr "工具"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "宏命令显示开关"
-
-#~ msgid "Z Position"
-#~ msgstr "Z 位置"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4 地址"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6 地址"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "未知加热器 "
-
-#~ msgid "Disconnect"
-#~ msgstr "断开"
-
-#~ msgid "Duration Only"
-#~ msgstr "持续时间"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Klipper 版本"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper与MCU通讯错误。\n"
-#~ "请为主板重新烧录固件。"
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper 遇到错误。\n"
-#~ "使用”FIRMWARE_RESTART“命令尝试解决此问题。"
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "KlipperScreen 版本"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "仅显示使用中的加热器."
-
-#~ msgid "Target"
-#~ msgstr "目标"
-
-#~ msgid "Temp"
-#~ msgstr "温度"
-
-#~ msgid "Number Pad"
-#~ msgstr "数字键盘"
-
-#~ msgid "Preheat"
-#~ msgstr "预热"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "屏幕将在1秒内显示"
-
-#~ msgid "Medium (default)"
-#~ msgstr "中 (默认)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "文件 (默认)"
-
-#~ msgid "Fan Off"
-#~ msgstr "关闭风扇"
-
-#~ msgid "Fan On"
-#~ msgstr "打开风扇"
-
-#~ msgid "Fast"
-#~ msgstr "加速"
-
-#~ msgid "Slow"
-#~ msgstr "减速"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "取消更改"
-
-#~ msgid "Control"
-#~ msgstr "控制"
-
-#~ msgid "Load Average"
-#~ msgstr "平均负载"
-
-#~ msgid "Network Info"
-#~ msgstr "网络信息"
-
-#~ msgid "Screen Blanking Time"
-#~ msgstr "关闭屏幕时间"

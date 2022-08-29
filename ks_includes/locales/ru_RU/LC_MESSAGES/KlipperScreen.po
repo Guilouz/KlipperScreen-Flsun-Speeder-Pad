@@ -6,18 +6,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-06-03 20:25-0500\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:07+0200\n"
 "Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -33,13 +75,13 @@ msgid "A FIRMWARE_RESTART may fix the issue."
 msgstr "FIRMWARE_RESTART может решить проблему."
 
 msgid "ADXL Not Configured"
-msgstr "ADXL не настроен"
+msgstr ""
 
 msgid "Abort"
 msgstr "Отменить"
 
 msgid "Acceleration:"
-msgstr "Ускорение:"
+msgstr ""
 
 msgid "Accept"
 msgstr "Применить"
@@ -54,15 +96,15 @@ msgid "Add profile"
 msgstr ""
 
 msgid "Apply"
-msgstr "Применить"
+msgstr ""
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr "Применить смещение %.2f к Endstop?"
+msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Применить смещение %s%.2f к зонду?"
+msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Вы уверены, что хотите запустить аварийную остановку?"
@@ -83,7 +125,7 @@ msgid "Auto"
 msgstr "Авто"
 
 msgid "Auto-calibrate"
-msgstr "Автоматическая калибровка"
+msgstr ""
 
 msgid "Auto-close notifications"
 msgstr ""
@@ -104,7 +146,7 @@ msgid "Calibrate"
 msgstr "Калибровка"
 
 msgid "Calibrated"
-msgstr "Откалиброванный"
+msgstr ""
 
 msgid "Calibrated, save configuration to make it permanent"
 msgstr "Откалибровано, сохраните конфигурацию, чтобы сделать ее постоянной"
@@ -113,7 +155,7 @@ msgid "Calibrating"
 msgstr "Калибровка"
 
 msgid "Calibrating..."
-msgstr "Калибровка..."
+msgstr "Калибровка…"
 
 msgid "Can't set above the maximum:"
 msgstr "Невозможно установить выше максимума:"
@@ -137,13 +179,13 @@ msgid "Channel"
 msgstr "Канал"
 
 msgid "Check ADXL Wiring"
-msgstr "Проверьте проводку ADXL"
+msgstr ""
 
 msgid "Checking for updates, please wait..."
 msgstr ""
 
 msgid "Clear"
-msgstr "Очистить"
+msgstr ""
 
 msgid "Close"
 msgstr "Закрыть"
@@ -229,22 +271,22 @@ msgid "Filament Used"
 msgstr "Использование филамента"
 
 msgid "Filament total:"
-msgstr "Итого филамента:"
+msgstr ""
 
 msgid "Filament used:"
-msgstr "Использование филамента:"
+msgstr ""
 
 msgid "Filament:"
-msgstr "Филамент:"
+msgstr ""
 
 msgid "File"
 msgstr "Файл"
 
 msgid "File:"
-msgstr "Файл:"
+msgstr ""
 
 msgid "Finding ADXL"
-msgstr "Поиск ADXL"
+msgstr ""
 
 msgid "Fine Tuning"
 msgstr "Точная настройка"
@@ -260,10 +302,10 @@ msgstr ""
 "Рестарт"
 
 msgid "Flow:"
-msgstr "Поток:"
+msgstr ""
 
 msgid "Flowrate:"
-msgstr "Расход:"
+msgstr ""
 
 msgid "Font Size"
 msgstr "Размер шрифта"
@@ -279,7 +321,7 @@ msgid "Go Back"
 msgstr "Назад"
 
 msgid "Height:"
-msgstr "Высота:"
+msgstr ""
 
 msgid "Hidden"
 msgstr "Скрытый"
@@ -291,7 +333,7 @@ msgid "Hide sensors in Temp."
 msgstr "Скрыть датчики в Temp."
 
 msgid "Hide temp."
-msgstr "Скрыть температуру."
+msgstr ""
 
 msgid "Home"
 msgstr "Парковка"
@@ -330,7 +372,7 @@ msgid "Initializing printer..."
 msgstr "Принтер стартует..."
 
 msgid "Input Shaper"
-msgstr "Входной шейпер"
+msgstr ""
 
 msgid "Interface"
 msgstr "Интерфейс"
@@ -376,7 +418,7 @@ msgid "Large"
 msgstr "Большой"
 
 msgid "Layer:"
-msgstr "Слой:"
+msgstr ""
 
 msgid "Left:"
 msgstr "Осталось:"
@@ -403,7 +445,7 @@ msgid "Max"
 msgstr ""
 
 msgid "Max Acceleration"
-msgstr "Максимальное ускорение"
+msgstr ""
 
 msgid "Max Acceleration to Deceleration"
 msgstr "Ускорения торможения"
@@ -412,13 +454,13 @@ msgid "Max Velocity"
 msgstr "Скорость"
 
 msgid "Measure Both"
-msgstr "Измерьте и то, и другое"
+msgstr ""
 
 msgid "Measure X"
-msgstr "Измерьте X"
+msgstr ""
 
 msgid "Measure Y"
-msgstr "Измерьте Y"
+msgstr ""
 
 msgid "Medium"
 msgstr "Среднее"
@@ -445,7 +487,7 @@ msgid "Network"
 msgstr "Сеть"
 
 msgid "New"
-msgstr "Новый"
+msgstr ""
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -499,7 +541,7 @@ msgid "Power On Printer"
 msgstr "Включить принтер"
 
 msgid "Pressure Advance:"
-msgstr "Повышение давления:"
+msgstr ""
 
 msgid "Print"
 msgstr "Печать"
@@ -517,7 +559,7 @@ msgid "Printing"
 msgstr "Печатается"
 
 msgid "Probe Offset"
-msgstr "Смещение зонда"
+msgstr ""
 
 msgid "Profile Name:"
 msgstr "Имя профиля:"
@@ -550,13 +592,13 @@ msgid "Retract"
 msgstr "Втянуть"
 
 msgid "Retraction"
-msgstr "Ретракт"
+msgstr ""
 
 msgid "Retraction Length"
-msgstr "Длина ретракта"
+msgstr ""
 
 msgid "Retraction Speed"
-msgstr "Скорость ретракта"
+msgstr ""
 
 #, python-format
 msgid "Retry #%s"
@@ -572,17 +614,17 @@ msgid "Save Config"
 msgstr "Сохр. Конфиг"
 
 msgid "Save Z"
-msgstr "Сохранить Z"
+msgstr ""
 
 msgid "Save configuration?"
-msgstr "Сохранить конфигурацию?"
+msgstr ""
 
 msgid "Saved"
-msgstr "Сохранено"
+msgstr ""
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr "Сохраненный офсет: %s"
+msgstr ""
 
 msgid "Screen DPMS"
 msgstr "Экран DPMS"
@@ -631,7 +673,7 @@ msgid "Sort by: "
 msgstr "Орден: "
 
 msgid "Sort:"
-msgstr "Сортировать:"
+msgstr ""
 
 msgid "Speed (mm/s)"
 msgstr "Скорость (мм/с)"
@@ -783,114 +825,3 @@ msgstr "мм/с"
 
 msgid "mm/s²"
 msgstr "мм/с²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch обнаружил примененное смещение"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Проверьте /tmp/KlipperScreen.log для дополнитольной информации.\n"
-#~ "Создайте issues на GitHub что-бы получить помощь."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe обнаружил примененное смещение"
-
-#~ msgid "Tool"
-#~ msgstr "Инструмент"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "Показать  макросы"
-
-#~ msgid "Z Position"
-#~ msgstr "Позиция Z"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "Неизвестный обогреватель "
-
-#~ msgid "Disconnect"
-#~ msgstr "Отключить"
-
-#~ msgid "Duration Only"
-#~ msgstr "Продолжительность печати"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Версия Klipper"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper определил ошибку в микроконтроллере.\n"
-#~ "Прошейте заново."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper обнаружил ошибку.\n"
-#~ "Выполните перезагрузку прошивки, чтобы попытаться исправить проблему."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "Версия KlipperScreen"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "Показать только нагреватели в темп."
-
-#~ msgid "Target"
-#~ msgstr "Цель"
-
-#~ msgid "Temp"
-#~ msgstr "Темп"
-
-#~ msgid "Number Pad"
-#~ msgstr "Клавиатура"
-
-#~ msgid "Preheat"
-#~ msgstr "Разогрев"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "Экран отобразится через одну секунду"
-
-#~ msgid "Medium (default)"
-#~ msgstr "Средний (по умолчанию)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "По файлу (по умолчанию)"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Change Printer"
-#~ msgstr "Сменить принтер"
-
-#~ msgid "Fan Off"
-#~ msgstr "Bыключить"
-
-#~ msgid "Fan On"
-#~ msgstr "Bключи"
-
-#~ msgid "Fast"
-#~ msgstr "Быстро"
-
-#~ msgid "Slow"
-#~ msgstr "Mедленно"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "Отменить изменения"
-
-#~ msgid "Control"
-#~ msgstr "Управление"
-
-#~ msgid "Load Average"
-#~ msgstr "Средняя нагрузка"

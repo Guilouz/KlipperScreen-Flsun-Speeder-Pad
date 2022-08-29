@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-08-10 12:01-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:04+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,7 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -50,7 +92,7 @@ msgid "Add Printer"
 msgstr "Agregar impresora"
 
 msgid "Add profile"
-msgstr "Agregar perfil"
+msgstr ""
 
 msgid "Apply"
 msgstr "Aplicar"
@@ -67,16 +109,16 @@ msgid "Are you sure you want to run Emergency Stop?"
 msgstr "¿Parada de emergencia?"
 
 msgid "Are you sure you wish to cancel this print?"
-msgstr "¿Está seguro que desea cancelar esta impresión?"
+msgstr "Está seguro que desea cancelar esta impresión?"
 
 msgid "Are you sure you wish to disable motors?"
 msgstr "¿Está seguro que desea desactivar los motores?"
 
 msgid "Are you sure you wish to reboot the system?"
-msgstr "¿Está seguro que desea reiniciar el sistema?"
+msgstr "Está seguro que desea reiniciar el sistema?"
 
 msgid "Are you sure you wish to shutdown the system?"
-msgstr "¿Está seguro que desea apagar el sistema?"
+msgstr "Está seguro que desea apagar el sistema?"
 
 msgid "Auto"
 msgstr "Auto"
@@ -85,7 +127,7 @@ msgid "Auto-calibrate"
 msgstr "Auto-Calibrar"
 
 msgid "Auto-close notifications"
-msgstr "Auto-cerrar notificaciones"
+msgstr ""
 
 msgid "Auto-scroll"
 msgstr "Auto-scroll"
@@ -97,7 +139,7 @@ msgid "Bed Mesh"
 msgstr "Malla de cama"
 
 msgid "Bed screw configuration:"
-msgstr "Configuración de tornillos:"
+msgstr ""
 
 msgid "Calibrate"
 msgstr "Calibrar"
@@ -139,7 +181,7 @@ msgid "Check ADXL Wiring"
 msgstr "Verificar cableado del ADXL"
 
 msgid "Checking for updates, please wait..."
-msgstr "Buscando actualizaciones, espere por favor..."
+msgstr ""
 
 msgid "Clear"
 msgstr "Limpiar"
@@ -182,7 +224,7 @@ msgid "Delete"
 msgstr "Borrar"
 
 msgid "Delete File?"
-msgstr "¿Borrar archivo?"
+msgstr ""
 
 msgid "Deselect"
 msgstr "Deseleccionar"
@@ -329,7 +371,7 @@ msgid "Initializing printer..."
 msgstr "Iniciando Impresora..."
 
 msgid "Input Shaper"
-msgstr "Corrección de Resonancias"
+msgstr ""
 
 msgid "Interface"
 msgstr "Interfaz"
@@ -399,10 +441,10 @@ msgid "Main Menu"
 msgstr "Menú"
 
 msgid "Max"
-msgstr "Max"
+msgstr ""
 
 msgid "Max Acceleration"
-msgstr "Aceleración Máxima"
+msgstr "Aceleración Max"
 
 msgid "Max Acceleration to Deceleration"
 msgstr "Max. Aceleración a Desaceleración"
@@ -450,8 +492,6 @@ msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
-"No soportado para la detección automatica, necesita configurarlo en "
-"klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Nada seleccionado"
@@ -472,7 +512,7 @@ msgstr[0] "Paquete será actualizado"
 msgstr[1] "Paquetes serán actualizados"
 
 msgid "Part Fan"
-msgstr "Ventilador de parte"
+msgstr ""
 
 msgid "Password saved"
 msgstr "Contraseña guardada"
@@ -487,7 +527,7 @@ msgid "Perform a full upgrade?"
 msgstr "¿Actualizar Todo?"
 
 msgid "Pins"
-msgstr "Pines"
+msgstr ""
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Por favor recompile y flashee el micro-controlador."
@@ -538,7 +578,7 @@ msgid "Reference"
 msgstr "Referencia"
 
 msgid "Refresh"
-msgstr "Actualizar"
+msgstr ""
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -563,7 +603,7 @@ msgid "Retry #%s"
 msgstr "Intento #%s"
 
 msgid "Retrying"
-msgstr "Reintentando"
+msgstr ""
 
 msgid "Save"
 msgstr "Guardar"
@@ -694,7 +734,7 @@ msgid "Unknown Heater"
 msgstr "Calentador Desconocido"
 
 msgid "Unknown screw position"
-msgstr "Posición de tornillo desconocida"
+msgstr ""
 
 msgid "Unload"
 msgstr "Descargar"
@@ -783,114 +823,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Encontrado Bltouch aplicado desfase"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Revise /tmp/KlipperScreen.log para mas información.\n"
-#~ "Por favor crear un 'issue' en GitHub para ser ayudado."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Encontrado Probe aplicado desfase"
-
-#~ msgid "Tool"
-#~ msgstr "Herrmienta"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "Macros mostrados"
-
-#~ msgid "Z Position"
-#~ msgstr "Posición Z"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "Calentador Desconocido "
-
-#~ msgid "Disconnect"
-#~ msgstr "Desconectar"
-
-#~ msgid "Duration Only"
-#~ msgstr "Duración"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Versión de Klipper"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper encontró un error en el microcontrolador.\n"
-#~ "Por favor recompile y flasheelo."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper encontró un error.\n"
-#~ "Ejecute FIRMWARE_RESTART para tratar de arreglarlo."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "Versión de KlipperScreen"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "Solo mostrar calentadores en Temp."
-
-#~ msgid "Target"
-#~ msgstr "Obejtivo"
-
-#~ msgid "Temp"
-#~ msgstr "Temp"
-
-#~ msgid "Number Pad"
-#~ msgstr "Teclado"
-
-#~ msgid "Preheat"
-#~ msgstr "Precalentar"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "La pantalla se mostrará en menos de un segundo"
-
-#~ msgid "Medium (default)"
-#~ msgstr "Medio (por defecto)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "Archivo (por defecto)"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Change Printer"
-#~ msgstr "Cambiar impresora"
-
-#~ msgid "Fan Off"
-#~ msgstr "Apagar"
-
-#~ msgid "Fan On"
-#~ msgstr "Encender"
-
-#~ msgid "Fast"
-#~ msgstr "Rápido"
-
-#~ msgid "Slow"
-#~ msgstr "Lento"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "Cancelar"
-
-#~ msgid "Control"
-#~ msgstr "Control"
-
-#~ msgid "Load Average"
-#~ msgstr "Carga media"

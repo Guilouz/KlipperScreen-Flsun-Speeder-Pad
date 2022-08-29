@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-03-31 10:54-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:05+0200\n"
 "Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -17,15 +17,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
 msgstr "%s יעודכן לגרסה"
 
 msgid "(default)"
-msgstr "(בְּרִירַת מֶחדָל)"
+msgstr "(בְּרִירַת מֶחדָל)"
 
 msgid "24 Hour Time"
 msgstr "זמן 24 שעות"
@@ -151,7 +193,7 @@ msgid "Close"
 msgstr "סגור"
 
 msgid "Complete"
-msgstr "לְהַשְׁלִים"
+msgstr "לְהַשְׁלִים"
 
 msgid "Configuration"
 msgstr "קונפיגורציה"
@@ -160,7 +202,7 @@ msgid "Confirm Emergency Stop"
 msgstr "אשר עצירת חירום"
 
 msgid "Connected"
-msgstr "מְחוּבָּר"
+msgstr "מְחוּבָּר"
 
 #, python-format
 msgid "Connecting to %s"
@@ -170,7 +212,7 @@ msgid "Console"
 msgstr "לְנַחֵם"
 
 msgid "Continue"
-msgstr "לְהַמשִׁיך"
+msgstr "לְהַמשִׁיך"
 
 msgid "Cooldown"
 msgstr "תירגע"
@@ -207,7 +249,7 @@ msgid "Elapsed:"
 msgstr "זמן שעבר:"
 
 msgid "Error"
-msgstr "שְׁגִיאָה"
+msgstr "שְׁגִיאָה"
 
 msgid "Estimated Time Method"
 msgstr "שיטת זמן משוערת"
@@ -335,7 +377,7 @@ msgid "Input Shaper"
 msgstr ""
 
 msgid "Interface"
-msgstr "מִמְשָׁק"
+msgstr "מִמְשָׁק"
 
 msgid "Invalid"
 msgstr "לא חוקי"
@@ -441,7 +483,7 @@ msgid "Move Distance (mm)"
 msgstr "מרחק הזזה (מ''מ)"
 
 msgid "Name"
-msgstr "שֵׁם"
+msgstr "שֵׁם"
 
 msgid "Network"
 msgstr "רשת"
@@ -600,7 +642,7 @@ msgid "Select"
 msgstr "בחר"
 
 msgid "Send"
-msgstr "לִשְׁלוֹחַ"
+msgstr "לִשְׁלוֹחַ"
 
 #, python-format
 msgid "Sending Power ON signal to: %s"
@@ -790,135 +832,3 @@ msgstr "מ\"מ/ש"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch נמצא היסט מוחל"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "בדוק KlipperScreen.log, בתיקית tmp ליותר פרטים.\n"
-#~ "אנא שלח דוח תקלה ב- GITHUB, לעזרה."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe נמצא היסט מוחל"
-
-#~ msgid "Tool"
-#~ msgstr "כלי"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "מוצגים מאקרו"
-
-#~ msgid "Z Position"
-#~ msgstr "מיקום Z"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "מחמם לא ידוע "
-
-#~ msgid "Disconnect"
-#~ msgstr "לְנַתֵק"
-
-#~ msgid "Duration Only"
-#~ msgstr "משך הזמן בלבד"
-
-#~ msgid "Klipper Version"
-#~ msgstr "גרסא של קליפר"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "קליפר נתקל בשגיאה בבקר המיקרו.\n"
-#~ "אנא הידור מחדש והבהב."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "קליפר נתקל בבעיה. \n"
-#~ "נסה להריץ firmware_restart, כדי לפתור את הבעיה."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "גרסא של KlipperScreen"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "הצג רק מחממים בטמפ'."
-
-#~ msgid "Target"
-#~ msgstr "יַעַד"
-
-#~ msgid "Temp"
-#~ msgstr "טמפ'"
-
-#~ msgid "Number Pad"
-#~ msgstr "פד נומרי"
-
-#~ msgid "Preheat"
-#~ msgstr "חימום מראש"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "המסך יופיע תוך פחות משנייה אחת"
-
-#~ msgid "Medium (default)"
-#~ msgstr "בינוני (ברירת מחדל)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "קובץ (ברירת מחדל)"
-
-#~ msgid "Fan Off"
-#~ msgstr "כבה מאוורר"
-
-#~ msgid "Fan On"
-#~ msgstr "הפעל מאוורר"
-
-#~ msgid "Fast"
-#~ msgstr "מהיר"
-
-#~ msgid "Slow"
-#~ msgstr "האט"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "בטל שינוי"
-
-#~ msgid "Control"
-#~ msgstr "שליטה"
-
-#~ msgid "Load Average"
-#~ msgstr "עומס ממוצע"
-
-#~ msgid "Network Info"
-#~ msgstr "מידע על הרשת"
-
-#~ msgid "Back"
-#~ msgstr "חזור"
-
-#~ msgid "Extrusion"
-#~ msgstr "שיחול"
-
-#~ msgid "Fan +"
-#~ msgstr "מאוורר +"
-
-#~ msgid "Fan -"
-#~ msgstr "מאוורר -"
-
-#~ msgid "System Information"
-#~ msgstr "מידע אודות המערכת"
-
-#~ msgid "Time Elapsed"
-#~ msgstr "זמן שעבר"
-
-#~ msgid "Time Left"
-#~ msgstr "זמן שנשאר"
-
-#~ msgid "Tool 1"
-#~ msgstr "כלי 1"

@@ -81,7 +81,7 @@ class BasePanel(ScreenPanel):
         self.control['time'] = Gtk.Label("00:00 AM")
         self.control['time_box'] = Gtk.Box()
         self.control['time_box'].set_halign(Gtk.Align.END)
-        self.control['time_box'].pack_end(self.control['time'], True, True, 5)
+        self.control['time_box'].pack_end(self.control['time'], True, True, 20) # Changes
 
         self.titlebar = Gtk.Box(spacing=5)
         self.titlebar.set_size_request(0, self._gtk.get_titlebar_height())

@@ -7,16 +7,58 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-03-31 10:50-0300\n"
-"Last-Translator: O. Robardet\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-28 23:26+0200\n"
+"Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr "Calibration Auto"
+
+msgid "Manual Calibration"
+msgstr "Calibration Manuelle"
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr "NOTE: Modifiez le fichier printer.cfg pour enregistrer les modifications de calibrage manuel."
+
+msgid "Endstops Calibrate"
+msgstr "Calibration Endstops"
+
+msgid "Calibrations"
+msgstr "Calibrations"
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr "Veuillez connecter le palpeur avant de démarrer la Calibration Delta."
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr "Veuillez connecter le palpeur avant de démarrer le nivellement automatique."
+
+msgid "Please remove leveling switch before move Z0."
+msgstr "Veuillez déconnecter le palpeur avant le déplacement vers Z=0."
+
+msgid "Move Z0"
+msgstr "Aller à Z0"
+
+msgid "Light"
+msgstr "LED"
+
+msgid "LED ON"
+msgstr "LED On"
+
+msgid "LED OFF"
+msgstr "LED Off"
+
+msgid "LOGO ON"
+msgstr "LOGO On"
+
+msgid "LOGO OFF"
+msgstr "LOGO Off"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -32,7 +74,7 @@ msgid "A FIRMWARE_RESTART may fix the issue."
 msgstr "Un FIRMWARE_RESTART peut résoudre le problème."
 
 msgid "ADXL Not Configured"
-msgstr ""
+msgstr "ADXL non configuré"
 
 msgid "Abort"
 msgstr "Annuler"
@@ -50,57 +92,57 @@ msgid "Add Printer"
 msgstr "Ajouter une imprimante"
 
 msgid "Add profile"
-msgstr ""
+msgstr "Ajouter un profil"
 
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr ""
+msgstr "Appliquer un décalage de %.2f au Endstop ?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr ""
+msgstr "Appliquer un décalage de %s%.2f au palpeur ?"
 
 msgid "Are you sure you want to run Emergency Stop?"
-msgstr "Êtes-vous sûr de vouloir exécuter l'arrêt d'urgence?"
+msgstr "Êtes-vous sûr de vouloir exécuter l'arrêt d'urgence ?"
 
 msgid "Are you sure you wish to cancel this print?"
-msgstr "Êtes-vous sûr de vouloir annuler cette impression?"
+msgstr "Êtes-vous sûr de vouloir annuler cette impression ?"
 
 msgid "Are you sure you wish to disable motors?"
 msgstr "Voulez-vous vraiment désactiver les moteurs ?"
 
 msgid "Are you sure you wish to reboot the system?"
-msgstr "Êtes-vous sûr de vouloir redémarrer le système?"
+msgstr "Êtes-vous sûr de vouloir redémarrer le système ?"
 
 msgid "Are you sure you wish to shutdown the system?"
-msgstr "Êtes-vous sûr de vouloir arrêter le système?"
+msgstr "Êtes-vous sûr de vouloir arrêter le système ?"
 
 msgid "Auto"
 msgstr "Auto"
 
 msgid "Auto-calibrate"
-msgstr "Calibrage automatique"
+msgstr "Calibration Automatique"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "Fermeture automatique des notifications"
 
 msgid "Auto-scroll"
-msgstr "Auto-scroll"
+msgstr "Défilement automatique"
 
 msgid "Bed Level"
-msgstr "Nivelage du plateau"
+msgstr "Nivellement du plateau"
 
 msgid "Bed Mesh"
 msgstr "Maillage du plateau"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "Configuration des vis:"
 
 msgid "Calibrate"
-msgstr "Étalonner"
+msgstr "Calibration Delta"
 
 msgid "Calibrated"
 msgstr "Calibré"
@@ -109,10 +151,10 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "Calibré, enregistrez la configuration pour la rendre permanente"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "Calibration"
 
 msgid "Calibrating..."
-msgstr "Calibrage..."
+msgstr "Calibration…"
 
 msgid "Can't set above the maximum:"
 msgstr "Impossible de définir au-dessus du maximum:"
@@ -124,7 +166,7 @@ msgid "Cancel Print"
 msgstr "Annuler l'impression"
 
 msgid "Cancelled"
-msgstr "Annulé"
+msgstr "Annulée"
 
 msgid "Cancelling"
 msgstr "Annulation"
@@ -136,13 +178,13 @@ msgid "Channel"
 msgstr "Canal"
 
 msgid "Check ADXL Wiring"
-msgstr ""
+msgstr "Vérifier le câblage ADXL"
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "Recherche de mises à jour, veuillez patienter…"
 
 msgid "Clear"
-msgstr ""
+msgstr "Effacer"
 
 msgid "Close"
 msgstr "Fermer"
@@ -151,7 +193,7 @@ msgid "Complete"
 msgstr "Finalisé"
 
 msgid "Configuration"
-msgstr "Configuration"
+msgstr "Configurations"
 
 msgid "Confirm Emergency Stop"
 msgstr "Confirmer l'arrêt d'urgence"
@@ -182,7 +224,7 @@ msgid "Delete"
 msgstr "Effacer"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "Supprimer le fichier ?"
 
 msgid "Deselect"
 msgstr "Désélectionner"
@@ -207,7 +249,7 @@ msgid "Error"
 msgstr "Erreur"
 
 msgid "Estimated Time Method"
-msgstr "Méthode d'estimation du temps"
+msgstr "Méthode d'estimation de la durée"
 
 msgid "Extrude"
 msgstr "Extruder"
@@ -228,7 +270,7 @@ msgid "Filament Used"
 msgstr "Filament utilisé"
 
 msgid "Filament total:"
-msgstr "Total de filaments:"
+msgstr "Total filament:"
 
 msgid "Filament used:"
 msgstr "Filament utilisé:"
@@ -243,81 +285,77 @@ msgid "File:"
 msgstr "Fichier:"
 
 msgid "Finding ADXL"
-msgstr ""
+msgstr "Recherche de l’ADXL"
 
 msgid "Fine Tuning"
-msgstr "Réglages fins"
+msgstr "Réglages précis"
 
 msgid "Finish"
-msgstr "Fin"
+msgstr "Terminée"
 
 msgid ""
 "Firmware\n"
 "Restart"
-msgstr ""
-"Micrologiciel\n"
-"Redémarrage"
+msgstr "Redémarrer Firmware"
 
 msgid "Flow:"
-msgstr ""
+msgstr "Flux:"
 
 msgid "Flowrate:"
-msgstr ""
+msgstr "Débit:"
 
 msgid "Font Size"
-msgstr "Taille de police"
+msgstr "Taille de la police"
 
 msgid ""
 "Full\n"
 "Update"
-msgstr ""
-"Plein\n"
-"Mettre à jour"
+msgstr "MàJ (Tout)"
 
 msgid "Go Back"
-msgstr "Retourner"
+msgstr "Retour"
 
 msgid "Height:"
-msgstr ""
+msgstr "Hauteur:"
 
 msgid "Hidden"
-msgstr "Caché"
+msgstr "Masqué"
 
 msgid "Hide"
-msgstr "Cacher"
+msgstr "Masquer"
 
 msgid "Hide sensors in Temp."
-msgstr "Masquer les capteurs dans Temp."
+msgstr "Masquer les capteurs dans Températures"
 
 msgid "Hide temp."
-msgstr ""
+msgstr "Masquer températures"
 
 msgid "Home"
-msgstr "Accueil"
+msgstr "Home"
 
 msgid "Home All"
-msgstr "Origine XYZ"
+msgstr "Home XYZ"
 
 msgid "Home X"
-msgstr "Origine X"
+msgstr "Home X"
 
 msgid "Home XY"
-msgstr "Origine XY"
+msgstr "Home XY"
 
 msgid "Home Y"
-msgstr "Origine Y"
+msgstr "Home Y"
 
 msgid "Home Z"
-msgstr "Origine Z"
+msgstr "Home Z"
 
 msgid "Homing"
-msgstr "Origine"
+msgstr "Home"
 
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "Nom d’hôte"
 
 msgid "Icon Theme"
-msgstr "Thème icônes"
+msgstr "Thème"
 
 msgid "Increase"
 msgstr "Augmenter"
@@ -329,7 +367,7 @@ msgid "Initializing printer..."
 msgstr "Démarrage de l'imprimante..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Input Shaper"
 
 msgid "Interface"
 msgstr "Interface"
@@ -338,20 +376,18 @@ msgid "Invalid"
 msgstr "Invalide"
 
 msgid "Invert X"
-msgstr "Inverser X"
+msgstr "Inverser l'axe X"
 
 msgid "Invert Y"
-msgstr "Inverser Y"
+msgstr "Inverser l'axe Y"
 
 msgid "Invert Z"
-msgstr "Inverser Z"
+msgstr "Inverser l'axe Z"
 
 msgid ""
 "Klipper\n"
 "Restart"
-msgstr ""
-"Klipper\n"
-"Redémarrage"
+msgstr "Redémarrer Klipper"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper s'est déconnecté"
@@ -372,10 +408,10 @@ msgid "Language"
 msgstr "Langue"
 
 msgid "Large"
-msgstr "Grand"
+msgstr "Grande"
 
 msgid "Layer:"
-msgstr ""
+msgstr "Couche:"
 
 msgid "Left:"
 msgstr "Restant:"
@@ -390,7 +426,7 @@ msgid "Lower Nozzle"
 msgstr "Rapprocher la buse"
 
 msgid "Macro shortcut on sidebar"
-msgstr "Raccourci macro sur la barre latérale"
+msgstr "Raccourci des Macros sur la barre latérale"
 
 msgid "Macros"
 msgstr "Macros"
@@ -399,28 +435,28 @@ msgid "Main Menu"
 msgstr "Menu principal"
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Max Acceleration"
-msgstr "Accélération Max"
+msgstr "Accélération maximale"
 
 msgid "Max Acceleration to Deceleration"
-msgstr "Accélération maximale à décélération"
+msgstr "Accélération à décélération maximale"
 
 msgid "Max Velocity"
 msgstr "Vélocité maximale"
 
 msgid "Measure Both"
-msgstr ""
+msgstr "Mesurer les deux"
 
 msgid "Measure X"
-msgstr ""
+msgstr "Mesurer X"
 
 msgid "Measure Y"
-msgstr ""
+msgstr "Mesurer Y"
 
 msgid "Medium"
-msgstr "Moyen"
+msgstr "Moyenne"
 
 msgid "Menu"
 msgstr "Menu"
@@ -429,10 +465,10 @@ msgid "Modified"
 msgstr "Modifié"
 
 msgid "Moonraker: connected"
-msgstr "Moonraker : connecté"
+msgstr "Moonraker: connecté"
 
 msgid "Move"
-msgstr "Mouvement"
+msgstr "Mouvements"
 
 msgid "Move Distance (mm)"
 msgstr "Distance de mouvement (mm)"
@@ -446,20 +482,18 @@ msgstr "Réseau"
 msgid "New"
 msgstr "Nouveau"
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
-msgstr ""
+msgid "Not supported for auto-detection, it needs to be configured in klipperscreen.conf"
+msgstr "Non pris en charge pour la détection automatique, il doit être configuré dans klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Rien de sélectionné"
 
 msgid "Off"
-msgstr "Éteindre"
+msgstr "Off"
 
 #, python-format
 msgid "Outdated by %d"
-msgstr "Obsolète de %d"
+msgstr "Obsolète par %d"
 
 msgid "PSK for"
 msgstr "PSK pour"
@@ -467,10 +501,10 @@ msgstr "PSK pour"
 msgid "Package will be updated"
 msgid_plural "Packages will be updated"
 msgstr[0] "Le paquet sera mis à jour"
-msgstr[1] "Forfaits seront mis à jour"
+msgstr[1] "Les paquets seront mis à jour"
 
 msgid "Part Fan"
-msgstr ""
+msgstr "Ventilateurs de refroidissement"
 
 msgid "Password saved"
 msgstr "Mot de passe enregistré"
@@ -485,7 +519,7 @@ msgid "Perform a full upgrade?"
 msgstr "Effectuer une mise à jour complète ?"
 
 msgid "Pins"
-msgstr ""
+msgstr "Pins"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Veuillez recompiler et flasher le microcontrôleur."
@@ -497,16 +531,16 @@ msgid "Power On Printer"
 msgstr "Allumer l'imprimante"
 
 msgid "Pressure Advance:"
-msgstr ""
+msgstr "Pressure Advance:"
 
 msgid "Print"
 msgstr "Imprimer"
 
 msgid "Print Control"
-msgstr "Contrôle de l'impression"
+msgstr "Paramètres"
 
 msgid "Print Time"
-msgstr "Temps d'impression"
+msgstr "Durée d'impression"
 
 msgid "Printer Connections"
 msgstr "Connexions aux imprimantes"
@@ -515,28 +549,28 @@ msgid "Printing"
 msgstr "Impression"
 
 msgid "Probe Offset"
-msgstr ""
+msgstr "Décalage du palpeur"
 
 msgid "Profile Name:"
-msgstr "Nom de profil:"
+msgstr "Nom du profil:"
 
 msgid "Quad Gantry Level"
 msgstr "Portique à quatre niveaux"
 
 msgid "Raise Nozzle"
-msgstr "Éloigner la buse"
+msgstr "Eloigner la buse"
 
 msgid "Recover Hard"
-msgstr "Récupération \"--hard\""
+msgstr "Récupération Hard"
 
 msgid "Recover Soft"
-msgstr "Récupérer \"--soft\""
+msgstr "Récupération Soft"
 
 msgid "Reference"
 msgstr "Référence"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Rafraîchir"
 
 msgid "Restart"
 msgstr "Redémarrer"
@@ -558,29 +592,29 @@ msgstr "Vitesse de rétraction"
 
 #, python-format
 msgid "Retry #%s"
-msgstr "Réessayez #%s"
+msgstr "Réessayer #%s"
 
 msgid "Retrying"
-msgstr ""
+msgstr "Réessaye"
 
 msgid "Save"
 msgstr "Enregistrer"
 
 msgid "Save Config"
-msgstr "Enregistrer la config"
+msgstr "Enregistrer la configuration"
 
 msgid "Save Z"
 msgstr "Enregistrer Z"
 
 msgid "Save configuration?"
-msgstr "Enregistrer la configuration?"
+msgstr "Enregistrer la configuration ?"
 
 msgid "Saved"
 msgstr "Enregistré"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr ""
+msgstr "Décalage enregistré: %s"
 
 msgid "Screen DPMS"
 msgstr "Écran DPMS"
@@ -599,31 +633,31 @@ msgstr "Envoyer"
 
 #, python-format
 msgid "Sending Power ON signal to: %s"
-msgstr "Envoi du signal de mise sous tension à : %s"
+msgstr "Envoi du signal de mise sous tension à: %s"
 
 msgid "Set Temp"
-msgstr "Régler la temp"
+msgstr "Régler la température"
 
 msgid "Settings"
 msgstr "Paramètres"
 
 msgid "Show"
-msgstr "Montrer"
+msgstr "Afficher"
 
 msgid "Size"
-msgstr "Dimension"
+msgstr "Taille"
 
 msgid "Slicer"
-msgstr "Trancheur"
+msgstr "Slicer"
 
 msgid "Slicer Time correction (%)"
-msgstr "Correction du temps de trancheuse (%)"
+msgstr "Correction de la durée du slicer (%)"
 
 msgid "Slicer:"
-msgstr ""
+msgstr "Slicer:"
 
 msgid "Small"
-msgstr "Petit"
+msgstr "Petite"
 
 msgid "Sort by: "
 msgstr "Trier par: "
@@ -632,7 +666,7 @@ msgid "Sort:"
 msgstr "Trier:"
 
 msgid "Speed (mm/s)"
-msgstr "Vitesse de déplacement (mm/s)"
+msgstr "Vitesse (mm/s)"
 
 msgid "Speed +"
 msgstr "Vitesse +"
@@ -671,47 +705,49 @@ msgstr ""
 msgid ""
 "System\n"
 "Shutdown"
-msgstr "Arrêt du Système"
+msgstr ""
+"Arrêt\n"
+"du système"
 
 msgid "Temp (°C)"
 msgstr "Temp (°C)"
 
 msgid "Temperature"
-msgstr "Température"
+msgstr "Températures"
 
 #, python-format
 msgid "To apply %s KlipperScreen needs to be restarted"
-msgstr "Pour appliquer %s KlipperScreen doit être redémarré"
+msgstr "Pour appliquer %s, KlipperScreen doit être redémarré"
 
 msgid "Total:"
 msgstr "Total:"
 
 msgid "Unknown Heater"
-msgstr "Chauffage inconnu"
+msgstr "Chauffe inconnue"
 
 msgid "Unknown screw position"
-msgstr ""
+msgstr "Position de vis inconnue"
 
 msgid "Unload"
 msgstr "Décharger"
 
 msgid "Unretract Extra Length"
-msgstr ""
+msgstr "Longueur de rétraction supplémentaire"
 
 msgid "Unretract Speed"
-msgstr ""
+msgstr "Vitesse de rétractation"
 
 msgid "Up To Date"
 msgstr "À jour"
 
 msgid "Update"
-msgstr "Mise à jour"
+msgstr "Mettre à jour"
 
 msgid "Updating"
 msgstr "Mise à jour"
 
 msgid "Uploaded"
-msgstr "Téléchargé"
+msgstr "Envoyé"
 
 msgid "View Mesh"
 msgstr "Voir le maillage"
@@ -744,10 +780,10 @@ msgid "Z Speed (mm/s)"
 msgstr "Vitesse Z (mm/s)"
 
 msgid "Z Tilt"
-msgstr "Z Tilt"
+msgstr "Z-Tilt"
 
 msgid "Z offset:"
-msgstr "Décalage Z"
+msgstr "Z-Offset:"
 
 msgid "Z+"
 msgstr "Z+"
@@ -765,7 +801,7 @@ msgstr "dBm"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "heur"
+msgstr[0] "heure"
 msgstr[1] "heures"
 
 msgid "minutes"
@@ -779,141 +815,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch a trouvé le décalage appliqué"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Vérifiez /tmp/KlipperScreen.log pour plus d'informations.\n"
-#~ "SVP envoyez une requête sur GitHub pour obtenir de l'aide."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe a trouvé le décalage appliqué"
-
-#~ msgid "Tool"
-#~ msgstr "Outil"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "Macros affichées"
-
-#~ msgid "Z Position"
-#~ msgstr "Position Z"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "Chauffage inconnu "
-
-#~ msgid "Disconnect"
-#~ msgstr "Déconnecter"
-
-#~ msgid "Duration Only"
-#~ msgstr "Durée seulement"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Version de Klipper"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper a rencontré une erreur avec le micro-contrôleur.\n"
-#~ "Veuillez recompiler et reflasher."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper a rencontré une erreur. \n"
-#~ "Taper FIRMWARE_RESTART pour fixer l'erreur."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "Version de KlipperScreen"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "Afficher uniquement les éléments chauffants en temp."
-
-#~ msgid "Target"
-#~ msgstr "Cibler"
-
-#~ msgid "Temp"
-#~ msgstr "Temp"
-
-#~ msgid "Number Pad"
-#~ msgstr "Clavier"
-
-#~ msgid "Preheat"
-#~ msgstr "Préchauffer"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "L'écran s'affichera en moins d'une seconde"
-
-#~ msgid "Medium (default)"
-#~ msgstr "Moyen (défaut)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "Fichier (défaut)"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Change Printer"
-#~ msgstr "Changer d'imprimante"
-
-#~ msgid "Fan Off"
-#~ msgstr "Arrêter "
-
-#~ msgid "Fan On"
-#~ msgstr "Allumer"
-
-#~ msgid "Fast"
-#~ msgstr "Rapide"
-
-#~ msgid "Slow"
-#~ msgstr "Lent"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "Annuler le changement"
-
-#~ msgid "Control"
-#~ msgstr "Controle"
-
-#~ msgid "Load Average"
-#~ msgstr "Charge moyenne"
-
-#~ msgid "Network Info"
-#~ msgstr "Information réseau "
-
-#~ msgid "Back"
-#~ msgstr "Retour"
-
-#~ msgid "Extrusion"
-#~ msgstr "Extrusion"
-
-#~ msgid "Fan +"
-#~ msgstr "Ventilateur+"
-
-#~ msgid "Fan -"
-#~ msgstr "Ventilateur-"
-
-#~ msgid "System Information"
-#~ msgstr "Info systeme"
-
-#~ msgid "Time Elapsed"
-#~ msgstr "Temps écoulé"
-
-#~ msgid "Time Left"
-#~ msgstr "temps restant"
-
-#~ msgid "Tool 1"
-#~ msgstr "Outil 1"

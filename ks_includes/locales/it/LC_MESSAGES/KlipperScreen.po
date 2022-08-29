@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: pappicio\n"
 "Language-Team: \n"
@@ -11,7 +11,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -45,7 +87,7 @@ msgid "Add Printer"
 msgstr "Aggiungi Stampante"
 
 msgid "Add profile"
-msgstr ""
+msgstr "Aggiungi Profilo"
 
 msgid "Apply"
 msgstr ""
@@ -104,10 +146,10 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "Calibrato, salva la configurazione per renderla permanente"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "Calibra"
 
 msgid "Calibrating..."
-msgstr ""
+msgstr "Calibra…"
 
 msgid "Can't set above the maximum:"
 msgstr "Impossibile impostare al di sopra del massimo:"
@@ -776,90 +818,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch ha trovato l'offset applicato"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Verifica /tmp/KlipperScreen.log per info.\n"
-#~ "Aggiungi un problema sul GitHub."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe ha trovato l'offset applicato"
-
-#~ msgid "Tool"
-#~ msgstr "Strumenti"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "Mostra/Nascondi Macros"
-
-#~ msgid "Z Position"
-#~ msgstr "Posizione Z"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "Riscaldatore sconosciuto "
-
-#~ msgid "Disconnect"
-#~ msgstr "Sconnetti"
-
-#~ msgid "Duration Only"
-#~ msgstr "Solo Durata"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Versione Klipper"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper ha riscontrato un errore con il microcontrollore.\n"
-#~ "Si prega di ricompilare e flashare."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper ha riscontrato un errore.\n"
-#~ "esegui un FIRMWARE_RESTART per tentare di risolvere il problema."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "Versione KlipperScreen"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "Mostra solo riscaldatori in temp."
-
-#~ msgid "Target"
-#~ msgstr "Obbiettivo"
-
-#~ msgid "Temp"
-#~ msgstr "Temp"
-
-#~ msgid "Number Pad"
-#~ msgstr "Tastierino"
-
-#~ msgid "Preheat"
-#~ msgstr "Preriscalda"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "Lo schermo verrà visualizzato a breve"
-
-#~ msgid "Medium (default)"
-#~ msgstr "Media (predef.)"
-
-#~ msgid "File Estimation (default)"
-#~ msgstr "Stima file (predef.)"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Change Printer"
-#~ msgstr "Cambia Stampante"

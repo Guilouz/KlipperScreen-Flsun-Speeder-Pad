@@ -17,7 +17,7 @@ class ExtrudePanel(ScreenPanel):
     def __init__(self, screen, title, back=True):
         super().__init__(screen, title, back)
         self.current_extruder = self._printer.get_stat("toolhead", "extruder")
-        self.speeds = ['1', '2', '5', '25']
+        self.speeds = ['1', '2', '5', '10'] # Changes
         self.speed = 1
         self.distances = ['5', '10', '15', '25']
         self.distance = 5
@@ -142,18 +142,18 @@ class ExtrudePanel(ScreenPanel):
         grid.attach(extgrid, 0, 0, 4, 1)
 
         if self._screen.vertical_mode:
-            grid.attach(self.labels['extrude'], 0, 1, 2, 1)
-            grid.attach(self.labels['retract'], 2, 1, 2, 1)
-            grid.attach(self.labels['load'], 0, 2, 2, 1)
-            grid.attach(self.labels['unload'], 2, 2, 2, 1)
+            grid.attach(self.labels['retract'], 0, 1, 2, 1) # Changes
+            grid.attach(self.labels['extrude'], 2, 1, 2, 1) # Changes
+            grid.attach(self.labels['unload'], 0, 2, 2, 1) # Changes
+            grid.attach(self.labels['load'], 2, 2, 2, 1) # Changes
             grid.attach(distbox, 0, 3, 4, 1)
             grid.attach(speedbox, 0, 4, 4, 1)
             grid.attach(sensors, 0, 5, 4, 1)
         else:
-            grid.attach(self.labels['extrude'], 0, 2, 1, 1)
-            grid.attach(self.labels['load'], 1, 2, 1, 1)
-            grid.attach(self.labels['unload'], 2, 2, 1, 1)
-            grid.attach(self.labels['retract'], 3, 2, 1, 1)
+            grid.attach(self.labels['retract'], 0, 2, 1, 1) # Changes
+            grid.attach(self.labels['unload'], 1, 2, 1, 1) # Changes
+            grid.attach(self.labels['load'], 2, 2, 1, 1) # Changes
+            grid.attach(self.labels['extrude'], 3, 2, 1, 1) # Changes
             grid.attach(distbox, 0, 3, 2, 1)
             grid.attach(speedbox, 2, 3, 2, 1)
             grid.attach(sensors, 0, 4, 4, 1)

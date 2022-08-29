@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-03-31 10:43-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,7 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -109,7 +151,7 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "Kalibriert, Konfiguration speichern, um sie dauerhaft zu machen"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "Kalibrieren"
 
 msgid "Calibrating..."
 msgstr "Kalibrieren..."
@@ -639,7 +681,7 @@ msgid "Sort by: "
 msgstr "Sortierung: "
 
 msgid "Sort:"
-msgstr "Sortieren: "
+msgstr "Sortieren:"
 
 msgid "Speed (mm/s)"
 msgstr "Geschwindigkeit (mm/s)"
@@ -793,94 +835,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch hat angewendeten Offset gefunden"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Prüfe /tmp/KlipperScreen.log für weitere Informationen.\n"
-#~ "Bitte eröffne einen Fehlerbericht auf https://git.io/JLNn4 für Hilfe."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe hat angewendeten Offset gefunden"
-
-#~ msgid "Tool"
-#~ msgstr "Druckkopf"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "Aktive Macros"
-
-#~ msgid "Z Position"
-#~ msgstr "Z-Position"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "Unbekannte Heizung "
-
-#~ msgid "Disconnect"
-#~ msgstr "Nicht verbunden"
-
-#~ msgid "Duration Only"
-#~ msgstr "Reine Druckzeit"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Klipper Version"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper hat einen Fehler mit dem Mainboard festgestellt.\n"
-#~ "Bitte Mainboard neu programmieren."
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper hat einen Fehler festgestellt.\n"
-#~ "Führe einen FIRMWARE_RESTART durch um den Fehler zu beheben."
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "KlipperScreen Version"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "Nur Heizungen in Temp anzeigen."
-
-#~ msgid "Target"
-#~ msgstr "Ziel"
-
-#~ msgid "Temp"
-#~ msgstr "Temp"
-
-# Nummernblock is 2 character too long and currently doesn't fit
-#~ msgid "Number Pad"
-#~ msgstr "Tastenfeld"
-
-#~ msgid "Preheat"
-#~ msgstr "Vorheizen"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "Der Bildschirm wird in weniger als einer Sekunde angezeigt"
-
-#~ msgid "Colorized"
-#~ msgstr "Colorized"
-
-#~ msgid "?"
-#~ msgstr "?"
-
-#~ msgid "Cancel Change"
-#~ msgstr "Änderung abbrechen"
-
-#~ msgid "Control"
-#~ msgstr "Steuerung"
-
-#~ msgid "Load Average"
-#~ msgstr "Durchschnittslast"

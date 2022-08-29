@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-03-31 11:25-0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -16,7 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -109,10 +151,10 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "校準，保存配置以使其永久化"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "校正"
 
 msgid "Calibrating..."
-msgstr ""
+msgstr "校正…"
 
 msgid "Can't set above the maximum:"
 msgstr "不能設置超過最大值："
@@ -774,78 +816,3 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Bltouch 發現應用的偏移量"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "檢查/tmp/KlipperScreen.log 日誌檔以了解更多訊息。\n"
-#~ "請在GitHub上提交問題以尋求幫助。"
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Probe 發現應用的偏移量"
-
-#~ msgid "Tool"
-#~ msgstr "工具"
-
-#~ msgid "Displayed Macros"
-#~ msgstr "顯示巨集"
-
-#~ msgid "Z Position"
-#~ msgstr "Z 位置"
-
-#~ msgid "IPv4"
-#~ msgstr "IPv4"
-
-#~ msgid "IPv6"
-#~ msgstr "IPv6"
-
-#~ msgid "Unknown Heater "
-#~ msgstr "未知加熱器 "
-
-#~ msgid "Disconnect"
-#~ msgstr "斷開"
-
-#~ msgid "Duration Only"
-#~ msgstr "僅持續時間"
-
-#~ msgid "Klipper Version"
-#~ msgstr "Klipper 版本"
-
-#~ msgid ""
-#~ "Klipper has encountered an error with the micro-controller.\n"
-#~ "Please recompile and flash."
-#~ msgstr ""
-#~ "Klipper遇到微控制器錯誤。\n"
-#~ "請重新編譯並刷新。"
-
-#~ msgid ""
-#~ "Klipper has encountered an error.\n"
-#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
-#~ msgstr ""
-#~ "Klipper遇到錯誤。\n"
-#~ "發出 FIRMWARE_RESTART 嘗試解決這個問題。"
-
-#~ msgid "KlipperScreen Version"
-#~ msgstr "KlipperScreen 版本"
-
-#~ msgid "Show Only Heaters in Temp."
-#~ msgstr "僅顯示溫度下的加熱器"
-
-#~ msgid "Target"
-#~ msgstr "目標溫度"
-
-#~ msgid "Temp"
-#~ msgstr "目前溫度"
-
-#~ msgid "Number Pad"
-#~ msgstr "數字鍵盤"
-
-#~ msgid "Preheat"
-#~ msgstr "預熱"
-
-#~ msgid "Screen will show in less than one second"
-#~ msgstr "螢幕將在1秒內顯示"

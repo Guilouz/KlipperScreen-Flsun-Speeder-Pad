@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   id="svg4"
+   sodipodi:docname="light off.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="32"
+     inkscape:cx="10.453125"
+     inkscape:cy="7.375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 12,5.6692913 a 5.9527559,5.9527559 0 0 1 5.952757,5.9527537 c 0,2.023937 -1.01197,3.801261 -2.551181,4.881261 v 1.921889 a 0.85039369,0.85039369 0 0 1 -0.850393,0.850394 H 9.4488191 a 0.85039369,0.85039369 0 0 1 -0.850393,-0.850394 v -1.921889 c -1.539213,-1.08 -2.551182,-2.857324 -2.551182,-4.881261 A 5.9527559,5.9527559 0 0 1 12,5.6692913 M 9.4488191,21.82677 v -0.850393 h 5.1023639 v 0.850393 a 0.85039369,0.85039369 0 0 1 -0.850396,0.850394 H 10.299213 A 0.85039369,0.85039369 0 0 1 9.4488191,21.82677 M 12,7.3700783 A 4.2519685,4.2519685 0 0 0 7.7480311,11.622045 c 0,1.743306 1.045985,3.24 2.5511819,3.894803 v 2.057954 h 3.401574 v -2.057954 c 1.505197,-0.654803 2.551181,-2.151497 2.551181,-3.894803 A 4.2519685,4.2519685 0 0 0 12,7.3700783 Z"
+     id="path2-6"
+     style="font-variation-settings:normal;vector-effect:none;fill:#e2e2e2;fill-opacity:1;stroke-width:0.850391;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000" />
+</svg>

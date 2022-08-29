@@ -5,20 +5,62 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  2022-06-02 14:53-0300\n"
+"Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 12:01-0300\n"
-"PO-Revision-Date: 2022-06-03 10:02+0300\n"
+"POT-Creation-Date: 2022-07-12 22:17-0300\n"
+"PO-Revision-Date: 2022-08-17 20:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Auto Calibration"
+msgstr ""
+
+msgid "Manual Calibration"
+msgstr ""
+
+msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
+msgstr ""
+
+msgid "Endstops Calibrate"
+msgstr ""
+
+msgid "Calibrations"
+msgstr ""
+
+msgid "Please plug in leveling switch before Delta Calibration."
+msgstr ""
+
+msgid "Please plug in leveling switch before auto-leveling."
+msgstr ""
+
+msgid "Please remove leveling switch before move Z0."
+msgstr ""
+
+msgid "Move Z0"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "LED ON"
+msgstr ""
+
+msgid "LED OFF"
+msgstr ""
+
+msgid "LOGO ON"
+msgstr ""
+
+msgid "LOGO OFF"
+msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -111,7 +153,7 @@ msgid "Calibrated, save configuration to make it permanent"
 msgstr "Відкалібровано, збережіть конфігурацію, щоб зробити її постійною"
 
 msgid "Calibrating"
-msgstr ""
+msgstr "Калібрування"
 
 msgid "Calibrating..."
 msgstr "Калібрування..."
@@ -786,19 +828,3 @@ msgstr "мм/с"
 
 msgid "mm/s²"
 msgstr "мм/с²"
-
-#~ msgid "Bltouch found applied offset"
-#~ msgstr "Зонд знайшов застосоване зміщення"
-
-#~ msgid ""
-#~ "Check /tmp/KlipperScreen.log for more information.\n"
-#~ "Please submit an issue on GitHub for help."
-#~ msgstr ""
-#~ "Перевірте /tmp/KlipperScreen.log для отримання додаткової інформації.\n"
-#~ "Будь ласка, надішліть проблему на GitHub, щоб отримати допомогу."
-
-#~ msgid "Probe found applied offset"
-#~ msgstr "Зонд знайшов застосоване зміщення"
-
-#~ msgid "Tool"
-#~ msgstr "Інструмент"

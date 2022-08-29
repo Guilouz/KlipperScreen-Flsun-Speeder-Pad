@@ -254,6 +254,9 @@ class KlipperScreen(Gtk.Window):
                 "configfile": ["config"],
                 "display_status": ["progress", "message"],
                 "fan": ["speed"],
+                # Changes Start
+                "filament_switch_sensor filament_sensor": ["filament_detected"],
+                # Changes End
                 "gcode_move": ["extrude_factor", "gcode_position", "homing_origin", "speed_factor", "speed"],
                 "idle_timeout": ["state"],
                 "pause_resume": ["is_paused"],

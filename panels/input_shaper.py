@@ -42,7 +42,7 @@ class InputShaperPanel(ScreenPanel):
         self.calibrating_axis = None
 
         auto_calibration_label = Gtk.Label()
-        auto_calibration_label.set_markup('<big><b>Auto Calibration</b></big>')
+        auto_calibration_label.set_markup("<big><b>" + _("Auto Calibration") + "</b></big>") # Changes
         auto_calibration_label.set_hexpand(True)
 
         auto_grid = Gtk.Grid()
@@ -50,11 +50,11 @@ class InputShaperPanel(ScreenPanel):
         auto_grid.attach(self.calibrate_btn, 1, 0, 1, 1)
 
         manual_calibration_label = Gtk.Label()
-        manual_calibration_label.set_markup('<big><b>Manual Calibration</b></big>')
+        manual_calibration_label.set_markup("<big><b> "+ _("Manual Calibration") + "</b></big>") # Changes
         manual_calibration_label.set_vexpand(True)
 
         disclaimer = Gtk.Label()
-        disclaimer.set_markup('<small>NOTE: Edit your printer.cfg to save manual calibration changes.</small>')
+        disclaimer.set_markup("<small>" + _("NOTE: Edit your printer.cfg to save manual calibration changes.") + "</small>") # Changes
         disclaimer.set_line_wrap(True)
         disclaimer.set_halign(Gtk.Align.CENTER)
 
