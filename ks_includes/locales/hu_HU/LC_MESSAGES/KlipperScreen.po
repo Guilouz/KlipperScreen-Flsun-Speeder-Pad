@@ -13,10 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#, fuzzy
-#| msgid "Print"
+msgid "Print Status"
+msgstr ""
+
 msgid "Reprint"
-msgstr "Nyomtatás"
+msgstr ""
 
 msgid "Auto Calibration"
 msgstr ""

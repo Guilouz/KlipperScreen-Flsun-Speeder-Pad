@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Print Status"
+msgstr ""
+
 msgid "Reprint"
 msgstr ""
 

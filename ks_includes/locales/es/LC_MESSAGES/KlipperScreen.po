@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-03 21:12+0200\n"
+"PO-Revision-Date: 2022-09-03 21:56+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,10 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#, fuzzy
-#| msgid "Print"
+msgid "Print Status"
+msgstr ""
+
 msgid "Reprint"
-msgstr "Imprimir"
+msgstr ""
 
 msgid "Auto Calibration"
 msgstr ""
