@@ -384,7 +384,7 @@ class JobStatusPanel(ScreenPanel):
             'fine_tune': self._gtk.ButtonImage("fine-tune", _("Fine Tuning"), "color4"),
             'menu': self._gtk.ButtonImage("complete", _("Main Menu"), "color4"),
             'pause': self._gtk.ButtonImage("pause", _("Pause"), "color1"),
-            'restart': self._gtk.ButtonImage("refresh", _("Restart"), "color3"),
+            'restart': self._gtk.ButtonImage("refresh", _("Reprint"), "color3"), # Changes
             'resume': self._gtk.ButtonImage("resume", _("Resume"), "color1"),
             'save_offset_endstop': self._gtk.ButtonImage("home-z", _("Save") + "\n" + "Z Endstop", "color2"), # Changes
         }
