@@ -386,7 +386,6 @@ class JobStatusPanel(ScreenPanel):
             'pause': self._gtk.ButtonImage("pause", _("Pause"), "color1"),
             'restart': self._gtk.ButtonImage("refresh", _("Restart"), "color3"),
             'resume': self._gtk.ButtonImage("resume", _("Resume"), "color1"),
-            'save_offset_probe': self._gtk.ButtonImage("home-z", _("Save") + "\n" + "Z Offset", "color1"), # Changes
             'save_offset_endstop': self._gtk.ButtonImage("home-z", _("Save") + "\n" + "Z Endstop", "color2"), # Changes
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
@@ -397,24 +396,17 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['pause'].connect("clicked", self.pause)
         self.buttons['restart'].connect("clicked", self.restart)
         self.buttons['resume'].connect("clicked", self.resume)
-        self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe")
-        self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop")
+        self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop") # Changes
 
     def save_offset(self, widget, device):
 
         saved_z_offset = 0
-        if self._printer.config_section_exists("probe"):
-            saved_z_offset = float(self._screen.printer.get_config_section("probe")['z_offset'])
-        elif self._printer.config_section_exists("bltouch"):
+        if self._printer.config_section_exists("bltouch"): # Changes
             saved_z_offset = float(self._screen.printer.get_config_section("bltouch")['z_offset'])
 
         sign = "+" if self.zoffset > 0 else "-"
         label = Gtk.Label()
-        if device == "probe":
-            label.set_text(_("Apply %s%.2f offset to Probe?") % (sign, abs(self.zoffset))
-                           + "\n\n"
-                           + _("Saved offset: %s") % saved_z_offset)
-        elif device == "endstop":
+        if device == "endstop": # Changes
             label.set_text(_("Apply %.2f offset to Endstop?") % self.zoffset)
         label.set_hexpand(True)
         label.set_halign(Gtk.Align.CENTER)
@@ -433,9 +425,7 @@ class JobStatusPanel(ScreenPanel):
 
     def save_confirm(self, widget, response_id, device):
         if response_id == Gtk.ResponseType.APPLY:
-            if device == "probe":
-                self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_PROBE")
-            if device == "endstop":
+            if device == "endstop": # Changes
                 self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_ENDSTOP")
             self._screen._ws.klippy.gcode_script("SAVE_CONFIG")
         widget.destroy()
@@ -804,7 +794,7 @@ class JobStatusPanel(ScreenPanel):
                     self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
-                if self._printer.config_section_exists("probe") or self._printer.config_section_exists("bltouch"):
+                if self._printer.config_section_exists("bltouch"): # Changes
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
