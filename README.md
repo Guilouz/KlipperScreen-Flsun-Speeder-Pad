@@ -68,6 +68,7 @@ install_script: scripts/KlipperScreen-install.sh
 
 ## Changelog
 
+- 03/09/2022 : Improvements
 - 28/08/2022 : Latest KlipperScreen commits / Power on Hotend LED when calibrate Z-Offset
 - 17/08/2022 : Added Home button in Z Calibrate menu / Translate Input Shaper menu / Improvements
 - 16/08/2022 : Improved moves speeds / Improved French translation
