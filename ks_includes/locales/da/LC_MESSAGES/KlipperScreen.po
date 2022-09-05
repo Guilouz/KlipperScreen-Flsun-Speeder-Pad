@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Shutdown"
+msgstr ""
+
 msgid "Print Status"
 msgstr ""
 
@@ -252,6 +255,9 @@ msgstr "Fejl"
 msgid "Estimated Time Method"
 msgstr "Metode til beregning af tid"
 
+msgid "Exclude Object"
+msgstr ""
+
 msgid "Extrude"
 msgstr "Ekstrudér"
 
@@ -294,9 +300,11 @@ msgstr "Finjustering"
 msgid "Finish"
 msgstr "Færdig"
 
-msgid ""
-"Firmware\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Firmware\n"
+#| "Restart"
+msgid "Firmware Restart"
 msgstr ""
 "Firmware\n"
 "Genstart"
@@ -310,9 +318,11 @@ msgstr ""
 msgid "Font Size"
 msgstr "Skriftstørrelse"
 
-msgid ""
-"Full\n"
-"Update"
+#, fuzzy
+#| msgid ""
+#| "Full\n"
+#| "Update"
+msgid "Full Update"
 msgstr ""
 "Fuld\n"
 "Opdatering"
@@ -356,6 +366,11 @@ msgstr "Home Z"
 msgid "Homing"
 msgstr "Homing"
 
+#, fuzzy
+#| msgid "Hostname"
+msgid "Host"
+msgstr "Værtsnavn"
+
 msgid "Hostname"
 msgstr "Værtsnavn"
 
@@ -389,9 +404,11 @@ msgstr "Invertér Y"
 msgid "Invert Z"
 msgstr "Invertér Z"
 
-msgid ""
-"Klipper\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Klipper\n"
+#| "Restart"
+msgid "Klipper Restart"
 msgstr ""
 "Klipper\n"
 "Genstart"
@@ -431,6 +448,9 @@ msgstr "Indlæs"
 
 msgid "Lower Nozzle"
 msgstr "Sænk Nozzle"
+
+msgid "Machine"
+msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "Makrogenvej på sidelinjen"
@@ -704,16 +724,20 @@ msgstr "Opdaterer"
 msgid "System"
 msgstr "System"
 
-msgid ""
-"System\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Restart"
+msgid "System Restart"
 msgstr ""
 "Genstart\n"
 "system"
 
-msgid ""
-"System\n"
-"Shutdown"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Shutdown"
+msgid "System Shutdown"
 msgstr ""
 "Luk\n"
 "system ned"

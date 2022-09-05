@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Shutdown"
+msgstr ""
+
 msgid "Print Status"
 msgstr ""
 
@@ -252,6 +255,9 @@ msgstr "Hiba"
 msgid "Estimated Time Method"
 msgstr "Becsült idő módszer"
 
+msgid "Exclude Object"
+msgstr ""
+
 msgid "Extrude"
 msgstr "Száladagolás"
 
@@ -294,9 +300,11 @@ msgstr "Finomhangolás"
 msgid "Finish"
 msgstr "Befejezve"
 
-msgid ""
-"Firmware\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Firmware\n"
+#| "Restart"
+msgid "Firmware Restart"
 msgstr ""
 "Firmware\n"
 "Újraindítása"
@@ -310,9 +318,11 @@ msgstr "Áramlás:"
 msgid "Font Size"
 msgstr "Betűméret"
 
-msgid ""
-"Full\n"
-"Update"
+#, fuzzy
+#| msgid ""
+#| "Full\n"
+#| "Update"
+msgid "Full Update"
 msgstr ""
 "Teljes\n"
 "Frissítés"
@@ -356,6 +366,11 @@ msgstr "Z kezdőpont"
 msgid "Homing"
 msgstr "Kezdőpont"
 
+#, fuzzy
+#| msgid "Hostname"
+msgid "Host"
+msgstr "Gazdanév"
+
 msgid "Hostname"
 msgstr "Gazdanév"
 
@@ -389,9 +404,11 @@ msgstr "Fordított Y"
 msgid "Invert Z"
 msgstr "Fordított Z"
 
-msgid ""
-"Klipper\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Klipper\n"
+#| "Restart"
+msgid "Klipper Restart"
 msgstr ""
 "Klipper\n"
 "Újraindítása"
@@ -431,6 +448,9 @@ msgstr "Betöltés"
 
 msgid "Lower Nozzle"
 msgstr "Fúvóka le"
+
+msgid "Machine"
+msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "Makró parancsikon az oldalsávon"
@@ -706,16 +726,20 @@ msgstr "Frissítés indítása"
 msgid "System"
 msgstr "Rendszer"
 
-msgid ""
-"System\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Restart"
+msgid "System Restart"
 msgstr ""
 "Rendszer\n"
 "Újraindítása"
 
-msgid ""
-"System\n"
-"Shutdown"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Shutdown"
+msgid "System Shutdown"
 msgstr ""
 "Rendszer\n"
 "Leállitás"

@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Shutdown"
+msgstr ""
+
 msgid "Print Status"
 msgstr ""
 
@@ -252,6 +255,9 @@ msgstr "오류"
 msgid "Estimated Time Method"
 msgstr "예상시간 옵션"
 
+msgid "Exclude Object"
+msgstr ""
+
 msgid "Extrude"
 msgstr "압출 "
 
@@ -294,9 +300,11 @@ msgstr "미세 조정"
 msgid "Finish"
 msgstr "완료됨"
 
-msgid ""
-"Firmware\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Firmware\n"
+#| "Restart"
+msgid "Firmware Restart"
 msgstr ""
 "펌웨어\n"
 "재시작"
@@ -310,9 +318,11 @@ msgstr "유량:"
 msgid "Font Size"
 msgstr "글꼴 크기"
 
-msgid ""
-"Full\n"
-"Update"
+#, fuzzy
+#| msgid ""
+#| "Full\n"
+#| "Update"
+msgid "Full Update"
 msgstr ""
 "전체\n"
 "업데이트"
@@ -356,6 +366,11 @@ msgstr "Z축 홈"
 msgid "Homing"
 msgstr "툴 헤드 위치 초기화"
 
+#, fuzzy
+#| msgid "Hostname"
+msgid "Host"
+msgstr "호스트 이름"
+
 msgid "Hostname"
 msgstr "호스트 이름"
 
@@ -389,9 +404,11 @@ msgstr "Y축 반전"
 msgid "Invert Z"
 msgstr "Z축 반전"
 
-msgid ""
-"Klipper\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "Klipper\n"
+#| "Restart"
+msgid "Klipper Restart"
 msgstr ""
 "클리퍼\n"
 "재시작"
@@ -431,6 +448,9 @@ msgstr "필라 넣기"
 
 msgid "Lower Nozzle"
 msgstr "노즐 낮춤"
+
+msgid "Machine"
+msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "사이드바에 매크로 아이콘 표시"
@@ -703,16 +723,20 @@ msgstr "업데이트 시작 중"
 msgid "System"
 msgstr "시스템"
 
-msgid ""
-"System\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Restart"
+msgid "System Restart"
 msgstr ""
 "시스템\n"
 "재시작"
 
-msgid ""
-"System\n"
-"Shutdown"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Shutdown"
+msgid "System Shutdown"
 msgstr ""
 "시스템\n"
 "종료"

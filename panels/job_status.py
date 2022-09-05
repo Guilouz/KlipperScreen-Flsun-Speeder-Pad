@@ -449,7 +449,8 @@ class JobStatusPanel(ScreenPanel):
             {"name": _("Cancel Print"), "response": Gtk.ResponseType.OK},
             {"name": _("Go Back"), "response": Gtk.ResponseType.CANCEL}
         ]
-
+        if len(self._printer.get_stat("exclude_object", "objects")) > 1:
+            buttons.insert(0, {"name": _("Exclude Object"), "response": Gtk.ResponseType.APPLY})
         label = Gtk.Label()
         label.set_markup(_("Are you sure you wish to cancel this print?"))
         label.set_hexpand(True)
@@ -464,6 +465,10 @@ class JobStatusPanel(ScreenPanel):
 
     def cancel_confirm(self, widget, response_id):
         widget.destroy()
+
+        if response_id == Gtk.ResponseType.APPLY:
+            self.menu_item_clicked(None, "exclude", {"panel": "exclude", "name": _("Exclude Object")})
+            return
 
         if response_id == Gtk.ResponseType.CANCEL:
             self.enable_button("pause", "cancel")
@@ -550,7 +555,7 @@ class JobStatusPanel(ScreenPanel):
                 self.labels['temp_grid'].attach(self.extruder_button[self.current_extruder], 0, 0, 1, 1)
                 self._screen.show_all()
         with contextlib.suppress(KeyError):
-            self.labels['max_accel'].set_text(f"{data['toolhead']['max_accel']} mm/s²")
+            self.labels['max_accel'].set_text(f"{data['toolhead']['max_accel']:.0f} mm/s²")
         with contextlib.suppress(KeyError):
             self.labels['advance'].set_text(f"{data['extruder']['pressure_advance']:.2f}")
 
@@ -717,7 +722,7 @@ class JobStatusPanel(ScreenPanel):
     def state_check(self):
         ps = self._printer.get_stat("print_stats")
 
-        if ps['state'] == self.state:
+        if 'state' not in ps or ps['state'] == self.state:
             return True
 
         if ps['state'] == "printing":

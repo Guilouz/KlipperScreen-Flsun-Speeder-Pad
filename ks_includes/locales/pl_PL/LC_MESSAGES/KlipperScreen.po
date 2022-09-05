@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-03 21:57+0200\n"
+"PO-Revision-Date: 2022-09-05 01:47+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -18,6 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Shutdown"
+msgstr ""
 
 msgid "Print Status"
 msgstr ""
@@ -258,6 +261,9 @@ msgstr "Błąd"
 msgid "Estimated Time Method"
 msgstr "Sposób Oszacowania Czasu"
 
+msgid "Exclude Object"
+msgstr ""
+
 msgid "Extrude"
 msgstr "Extruduj"
 
@@ -300,10 +306,10 @@ msgstr "Regulacja Precyzyjna"
 msgid "Finish"
 msgstr "Zakończ"
 
-msgid ""
-"Firmware\n"
-"Restart"
-msgstr ""
+#, fuzzy
+#| msgid "Restart"
+msgid "Firmware Restart"
+msgstr "Restartuj"
 
 msgid "Flow:"
 msgstr ""
@@ -314,9 +320,11 @@ msgstr ""
 msgid "Font Size"
 msgstr "Rozmiar trzcionki"
 
-msgid ""
-"Full\n"
-"Update"
+#, fuzzy
+#| msgid ""
+#| "Full\n"
+#| "Update"
+msgid "Full Update"
 msgstr ""
 "Pełny\n"
 "Aktualizacja"
@@ -360,6 +368,11 @@ msgstr "Baza Z"
 msgid "Homing"
 msgstr "Bazowanie"
 
+#, fuzzy
+#| msgid "Hostname"
+msgid "Host"
+msgstr "Nazwa hosta"
+
 msgid "Hostname"
 msgstr "Nazwa hosta"
 
@@ -393,10 +406,10 @@ msgstr "Odwróć Y"
 msgid "Invert Z"
 msgstr "Odwróć Z"
 
-msgid ""
-"Klipper\n"
-"Restart"
-msgstr ""
+#, fuzzy
+#| msgid "Restart"
+msgid "Klipper Restart"
+msgstr "Restartuj"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper się rozłączył"
@@ -433,6 +446,9 @@ msgstr "Ładuj"
 
 msgid "Lower Nozzle"
 msgstr "Obniż  dyszę"
+
+msgid "Machine"
+msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "Skrót do makr na pasku bocznym"
@@ -707,16 +723,20 @@ msgstr "Zacznij uaktualnienie dla"
 msgid "System"
 msgstr "System"
 
-msgid ""
-"System\n"
-"Restart"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Restart"
+msgid "System Restart"
 msgstr ""
 "Restart\n"
 "Systemu"
 
-msgid ""
-"System\n"
-"Shutdown"
+#, fuzzy
+#| msgid ""
+#| "System\n"
+#| "Shutdown"
+msgid "System Shutdown"
 msgstr ""
 "Wyłączanie\n"
 " systemu"

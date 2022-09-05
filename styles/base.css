@@ -22,12 +22,13 @@ button {
     -gtk-icon-shadow: none;
 }
 
-button:active {
+button:active, .button_active {
     background-color: #304C62;
 }
 
-.button_active {
-    background-color: #20303D;
+button label {
+    margin-top: .25em;
+    margin-bottom: .5em;
 }
 
 button.color1 {
@@ -163,6 +164,11 @@ scrollbar slider {
     min-width: 2em;
     border-radius: .7em;
     background-color: #404E57;
+}
+
+separator {
+    margin: 1em 2em;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 textview, textview text {
