@@ -494,9 +494,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
+msgid "Not supported for auto-detection, it needs to be configured in klipperscreen.conf"
 msgstr ""
 
 msgid "Nothing selected"
