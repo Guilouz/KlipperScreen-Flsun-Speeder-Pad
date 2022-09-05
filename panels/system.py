@@ -400,9 +400,10 @@ class SystemPanel(ScreenPanel):
         self._gtk.Dialog(self._screen, buttons, scroll, self.reboot_poweroff_confirm, method)
 
     def reboot_poweroff_confirm(self, widget, response_id, method):
-        if method == "reboot":
-            os.system("systemctl reboot")
-        else:
-            os.system("shutdown -H now")
-    # End Changes
+        if response_id == Gtk.ResponseType.APPLY:
+            if method == "reboot":
+                os.system("systemctl reboot")
+            else:
+                os.system("shutdown -H now")
         widget.destroy()
+    # End Changes
