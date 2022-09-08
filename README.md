@@ -68,6 +68,7 @@ install_script: scripts/KlipperScreen-install.sh
 
 ## Changelog
 
+- 08/09/2022 : Added Support for Neopixels
 - 05/09/2022 : Updated to latest KlipperScreen v0.2.6
 - 03/09/2022 : Improvements
 - 28/08/2022 : Latest KlipperScreen commits / Power on Hotend LED when calibrate Z-Offset
