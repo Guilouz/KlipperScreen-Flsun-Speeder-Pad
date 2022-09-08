@@ -46,7 +46,7 @@ msgstr ""
 msgid "Bed (All)"
 msgstr ""
 
-msgid "Bed (One by One"
+msgid "Bed (One by One)"
 msgstr ""
 
 msgid "Progress (All)"
