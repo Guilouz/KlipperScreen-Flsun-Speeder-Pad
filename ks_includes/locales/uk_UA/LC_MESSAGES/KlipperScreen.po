@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 01:48+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -19,6 +19,54 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Neopixels"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Violet"
+msgstr ""
+
+msgid "Hotend (All)"
+msgstr ""
+
+msgid "Hotend (One by One)"
+msgstr ""
+
+msgid "Bed (All)"
+msgstr ""
+
+msgid "Bed (One by One"
+msgstr ""
+
+msgid "Progress (All)"
+msgstr ""
+
+msgid "Progress (One by One)"
+msgstr ""
+
+msgid "Speed (All)"
+msgstr ""
+
+msgid "Speed (One by One)"
+msgstr ""
 
 msgid "Shutdown"
 msgstr ""
@@ -56,19 +104,19 @@ msgstr ""
 msgid "Move Z0"
 msgstr ""
 
-msgid "Light"
+msgid "LED"
 msgstr ""
 
-msgid "LED ON"
+msgid "Hotend LED On"
 msgstr ""
 
-msgid "LED OFF"
+msgid "Hotend LED Off"
 msgstr ""
 
-msgid "LOGO ON"
+msgid "Logo LED On"
 msgstr ""
 
-msgid "LOGO OFF"
+msgid "Logo LED Off"
 msgstr ""
 
 #, python-format
@@ -307,14 +355,8 @@ msgstr "Підправити"
 msgid "Finish"
 msgstr "Фініш"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"Перезапуск\n"
-"Прошивки"
+msgstr "Перезапуск Прошивки"
 
 msgid "Flow:"
 msgstr "Потік:"
@@ -325,14 +367,8 @@ msgstr "Швидкість потоку:"
 msgid "Font Size"
 msgstr "Розмір шрифту"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"Повне\n"
-"Оновлення"
+msgstr "Повне Оновлення"
 
 msgid "Go Back"
 msgstr "Назад"
@@ -373,10 +409,8 @@ msgstr "Дім Z"
 msgid "Homing"
 msgstr "До дому"
 
-#, fuzzy
-#| msgid "Hostname"
 msgid "Host"
-msgstr "Назва хоста"
+msgstr ""
 
 msgid "Hostname"
 msgstr "Назва хоста"
@@ -411,14 +445,8 @@ msgstr "Інвертувати Y"
 msgid "Invert Z"
 msgstr "Інвертувати Z"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"Перезапуск\n"
-"Кліппера"
+msgstr "Перезапуск Кліппера"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper відключився"
@@ -732,23 +760,11 @@ msgstr "Початок оновлення для"
 msgid "System"
 msgstr "Системна"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Restart"
 msgid "System Restart"
-msgstr ""
-"Рестарт\n"
-"Малини"
+msgstr "Рестарт Малини"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Shutdown"
 msgid "System Shutdown"
-msgstr ""
-"Вимкнути\n"
-"Малину"
+msgstr "Вимкнути Малину"
 
 msgid "Temp (°C)"
 msgstr "Teмп (°C)"

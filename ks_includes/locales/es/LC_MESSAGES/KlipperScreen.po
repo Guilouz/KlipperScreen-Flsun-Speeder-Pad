@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 01:46+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:45+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Neopixels"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Violet"
+msgstr ""
+
+msgid "Hotend (All)"
+msgstr ""
+
+msgid "Hotend (One by One)"
+msgstr ""
+
+msgid "Bed (All)"
+msgstr ""
+
+msgid "Bed (One by One"
+msgstr ""
+
+msgid "Progress (All)"
+msgstr ""
+
+msgid "Progress (One by One)"
+msgstr ""
+
+msgid "Speed (All)"
+msgstr ""
+
+msgid "Speed (One by One)"
+msgstr ""
 
 msgid "Shutdown"
 msgstr ""
@@ -54,19 +102,19 @@ msgstr ""
 msgid "Move Z0"
 msgstr ""
 
-msgid "Light"
+msgid "LED"
 msgstr ""
 
-msgid "LED ON"
+msgid "Hotend LED On"
 msgstr ""
 
-msgid "LED OFF"
+msgid "Hotend LED Off"
 msgstr ""
 
-msgid "LOGO ON"
+msgid "Logo LED On"
 msgstr ""
 
-msgid "LOGO OFF"
+msgid "Logo LED Off"
 msgstr ""
 
 #, python-format
@@ -305,14 +353,8 @@ msgstr "Ajuste Fino"
 msgid "Finish"
 msgstr "Cerrar"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"Reiniciar\n"
-"Firmware"
+msgstr "Reiniciar Firmware"
 
 msgid "Flow:"
 msgstr "Flujo:"
@@ -323,14 +365,8 @@ msgstr "Flujo:"
 msgid "Font Size"
 msgstr "Tamaño del texto"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"Actualizar\n"
-"Todo"
+msgstr "Actualizar Todo"
 
 msgid "Go Back"
 msgstr "Volver"
@@ -371,10 +407,8 @@ msgstr "Origen Z"
 msgid "Homing"
 msgstr "Origen"
 
-#, fuzzy
-#| msgid "Hostname"
 msgid "Host"
-msgstr "Hostname"
+msgstr ""
 
 msgid "Hostname"
 msgstr "Hostname"
@@ -409,14 +443,8 @@ msgstr "Invertir Y"
 msgid "Invert Z"
 msgstr "Invertir Z"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"Reiniciar\n"
-"Klipper"
+msgstr "Reiniciar Klipper"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper se desconectó"
@@ -729,23 +757,11 @@ msgstr "Iniciando actualización de"
 msgid "System"
 msgstr "Sistema"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Restart"
 msgid "System Restart"
-msgstr ""
-"Reiniciar\n"
-"Sistema"
+msgstr "Reiniciar Sistema"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Shutdown"
 msgid "System Shutdown"
-msgstr ""
-"Apagar\n"
-"Sistema"
+msgstr "Apagar Sistema"
 
 msgid "Temp (°C)"
 msgstr "Temp (°C)"

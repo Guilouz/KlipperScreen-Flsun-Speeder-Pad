@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 01:48+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Neopixels"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Violet"
+msgstr ""
+
+msgid "Hotend (All)"
+msgstr ""
+
+msgid "Hotend (One by One)"
+msgstr ""
+
+msgid "Bed (All)"
+msgstr ""
+
+msgid "Bed (One by One"
+msgstr ""
+
+msgid "Progress (All)"
+msgstr ""
+
+msgid "Progress (One by One)"
+msgstr ""
+
+msgid "Speed (All)"
+msgstr ""
+
+msgid "Speed (One by One)"
+msgstr ""
 
 msgid "Shutdown"
 msgstr ""
@@ -54,19 +102,19 @@ msgstr ""
 msgid "Move Z0"
 msgstr ""
 
-msgid "Light"
+msgid "LED"
 msgstr ""
 
-msgid "LED ON"
+msgid "Hotend LED On"
 msgstr ""
 
-msgid "LED OFF"
+msgid "Hotend LED Off"
 msgstr ""
 
-msgid "LOGO ON"
+msgid "Logo LED On"
 msgstr ""
 
-msgid "LOGO OFF"
+msgid "Logo LED Off"
 msgstr ""
 
 #, python-format
@@ -305,14 +353,8 @@ msgstr "Finjustering"
 msgid "Finish"
 msgstr "Slutför"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"Firmware\n"
-"Omstart"
+msgstr "Firmware Omstart"
 
 msgid "Flow:"
 msgstr ""
@@ -323,14 +365,8 @@ msgstr ""
 msgid "Font Size"
 msgstr "Textstorlek"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"Fullständig\n"
-"Uppdatering"
+msgstr "Fullständig Uppdatering"
 
 msgid "Go Back"
 msgstr "Gå tillbaka"
@@ -371,10 +407,8 @@ msgstr "Hem Z"
 msgid "Homing"
 msgstr ""
 
-#, fuzzy
-#| msgid "Hostname"
 msgid "Host"
-msgstr "Värdnamn"
+msgstr ""
 
 msgid "Hostname"
 msgstr "Värdnamn"
@@ -409,14 +443,8 @@ msgstr "Invertera Y"
 msgid "Invert Z"
 msgstr "Invertera Z"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"Klipper\n"
-"Omstart"
+msgstr "Klipper Omstart"
 
 msgid "Klipper has disconnected"
 msgstr ""
@@ -729,23 +757,11 @@ msgstr ""
 msgid "System"
 msgstr "System"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Restart"
 msgid "System Restart"
-msgstr ""
-"System\n"
-"Omstart"
+msgstr "System Omstart"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Shutdown"
 msgid "System Shutdown"
-msgstr ""
-"System\n"
-"Avstängning"
+msgstr "System Avstängning"
 
 msgid "Temp (°C)"
 msgstr "Temperatur (°C)"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 11:58+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:48+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Neopixels"
+msgstr "Neopixels"
+
+msgid "On"
+msgstr "On"
+
+msgid "Blue"
+msgstr "Bleu"
+
+msgid "Red"
+msgstr "Rouge"
+
+msgid "Green"
+msgstr "Vert"
+
+msgid "Yellow"
+msgstr "Jaune"
+
+msgid "Orange"
+msgstr "Orange"
+
+msgid "Violet"
+msgstr "Violet"
+
+msgid "Hotend (All)"
+msgstr "Hotend (Toutes)"
+
+msgid "Hotend (One by One)"
+msgstr "Hotend (Une par Une)"
+
+msgid "Bed (All)"
+msgstr "Plateau (Toutes)"
+
+msgid "Bed (One by One"
+msgstr "Plateau (Une par Une)"
+
+msgid "Progress (All)"
+msgstr "Progression (Toutes)"
+
+msgid "Progress (One by One)"
+msgstr "Progression (Une par Une)"
+
+msgid "Speed (All)"
+msgstr "Vitesse (Toutes)"
+
+msgid "Speed (One by One)"
+msgstr "Vitesse (Une par Une)"
 
 msgid "Shutdown"
 msgstr "Arrêter"
@@ -34,7 +82,9 @@ msgid "Manual Calibration"
 msgstr "Calibration Manuelle"
 
 msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr "NOTE: Modifiez le fichier printer.cfg pour enregistrer les modifications de calibration manuelle."
+msgstr ""
+"NOTE: Modifiez le fichier printer.cfg pour enregistrer les modifications de "
+"calibration manuelle."
 
 msgid "Endstops Calibrate"
 msgstr "Calibration Endstops"
@@ -46,7 +96,8 @@ msgid "Please plug in leveling switch before Delta Calibration."
 msgstr "Veuillez connecter le palpeur avant de démarrer la Calibration Delta."
 
 msgid "Please plug in leveling switch before auto-leveling."
-msgstr "Veuillez connecter le palpeur avant de démarrer le nivellement automatique."
+msgstr ""
+"Veuillez connecter le palpeur avant de démarrer le nivellement automatique."
 
 msgid "Please remove leveling switch before move Z0."
 msgstr "Veuillez déconnecter le palpeur avant le déplacement vers Z=0."
@@ -54,20 +105,20 @@ msgstr "Veuillez déconnecter le palpeur avant le déplacement vers Z=0."
 msgid "Move Z0"
 msgstr "Aller à Z0"
 
-msgid "Light"
+msgid "LED"
 msgstr "LED"
 
-msgid "LED ON"
-msgstr "LED On"
+msgid "Hotend LED On"
+msgstr "LED Hotend On"
 
-msgid "LED OFF"
-msgstr "LED Off"
+msgid "Hotend LED Off"
+msgstr "LED Hotend Off"
 
-msgid "LOGO ON"
-msgstr "LOGO On"
+msgid "Logo LED On"
+msgstr "LED Logo On"
 
-msgid "LOGO OFF"
-msgstr "LOGO Off"
+msgid "Logo LED Off"
+msgstr "LED Logo Off"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -494,8 +545,12 @@ msgstr "Réseau"
 msgid "New"
 msgstr "Nouveau"
 
-msgid "Not supported for auto-detection, it needs to be configured in klipperscreen.conf"
-msgstr "Non pris en charge pour la détection automatique, il doit être configuré dans klipperscreen.conf"
+msgid ""
+"Not supported for auto-detection, it needs to be configured in klipperscreen."
+"conf"
+msgstr ""
+"Non pris en charge pour la détection automatique, il doit être configuré "
+"dans klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Rien de sélectionné"

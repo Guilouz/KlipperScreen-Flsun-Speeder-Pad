@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 01:49+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Neopixels"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Violet"
+msgstr ""
+
+msgid "Hotend (All)"
+msgstr ""
+
+msgid "Hotend (One by One)"
+msgstr ""
+
+msgid "Bed (All)"
+msgstr ""
+
+msgid "Bed (One by One"
+msgstr ""
+
+msgid "Progress (All)"
+msgstr ""
+
+msgid "Progress (One by One)"
+msgstr ""
+
+msgid "Speed (All)"
+msgstr ""
+
+msgid "Speed (One by One)"
+msgstr ""
 
 msgid "Shutdown"
 msgstr ""
@@ -54,19 +102,19 @@ msgstr ""
 msgid "Move Z0"
 msgstr ""
 
-msgid "Light"
+msgid "LED"
 msgstr ""
 
-msgid "LED ON"
+msgid "Hotend LED On"
 msgstr ""
 
-msgid "LED OFF"
+msgid "Hotend LED Off"
 msgstr ""
 
-msgid "LOGO ON"
+msgid "Logo LED On"
 msgstr ""
 
-msgid "LOGO OFF"
+msgid "Logo LED Off"
 msgstr ""
 
 #, python-format
@@ -305,14 +353,8 @@ msgstr "微调"
 msgid "Finish"
 msgstr "结束"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"重启\n"
-"Firmware"
+msgstr "重启 Firmware"
 
 msgid "Flow:"
 msgstr "流量:"
@@ -323,14 +365,8 @@ msgstr "流量:"
 msgid "Font Size"
 msgstr "字体大小"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"全部\n"
-"更新"
+msgstr "全部 更新"
 
 msgid "Go Back"
 msgstr "返回"
@@ -371,10 +407,8 @@ msgstr "Z轴归零"
 msgid "Homing"
 msgstr "归零"
 
-#, fuzzy
-#| msgid "Hostname"
 msgid "Host"
-msgstr "主机名"
+msgstr ""
 
 msgid "Hostname"
 msgstr "主机名"
@@ -409,14 +443,8 @@ msgstr "反转Y轴"
 msgid "Invert Z"
 msgstr "反转Z轴"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"重启\n"
-"Klipper"
+msgstr "重启 Klipper"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper 已断开连接"
@@ -728,23 +756,11 @@ msgstr "开始更新"
 msgid "System"
 msgstr "系统"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Restart"
 msgid "System Restart"
-msgstr ""
-"重启\n"
-"系统"
+msgstr "重启 系统"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Shutdown"
 msgid "System Shutdown"
-msgstr ""
-"关闭\n"
-"系统"
+msgstr "关闭 系统"
 
 msgid "Temp (°C)"
 msgstr "温度 (°C)"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 22:17-0300\n"
-"PO-Revision-Date: 2022-09-05 01:48+0200\n"
+"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"PO-Revision-Date: 2022-09-08 02:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
+
+msgid "Neopixels"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Orange"
+msgstr ""
+
+msgid "Violet"
+msgstr ""
+
+msgid "Hotend (All)"
+msgstr ""
+
+msgid "Hotend (One by One)"
+msgstr ""
+
+msgid "Bed (All)"
+msgstr ""
+
+msgid "Bed (One by One"
+msgstr ""
+
+msgid "Progress (All)"
+msgstr ""
+
+msgid "Progress (One by One)"
+msgstr ""
+
+msgid "Speed (All)"
+msgstr ""
+
+msgid "Speed (One by One)"
+msgstr ""
 
 msgid "Shutdown"
 msgstr ""
@@ -54,19 +102,19 @@ msgstr ""
 msgid "Move Z0"
 msgstr ""
 
-msgid "Light"
+msgid "LED"
 msgstr ""
 
-msgid "LED ON"
+msgid "Hotend LED On"
 msgstr ""
 
-msgid "LED OFF"
+msgid "Hotend LED Off"
 msgstr ""
 
-msgid "LOGO ON"
+msgid "Logo LED On"
 msgstr ""
 
-msgid "LOGO OFF"
+msgid "Logo LED Off"
 msgstr ""
 
 #, python-format
@@ -305,14 +353,8 @@ msgstr "İnce Ayar"
 msgid "Finish"
 msgstr "Bitir"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"Firmware\n"
-"Yeniden Başlat"
+msgstr "Firmware Yeniden Başlat"
 
 msgid "Flow:"
 msgstr "Akış:"
@@ -323,14 +365,8 @@ msgstr "Akış oranı:"
 msgid "Font Size"
 msgstr "Yazı boyutu"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"Tam\n"
-"Güncelleme"
+msgstr "Tam Güncelleme"
 
 msgid "Go Back"
 msgstr "Geri git"
@@ -371,10 +407,8 @@ msgstr "Z  Sıfırla"
 msgid "Homing"
 msgstr "Eksen Sıfırlama"
 
-#, fuzzy
-#| msgid "Hostname"
 msgid "Host"
-msgstr "Ana bilgisayar adı"
+msgstr ""
 
 msgid "Hostname"
 msgstr "Ana bilgisayar adı"
@@ -409,14 +443,8 @@ msgstr "Y Ters çevir"
 msgid "Invert Z"
 msgstr "Z Ters çevir"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"Klipper\n"
-"Yeniden başlat"
+msgstr "Klipper Yeniden başlat"
 
 msgid "Klipper has disconnected"
 msgstr "Klipper bağlantısı kesildi"
@@ -731,23 +759,11 @@ msgstr "Güncelleme başlatılıyor"
 msgid "System"
 msgstr "Sistem"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Restart"
 msgid "System Restart"
-msgstr ""
-"Sistem\n"
-"Yeniden Başlat"
+msgstr "Sistem Yeniden Başlat"
 
-#, fuzzy
-#| msgid ""
-#| "System\n"
-#| "Shutdown"
 msgid "System Shutdown"
-msgstr ""
-"Sistem\n"
-"Kapat"
+msgstr "Sistem Kapat"
 
 msgid "Temp (°C)"
 msgstr "Sıcaklık (°C)"
