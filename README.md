@@ -8,6 +8,8 @@ KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github
 
 [Click here to access the documentation.](https://klipperscreen.readthedocs.io/en/latest/)
 
+<br />
+
 ## About
 
 This version of KlipperScreen is compatible with FLSUN's Speeder Pad, it's optimized for Delta printers.
@@ -25,6 +27,7 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 [ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
 
+<br />
 
 ## Installation
 
@@ -51,6 +54,7 @@ install_script: scripts/KlipperScreen-install.sh
 
 ![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
 
+<br />
 
 ## Restoration
 
@@ -65,6 +69,18 @@ env: /home/pi/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
+<br />
+
+## Notes
+
+Calibrations Menu use the following Macros:
+
+- `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
+- `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
+- `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
+- `Move Z0` function in `Z Calibrate` menu use `[gcode_macro MOVE_TO_Z0]`
+
+<br />
 
 ## Changelog
 
