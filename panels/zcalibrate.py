@@ -27,7 +27,7 @@ class ZCalibratePanel(ScreenPanel):
         logging.debug("ZCalibratePanel")
 
         self.labels['start'] = self._gtk.ButtonImage('arrow-down', _("Move Z0"), 'color1')
-        script = {"script": "G28\nLED_ON\nG1 Z0 F2500"}
+        script = {"script": "MOVE_TO_Z0"}
         self.labels['start'].connect("clicked", self._screen._confirm_send_action,
                                           _("Please remove leveling switch before move Z0."),
                                           "printer.gcode.script", script)
