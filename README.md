@@ -84,6 +84,7 @@ Calibrations Menu use the following Macros:
 
 ## Changelog
 
+- 11/09/2022 : Added settings to Show Heater Power
 - 10/09/2022 : Some menus now use Macros
 - 08/09/2022 : Added Support for Neopixels
 - 05/09/2022 : Updated to latest KlipperScreen v0.2.6
