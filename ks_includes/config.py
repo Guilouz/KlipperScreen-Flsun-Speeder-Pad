@@ -112,16 +112,16 @@ class KlipperScreenConfig:
 
     def validate_config(self):
         valid = True
-        bools = strs = numbers = ()
         for section in self.config:
             if section == 'DEFAULT' or section.startswith('include '):
                 # Do not validate 'DEFAULT' or 'include*' sections
                 continue
-
+            bools = strs = numbers = ()
             if section == 'main':
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
-                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_macro_shortcut', 'use-matchbox-keyboard'
+                    'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_macro_shortcut', 'use-matchbox-keyboard',
+                    'show_heater_power'
                 )
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -222,7 +222,7 @@ class KlipperScreenConfig:
             {"confirm_estop": {"section": "main", "name": _("Confirm Emergency Stop"), "type": "binary",
                                "value": "False"}},
             {"only_heaters": {"section": "main", "name": _("Hide sensors in Temp."), "type": "binary",
-                              "value": "False", "callback": screen.restart_warning}},
+                              "value": "False", "callback": screen.reload_panels}},
             {"use_dpms": {"section": "main", "name": _("Screen DPMS"), "type": "binary",
                           "value": "True", "callback": screen.set_dpms}},
             {"print_estimate_compensation": {
@@ -230,7 +230,8 @@ class KlipperScreenConfig:
                 "range": [50, 150], "step": 1}},
             {"autoclose_popups": {"section": "main", "name": _("Auto-close notifications"), "type": "binary",
                                   "value": "True"}},
-
+            {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
+                                   "value": "False", "callback": screen.reload_panels}},
             # {"": {"section": "main", "name": _(""), "type": ""}}
         ]
 
