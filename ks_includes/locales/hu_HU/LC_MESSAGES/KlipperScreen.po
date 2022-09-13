@@ -307,7 +307,7 @@ msgid "Estimated Time Method"
 msgstr "Becsült idő módszer"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "Objektum kizárása"
 
 msgid "Extrude"
 msgstr "Száladagolás"
@@ -406,7 +406,7 @@ msgid "Homing"
 msgstr "Kezdőpont"
 
 msgid "Host"
-msgstr ""
+msgstr "Gazda"
 
 msgid "Hostname"
 msgstr "Gazdanév"
@@ -481,7 +481,7 @@ msgid "Lower Nozzle"
 msgstr "Fúvóka le"
 
 msgid "Machine"
-msgstr ""
+msgstr "Gép"
 
 msgid "Macro shortcut on sidebar"
 msgstr "Makró parancsikon az oldalsávon"
