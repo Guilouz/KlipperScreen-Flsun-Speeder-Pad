@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:24+0200\n"
+"PO-Revision-Date: 2022-09-13 23:00+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -655,10 +655,10 @@ msgid "Retraction"
 msgstr "Rétraction"
 
 msgid "Retraction Length"
-msgstr "Longueur de rétraction"
+msgstr "Longueur de retrait"
 
 msgid "Retraction Speed"
-msgstr "Vitesse de rétraction"
+msgstr "Vitesse de retrait"
 
 #, python-format
 msgid "Retry #%s"
@@ -794,10 +794,10 @@ msgid "Unload"
 msgstr "Décharger"
 
 msgid "Unretract Extra Length"
-msgstr "Longueur de rétraction supplémentaire"
+msgstr "Longueur d'insertion supplémentaire"
 
 msgid "Unretract Speed"
-msgstr "Vitesse de rétractation"
+msgstr "Vitesse d'insertion"
 
 msgid "Up To Date"
 msgstr "À jour"
