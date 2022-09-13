@@ -79,6 +79,10 @@ Calibrations Menu use the following Macros:
 - `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
 - `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
 - `Move Z0` function in `Z Calibrate` menu use `[gcode_macro MOVE_TO_Z0]`
+- `Hotend LED Off` function use `[gcode_macro LED_HOTEND_OFF]`
+- `Hotend LED On` function use `[gcode_macro LED_HOTEND_ON]`
+- `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
+- `Logo LED On` function use `[gcode_macro LED_LOGO_ON]`
 
 <br />
 
