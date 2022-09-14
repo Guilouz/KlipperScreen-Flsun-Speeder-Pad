@@ -89,7 +89,7 @@ class ZCalibratePanel(ScreenPanel):
 
 
     def go_to_home(self, widget, home):
-        gcode = "LED_OFF\nG28"
+        gcode = "LED_HOTEND_OFF\nG28"
 
         self._screen._ws.klippy.gcode_script(gcode)
 
