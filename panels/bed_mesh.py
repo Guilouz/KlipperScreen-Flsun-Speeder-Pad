@@ -37,8 +37,11 @@ class BedMeshPanel(ScreenPanel):
         clear = self._gtk.ButtonImage("cancel", " " + _("Clear"), "color2", .66, Gtk.PositionType.LEFT, 1)
         clear.connect("clicked", self._clear_mesh)
         clear.set_hexpand(True)
-        top_calibrate = self._gtk.ButtonImage("refresh", " " + _("Calibrate"), "color3", .66, Gtk.PositionType.LEFT, 1)
-        top_calibrate.connect("clicked", self._send_calibrate)
+        script = {"script": "BED_LEVELING"} # Changes
+        top_calibrate = self._gtk.ButtonImage("refresh", " " + _("Bed Level"), "color3", .66, Gtk.PositionType.LEFT, 1)
+        top_calibrate.connect("clicked", self._screen._confirm_send_action,
+                                          _("Please plug in leveling switch before auto-leveling."),
+                                          "printer.gcode.script", script) # Changes
         top_calibrate.set_hexpand(True)
 
         topbar = Gtk.Box(spacing=5)
@@ -116,13 +119,16 @@ class BedMeshPanel(ScreenPanel):
         name.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
         buttons = {
-            "calibrate": self._gtk.ButtonImage("refresh", _("Calibrate"), "color4"),
+            "calibrate": self._gtk.ButtonImage("refresh", _("Bed Level"), "color4"), # Changes
             "load": self._gtk.ButtonImage("load", _("Load"), "color2"),
             "save": self._gtk.ButtonImage("complete", _("Save"), "color3"),
             "delete": self._gtk.ButtonImage("cancel", _("Delete"), "color3"),
             "view": self._gtk.ButtonImage("bed-level", _("View Mesh"), "color1"),
         }
-        buttons["calibrate"].connect("clicked", self.calibrate_mesh)
+        script = {"script": "BED_LEVELING"} # Changes
+        buttons["calibrate"].connect("clicked", self._screen._confirm_send_action,
+                                          _("Please plug in leveling switch before auto-leveling."),
+                                          "printer.gcode.script", script) # Changes
         buttons["load"].connect("clicked", self.send_load_mesh, profile)
         buttons["save"].connect("clicked", self.send_save_mesh, profile)
         buttons["delete"].connect("clicked", self.send_remove_mesh, profile)
@@ -136,9 +142,9 @@ class BedMeshPanel(ScreenPanel):
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
         button_box.add(buttons["calibrate"])
         if profile != "default":
-            button_box.add(buttons["save"])
-            button_box.add(buttons["delete"])
+            button_box.add(buttons["save"]) # Changes
         if self._printer.get_config_section(f"bed_mesh {profile}"):
+            button_box.add(buttons["delete"]) # Changes
             button_box.add(buttons["load"])
             button_box.add(buttons["view"])
 
