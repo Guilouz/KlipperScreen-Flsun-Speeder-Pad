@@ -88,6 +88,7 @@ Calibrations Menu use the following Macros:
 
 ## Changelog
 
+- 23/09/2022 : Added layers on Job Status Screen
 - 18/09/2022 : Added support for bed mesh profiles and bed mesh visualization
 - 11/09/2022 : Added settings to Show Heater Power
 - 10/09/2022 : Some menus now use Macros

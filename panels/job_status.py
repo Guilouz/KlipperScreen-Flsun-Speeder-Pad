@@ -243,21 +243,27 @@ class JobStatusPanel(ScreenPanel):
         self.left_button = self._gtk.ButtonImage("hourglass", remaining_label, None, .6, Gtk.PositionType.LEFT, False)
         self.left_button.connect("clicked", self.create_time_grid)
         self.left_button.set_halign(Gtk.Align.START)
+        
+        layer_label = self.labels['layer_lbl'].get_text() # Changes
+        self.layer_button = self._gtk.ButtonImage("layer", layer_label, None, .6, Gtk.PositionType.LEFT, False) # Changes
+        self.layer_button.connect("clicked", self.create_move_grid) # Changes
+        self.layer_button.set_halign(Gtk.Align.START) # Changes
 
         szfe = Gtk.Grid()
         szfe.attach(self.speed_button, 0, 0, 1, 1)
-        szfe.attach(self.z_button, 1, 0, 1, 1)
+        szfe.attach(self.z_button, 1, 1, 1, 1) # Changes
+        szfe.attach(self.elapsed_button, 0, 2, 1, 1) # Changes
+        szfe.attach(self.left_button, 1, 2, 1, 1) # Changes
         if self._screen.printer.get_tools():
             szfe.attach(self.extrusion_button, 0, 1, 1, 1)
         if self._screen.printer.get_fans():
-            szfe.attach(self.fan_button, 1, 1, 1, 1)
+            szfe.attach(self.fan_button, 1, 0, 1, 1) # Changes
 
         info = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         info.get_style_context().add_class("printing-info")
         info.add(self.labels['temp_grid'])
         info.add(szfe)
-        info.add(self.elapsed_button)
-        info.add(self.left_button)
+        info.add(self.layer_button) # Changes
         self.switch_info(info)
 
     def create_extrusion_grid(self, widget=None):
@@ -658,6 +664,8 @@ class JobStatusPanel(ScreenPanel):
             self.elapsed_button.set_label(elapsed_label)
             remaining_label = f"{self.labels['left'].get_text()}  {self.labels['time_left'].get_text()}"
             self.left_button.set_label(remaining_label)
+            layer_label = f"{self.labels['layer_lbl'].get_text()} {1 + round((self.pos_z - self.f_layer_h) / self.layer_h)} / {self.labels['total_layers'].get_text()}" # Changes
+            self.layer_button.set_label(layer_label) # Changes
 
     def update_velocity(self):
         if not self.velstore:
