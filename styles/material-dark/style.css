@@ -200,6 +200,14 @@ textview .time {
     background-color: rgba(0,0,0,0.5);
 }
 
+popover {
+    background-color: #2196f3;
+}
+
+popover button {
+    background-color: #2196f3;
+}
+
 .printing-status {
     color: #e2e2e2;
 }
