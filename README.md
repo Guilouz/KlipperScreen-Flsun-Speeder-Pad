@@ -84,10 +84,13 @@ Calibrations Menu use the following Macros:
 - `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
 - `Logo LED On` function use `[gcode_macro LED_LOGO_ON]`
 
+My Macros can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-V400/blob/main/Configurations/macros.cfg)
+
 <br />
 
 ## Changelog
 
+- 04/10/2022 : atest KlipperScreen commits
 - 23/09/2022 : Added layers on Job Status Screen
 - 18/09/2022 : Added support for bed mesh profiles and bed mesh visualization
 - 11/09/2022 : Added settings to Show Heater Power
