@@ -90,7 +90,7 @@ My Macros can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Fl
 
 ## Changelog
 
-- 04/10/2022 : atest KlipperScreen commits
+- 04/10/2022 : Latest KlipperScreen commits
 - 23/09/2022 : Added layers on Job Status Screen
 - 18/09/2022 : Added support for bed mesh profiles and bed mesh visualization
 - 11/09/2022 : Added settings to Show Heater Power
