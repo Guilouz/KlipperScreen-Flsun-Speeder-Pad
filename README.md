@@ -78,16 +78,16 @@ My Macros for V400 can be found here : [macros.cfg](https://github.com/Guilouz/K
 
 My Macros for Super Racer can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/blob/main/Configurations/macros.cfg)
 
-Calibrations Menu use the following Macros:
+- Calibrations Menu use the following Macros:
 
-- `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
-- `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
-- `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
-- `Move Z0` function in `Z Calibrate` menu use `[gcode_macro MOVE_TO_Z0]`
-- `Hotend LED Off` function use `[gcode_macro LED_HOTEND_OFF]`
-- `Hotend LED On` function use `[gcode_macro LED_HOTEND_ON]`
-- `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
-- `Logo LED On` function use `[gcode_macro LED_LOGO_ON]`
+  - `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
+  - `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
+  - `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
+  - `Move Z0` function in `Z Calibrate` menu use `[gcode_macro MOVE_TO_Z0]`
+  - `Hotend LED Off` function use `[gcode_macro LED_HOTEND_OFF]`
+  - `Hotend LED On` function use `[gcode_macro LED_HOTEND_ON]`
+  - `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
+  - `Logo LED On` function use `[gcode_macro LED_LOGO_ON]`
 
 <br />
 
@@ -98,7 +98,10 @@ pause_on_runout: True
 runout_gcode: M600
 ...
 ```
-- To have screen notifications, add this in your `printer.cfg` file
+
+<br />
+
+- To have screen notifications, add this in your `printer.cfg` file:
 ```
 [respond]
 ```
