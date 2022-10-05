@@ -73,6 +73,11 @@ install_script: scripts/KlipperScreen-install.sh
 
 ## Notes
 
+
+My Macros for V400 can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-V400/blob/main/Configurations/macros.cfg). Note: If you use Stock V400, remove [gcode_macro M205] section.
+
+My Macros for Super Racer can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/blob/main/Configurations/macros.cfg)
+
 Calibrations Menu use the following Macros:
 
 - `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
@@ -84,9 +89,19 @@ Calibrations Menu use the following Macros:
 - `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
 - `Logo LED On` function use `[gcode_macro LED_LOGO_ON]`
 
-My Macros for V400 can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-V400/blob/main/Configurations/macros.cfg)
+<br />
 
-My Macros for Super Racer can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/blob/main/Configurations/macros.cfg)
+- To use `M600` Macro, you need to change `[filament_switch_sensor filament_sensor]` section in your `printer.cfg` file like this:
+```
+[filament_switch_sensor filament_sensor]
+pause_on_runout: True
+runout_gcode: M600
+...
+```
+- To have screen notifications, add this in your `printer.cfg` file
+```
+[respond]
+```
 
 <br />
 
