@@ -62,12 +62,12 @@ install_script: scripts/KlipperScreen-install.sh
 
 ```
 [update_manager KlipperScreen]
-type: git_repo
-path: /home/pi/KlipperScreen
-origin: https://gitee.com/zzcatvs/KlipperScreen.git
-env: /home/pi/.KlipperScreen-env/bin/python
-requirements: scripts/KlipperScreen-requirements.txt
-install_script: scripts/KlipperScreen-install.sh
+type = git_repo
+path = /home/pi/KlipperScreen
+origin = https://gitee.com/leexxiangyang/KlipperScreen.git
+env = /home/pi/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
 ```
 <br />
 
