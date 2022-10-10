@@ -78,7 +78,7 @@ My Macros for V400 can be found here : [macros.cfg](https://github.com/Guilouz/K
 
 My Macros for Super Racer can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/blob/main/Configurations/macros.cfg)
 
-- Calibrations Menu use the following Macros:
+- This version of KlipperScreen use the following Macros:
 
   - `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
   - `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
