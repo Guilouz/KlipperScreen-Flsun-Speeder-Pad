@@ -108,7 +108,14 @@ runout_gcode: M600
 
 <br />
 
-- This version of KlipperScreen must be used with this Macros to save Z-Offset in real time:
+- This version of KlipperScreen save Z-Offset in real time. This is needed:
+
+- Add this in your `printer.cfg` file:
+```
+[save_variables]
+filename: ~/savedVariables.cfg
+```
+- And must be used with this Macros:
 ```
 [gcode_macro SET_GCODE_OFFSET]
 description: Save Z-Offset value
