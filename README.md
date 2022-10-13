@@ -108,6 +108,20 @@ runout_gcode: M600
 
 <br />
 
+- To use Endstops Calibrate function, it's needed to have this in your `printer.cfg` file:
+```
+[endstop_phase stepper_a]
+endstop_align_zero: false
+
+[endstop_phase stepper_b]
+endstop_align_zero: false
+
+[endstop_phase stepper_c]
+endstop_align_zero: false
+```
+
+<br />
+
 - This version of KlipperScreen save Z-Offset in real time. This is needed:
 
 - Add this in your `printer.cfg` file:
