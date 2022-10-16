@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:27+0200\n"
+"PO-Revision-Date: 2022-10-16 14:20+0200\n"
 "Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -18,9 +18,6 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
-
-msgid "Show Heater Power"
-msgstr ""
 
 msgid "Neopixels"
 msgstr ""
@@ -68,9 +65,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -164,6 +158,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -486,9 +483,6 @@ msgstr "Загрузить"
 msgid "Lower Nozzle"
 msgstr "Опустить сопло"
 
-msgid "Machine"
-msgstr ""
-
 msgid "Macro shortcut on sidebar"
 msgstr "Показать макросы в панели"
 
@@ -609,6 +603,9 @@ msgstr "Управление печатью"
 msgid "Print Time"
 msgstr "Время печати"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "Подключение принтера"
 
@@ -711,6 +708,12 @@ msgstr "Настройки"
 msgid "Show"
 msgstr "Показывать"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Размер"
 
@@ -725,9 +728,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "Маленький"
-
-msgid "Sort by: "
-msgstr "Орден: "
 
 msgid "Sort:"
 msgstr ""

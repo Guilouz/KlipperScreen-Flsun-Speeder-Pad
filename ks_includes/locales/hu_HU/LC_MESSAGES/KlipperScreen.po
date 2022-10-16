@@ -13,9 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-msgid "Show Heater Power"
-msgstr ""
-
 msgid "Neopixels"
 msgstr ""
 
@@ -62,9 +59,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -159,6 +153,9 @@ msgstr "Alkalmaz %.2f eltolást az Endstopra?"
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
 msgstr "Alkalmaz %s%.2f eltolást a szondára?"
+
+msgid "Are you sure do you want to exclude the object?"
+msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Biztosan Vészleállítást végez?"
@@ -480,9 +477,6 @@ msgstr "Betöltés"
 msgid "Lower Nozzle"
 msgstr "Fúvóka le"
 
-msgid "Machine"
-msgstr "Gép"
-
 msgid "Macro shortcut on sidebar"
 msgstr "Makró parancsikon az oldalsávon"
 
@@ -604,6 +598,9 @@ msgstr "Nyomtatásvezérlés"
 msgid "Print Time"
 msgstr "Nyomtatási idő"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "Nyomtató csatlakozások"
 
@@ -706,6 +703,12 @@ msgstr "Beállítások"
 msgid "Show"
 msgstr "Mutat"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Méret"
 
@@ -720,9 +723,6 @@ msgstr "Szeletelő:"
 
 msgid "Small"
 msgstr "Kicsi"
-
-msgid "Sort by: "
-msgstr "Sorrend: "
 
 msgid "Sort:"
 msgstr "Fajta:"

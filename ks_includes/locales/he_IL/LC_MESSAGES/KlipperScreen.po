@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:26+0200\n"
+"PO-Revision-Date: 2022-10-16 14:18+0200\n"
 "Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -19,9 +19,6 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-msgid "Show Heater Power"
-msgstr ""
 
 msgid "Neopixels"
 msgstr ""
@@ -69,9 +66,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -165,6 +159,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -449,14 +446,8 @@ msgstr "הפוך את Y"
 msgid "Invert Z"
 msgstr "הפוך את Z"
 
-#, fuzzy
-#| msgid ""
-#| "Klipper\n"
-#| "Restart"
 msgid "Klipper Restart"
-msgstr ""
-"קליפר\n"
-"איתחול"
+msgstr "קליפר איתחול"
 
 msgid "Klipper has disconnected"
 msgstr "קליפר התנתק"
@@ -493,9 +484,6 @@ msgstr "לִטעוֹן"
 
 msgid "Lower Nozzle"
 msgstr "הנמך דיזה"
-
-msgid "Machine"
-msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "קיצור מקרו בסרגל הצד"
@@ -618,6 +606,9 @@ msgstr "שליטה בהדפסה"
 msgid "Print Time"
 msgstr "זמן הדפסה"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "חיבורי מדפסת"
 
@@ -720,6 +711,12 @@ msgstr "הגדרות"
 msgid "Show"
 msgstr "הופעה"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "גודל"
 
@@ -734,9 +731,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "קָטָן"
-
-msgid "Sort by: "
-msgstr "מיין לפי: "
 
 msgid "Sort:"
 msgstr ""

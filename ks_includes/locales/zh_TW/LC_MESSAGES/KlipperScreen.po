@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:28+0200\n"
+"PO-Revision-Date: 2022-10-16 14:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
-
-msgid "Show Heater Power"
-msgstr ""
 
 msgid "Neopixels"
 msgstr ""
@@ -67,9 +64,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -163,6 +157,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -485,9 +482,6 @@ msgstr "載入"
 msgid "Lower Nozzle"
 msgstr "降低噴嘴"
 
-msgid "Machine"
-msgstr ""
-
 msgid "Macro shortcut on sidebar"
 msgstr "在側邊欄上顯示巨集快捷鍵"
 
@@ -606,6 +600,9 @@ msgstr "列印控制"
 msgid "Print Time"
 msgstr "列印時間"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "連接列印機"
 
@@ -708,6 +705,12 @@ msgstr "設定"
 msgid "Show"
 msgstr "展示"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "大小"
 
@@ -722,9 +725,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "小的"
-
-msgid "Sort by: "
-msgstr "排序: "
 
 msgid "Sort:"
 msgstr ""

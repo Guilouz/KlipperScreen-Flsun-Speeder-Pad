@@ -166,6 +166,7 @@ gcode:
 
 ## Changelog
 
+- 16/10/2022 : Latest KlipperScreen commits
 - 08/10/2022 : Fixed heaters not showing their respective power percentages
 - 04/10/2022 : Latest KlipperScreen commits
 - 23/09/2022 : Added layers on Job Status Screen

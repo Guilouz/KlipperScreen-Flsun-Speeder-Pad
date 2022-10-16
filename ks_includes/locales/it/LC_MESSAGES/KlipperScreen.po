@@ -13,9 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-msgid "Show Heater Power"
-msgstr ""
-
 msgid "Neopixels"
 msgstr ""
 
@@ -62,9 +59,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -158,6 +152,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -480,9 +477,6 @@ msgstr "Carica"
 msgid "Lower Nozzle"
 msgstr "Abbassa ugello"
 
-msgid "Machine"
-msgstr ""
-
 msgid "Macro shortcut on sidebar"
 msgstr "Macros sulla barra laterale"
 
@@ -602,6 +596,9 @@ msgstr "Controllo Stampa"
 msgid "Print Time"
 msgstr "Tempo di Stampa"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "Connessioni Stampante"
 
@@ -704,6 +701,12 @@ msgstr "Impostazioni"
 msgid "Show"
 msgstr "Mostrare"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Grandezza"
 
@@ -718,9 +721,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "Piccola"
-
-msgid "Sort by: "
-msgstr "Ordine: "
 
 msgid "Sort:"
 msgstr ""

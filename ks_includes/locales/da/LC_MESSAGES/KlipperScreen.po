@@ -13,9 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-msgid "Show Heater Power"
-msgstr ""
-
 msgid "Neopixels"
 msgstr ""
 
@@ -62,9 +59,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -158,6 +152,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -351,14 +348,8 @@ msgstr "Finjustering"
 msgid "Finish"
 msgstr "Færdig"
 
-#, fuzzy
-#| msgid ""
-#| "Firmware\n"
-#| "Restart"
 msgid "Firmware Restart"
-msgstr ""
-"Firmware\n"
-"Genstart"
+msgstr "Firmware Genstart"
 
 msgid "Flow:"
 msgstr ""
@@ -369,14 +360,8 @@ msgstr ""
 msgid "Font Size"
 msgstr "Skriftstørrelse"
 
-#, fuzzy
-#| msgid ""
-#| "Full\n"
-#| "Update"
 msgid "Full Update"
-msgstr ""
-"Fuld\n"
-"Opdatering"
+msgstr "Fuld Opdatering"
 
 msgid "Go Back"
 msgstr "Gå tilbage"
@@ -491,9 +476,6 @@ msgstr "Indlæs"
 
 msgid "Lower Nozzle"
 msgstr "Sænk Nozzle"
-
-msgid "Machine"
-msgstr ""
 
 msgid "Macro shortcut on sidebar"
 msgstr "Makrogenvej på sidelinjen"
@@ -614,6 +596,9 @@ msgstr "Print styring"
 msgid "Print Time"
 msgstr "Printtid"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "Printer forbindelser"
 
@@ -716,6 +701,12 @@ msgstr "Indstillinger"
 msgid "Show"
 msgstr "At vise"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Størrelse"
 
@@ -730,9 +721,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "Lille"
-
-msgid "Sort by: "
-msgstr "Sortér efter: "
 
 msgid "Sort:"
 msgstr "Sortere:"

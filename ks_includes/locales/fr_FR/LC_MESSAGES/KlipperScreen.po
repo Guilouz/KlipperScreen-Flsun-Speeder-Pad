@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-24 22:29+0200\n"
+"PO-Revision-Date: 2022-10-16 14:03+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.1.1\n"
-
-msgid "Show Heater Power"
-msgstr "Afficher la puissance de chauffe"
 
 msgid "Neopixels"
 msgstr "Neopixels"
@@ -68,9 +65,6 @@ msgstr "Vitesse (Toutes)"
 
 msgid "Speed (One by One)"
 msgstr "Vitesse (Une par Une)"
-
-msgid "Shutdown"
-msgstr "Arrêter"
 
 msgid "Print Status"
 msgstr "Etat d’impression"
@@ -167,6 +161,9 @@ msgstr "Appliquer un décalage de %.2f au Endstop ?"
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
 msgstr "Appliquer un décalage de %s%.2f au palpeur ?"
+
+msgid "Are you sure do you want to exclude the object?"
+msgstr "Êtes-vous sûr de vouloir exclure l’objet ?"
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Êtes-vous sûr de vouloir exécuter l'arrêt d'urgence ?"
@@ -488,9 +485,6 @@ msgstr "Charger"
 msgid "Lower Nozzle"
 msgstr "Rapprocher la buse"
 
-msgid "Machine"
-msgstr "Imprimante"
-
 msgid "Macro shortcut on sidebar"
 msgstr "Raccourci des Macros sur la barre latérale"
 
@@ -612,6 +606,9 @@ msgstr "Paramètres"
 msgid "Print Time"
 msgstr "Durée d'impression"
 
+msgid "Printer"
+msgstr "Imprimante"
+
 msgid "Printer Connections"
 msgstr "Connexions aux imprimantes"
 
@@ -714,6 +711,12 @@ msgstr "Paramètres"
 msgid "Show"
 msgstr "Afficher"
 
+msgid "Show Heater Power"
+msgstr "Afficher la puissance de chauffe"
+
+msgid "Shutdown"
+msgstr "Arrêter"
+
 msgid "Size"
 msgstr "Taille"
 
@@ -728,9 +731,6 @@ msgstr "Slicer:"
 
 msgid "Small"
 msgstr "Petite"
-
-msgid "Sort by: "
-msgstr "Trier par: "
 
 msgid "Sort:"
 msgstr "Trier:"

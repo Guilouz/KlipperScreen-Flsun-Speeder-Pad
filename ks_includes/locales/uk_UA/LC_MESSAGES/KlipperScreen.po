@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:27+0200\n"
+"PO-Revision-Date: 2022-10-16 14:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -19,9 +19,6 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-msgid "Show Heater Power"
-msgstr ""
 
 msgid "Neopixels"
 msgstr ""
@@ -69,9 +66,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -166,6 +160,9 @@ msgstr "Застосувати зміщення %.2f до кінцевика?"
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
 msgstr "Застосувати зміщення %s%.2f до зонда?"
+
+msgid "Are you sure do you want to exclude the object?"
+msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Ви впевнені, що хочете запустити аварійну зупинку?"
@@ -487,9 +484,6 @@ msgstr "Завантажити"
 msgid "Lower Nozzle"
 msgstr "Низ сопла"
 
-msgid "Machine"
-msgstr ""
-
 msgid "Macro shortcut on sidebar"
 msgstr "Ярлик макросу на бічній панелі"
 
@@ -610,6 +604,9 @@ msgstr "Контроль друку"
 msgid "Print Time"
 msgstr "Час друку"
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr "Підключення принтера"
 
@@ -712,6 +709,12 @@ msgstr "Налаштування"
 msgid "Show"
 msgstr "Показати"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Розмір"
 
@@ -726,9 +729,6 @@ msgstr "Слайсер:"
 
 msgid "Small"
 msgstr "Малий"
-
-msgid "Sort by: "
-msgstr "Сортувати за: "
 
 msgid "Sort:"
 msgstr "Сортувати:"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-09-11 14:27+0200\n"
+"PO-Revision-Date: 2022-10-16 14:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
-
-msgid "Show Heater Power"
-msgstr ""
 
 msgid "Neopixels"
 msgstr ""
@@ -67,9 +64,6 @@ msgid "Speed (All)"
 msgstr ""
 
 msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Shutdown"
 msgstr ""
 
 msgid "Print Status"
@@ -163,6 +157,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
+msgstr ""
+
+msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
 msgid "Are you sure you want to run Emergency Stop?"
@@ -485,9 +482,6 @@ msgstr "Ladda"
 msgid "Lower Nozzle"
 msgstr "Sänk munstycket"
 
-msgid "Machine"
-msgstr ""
-
 msgid "Macro shortcut on sidebar"
 msgstr "Makro genväg på sidofältet"
 
@@ -607,6 +601,9 @@ msgstr "Utskriftskontroll"
 msgid "Print Time"
 msgstr ""
 
+msgid "Printer"
+msgstr ""
+
 msgid "Printer Connections"
 msgstr ""
 
@@ -709,6 +706,12 @@ msgstr "Inställningar"
 msgid "Show"
 msgstr "Visa"
 
+msgid "Show Heater Power"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
 msgid "Size"
 msgstr "Storlek"
 
@@ -723,9 +726,6 @@ msgstr ""
 
 msgid "Small"
 msgstr "Liten"
-
-msgid "Sort by: "
-msgstr "Sortera efter: "
 
 msgid "Sort:"
 msgstr ""
