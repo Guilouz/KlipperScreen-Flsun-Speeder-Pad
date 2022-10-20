@@ -1,6 +1,6 @@
 # KlipperScreen for FLSUN Speeder Pad
 
-![test-flsun-v400 jpg 3683ed2615cedff6a17e282b2dc48190 thumb jpg c579e0706751042e9e214feb12a7c162](https://user-images.githubusercontent.com/12702322/183767560-330689f3-61f6-42d3-9daf-b6c3e6ff845a.jpg)
+![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/196842330-e200350d-496f-4a1b-a8f7-1793d781dccb.jpg)
 
 KlipperScreen is a touchscreen GUI that interfaces with [Klipper](https://github.com/kevinOConnor/klipper) via [Moonraker](https://github.com/arksine/moonraker). It can switch between multiple printers to access them from a single location, and it doesn't even need to run on the same host, you can install it on another device and configure the IP address to access the printer.
 
@@ -19,7 +19,7 @@ This version of KlipperScreen is compatible with FLSUN Speeder Pad, it's optimiz
 - Added support for Endstops Phase Calibration
 - Some fixes and adjustments
 
-Improved Klipper Configuration for V400 is also available here : [Klipper-Flsun-V400](https://github.com/Guilouz/Klipper-Flsun-V400)
+Improved Klipper Configurations are also available here : [Klipper-Flsun-Speeder-Pad](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad)
 
 <br />
 
@@ -54,21 +54,6 @@ install_script: scripts/KlipperScreen-install.sh
 
 ![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
 
-<br />
-
-## Restoration
-
-- If you want to go back to the Flsun version, you can simply restore the previously downloaded `moonraker.conf` file or re-edit the `[update_manager KlipperScreen]` section and click the refresh button on the `Update Manager` tile:
-
-```
-[update_manager KlipperScreen]
-type = git_repo
-path = /home/pi/KlipperScreen
-origin = https://gitee.com/leexxiangyang/KlipperScreen.git
-env = /home/pi/.KlipperScreen-env/bin/python
-requirements = scripts/KlipperScreen-requirements.txt
-install_script = scripts/KlipperScreen-install.sh
-```
 <br />
 
 ## Notes
