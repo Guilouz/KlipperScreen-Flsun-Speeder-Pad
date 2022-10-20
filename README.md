@@ -19,7 +19,7 @@ This version of KlipperScreen is compatible with FLSUN Speeder Pad, it's optimiz
 - Added support for Endstops Phase Calibration
 - Some fixes and adjustments
 
-Improved Klipper Configuration for V400 is also available here : [Klipper-Flsun-V400](https://github.com/Guilouz/Klipper-Flsun-V400)
+Improved Klipper Configurations is also available here : [Klipper-Flsun-Speeder-Pad](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad))
 
 <br />
 
