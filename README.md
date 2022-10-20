@@ -58,11 +58,6 @@ install_script: scripts/KlipperScreen-install.sh
 
 ## Notes
 
-
-My Macros for V400 can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-V400/blob/main/Configurations/macros.cfg) (Note: If you use Stock V400 with Stock Klipper version, remove [gcode_macro M205] section).
-
-My Macros for Super Racer can be found here : [macros.cfg](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/blob/main/Configurations/macros.cfg)
-
 - This version of KlipperScreen use the following Macros:
 
   - `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
