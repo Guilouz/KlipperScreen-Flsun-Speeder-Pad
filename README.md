@@ -39,7 +39,7 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 [update_manager KlipperScreen]
 type: git_repo
 path: /home/pi/KlipperScreen
-origin: https://github.com/Guilouz/KlipperScreen-Flsun-V400.git
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 env: /home/pi/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
