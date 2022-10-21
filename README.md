@@ -44,7 +44,7 @@ env: /home/pi/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
-- Once done, click on `SAVE & CLOSE` at the top right to save the file.
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
 - You will see a new KlipperScreen update appear, if you see a ⚠️DIRTY update, just select `Hard Recovery` to update.
 
