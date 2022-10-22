@@ -56,6 +56,22 @@ install_script: scripts/KlipperScreen-install.sh
 
 <br />
 
+## Restoration
+
+- If you want to go back to the official version, you can simply restore the previously downloaded `moonraker.conf` file or re-edit the `[update_manager KlipperScreen]` section and click the refresh button on the `Update Manager` tile:
+
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: ~/KlipperScreen
+origin: https://github.com/jordanruthe/KlipperScreen.git
+env: ~/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+
+<br />
+
 ## Notes
 
 - This version of KlipperScreen use the following Macros:
