@@ -149,7 +149,7 @@ class KlipperScreen(Gtk.Window):
             pname = list(printers[0])[0]
             self.connect_printer(pname)
         else:
-            self.show_panel("printer_select", "printer_select", "Printer Select", 2)
+            self.show_panel("printer_select", "printer_select", _("Printer Select"), 2) # Changes
 
     def connect_printer_widget(self, widget, name):
         self.connect_printer(name)
@@ -725,7 +725,7 @@ class KlipperScreen(Gtk.Window):
         self.base_panel.show_heaters(False)
         self.base_panel.show_macro_shortcut(False)
         self.base_panel.show_printer_select(False)
-        self.show_panel("printer_select", "printer_select", "Printer Select", 2)
+        self.show_panel("printer_select", "printer_select", _("Printer Select"), 2) # Changes
         self.show_all()
         self.base_panel.action_bar.hide()
 
@@ -934,7 +934,7 @@ class KlipperScreen(Gtk.Window):
 
     def printer_initializing(self, text=None, disconnect=False):
         self.close_popup_message()
-        self.show_panel('splash_screen', "splash_screen", "Splash Screen", 2)
+        self.show_panel('splash_screen', "splash_screen", _("Splash Screen"), 2) # Changes
         if disconnect is True and self.printer is not None:
             self.shutdown = True
             self.printer.state = "disconnected"
