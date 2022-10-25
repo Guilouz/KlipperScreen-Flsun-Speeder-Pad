@@ -357,16 +357,16 @@ class KlipperScreenConfig:
                     klipper_config = os.path.join(os.path.expanduser("~/"), "klipper_config")
                     file = os.path.join(klipper_config, self.configfile_name)
                     if not path.exists(file):
-                        printer_data = os.path.join(os.path.expanduser("~/"), "printer_data/config") # Changes
+                        printer_data = os.path.join(os.path.expanduser("~/printer_data/"), "config") # Changes
                         file = os.path.join(printer_data, self.configfile_name) # Changes
                         if not path.exists(file): # Changes
-                            printer_1_data = os.path.join(os.path.expanduser("~/"), "printer_1_data/config") # Changes
+                            printer_1_data = os.path.join(os.path.expanduser("~/printer_1_data/"), "config") # Changes
                             file = os.path.join(printer_1_data, self.configfile_name) # Changes
                             if not path.exists(file): # Changes
-                                printer_2_data = os.path.join(os.path.expanduser("~/"), "printer_2_data/config") # Changes
+                                printer_2_data = os.path.join(os.path.expanduser("~/printer_2_data/"), "config") # Changes
                                 file = os.path.join(printer_2_data, self.configfile_name) # Changes
                                 if not path.exists(file): # Changes
-                                    printer_3_data = os.path.join(os.path.expanduser("~/"), "printer_3_data/config") # Changes
+                                    printer_3_data = os.path.join(os.path.expanduser("~/printer_3_data/"), "config") # Changes
                                     file = os.path.join(printer_3_data, self.configfile_name) # Changes
                                     if not path.exists(file):
                                         file = os.path.join(klipper_config, self.configfile_name.lower())
@@ -480,13 +480,13 @@ class KlipperScreenConfig:
             printer_3_data = os.path.join(filepath, "printer_3_data/config") # Changes
             if os.path.exists(klipper_config):
                 filepath = os.path.join(klipper_config, "KlipperScreen.conf")
-            if os.path.exists(printer_data): # Changes
+            elif os.path.exists(printer_data): # Changes
                 filepath = os.path.join(printer_data, "KlipperScreen.conf")  # Changes
-            if os.path.exists(printer_1_data): # Changes
+            elif os.path.exists(printer_1_data): # Changes
                 filepath = os.path.join(printer_1_data, "KlipperScreen.conf") # Changes
-            if os.path.exists(printer_2_data): # Changes
+            elif os.path.exists(printer_2_data): # Changes
                 filepath = os.path.join(printer_2_data, "KlipperScreen.conf") # Changes
-            if os.path.exists(printer_3_data): # Changes
+            elif os.path.exists(printer_3_data): # Changes
                 filepath = os.path.join(printer_3_data, "KlipperScreen.conf") # Changes
             else:
                 filepath = os.path.join(filepath, "KlipperScreen.conf")
