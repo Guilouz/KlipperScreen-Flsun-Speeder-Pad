@@ -21,9 +21,6 @@ msgstr ""
 msgid "Splash Screen"
 msgstr ""
 
-msgid "Printer Select"
-msgstr ""
-
 msgid "Neopixels"
 msgstr ""
 
@@ -609,6 +606,9 @@ msgid "Printer"
 msgstr ""
 
 msgid "Printer Connections"
+msgstr ""
+
+msgid "Printer Select"
 msgstr ""
 
 msgid "Printing"

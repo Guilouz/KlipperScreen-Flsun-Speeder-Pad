@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-10-25 01:14+0200\n"
+"PO-Revision-Date: 2022-10-29 01:18+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -19,9 +19,6 @@ msgstr ""
 "X-Generator: Poedit 3.2\n"
 
 msgid "Splash Screen"
-msgstr ""
-
-msgid "Printer Select"
 msgstr ""
 
 msgid "Neopixels"
@@ -152,7 +149,7 @@ msgid "Add Printer"
 msgstr "Agregar impresora"
 
 msgid "Add profile"
-msgstr ""
+msgstr "Agregar perfil"
 
 msgid "Apply"
 msgstr "Aplicar"
@@ -166,22 +163,22 @@ msgid "Apply %s%.2f offset to Probe?"
 msgstr "Aplicar %s%.2f desfase al sensor?"
 
 msgid "Are you sure do you want to exclude the object?"
-msgstr ""
+msgstr "¿Está seguro de excluir este objeto?"
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "¿Parada de emergencia?"
 
 msgid "Are you sure you wish to cancel this print?"
-msgstr "Está seguro que desea cancelar esta impresión?"
+msgstr "¿Está seguro que desea cancelar esta impresión?"
 
 msgid "Are you sure you wish to disable motors?"
 msgstr "¿Está seguro que desea desactivar los motores?"
 
 msgid "Are you sure you wish to reboot the system?"
-msgstr "Está seguro que desea reiniciar el sistema?"
+msgstr "¿Está seguro que desea reiniciar el sistema?"
 
 msgid "Are you sure you wish to shutdown the system?"
-msgstr "Está seguro que desea apagar el sistema?"
+msgstr "¿Está seguro que desea apagar el sistema?"
 
 msgid "Auto"
 msgstr "Auto"
@@ -190,7 +187,7 @@ msgid "Auto-calibrate"
 msgstr "Auto-Calibrar"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "Auto-cerrar notificaciones"
 
 msgid "Auto-scroll"
 msgstr "Auto-scroll"
@@ -202,7 +199,7 @@ msgid "Bed Mesh"
 msgstr "Malla de cama"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "Configuración de tornillos:"
 
 msgid "Calibrate"
 msgstr "Calibrar"
@@ -244,7 +241,7 @@ msgid "Check ADXL Wiring"
 msgstr "Verificar cableado del ADXL"
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "Buscando actualizaciones, espere por favor..."
 
 msgid "Clear"
 msgstr "Limpiar"
@@ -287,7 +284,7 @@ msgid "Delete"
 msgstr "Borrar"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "¿Borrar archivo?"
 
 msgid "Deselect"
 msgstr "Deseleccionar"
@@ -315,7 +312,7 @@ msgid "Estimated Time Method"
 msgstr "Método para estimar tiempo"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "Excluir Objeto"
 
 msgid "Extrude"
 msgstr "Extruir"
@@ -414,7 +411,7 @@ msgid "Homing"
 msgstr "Origen"
 
 msgid "Host"
-msgstr ""
+msgstr "Anfitrión"
 
 msgid "Hostname"
 msgstr "Hostname"
@@ -432,7 +429,7 @@ msgid "Initializing printer..."
 msgstr "Iniciando Impresora..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Corrección de Resonancias"
 
 msgid "Interface"
 msgstr "Interfaz"
@@ -498,10 +495,10 @@ msgid "Main Menu"
 msgstr "Menú"
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Max Acceleration"
-msgstr "Aceleración Max"
+msgstr "Aceleración Máxima"
 
 msgid "Max Acceleration to Deceleration"
 msgstr "Max. Aceleración a Desaceleración"
@@ -549,6 +546,8 @@ msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
+"No soportado para la detección automatica, necesita configurarlo en "
+"klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Nada seleccionado"
@@ -569,7 +568,7 @@ msgstr[0] "Paquete será actualizado"
 msgstr[1] "Paquetes serán actualizados"
 
 msgid "Part Fan"
-msgstr ""
+msgstr "Ventilador de parte"
 
 msgid "Password saved"
 msgstr "Contraseña guardada"
@@ -584,7 +583,7 @@ msgid "Perform a full upgrade?"
 msgstr "¿Actualizar Todo?"
 
 msgid "Pins"
-msgstr ""
+msgstr "Pines"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Por favor recompile y flashee el micro-controlador."
@@ -608,10 +607,13 @@ msgid "Print Time"
 msgstr "Tiempo de impresión"
 
 msgid "Printer"
-msgstr ""
+msgstr "Impresora"
 
 msgid "Printer Connections"
 msgstr "Conexiones a impresoras"
+
+msgid "Printer Select"
+msgstr "Seleccionar Impresora"
 
 msgid "Printing"
 msgstr "Imprimiendo"
@@ -638,7 +640,7 @@ msgid "Reference"
 msgstr "Referencia"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Actualizar"
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -663,7 +665,7 @@ msgid "Retry #%s"
 msgstr "Intento #%s"
 
 msgid "Retrying"
-msgstr ""
+msgstr "Reintentando"
 
 msgid "Save"
 msgstr "Guardar"
@@ -713,10 +715,10 @@ msgid "Show"
 msgstr "Mostrar"
 
 msgid "Show Heater Power"
-msgstr ""
+msgstr "Mostrar potencia del calentador"
 
 msgid "Shutdown"
-msgstr ""
+msgstr "Apagar"
 
 msgid "Size"
 msgstr "Tamaño"
@@ -789,7 +791,7 @@ msgid "Unknown Heater"
 msgstr "Calentador Desconocido"
 
 msgid "Unknown screw position"
-msgstr ""
+msgstr "Posición de tornillo desconocida"
 
 msgid "Unload"
 msgstr "Descargar"

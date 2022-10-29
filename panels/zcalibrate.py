@@ -4,7 +4,7 @@ import logging
 import re
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk, GLib
+from gi.repository import Gtk
 
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
@@ -20,12 +20,11 @@ class ZCalibratePanel(ScreenPanel):
     bs_deltas = ["0.01", "0.05", "0.1", "0.5", "1"]
 
     def initialize(self, panel_name):
-        _ = self.lang.gettext
+
+        logging.debug("ZCalibratePanel")
 
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
-        logging.debug("ZCalibratePanel")
-
         self.labels['start'] = self._gtk.ButtonImage('arrow-down', _("Move Z0"), 'color1')
         script = {"script": "MOVE_TO_Z0"}
         self.labels['start'].connect("clicked", self._screen._confirm_send_action,
@@ -70,7 +69,6 @@ class ZCalibratePanel(ScreenPanel):
         self.content.add(grid)
 
     def process_update(self, action, data):
-        _ = self.lang.gettext
 
         if action != "notify_status_update":
             return
@@ -87,12 +85,10 @@ class ZCalibratePanel(ScreenPanel):
 
         self._screen._ws.klippy.gcode_script(gcode)
 
-
     def go_to_home(self, widget, home):
         gcode = "LED_HOTEND_OFF\nG28"
 
         self._screen._ws.klippy.gcode_script(gcode)
-
 
     def change_bs_delta(self, widget, bs):
         if self.bs_delta == bs:

@@ -162,6 +162,7 @@ gcode:
 
 ## Changelog
 
+- 29/10/2022 : Latest KlipperScreen commits
 - 25/10/2022 : Added searching KlipperScreen.conf file in new directories
 - 16/10/2022 : Latest KlipperScreen commits
 - 08/10/2022 : Fixed heaters not showing their respective power percentages

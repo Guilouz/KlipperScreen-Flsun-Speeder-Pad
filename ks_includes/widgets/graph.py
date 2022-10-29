@@ -132,9 +132,9 @@ class HeaterGraph(Gtk.DrawingArea):
 
     def graph_lines(self, ctx, gsize, max_num):
         nscale = 10
+        max_num = min(max_num, 999)
         while (max_num / nscale) > 5:
             nscale += 10
-            max_num = min(max_num, 999)
         # nscale = math.floor((max_num / 10) / 4) * 10
         r = int(max_num / nscale) + 1
         hscale = (gsize[1][1] - gsize[0][1]) / (r * nscale)

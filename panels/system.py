@@ -12,7 +12,18 @@ def create_panel(*args):
     return SystemPanel(*args)
 
 
-ALLOWED_SERVICES = ["KlipperScreen", "MoonCord", "klipper", "moonraker", "webcamd"]
+# Same as ALLOWED_SERVICES in moonraker
+# https://github.com/Arksine/moonraker/blob/master/moonraker/components/machine.py
+ALLOWED_SERVICES = (
+    "crowsnest",
+    "MoonCord",
+    "moonraker",
+    "moonraker-telegram-bot",
+    "klipper",
+    "KlipperScreen",
+    "sonar",
+    "webcamd",
+)
 
 
 class SystemPanel(ScreenPanel):
@@ -124,6 +135,7 @@ class SystemPanel(ScreenPanel):
                 )
                 if data['complete']:
                     self.update_dialog.set_response_sensitive(Gtk.ResponseType.CANCEL, True)
+                    self.update_dialog.get_widget_for_response(Gtk.ResponseType.CANCEL).show()
 
     def restart(self, widget, program):
         if program not in ALLOWED_SERVICES:
@@ -265,6 +277,7 @@ class SystemPanel(ScreenPanel):
 
         dialog = self._gtk.Dialog(self._screen, buttons, scroll, self.finish_updating)
         dialog.set_response_sensitive(Gtk.ResponseType.CANCEL, False)
+        dialog.get_widget_for_response(Gtk.ResponseType.CANCEL).hide()
 
         self.update_prog = program
         self.update_dialog = dialog
@@ -310,6 +323,7 @@ class SystemPanel(ScreenPanel):
 
         dialog = self._gtk.Dialog(self._screen, buttons, scroll, self.finish_updating)
         dialog.set_response_sensitive(Gtk.ResponseType.CANCEL, False)
+        dialog.get_widget_for_response(Gtk.ResponseType.CANCEL).hide()
 
         self.update_prog = program
         self.update_dialog = dialog
