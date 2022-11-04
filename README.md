@@ -123,7 +123,7 @@ endstop_align_zero: false
 - Add this in your `printer.cfg` file:
 ```
 [save_variables]
-filename: ~/savedVariables.cfg
+filename: ~/printer_data/config/variables.cfg
 ```
 - And must be used with this Macros:
 ```
