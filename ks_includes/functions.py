@@ -123,8 +123,8 @@ def patch_threading_excepthook():
     threading.Thread.__init__ = new_init
 
 
-# Timed rotating file handler based on Klipper and Moonraker's implementation
-class KlipperScreenLoggingHandler(logging.handlers.TimedRotatingFileHandler):
+# Rotating file handler based on Klipper and Moonraker's implementation
+class KlipperScreenLoggingHandler(logging.handlers.RotatingFileHandler):
     def __init__(self, software_version, filename, **kwargs):
         super(KlipperScreenLoggingHandler, self).__init__(filename, **kwargs)
         self.rollover_info = {
@@ -157,18 +157,21 @@ def setup_logging(log_file, software_version):
     stdout_fmt = logging.Formatter(
         '%(asctime)s [%(filename)s:%(funcName)s()] - %(message)s')
     stdout_hdlr.setFormatter(stdout_fmt)
-
-    fh = None
-    if log_file:
-        fh = KlipperScreenLoggingHandler(software_version, log_file, when='midnight', backupCount=2)
-        formatter = logging.Formatter(
-            '%(asctime)s [%(filename)s:%(funcName)s()] - %(message)s')
+    fh = listener = None
+    try:
+        fh = KlipperScreenLoggingHandler(software_version, log_file, maxBytes=8000000, backupCount=1)
+        formatter = logging.Formatter('%(asctime)s [%(filename)s:%(funcName)s()] - %(message)s')
         fh.setFormatter(formatter)
-        listener = logging.handlers.QueueListener(
-            queue, fh, stdout_hdlr)
-    else:
-        listener = logging.handlers.QueueListener(
-            queue, stdout_hdlr)
+        listener = logging.handlers.QueueListener(queue, fh, stdout_hdlr)
+    except Exception as e:
+        print(
+            f"Unable to create log file at '{os.path.normpath(log_file)}'.\n"
+            f"Make sure that the folder '{os.path.dirname(log_file)}' exists\n"
+            f"and KlipperScreen has Read/Write access to the folder.\n"
+            f"{e}\n"
+        )
+    if listener is None:
+        listener = logging.handlers.QueueListener(queue, stdout_hdlr)
     listener.start()
 
     def logging_exception_handler(ex_type, value, tb, thread_identifier=None):
@@ -180,4 +183,4 @@ def setup_logging(log_file, software_version):
     sys.excepthook = logging_exception_handler
     logging.captureWarnings(True)
 
-    return listener, fh
+    return listener, 

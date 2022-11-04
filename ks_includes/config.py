@@ -521,20 +521,20 @@ class KlipperScreenConfig:
         else:
             filepath = os.path.expanduser("~/")
             klipper_config = os.path.join(filepath, "klipper_config")
-            printer_data = os.path.join(filepath, "printer_data/config") # Changes
-            printer_1_data = os.path.join(filepath, "printer_1_data/config") # Changes
-            printer_2_data = os.path.join(filepath, "printer_2_data/config") # Changes
-            printer_3_data = os.path.join(filepath, "printer_3_data/config") # Changes
             if os.path.exists(klipper_config):
                 filepath = os.path.join(klipper_config, "KlipperScreen.conf")
-            elif os.path.exists(printer_data): # Changes
-                filepath = os.path.join(printer_data, "KlipperScreen.conf")  # Changes
-            elif os.path.exists(printer_1_data): # Changes
-                filepath = os.path.join(printer_1_data, "KlipperScreen.conf") # Changes
-            elif os.path.exists(printer_2_data): # Changes
-                filepath = os.path.join(printer_2_data, "KlipperScreen.conf") # Changes
-            elif os.path.exists(printer_3_data): # Changes
-                filepath = os.path.join(printer_3_data, "KlipperScreen.conf") # Changes
+            klipper_config = os.path.join(filepath, "printer_data", "config")
+            elif os.path.exists(klipper_config): # Changes
+                filepath = os.path.join(klipper_config, "KlipperScreen.conf") # Changes
+            klipper_config = os.path.join(filepath, "printer_1_data", "config") # Changes
+            elif os.path.exists(klipper_config): # Changes
+                filepath = os.path.join(klipper_config, "KlipperScreen.conf") # Changes
+            klipper_config = os.path.join(filepath, "printer_2_data", "config") # Changes
+            elif os.path.exists(klipper_config): # Changes
+                filepath = os.path.join(klipper_config, "KlipperScreen.conf") # Changes
+            klipper_config = os.path.join(filepath, "printer_3_data", "config") # Changes
+            elif os.path.exists(klipper_config): # Changes
+                filepath = os.path.join(klipper_config, "KlipperScreen.conf") # Changes
             else:
                 filepath = os.path.join(filepath, "KlipperScreen.conf")
 
