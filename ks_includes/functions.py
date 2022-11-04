@@ -183,4 +183,4 @@ def setup_logging(log_file, software_version):
     sys.excepthook = logging_exception_handler
     logging.captureWarnings(True)
 
-    return listener, 
+    return listener, fh
