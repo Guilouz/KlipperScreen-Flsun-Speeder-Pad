@@ -28,6 +28,7 @@ class ConfigError(Exception):
 
 
 class KlipperScreenConfig:
+    self.lang_list = None
     config = None
     configfile_name = "KlipperScreen.conf"
     do_not_edit_line = "#~# --- Do not edit below this line. This section is auto generated --- #~#"
@@ -110,7 +111,6 @@ class KlipperScreenConfig:
         lang_path = os.path.join(klipperscreendir, "ks_includes", "locales")
         self.lang_list = [d for d in os.listdir(lang_path) if not os.path.isfile(os.path.join(lang_path, d))]
         self.lang_list.sort()
-        logging.info(f"Available lang list {self.lang_list}")
         for lng in self.lang_list:
             self.langs[lng] = gettext.translation('KlipperScreen', localedir=lang_path, languages=[lng], fallback=True)
 
@@ -126,6 +126,7 @@ class KlipperScreenConfig:
                     lang = language
         if lang not in self.lang_list:
             logging.error(f"lang: {lang} not found")
+            logging.info(f"Available lang list {self.lang_list}")
             lang = "en"
         logging.info(f"Using lang {lang}")
         self.lang = self.langs[lang]
