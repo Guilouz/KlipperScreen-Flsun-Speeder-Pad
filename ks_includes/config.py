@@ -28,13 +28,13 @@ class ConfigError(Exception):
 
 
 class KlipperScreenConfig:
-    self.lang_list = None
     config = None
     configfile_name = "KlipperScreen.conf"
     do_not_edit_line = "#~# --- Do not edit below this line. This section is auto generated --- #~#"
     do_not_edit_prefix = "#~#"
 
     def __init__(self, configfile, screen=None):
+        self.lang_list = None
         self.errors = []
         self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
         self.config = configparser.ConfigParser()
