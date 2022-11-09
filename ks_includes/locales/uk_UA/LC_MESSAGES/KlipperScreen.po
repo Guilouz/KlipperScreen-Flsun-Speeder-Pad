@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-10-25 01:16+0200\n"
+"PO-Revision-Date: 2022-11-09 23:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -20,10 +20,10 @@ msgstr ""
 "X-Generator: Poedit 3.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Splash Screen"
+msgid "No mesh has been loaded"
 msgstr ""
 
-msgid "Printer Select"
+msgid "Splash Screen"
 msgstr ""
 
 msgid "Neopixels"
@@ -615,6 +615,9 @@ msgstr ""
 
 msgid "Printer Connections"
 msgstr "Підключення принтера"
+
+msgid "Printer Select"
+msgstr ""
 
 msgid "Printing"
 msgstr "Друк"

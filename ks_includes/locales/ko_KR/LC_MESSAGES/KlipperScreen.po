@@ -13,10 +13,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2\n"
 
-msgid "Splash Screen"
+msgid "No mesh has been loaded"
 msgstr ""
 
-msgid "Printer Select"
+msgid "Splash Screen"
 msgstr ""
 
 msgid "Neopixels"
@@ -606,6 +606,9 @@ msgstr ""
 
 msgid "Printer Connections"
 msgstr "프린터 연결"
+
+msgid "Printer Select"
+msgstr ""
 
 msgid "Printing"
 msgstr "출력중"
