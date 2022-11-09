@@ -15,7 +15,7 @@ button {
 }
 
 button:active {
-    background-color: #d8a415;
+    background-color: #2196f3;
 }
 
 .button_active {
@@ -50,8 +50,8 @@ button.color4 {
     border-radius: 1em;
 }
 
-button.color1:active, button.color2:active, button.color3:active, button.color4:active, button.update:active, button.invalid:active, .dialog button:active {
-    border-style: none;
+button.color1:active, button.color2:active, button.color3:active, button.color4:active, button.update:active, button.invalid:active, .dialog button:active, .dialog button:nth-child(1):active, .dialog button:nth-child(2):active {
+    border-color: rgba(0,0,0,0);
 }
 
 button.active {
@@ -75,17 +75,16 @@ button.invalid {
 }
 
 combobox box button {
-    background-color: #1f1f1f;
-    border-color: #121212;
+    border-color: #cccccc;
 }
 
 switch {
-    background-color: #1f1f1f;
+    background-color: #404E57;
     border-color: #121212;
 }
 
 switch:checked {
-    background-color: #849900;
+    background-color: #2196f3;
 }
 
 switch slider {
@@ -107,22 +106,22 @@ label {
 }
 
 menu {
-    background-color: #121212;
-    border-color: #a2a2a2;
+    background-color: #13181C;
+    border-color: #cccccc;
 }
 
 menuitem {
-    background-color: #121212;
-    border-color: #a2a2a2;
+    background-color: #13181C;
+    border-color: #cccccc;
 }
 
 trough {
-    background-color: #1f1f1f;
+    background-color: #404E57;
     color: #e2e2e2;
 }
 
 trough highlight, trough progress {
-    background-color: #d81549;
+    background-color: #2196f3;
     color: #e2e2e2;
     border-color: #121212;
 }
@@ -136,7 +135,7 @@ scrollbar, scrollbar button, scrollbar trough {
 }
 
 scrollbar slider {
-    background-color: #2f2f2f;
+    background-color: #404E57;
 }
 
 textview .time {
@@ -244,5 +243,5 @@ popover button {
 }
 
 .keyboard_pad {
-    background-color: #090909; /*base02*/
+    background-color: #090909;
 }

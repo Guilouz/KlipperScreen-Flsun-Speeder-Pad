@@ -13,7 +13,7 @@ button {
 }
 
 button:active {
-    background-color: #d8a415;
+    background-color: #2196f3;
 }
 
 .button_active {
@@ -56,11 +56,11 @@ combobox box button {
 }
 
 switch {
-    background-color: #20292F;
+    background-color: #404E57;
 }
 
 switch:checked {
-    background-color: #3584e4;
+    background-color: #2196f3;
 }
 
 entry {
@@ -93,7 +93,7 @@ trough {
 }
 
 trough highlight, trough progress {
-    background-color: #3584e4;
+    background-color: #2196f3;
     color: white;
     border-color: black;
 }
@@ -103,7 +103,7 @@ scale-mark {
 }
 
 scrollbar, scrollbar button, scrollbar trough {
-    background-color: #13181C;
+    background-color: rgba(0,0,0,0);
 }
 
 scrollbar slider {
