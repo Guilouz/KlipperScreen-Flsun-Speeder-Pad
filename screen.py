@@ -26,9 +26,6 @@ from ks_includes.config import KlipperScreenConfig
 from panels.base_panel import BasePanel
 
 logging.getLogger("urllib3").setLevel(logging.WARNING)
-logging.getLogger('matplotlib').setLevel(logging.WARNING)
-# This is here to avoid performance issues opening bed_mesh
-import matplotlib.pyplot  # noqa
 
 PRINTER_BASE_STATUS_OBJECTS = [
     'bed_mesh',
@@ -50,6 +47,21 @@ PRINTER_BASE_STATUS_OBJECTS = [
 ]
 
 klipperscreendir = pathlib.Path(__file__).parent.resolve()
+
+
+def set_text_direction(lang=None):
+    rtl_languages = ['he_IL']
+    if lang is None:
+        for lng in rtl_languages:
+            if os.getenv('LANG').startswith(lng):
+                lang = lng
+                break
+    if lang in rtl_languages:
+        Gtk.Widget.set_default_direction(Gtk.TextDirection.RTL)
+        logging.debug("Enabling RTL mode")
+        return False
+    Gtk.Widget.set_default_direction(Gtk.TextDirection.LTR)
+    return True
 
 
 class KlipperScreen(Gtk.Window):
@@ -93,7 +105,7 @@ class KlipperScreen(Gtk.Window):
         configfile = os.path.normpath(os.path.expanduser(args.configfile))
 
         self._config = KlipperScreenConfig(configfile, self)
-        self.lang_ltr = self.set_text_direction(self._config.get_main_config().get("language", None))
+        self.lang_ltr = set_text_direction(self._config.get_main_config().get("language", None))
 
         Gtk.Window.__init__(self)
         self.set_title("KlipperScreen")
@@ -813,23 +825,9 @@ class KlipperScreen(Gtk.Window):
     def toggle_macro_shortcut(self, value):
         self.base_panel.show_macro_shortcut(value)
 
-    def set_text_direction(self, lang=None):
-        rtl_languages = ['he_IL']
-        if lang is None:
-            for lng in rtl_languages:
-                if os.getenv('LANG').startswith(lng):
-                    lang = lng
-                    break
-        if lang in rtl_languages:
-            Gtk.Widget.set_default_direction(Gtk.TextDirection.RTL)
-            logging.debug("Enabling RTL mode")
-            return False
-        Gtk.Widget.set_default_direction(Gtk.TextDirection.LTR)
-        return True
-
     def change_language(self, lang):
         self._config.install_language(lang)
-        self.lang_ltr = self.set_text_direction(lang)
+        self.lang_ltr = set_text_direction(lang)
         self._config._create_configurable_options(self)
         self.reload_panels()
 
@@ -935,7 +933,7 @@ class KlipperScreen(Gtk.Window):
             self.panels['splash_screen'].update_text(text)
 
     def search_power_devices(self, power_devices):
-        if self.connected_printer is None:
+        if self.connected_printer is None or not power_devices:
             return
         found_devices = []
         devices = self.printer.get_power_devices()
@@ -949,7 +947,7 @@ class KlipperScreen(Gtk.Window):
             logging.info("Found %s", found_devices)
             return found_devices
         else:
-            logging.info("Power devices not found")
+            logging.info("Associated power devices not found")
             return None
 
     def power_on(self, widget, devices):
