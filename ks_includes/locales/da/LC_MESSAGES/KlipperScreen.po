@@ -278,9 +278,6 @@ msgstr "Dato"
 msgid "Decrease"
 msgstr "Formindsk"
 
-msgid "Delete"
-msgstr "Slet"
-
 msgid "Delete File?"
 msgstr ""
 
@@ -386,9 +383,6 @@ msgstr "Skjul sensorer i Temp."
 
 msgid "Hide temp."
 msgstr ""
-
-msgid "Home"
-msgstr "Home"
 
 msgid "Home All"
 msgstr "Home alle"
@@ -519,6 +513,9 @@ msgstr "Mellem"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Mesh calibrate"
+msgstr ""
+
 msgid "Modified"
 msgstr "Ændret"
 
@@ -537,6 +534,9 @@ msgstr "Navn"
 msgid "Network"
 msgstr "Netværk"
 
+msgid "Never"
+msgstr ""
+
 msgid "New"
 msgstr "Ny"
 
@@ -547,9 +547,6 @@ msgstr ""
 
 msgid "Nothing selected"
 msgstr "Intet valgt"
-
-msgid "Off"
-msgstr "Sluk"
 
 #, python-format
 msgid "Outdated by %d"
@@ -654,6 +651,9 @@ msgid "Retraction Length"
 msgstr ""
 
 msgid "Retraction Speed"
+msgstr ""
+
+msgid "Retry"
 msgstr ""
 
 #, python-format
@@ -809,9 +809,6 @@ msgstr "Opdatering"
 
 msgid "Uploaded"
 msgstr "Uploadet"
-
-msgid "View Mesh"
-msgstr "Vis mesh"
 
 msgid "X+"
 msgstr "X+"

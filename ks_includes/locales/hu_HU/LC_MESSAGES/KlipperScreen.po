@@ -278,9 +278,6 @@ msgstr "Dátum"
 msgid "Decrease"
 msgstr "Csökkent"
 
-msgid "Delete"
-msgstr "Töröl"
-
 msgid "Delete File?"
 msgstr "Fájl törlése?"
 
@@ -386,9 +383,6 @@ msgstr "Hőfok szenzorok elrejtése."
 
 msgid "Hide temp."
 msgstr "Hőfok elrejtése"
-
-msgid "Home"
-msgstr "Kezdőpontok"
 
 msgid "Home All"
 msgstr "X-Y-Z kezdőpont"
@@ -519,6 +513,9 @@ msgstr "Közepes"
 msgid "Menu"
 msgstr "Menü"
 
+msgid "Mesh calibrate"
+msgstr ""
+
 msgid "Modified"
 msgstr "Módosított"
 
@@ -537,6 +534,9 @@ msgstr "Név"
 msgid "Network"
 msgstr "Hálózat"
 
+msgid "Never"
+msgstr ""
+
 msgid "New"
 msgstr "Új"
 
@@ -549,9 +549,6 @@ msgstr ""
 
 msgid "Nothing selected"
 msgstr "Nincs kiválasztva"
-
-msgid "Off"
-msgstr "Ki"
 
 #, python-format
 msgid "Outdated by %d"
@@ -657,6 +654,9 @@ msgstr "Visszahúzási hossz"
 
 msgid "Retraction Speed"
 msgstr "Visszahúzási sebesség"
+
+msgid "Retry"
+msgstr ""
 
 #, python-format
 msgid "Retry #%s"
@@ -811,9 +811,6 @@ msgstr "Frissítés"
 
 msgid "Uploaded"
 msgstr "Feltöltve"
-
-msgid "View Mesh"
-msgstr "Háló nézet"
 
 msgid "X+"
 msgstr "X+"

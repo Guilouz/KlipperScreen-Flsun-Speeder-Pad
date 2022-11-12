@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-09 23:52+0100\n"
+"PO-Revision-Date: 2022-11-12 18:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -283,9 +283,6 @@ msgstr "Tarih"
 msgid "Decrease"
 msgstr "Azalt"
 
-msgid "Delete"
-msgstr "Sil"
-
 msgid "Delete File?"
 msgstr "Dosyayı Sil?"
 
@@ -391,9 +388,6 @@ msgstr "Sıcaklıktaki sensörleri gizleyin."
 
 msgid "Hide temp."
 msgstr "Sıcaklığı gizle."
-
-msgid "Home"
-msgstr "Ana Ekran"
 
 msgid "Home All"
 msgstr "Eksenleri Sıfırla"
@@ -524,6 +518,9 @@ msgstr "Orta"
 msgid "Menu"
 msgstr "Menü"
 
+msgid "Mesh calibrate"
+msgstr ""
+
 msgid "Modified"
 msgstr "Değiştirilmiş"
 
@@ -542,6 +539,9 @@ msgstr "İsim"
 msgid "Network"
 msgstr "Ağ"
 
+msgid "Never"
+msgstr ""
+
 msgid "New"
 msgstr "Yeni"
 
@@ -554,9 +554,6 @@ msgstr ""
 
 msgid "Nothing selected"
 msgstr "Hiçbir şey seçilmedi"
-
-msgid "Off"
-msgstr "Kapa"
 
 #, python-format
 msgid "Outdated by %d"
@@ -662,6 +659,9 @@ msgstr "Geri Çekme Uzunluğu"
 
 msgid "Retraction Speed"
 msgstr "Geri Çekme Hızı"
+
+msgid "Retry"
+msgstr ""
 
 #, python-format
 msgid "Retry #%s"
@@ -816,9 +816,6 @@ msgstr "Yükleniyor"
 
 msgid "Uploaded"
 msgstr "Yüklendi"
-
-msgid "View Mesh"
-msgstr "Örgüyü Görüntüle"
 
 msgid "X+"
 msgstr "X+"
