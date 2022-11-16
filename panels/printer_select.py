@@ -37,7 +37,16 @@ class PrinterSelect(ScreenPanel):
 
         for i, printer in enumerate(printers):
             name = list(printer)[0]
-            self.labels[name] = self._gtk.ButtonImage("printer", name, f"color{1 + i % 4}", 5) # Changes
+            if name == "FLSUN V400": # Changes
+                self.labels[name] = self._gtk.ButtonImage("V400_thumbnail", name, f"color{1 + i % 4}", 6) # Changes
+            elif name == "FLSUN SR": # Changes
+                self.labels[name] = self._gtk.ButtonImage("SR_thumbnail", name, f"color{1 + i % 4}", 6) # Changes
+            elif name == "FLSUN QQSP": # Changes
+                self.labels[name] = self._gtk.ButtonImage("QQSP_thumbnail", name, f"color{1 + i % 4}", 6) # Changes
+            elif name == "FLSUN Q5": # Changes
+                self.labels[name] = self._gtk.ButtonImage("Q5_thumbnail", name, f"color{1 + i % 4}", 6) # Changes
+            else: # Changes
+                self.labels[name] = self._gtk.ButtonImage("printer", name, f"color{1 + i % 4}", 6) # Changes
             self.labels[name].connect("clicked", self._screen.connect_printer_widget, name)
             if self._screen.vertical_mode:
                 row = i % columns

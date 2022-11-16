@@ -160,8 +160,17 @@ gcode:
 
 <br />
 
+- To display printers icons on printer select screen, your printers must be named like that:
+  - Flsun V400: `FLSUN V400`
+  - Flsun Super Racer: `FLSUN SR`
+  - Flsun QQS Pro: `FLSUN QQSP`
+  - Flsun Q5: `FLSUN Q5`
+
+<br />
+
 ## Changelog
 
+- 16/11/2022 : Added support for printers icons on printer select screen
 - 09/11/2022 : Latest KlipperScreen commits
 - 04/11/2022 : Latest KlipperScreen commits
 - 29/10/2022 : Latest KlipperScreen commits
