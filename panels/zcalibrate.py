@@ -14,12 +14,12 @@ def create_panel(*args):
 
 class ZCalibratePanel(ScreenPanel):
     user_selecting = False
-
     bs = 0
     bs_delta = "0.1"
     bs_deltas = ["0.01", "0.05", "0.1", "0.5", "1"]
 
-        logging.debug("ZCalibratePanel")
+    def __init__(self, screen, title, back=True):
+        super().__init__(screen, title, back)
 
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
