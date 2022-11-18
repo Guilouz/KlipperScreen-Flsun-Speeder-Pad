@@ -13,7 +13,6 @@ def create_panel(*args):
     return ZCalibratePanel(*args)
 
 class ZCalibratePanel(ScreenPanel):
-    user_selecting = False
     bs = 0
     bs_delta = "0.1"
     bs_deltas = ["0.01", "0.05", "0.1", "0.5", "1"]
@@ -32,7 +31,9 @@ class ZCalibratePanel(ScreenPanel):
         self.labels['home'].connect("clicked", self.go_to_home, "home")
         self.labels['z+'] = self._gtk.ButtonImage("z-farther", _("Raise Nozzle"), "color1")  
         self.labels['z+'].connect("clicked", self.change_babystepping, "+")
-        self.labels['zoffset'] = Gtk.Label("0.00" + _("mm"))         
+        self.labels['zoffset'] = self._gtk.ButtonImage("refresh", " Z-Offset: 0.00" + _("mm"),
+                                                           "color1", .6, Gtk.PositionType.LEFT, 1)
+        self.labels['zoffset'].connect("clicked", self.change_babystepping, "reset")
         self.labels['z-'] = self._gtk.ButtonImage("z-closer", _("Lower Nozzle"), "color1")
         self.labels['z-'].connect("clicked", self.change_babystepping, "-")
         self.labels['move_dist'] = Gtk.Label(_("Move Distance (mm)"))
@@ -43,13 +44,13 @@ class ZCalibratePanel(ScreenPanel):
         grid.attach(self.labels['z+'], 1, 0, 2, 1)
         grid.attach(self.labels['z-'],  1, 1, 2, 1)
         grid.attach(self.labels['blank'], 0, 3, 1, 1)
-        grid.attach(self.labels['zoffset'], 0, 4, 1, 1)
+        grid.attach(self.labels['zoffset'], 0, 4, 3, 1)
         grid.attach(self.labels['move_dist'], 0, 5, 1, 1)
 
         bsgrid = Gtk.Grid()
         j = 0
         for i in self.bs_deltas:
-            self.labels[i] = self._gtk.ToggleButton(i)
+            self.labels[i] = self._gtk.Button(i)
             self.labels[i].connect("clicked", self.change_bs_delta, i)
             ctx = self.labels[i].get_style_context()
             if j == 0:
@@ -67,25 +68,24 @@ class ZCalibratePanel(ScreenPanel):
         self.content.add(grid)
 
     def process_update(self, action, data):
-
         if action != "notify_status_update":
             return
-
         if "gcode_move" in data:
             if "homing_origin" in data["gcode_move"]:
-                self.labels['zoffset'].set_text("Z Offset: %.2fmm" % data["gcode_move"]["homing_origin"][2])
+                self.labels['zoffset'].set_label(f' Z-Offset: {data["gcode_move"]["homing_origin"][2]:.2f}mm')
 
-    def change_babystepping(self, widget, dir):
-        if dir == "+":
+    def change_babystepping(self, widget, direction):
+        if direction == "reset":
+            self.labels['zoffset'].set_label(' Z-Offset: 0.00mm')
+            self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0 MOVE=1")
+        elif direction == "+":
             gcode = "SET_GCODE_OFFSET Z_ADJUST=%s MOVE=1" % self.bs_delta
         else:
             gcode = "SET_GCODE_OFFSET Z_ADJUST=-%s MOVE=1" % self.bs_delta
-
         self._screen._ws.klippy.gcode_script(gcode)
 
     def go_to_home(self, widget, home):
         gcode = "LED_HOTEND_OFF\nG28"
-
         self._screen._ws.klippy.gcode_script(gcode)
 
     def change_bs_delta(self, widget, bs):
