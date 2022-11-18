@@ -213,9 +213,11 @@ class KlippyGtk:
         dialog.show_all()
         # Change cursor to blank
         if self.cursor:
-            dialog.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.ARROW))
+            dialog.get_window().set_cursor(
+                Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.ARROW))
         else:
-            dialog.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.BLANK_CURSOR))
+            dialog.get_window().set_cursor(
+                Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.BLANK_CURSOR))
 
         self.screen.dialogs.append(dialog)
         return dialog
@@ -223,23 +225,6 @@ class KlippyGtk:
     def remove_dialog(self, widget, response_id, dialog):
         logging.info("Removing Dialog")
         self.screen.dialogs.remove(dialog)
-
-    def ToggleButtonImage(self, image_name, label, style=None, width=None, height=None):
-
-        b = Gtk.ToggleButton(label=label)
-        b.set_hexpand(True)
-        b.set_vexpand(True)
-        b.set_can_focus(False)
-        b.set_image(self.Image(image_name, width, height))
-        b.set_image_position(Gtk.PositionType.TOP)
-        b.set_always_show_image(True)
-
-        if style is not None:
-            ctx = b.get_style_context()
-            ctx.add_class(style)
-
-        b.connect("clicked", self.screen.reset_screensaver_timeout)
-        return b
 
     @staticmethod
     def HomogeneousGrid(width=None, height=None):

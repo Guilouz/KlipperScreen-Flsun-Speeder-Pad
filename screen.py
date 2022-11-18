@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import argparse
+
 import gi
 
 import json
@@ -10,6 +11,7 @@ import os
 import signal
 import subprocess
 import pathlib
+import traceback  # noqa
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GLib, Pango
@@ -67,29 +69,20 @@ def set_text_direction(lang=None):
 class KlipperScreen(Gtk.Window):
     """ Class for creating a screen for Klipper via HDMI """
     _cur_panels = []
-    bed_temp_label = None
     connecting = False
     connecting_to_printer = None
     connected_printer = None
-    currentPanel = None
     files = None
-    filename = ""
     keyboard = None
-    last_update = {}
     load_panel = {}
-    number_tools = 1
     panels = {}
     popup_message = None
     screensaver = None
     printer = None
-    printer_select_callbacks = []
-    printer_select_prepanel = None
     subscriptions = []
-    shutdown = True
     updating = False
     update_queue = []
     _ws = None
-    init_printer_timeout = None
     dpms_timeout = None
     screensaver_timeout = None
     reinit_count = 0
@@ -129,14 +122,14 @@ class KlipperScreen(Gtk.Window):
         self.add(self.base_panel.get())
         self.show_all()
         if show_cursor:
-            self.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.ARROW))
+            self.get_window().set_cursor(
+                Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.ARROW))
             os.system("xsetroot  -cursor_name  arrow")
         else:
-            self.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.BLANK_CURSOR))
+            self.get_window().set_cursor(
+                Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.BLANK_CURSOR))
             os.system("xsetroot  -cursor ks_includes/emptyCursor.xbm ks_includes/emptyCursor.xbm")
         self.base_panel.activate()
-
-        self.printer_initializing(_("Initializing"))
         if self._config.errors:
             self.show_error_modal("Invalid config file", self._config.get_errors())
             # Prevent this dialog from being destroyed
@@ -155,80 +148,32 @@ class KlipperScreen(Gtk.Window):
             pname = list(printers[0])[0]
             self.connect_printer(pname)
         else:
+            self.base_panel.show_printer_select(True)
             self.show_printer_select()
 
-    def connect_printer_widget(self, widget, name):
-        self.connect_printer(name)
-
     def connect_printer(self, name):
+        self.connecting_to_printer = name
+        if self._ws is not None and self._ws.connected:
+            self._ws.close()
+            return
+
         data = {
             "moonraker_host": "127.0.0.1",
             "moonraker_port": "7125",
             "moonraker_api_key": False
         }
 
-        self.connecting_to_printer = name
-
-        if self.connected_printer == name:
-            if self.printer_select_prepanel is not None:
-                self.show_panel(self.printer_select_prepanel, "", "", 2)
-                self.printer_select_prepanel = None
-            while len(self.printer_select_callbacks) > 0:
-                i = self.printer_select_callbacks.pop(0)
-                i()
-            self.base_panel.show_printer_select(True)
-            return
-
-        # Cleanup
-        self.printer_select_callbacks = []
-        self.printer_select_prepanel = None
-        if self.files is not None:
-            self.files.reset()
-            self.files = None
-        if self.printer is not None:
-            self.printer.reset()
-            self.printer = None
-
+        logging.info(f"Connecting to printer: {name}")
         for printer in self._config.get_printers():
             pname = list(printer)[0]
-
             if pname != name:
                 continue
             data = printer[pname]
             break
 
-        if self._ws is not None:
-            self._ws.close()
-        self.connecting = True
-
-        logging.info(f"Connecting to printer: {name}")
         self.apiclient = KlippyRest(data["moonraker_host"], data["moonraker_port"], data["moonraker_api_key"])
-
-        self.printer = Printer({
-            "software_version": "Unknown"
-        }, {
-            'configfile': {
-                'config': {}
-            },
-            'print_stats': {
-                'state': 'disconnected'
-            },
-            'virtual_sdcard': {
-                'is_active': False
-            }
-        }, self.state_execute)
-
-        self._remove_all_panels()
-        self.subscriptions = []
-        for panel in list(self.panels):
-            if panel not in ["printer_select", "splash_screen"]:
-                del self.panels[panel]
-        for dialog in self.dialogs:
-            dialog.destroy()
-        self.base_panel.show_printer_select(True)
-        self.printer_initializing(_("Connecting to %s") % name)
-
-        self.printer.set_callbacks({
+        self.printer = Printer(self.state_execute)
+        self.printer.state_callbacks = {
             "disconnected": self.state_disconnected,
             "error": self.state_error,
             "paused": self.state_paused,
@@ -236,13 +181,15 @@ class KlipperScreen(Gtk.Window):
             "ready": self.state_ready,
             "startup": self.state_startup,
             "shutdown": self.state_shutdown
-        })
+        }
+        self._remove_all_panels()
+        self.printer_initializing(_("Connecting to %s") % name)
 
         self._ws = KlippyWebsocket(self,
                                    {
                                        "on_connect": self.init_printer,
                                        "on_message": self._websocket_callback,
-                                       "on_close": self.printer_initializing
+                                       "on_close": self.websocket_disconnected
                                    },
                                    data["moonraker_host"],
                                    data["moonraker_port"]
@@ -250,10 +197,6 @@ class KlipperScreen(Gtk.Window):
 
         self.files = KlippyFiles(self)
         self._ws.initial_connect()
-        self.connecting = False
-
-        self.connected_printer = name
-        logging.debug(f"Connected to printer: {name}")
 
     def ws_subscribe(self):
         requested_updates = {
@@ -297,61 +240,45 @@ class KlipperScreen(Gtk.Window):
             panel_path = os.path.join(os.path.dirname(__file__), 'panels', f"{panel}.py")
             logging.info(f"Panel path: {panel_path}")
             if not os.path.exists(panel_path):
-                msg = f"Panel {panel} does not exist"
-                logging.info(msg)
-                raise Exception(msg)
+                logging.error(f"Panel {panel} does not exist")
+                raise FileNotFoundError(os.strerror(2), "\n" + panel_path)
 
             module = importlib.import_module(f"panels.{panel}")
             if not hasattr(module, "create_panel"):
-                msg = f"Cannot locate create_panel function for {panel}"
-                logging.info(msg)
-                raise Exception(msg)
+                raise ImportError(f"Cannot locate create_panel function for {panel}")
             self.load_panel[panel] = getattr(module, "create_panel")
 
         try:
             return self.load_panel[panel](*args)
         except Exception as e:
-            msg = f"Unable to create panel {panel}\n{e}"
-            logging.exception(msg)
-            raise Exception(msg) from e
+            raise RuntimeError(f"Unable to create panel: {panel}\n{e}") from e
 
     def show_panel(self, panel_name, panel_type, title, remove=None, pop=True, **kwargs):
-        if panel_name not in self.panels:
-            try:
-                self.panels[panel_name] = self._load_panel(panel_type, self, title)
-
-                if kwargs != {}:
-                    self.panels[panel_name].initialize(panel_name, **kwargs)
-                else:
-                    self.panels[panel_name].initialize(panel_name)
-            except Exception as e:
-                if panel_name in self.panels:
-                    del self.panels[panel_name]
-                logging.exception(f"Unable to load panel {panel_type}")
-                self.show_error_modal(f"Unable to load panel {panel_type}", f"{e}")
-                return
-
-            if hasattr(self.panels[panel_name], "process_update"):
-                self.panels[panel_name].process_update("notify_status_update", self.printer.get_data())
-
         try:
             if remove == 2:
                 self._remove_all_panels()
             elif remove == 1:
                 self._remove_current_panel(pop)
 
+            if panel_name not in self.panels:
+                try:
+                    self.panels[panel_name] = self._load_panel(panel_type, self, title)
+                    if hasattr(self.panels[panel_name], "initialize"):
+                        self.panels[panel_name].initialize(**kwargs)
+                except Exception as e:
+                    if panel_name in self.panels:
+                        del self.panels[panel_name]
+                    logging.exception(f"Unable to load panel {panel_type}")
+                    self.show_error_modal(f"Unable to load panel {panel_type}", f"{e}")
+                    return
+
             logging.debug(f"Attaching panel {panel_name}")
             self.base_panel.add_content(self.panels[panel_name])
 
-            logging.debug(f"Showing back. count: {len(self._cur_panels)}")
-            if len(self._cur_panels) == 0:
-                self.base_panel.show_back(False)
-            else:
-                self.base_panel.show_back(True)
+            self.base_panel.show_back(len(self._cur_panels) > 0)
             self.show_all()
 
             if hasattr(self.panels[panel_name], "process_update"):
-                self.panels[panel_name].process_update("notify_status_update", self.printer.get_updates())
                 self.add_subscription(panel_name)
             if hasattr(self.panels[panel_name], "activate"):
                 self.panels[panel_name].activate()
@@ -360,7 +287,7 @@ class KlipperScreen(Gtk.Window):
             logging.exception(f"Error attaching panel:\n{e}")
 
         self._cur_panels.append(panel_name)
-        logging.debug(f"Current panel hierarchy: {self._cur_panels}")
+        logging.debug(f"Current panel hierarchy: {' > '.join(self._cur_panels)}")
 
     def show_popup_message(self, message, level=3):
         self.close_screensaver()
@@ -413,7 +340,7 @@ class KlipperScreen(Gtk.Window):
         self.popup_message = None
 
     def show_error_modal(self, err, e=""):
-        logging.exception(f"Showing error modal: {err}")
+        logging.error(f"Showing error modal: {err}")
 
         title = Gtk.Label()
         title.set_markup(f"<b>{err}</b>\n")
@@ -445,12 +372,11 @@ class KlipperScreen(Gtk.Window):
         ]
         self.gtk.Dialog(self, buttons, grid, self.error_modal_response)
 
-    @staticmethod
-    def error_modal_response(widget, response_id):
+    def error_modal_response(self, widget, response_id):
         widget.destroy()
+        self.reload_panels()
 
     def restart_warning(self, value):
-
         logging.debug(f"Showing restart warning because: {value}")
 
         buttons = [
@@ -530,16 +456,11 @@ class KlipperScreen(Gtk.Window):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-    def is_printing(self):
-        return self.printer.get_state() == "printing"
-
     def is_updating(self):
         return self.updating
 
     def _go_to_submenu(self, widget, name):
         logging.info(f"#### Go to submenu {name}")
-        # self._remove_current_panel(False)
-
         # Find current menu item
         if "main_panel" in self._cur_panels:
             menu = "__main"
@@ -555,21 +476,29 @@ class KlipperScreen(Gtk.Window):
             logging.info("No items in menu, returning.")
             return
 
-        self.show_panel(f'{self._cur_panels[-1]}_{name}',
-                        "menu", disname, 1, False, display_name=disname, items=menuitems)
+        self.show_panel(f'{self._cur_panels[-1]}_{name}', "menu", disname, 1, False, items=menuitems)
 
     def _remove_all_panels(self):
-        while len(self._cur_panels) > 0:
-            self._remove_current_panel(True, False)
-        self.show_all()
+        self.subscriptions = []
+        self._cur_panels = []
+        for _ in self.base_panel.content.get_children():
+            self.base_panel.content.remove(_)
+        for panel in list(self.panels):
+            if panel not in ["printer_select", "splash_screen"]:
+                del self.panels[panel]
+        for dialog in self.dialogs:
+            dialog.destroy()
+        self.close_screensaver()
 
-    def _remove_current_panel(self, pop=True, show=True):
+    def _remove_current_panel(self, pop=True):
         if len(self._cur_panels) <= 0:
+            self.reload_panels()
             return
         self.base_panel.remove(self.panels[self._cur_panels[-1]].get_content())
         if hasattr(self.panels[self._cur_panels[-1]], "deactivate"):
             self.panels[self._cur_panels[-1]].deactivate()
-        self.remove_subscription(self._cur_panels[-1])
+        if self._cur_panels[-1] in self.subscriptions:
+            self.subscriptions.remove(self._cur_panels[-1])
         if pop is True:
             self._cur_panels.pop()
             if len(self._cur_panels) > 0:
@@ -578,11 +507,8 @@ class KlipperScreen(Gtk.Window):
                 if hasattr(self.panels[self._cur_panels[-1]], "activate"):
                     self.panels[self._cur_panels[-1]].activate()
                 if hasattr(self.panels[self._cur_panels[-1]], "process_update"):
-                    self.panels[self._cur_panels[-1]].process_update("notify_status_update",
-                                                                     self.printer.get_updates())
                     self.add_subscription(self._cur_panels[-1])
-                if show is True:
-                    self.show_all()
+                self.show_all()
 
     def _menu_go_back(self, widget=None):
         logging.info("#### Menu go back")
@@ -599,17 +525,8 @@ class KlipperScreen(Gtk.Window):
             self._remove_current_panel()
 
     def add_subscription(self, panel_name):
-        for sub in self.subscriptions:
-            if sub == panel_name:
-                return
-
-        self.subscriptions.append(panel_name)
-
-    def remove_subscription(self, panel_name):
-        for i in range(len(self.subscriptions)):
-            if self.subscriptions[i] == panel_name:
-                self.subscriptions.pop(i)
-                return
+        if panel_name not in self.subscriptions:
+            self.subscriptions.append(panel_name)
 
     def reset_screensaver_timeout(self, *args):
         if self.screensaver_timeout is not None:
@@ -721,42 +638,36 @@ class KlipperScreen(Gtk.Window):
         if self.updating is True and updating is False and len(self.update_queue) > 0:
             i = self.update_queue.pop()
             self.update_queue = []
-            i[0](i[1])
-
+            i[0]()
         self.updating = updating
 
     def show_printer_select(self, widget=None):
-        logging.debug(f"Saving panel: {self._cur_panels[0]}")
-        self.printer_select_prepanel = self._cur_panels[0]
         self.base_panel.show_heaters(False)
         self.show_panel("printer_select", "printer_select", _("Printer Select"), 2)
 
-    def state_execute(self, callback, prev_state):
+    def state_execute(self, callback):
         if self.is_updating():
-            self.update_queue.append([callback, prev_state])
+            self.update_queue.append([callback])
         else:
-            callback(prev_state)
+            self.init_printer()
+            callback()
 
-    def state_disconnected(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_disconnected]
-            return
+    def websocket_disconnected(self, msg):
+        self.printer_initializing(msg)
+        self.connecting = True
+        self.connected_printer = None
+        self.files.reset()
+        self.files = None
+        self.printer.reset()
+        self.printer = None
+        self.connect_printer(self.connecting_to_printer)
 
+    def state_disconnected(self):
         logging.debug("### Going to disconnected")
         self.close_screensaver()
         self.printer_initializing(_("Klipper has disconnected"))
-        if self.connected_printer is not None:
-            self.connected_printer = None
-            # Try to reconnect
-            self.connect_printer(self.connecting_to_printer)
-        else:
-            self.initial_connection()
 
-    def state_error(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_error]
-            return
-
+    def state_error(self):
         self.close_screensaver()
         msg = self.printer.get_stat("webhooks", "state_message")
         if "FIRMWARE_RESTART" in msg:
@@ -771,57 +682,29 @@ class KlipperScreen(Gtk.Window):
             self.printer_initializing("<b>" + _("Klipper has encountered an error.") +
                                       "</b>" + "\n\n" + msg)
 
-        for panel in list(self.panels):
-            if panel not in ["printer_select", "splash_screen"]:
-                del self.panels[panel]
-        for dialog in self.dialogs:
-            dialog.destroy()
-
-    def state_paused(self, prev_state):
+    def state_paused(self):
         if "job_status" not in self._cur_panels:
             self.printer_printing()
 
-    def state_printing(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_printing]
-            return
-
+    def state_printing(self):
         if "job_status" not in self._cur_panels:
             self.printer_printing()
         else:
             self.panels["job_status"].new_print()
 
-    def state_ready(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_ready]
-            return
-
+    def state_ready(self):
         # Do not return to main menu if completing a job, timeouts/user input will return
-        if "job_status" in self._cur_panels or "main_menu" in self._cur_panels:
+        if "job_status" in self._cur_panels:
             return
-
-        if prev_state not in ['paused', 'printing']:
-            self.init_printer()
-            self.base_panel._printer = self.printer
-
         self.printer_ready()
 
-    def state_startup(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_startup]
-            return
-
+    def state_startup(self):
         self.printer_initializing(_("Klipper is attempting to start"))
 
-    def state_shutdown(self, prev_state):
-        if "printer_select" in self._cur_panels:
-            self.printer_select_callbacks = [self.state_shutdown]
-            return
-
+    def state_shutdown(self):
         self.close_screensaver()
         msg = self.printer.get_stat("webhooks", "state_message")
-        if "ready" in msg:
-            msg = ""
+        msg = msg if "ready" not in msg else ""
         self.printer_initializing("<b>" + _("Klipper has shutdown") +
                                   "</b>" + "\n\n" + msg)
 
@@ -836,17 +719,11 @@ class KlipperScreen(Gtk.Window):
 
     def reload_panels(self, *args):
         self._remove_all_panels()
-        for panel in list(self.panels):
-            del self.panels[panel]
-        for dialog in self.dialogs:
-            dialog.destroy()
         self.printer.change_state(self.printer.state)
 
     def _websocket_callback(self, action, data):
-
-        if self.connecting is True:
+        if self.connecting:
             return
-
         if action == "notify_klippy_disconnected":
             self.printer.change_state("disconnected")
             return
@@ -854,10 +731,9 @@ class KlipperScreen(Gtk.Window):
             self.printer.change_state("shutdown")
         elif action == "notify_klippy_ready":
             self.printer.change_state("ready")
-        elif action == "notify_status_update" and self.printer.get_state() != "shutdown":
+        elif action == "notify_status_update" and self.printer.state != "shutdown":
             self.printer.process_update(data)
         elif action == "notify_filelist_changed":
-            logging.debug("Filelist changed: %s", json.dumps(data, indent=2))
             if self.files is not None:
                 self.files.process_update(data)
         elif action == "notify_metadata_update":
@@ -868,13 +744,13 @@ class KlipperScreen(Gtk.Window):
             logging.debug("Power status changed: %s", data)
             self.printer.process_power_update(data)
             self.panels['splash_screen'].check_power_status()
-        elif self.printer.get_state() not in ["error", "shutdown"] and action == "notify_gcode_response":
+        elif action == "notify_gcode_response" and self.printer.state not in ["error", "shutdown"]:
             if not (data.startswith("B:") or data.startswith("T:")):
                 if data.startswith("echo: "):
                     self.show_popup_message(data[6:], 1)
                 elif data.startswith("!! "):
                     self.show_popup_message(data[3:], 3)
-                if "SAVE_CONFIG" in data and self.printer.get_state() == "ready":
+                if "SAVE_CONFIG" in data and self.printer.state == "ready":
                     script = {"script": "SAVE_CONFIG"}
                     self._confirm_send_action(
                         None,
@@ -882,15 +758,11 @@ class KlipperScreen(Gtk.Window):
                         "printer.gcode.script",
                         script
                     )
-
         self.base_panel.process_update(action, data)
-        if self._cur_panels[-1] in self.subscriptions:
+        if self._cur_panels and self._cur_panels[-1] in self.subscriptions:
             self.panels[self._cur_panels[-1]].process_update(action, data)
 
     def _confirm_send_action(self, widget, text, method, params=None):
-
-        if params is None:
-            params = {}
         buttons = [
             {"name": _("Continue"), "response": Gtk.ResponseType.OK},
             {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
@@ -924,16 +796,14 @@ class KlipperScreen(Gtk.Window):
         widget.destroy()
 
     def _send_action(self, widget, method, params):
+        logging.info(f"{method}: {params}")
         self._ws.send_method(method, params)
 
-    def printer_initializing(self, text=None, disconnect=False):
+    def printer_initializing(self, msg):
         self.close_popup_message()
-        self.show_panel('splash_screen', "splash_screen", None, 2)
-        if disconnect is True and self.printer is not None:
-            self.shutdown = True
-            self.printer.state = "disconnected"
-        if text is not None:
-            self.panels['splash_screen'].update_text(text)
+        if 'splash_screen' not in self.panels or 'printer_select' not in self._cur_panels:
+            self.show_panel('splash_screen', "splash_screen", None, 2)
+        self.panels['splash_screen'].update_text(msg)
 
     def search_power_devices(self, power_devices):
         if self.connected_printer is None or not power_devices:
@@ -954,7 +824,6 @@ class KlipperScreen(Gtk.Window):
             return None
 
     def power_on(self, widget, devices):
-
         for device in devices:
             if self.printer.get_power_device_status(device) == "off":
                 self.show_popup_message(_("Sending Power ON signal to: %s") % devices, level=1)
@@ -964,38 +833,42 @@ class KlipperScreen(Gtk.Window):
                 logging.info("%s is ON", device)
 
     def init_printer(self):
-
         state = self.apiclient.get_server_info()
         if state is False:
-            return False
+            logging.info("Moonraker not connected")
+            return
+        self.connecting = not self._ws.connected
+        self.connected_printer = self.connecting_to_printer
+        self.base_panel.set_ks_printer_cfg(self.connected_printer)
+
         # Moonraker is ready, set a loop to init the printer
         self.reinit_count += 1
-        self.init_printer_timeout = GLib.timeout_add_seconds(3, self.init_printer)
 
-        self.shutdown = False
         powerdevs = self.apiclient.send_request("machine/device_power/devices")
         if powerdevs is not False:
             self.printer.configure_power_devices(powerdevs['result'])
 
         if state['result']['klippy_connected'] is False:
-            self.panels['splash_screen'].update_text(
+            logging.info("Klipper not connected")
+            self.printer_initializing(
                 _("Moonraker: connected")
                 + f"\n\nKlipper: {state['result']['klippy_state']}\n\n"
                 + _("Retry #%s") % self.reinit_count
             )
-            return False
+            GLib.timeout_add_seconds(3, self.init_printer)
+            return
 
         printer_info = self.apiclient.get_printer_info()
         if printer_info is False:
-            return self._update_splash_screen("Unable to get printer info from moonraker")
-
-        data = self.apiclient.send_request("printer/objects/query?" + "&".join(PRINTER_BASE_STATUS_OBJECTS))
-        if data is False:
-            return self._update_splash_screen("Error getting printer object data")
+            self.printer_initializing("Unable to get printer info from moonraker")
+            GLib.timeout_add_seconds(3, self.init_printer)
+            return
 
         config = self.apiclient.send_request("printer/objects/query?configfile")
         if config is False:
-            return self._update_splash_screen("Error getting printer config data")
+            self.printer_initializing("Error getting printer configuration")
+            GLib.timeout_add_seconds(3, self.init_printer)
+            return
 
         # Reinitialize printer, in case the printer was shut down and anything has changed.
         self.printer.reinit(printer_info['result'], config['result']['status'])
@@ -1011,7 +884,9 @@ class KlipperScreen(Gtk.Window):
         data = self.apiclient.send_request("printer/objects/query?" + "&".join(PRINTER_BASE_STATUS_OBJECTS +
                                                                                extra_items))
         if data is False:
-            return self._update_splash_screen("Error getting printer object data with extra items")
+            self.printer_initializing("Error getting printer object data with extra items")
+            GLib.timeout_add_seconds(3, self.init_printer)
+            return
 
         tempstore = self.apiclient.send_request("server/temperature_store")
         if tempstore is not False:
@@ -1022,14 +897,7 @@ class KlipperScreen(Gtk.Window):
         self.files.refresh_files()
 
         logging.info("Printer initialized")
-        GLib.source_remove(self.init_printer_timeout)
         self.reinit_count = 0
-        return False
-
-    def _update_splash_screen(self, msg):
-        logging.info(msg)
-        self.panels['splash_screen'].update_text(msg)
-        return False
 
     def base_panel_show_all(self):
         self.base_panel.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
@@ -1038,13 +906,8 @@ class KlipperScreen(Gtk.Window):
 
     def printer_ready(self):
         self.close_popup_message()
-        self.show_panel('main_panel', "main_menu", None, 2,
-                        items=self._config.get_menu_items("__main"), extrudercount=self.printer.get_extruder_count())
+        self.show_panel('main_panel', "main_menu", None, 2, items=self._config.get_menu_items("__main"))
         self.base_panel_show_all()
-        self.ws_subscribe()
-        if "job_status" in self.panels:
-            self.remove_subscription("job_status")
-            del self.panels["job_status"]
 
     def printer_printing(self):
         self.close_screensaver()

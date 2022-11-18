@@ -40,8 +40,6 @@ class ExtrudePanel(ScreenPanel):
 
         self.distance = int(self.distances[1])
         self.speed = int(self.speeds[1])
-
-    def initialize(self, panel_name):
         self.labels['extrude'] = self._gtk.ButtonImage("extrude", _("Extrude"), "color4")
         self.labels['extrude'].connect("clicked", self.extrude, "+")
         self.labels['load'] = self._gtk.ButtonImage("arrow-down", _("Load"), "color3")

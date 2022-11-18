@@ -351,7 +351,7 @@ class KlipperScreenConfig:
         saved_def = []
         found_saved = False
         if not path.exists(config_path):
-            return [None, None]
+            return ["", None]
         with open(config_path) as file:
             for line in file:
                 line = line.replace('\n', '')
@@ -470,9 +470,6 @@ class KlipperScreenConfig:
 
         return None if name not in self.config else self.config[name]
 
-    def get_printer_power_name(self):
-        return self.config['settings'].get("printer_power_name", "printer")
-
     def get_printers(self):
         return self.printers
 
@@ -512,10 +509,11 @@ class KlipperScreenConfig:
         else:
             user_def, saved_def = self.separate_saved_config(self.config_path)
 
-        extra_lb = "\n" if saved_def is not None else ""
-        contents = "%s\n%s%s\n%s\n%s\n%s\n" % (
-            user_def, self.do_not_edit_line, extra_lb, self.do_not_edit_prefix, "\n".join(save_output),
-            self.do_not_edit_prefix)
+        contents = (f"{user_def}\n"
+                    f"{self.do_not_edit_line}\n"
+                    f"{self.do_not_edit_prefix}\n"
+                    + '\n'.join(save_output) + f"\n"
+                    f"{self.do_not_edit_prefix}\n")
 
         if self.config_path != self.default_config_path:
             filepath = self.config_path
@@ -574,11 +572,11 @@ class KlipperScreenConfig:
         cfg = self.config[name]
         item = {
             "name": cfg.get("name"),
-            "icon": cfg.get("icon"),
-            "panel": cfg.get("panel", False),
-            "method": cfg.get("method", False),
-            "confirm": cfg.get("confirm", False),
-            "enable": cfg.get("enable", True)
+            "icon": cfg.get("icon", None),
+            "panel": cfg.get("panel", None),
+            "method": cfg.get("method", None),
+            "confirm": cfg.get("confirm", None),
+            "enable": cfg.get("enable", "True")
         }
 
         try:

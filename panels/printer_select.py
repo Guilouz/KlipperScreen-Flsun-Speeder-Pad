@@ -1,11 +1,8 @@
 import gi
-import logging
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 from ks_includes.screen_panel import ScreenPanel
-
-logger = logging.getLogger("KlipperScreen.PrinterSelect")
 
 
 def create_panel(*args):
@@ -15,8 +12,6 @@ def create_panel(*args):
 class PrinterSelect(ScreenPanel):
     def __init__(self, screen, title, back=True):
         super().__init__(screen, title, False)
-
-    def initialize(self, panel_name):
         printers = self._config.get_printers()
 
         grid = self._gtk.HomogeneousGrid()
@@ -47,7 +42,7 @@ class PrinterSelect(ScreenPanel):
                 self.labels[name] = self._gtk.ButtonImage("Q5_thumbnail", name, f"color{1 + i % 4}", 6) # Changes
             else: # Changes
                 self.labels[name] = self._gtk.ButtonImage("printer", name, f"color{1 + i % 4}", 6) # Changes
-            self.labels[name].connect("clicked", self._screen.connect_printer_widget, name)
+            self.labels[name].connect("clicked", self.connect_printer, name)
             if self._screen.vertical_mode:
                 row = i % columns
                 col = int(i / columns)
@@ -56,6 +51,10 @@ class PrinterSelect(ScreenPanel):
                 row = int(i / columns)
             grid.attach(self.labels[name], col, row, 1, 1)
 
+    def connect_printer(self, widget, name):
+        self._screen.connect_printer(name)
+
     def activate(self):
         self._screen.base_panel.action_bar.hide()
+        self._screen._ws.connecting = False
         GLib.timeout_add(0, self._screen.base_panel.action_bar.hide) # Changes

@@ -19,6 +19,7 @@ class ScreenPanel:
         self.title = title
         self.devices = {}
         self.active_heaters = []
+        self.ks_printer_cfg = None
 
         self.layout = Gtk.Layout()
         self.layout.set_size(self._screen.width, self._screen.height)
@@ -29,10 +30,6 @@ class ScreenPanel:
         self.content.set_vexpand(True)
 
         self._show_heater_power = self._config.get_main_config().getboolean('show_heater_power', False)
-
-    def initialize(self, panel_name):
-        # Create gtk items here
-        return
 
     def emergency_stop(self, widget):
         if self._config.get_main_config().getboolean('confirm_estop', False):
@@ -65,11 +62,6 @@ class ScreenPanel:
         return self.title
 
     def menu_item_clicked(self, widget, panel, item):
-        logging.info(f"### Creating panel {item['panel']} : {panel} {item}")
-        if "items" in item:
-            self._screen.show_panel(f'{self._screen._cur_panels[-1]}_{panel}',
-                                    item['panel'], item['name'], 1, False, items=item['items'])
-            return
         self._screen.show_panel(f'{self._screen._cur_panels[-1]}_{panel}', item['panel'], item['name'], 1, False)
 
     def menu_return(self, widget, home=False):
@@ -83,10 +75,6 @@ class ScreenPanel:
 
     def show_all(self):
         self._screen.show_all()
-
-    def update_image_text(self, label, text):
-        if label in self.labels and 'l' in self.labels[label]:
-            self.labels[label]['l'].set_text(text)
 
     def load_menu(self, widget, name):
         if f"{name}_menu" not in self.labels:
