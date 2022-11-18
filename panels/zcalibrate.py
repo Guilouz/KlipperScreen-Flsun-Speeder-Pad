@@ -19,8 +19,6 @@ class ZCalibratePanel(ScreenPanel):
     bs_delta = "0.1"
     bs_deltas = ["0.01", "0.05", "0.1", "0.5", "1"]
 
-    def initialize(self, panel_name):
-
         logging.debug("ZCalibratePanel")
 
         grid = self._gtk.HomogeneousGrid()
