@@ -170,6 +170,7 @@ gcode:
 
 ## Changelog
 
+- 18/11/2022 : Latest KlipperScreen commits
 - 16/11/2022 : Added support for printers icons on printer select screen
 - 09/11/2022 : Latest KlipperScreen commits
 - 04/11/2022 : Latest KlipperScreen commits
