@@ -143,9 +143,6 @@ msgstr "확인"
 msgid "Actions"
 msgstr "툴 헤드 제어"
 
-msgid "Add Printer"
-msgstr "프린터 추가"
-
 msgid "Add profile"
 msgstr ""
 
@@ -309,6 +306,9 @@ msgstr "예상시간 옵션"
 msgid "Exclude Object"
 msgstr ""
 
+msgid "Extra Large"
+msgstr ""
+
 msgid "Extrude"
 msgstr "압출 "
 
@@ -414,9 +414,6 @@ msgstr "아이콘 테마"
 msgid "Increase"
 msgstr "높이기"
 
-msgid "Initializing"
-msgstr "초기화 중.."
-
 msgid "Initializing printer..."
 msgstr "프린터 초기화 중.."
 
@@ -497,6 +494,9 @@ msgstr "감속을 위한 최대 가속"
 
 msgid "Max Velocity"
 msgstr "출력 속도"
+
+msgid "Maximum"
+msgstr ""
 
 msgid "Measure Both"
 msgstr "XY축 모두 측정"

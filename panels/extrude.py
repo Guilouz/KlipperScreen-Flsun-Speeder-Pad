@@ -1,6 +1,7 @@
-import gi
 import logging
 import re
+
+import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
@@ -18,21 +19,19 @@ class ExtrudePanel(ScreenPanel):
     def __init__(self, screen, title, back=True):
         super().__init__(screen, title, back)
         self.current_extruder = self._printer.get_stat("toolhead", "extruder")
-
         macros = self._screen.printer.get_gcode_macros()
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
         self.speeds = ['1', '2', '5', '10'] # Changes
         self.distances = ['5', '10', '15', '25']
-        print_cfg = self._config.get_printer_config(self._screen.connected_printer)
-        if print_cfg is not None:
-            dis = print_cfg.get("extrude_distances", '5, 10, 15, 25')
+        if self.ks_printer_cfg is not None:
+            dis = self.ks_printer_cfg.get("extrude_distances", '5, 10, 15, 25')
             if re.match(r'^[0-9,\s]+$', dis):
                 dis = [str(i.strip()) for i in dis.split(',')]
                 if 1 < len(dis) < 5:
                     self.distances = dis
-            vel = print_cfg.get("extrude_speeds", '1, 2, 5, 10') # Changes
+            vel = self.ks_printer_cfg.get("extrude_speeds", '1, 2, 5, 10') # Changes
             if re.match(r'^[0-9,\s]+$', vel):
                 vel = [str(i.strip()) for i in vel.split(',')]
                 if 1 < len(vel) < 5:

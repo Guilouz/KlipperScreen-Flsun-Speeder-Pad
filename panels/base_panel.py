@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import contextlib
-import gi
 import logging
+
+import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import GLib, Gtk, Pango
@@ -29,22 +30,23 @@ class BasePanel(ScreenPanel):
         }
         self.current_extruder = None
         # Action bar buttons
-        self.control['back'] = self._gtk.ButtonImage('back', scale=1)
+        scale = 1.5 if self._gtk.font_size_type == "extralarge" else 1
+        self.control['back'] = self._gtk.ButtonImage('back', scale=scale)
         self.control['back'].connect("clicked", self.back)
-        self.control['home'] = self._gtk.ButtonImage('main', scale=1)
+        self.control['home'] = self._gtk.ButtonImage('main', scale=scale)
         self.control['home'].connect("clicked", self.menu_return, True)
 
         if len(self._config.get_printers()) > 1:
-            self.control['printer_select'] = self._gtk.ButtonImage('shuffle', scale=1)
+            self.control['printer_select'] = self._gtk.ButtonImage('shuffle', scale=scale)
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
 
-        self.control['macros_shortcut'] = self._gtk.ButtonImage('custom-script', scale=1)
+        self.control['macros_shortcut'] = self._gtk.ButtonImage('custom-script', scale=scale)
         self.control['macros_shortcut'].connect("clicked", self.menu_item_clicked, "gcode_macros", {
             "name": "Macros",
             "panel": "gcode_macros"
         })
 
-        self.control['estop'] = self._gtk.ButtonImage('emergency', scale=1)
+        self.control['estop'] = self._gtk.ButtonImage('emergency', scale=scale)
         self.control['estop'].connect("clicked", self.emergency_stop)
 
         # Any action bar button should close the keyboard
@@ -121,7 +123,10 @@ class BasePanel(ScreenPanel):
             if not show or self._screen.printer.get_temp_store_devices() is None:
                 return
 
-            img_size = self._gtk.img_scale * .5
+            if self._gtk.font_size_type == "extralarge":
+                img_size = self._gtk.img_scale * .75
+            else:
+                img_size = self._gtk.img_scale * .5
             for device in self._screen.printer.get_temp_store_devices():
                 self.labels[device] = Gtk.Label(label="100º")
                 self.labels[device].set_ellipsize(Pango.EllipsizeMode.START)
@@ -309,7 +314,7 @@ class BasePanel(ScreenPanel):
             self.buttons_showing['estop'] = False
 
     def set_ks_printer_cfg(self, printer):
-        self.ks_printer_cfg = self._config.get_printer_config(printer)
+        ScreenPanel.ks_printer_cfg = self._config.get_printer_config(printer)
         if self.ks_printer_cfg is not None:
             self.titlebar_name_type = self.ks_printer_cfg.get("titlebar_name_type", None)
             titlebar_items = self.ks_printer_cfg.get("titlebar_items", None)

@@ -143,9 +143,6 @@ msgstr "Elfogad"
 msgid "Actions"
 msgstr "Műveletek"
 
-msgid "Add Printer"
-msgstr "Nyomtató hozzáadása"
-
 msgid "Add profile"
 msgstr "Profil hozzáadása"
 
@@ -309,6 +306,9 @@ msgstr "Becsült idő módszer"
 msgid "Exclude Object"
 msgstr "Objektum kizárása"
 
+msgid "Extra Large"
+msgstr ""
+
 msgid "Extrude"
 msgstr "Száladagolás"
 
@@ -414,9 +414,6 @@ msgstr "Ikon téma"
 msgid "Increase"
 msgstr "Növel"
 
-msgid "Initializing"
-msgstr "Inicializálás"
-
 msgid "Initializing printer..."
 msgstr "Nyomtató inicializálása..."
 
@@ -497,6 +494,9 @@ msgstr "Lassulás max gyorsulása"
 
 msgid "Max Velocity"
 msgstr "Max sebesség"
+
+msgid "Maximum"
+msgstr ""
 
 msgid "Measure Both"
 msgstr "Mindkettő mérése"

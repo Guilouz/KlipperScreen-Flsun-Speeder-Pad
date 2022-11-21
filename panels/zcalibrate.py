@@ -1,7 +1,8 @@
 # Changes Start
-import gi
 import logging
 import re
+
+import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -41,10 +42,10 @@ class ZCalibratePanel(ScreenPanel):
         
         grid.attach(self.labels['start'], 0, 0, 1, 1)
         grid.attach(self.labels['home'], 0, 1, 1, 1)
-        grid.attach(self.labels['z+'], 1, 0, 2, 1)
-        grid.attach(self.labels['z-'],  1, 1, 2, 1)
+        grid.attach(self.labels['z+'], 1, 0, 1, 1)
+        grid.attach(self.labels['z-'],  1, 1, 1, 1)
         grid.attach(self.labels['blank'], 0, 3, 1, 1)
-        grid.attach(self.labels['zoffset'], 0, 4, 3, 1)
+        grid.attach(self.labels['zoffset'], 0, 4, 2, 1)
         grid.attach(self.labels['move_dist'], 0, 5, 1, 1)
 
         bsgrid = Gtk.Grid()
@@ -63,7 +64,7 @@ class ZCalibratePanel(ScreenPanel):
                 ctx.add_class("distbutton_active")
             bsgrid.attach(self.labels[i], j, 0, 1, 1)
             j += 1
-        grid.attach(bsgrid, 1, 5, 2, 1)
+        grid.attach(bsgrid, 1, 5, 1, 1)
 
         self.content.add(grid)
 

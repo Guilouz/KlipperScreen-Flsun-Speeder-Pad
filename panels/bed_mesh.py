@@ -1,6 +1,7 @@
-import gi
 import logging
 import contextlib
+
+import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
@@ -270,7 +271,7 @@ class BedMeshPanel(ScreenPanel):
         self._screen._ws.klippy.gcode_script("BED_MESH_CALIBRATE")
 
         # Load zcalibrate to do a manual mesh
-        if not (self._printer.config_section_exists("probe") or self._printer.config_section_exists("bltouch")):
+        if not self._screen.printer.get_probe():
             self.menu_item_clicked(widget, "refresh", {"name": _("Mesh calibrate"), "panel": "zcalibrate"})
 
     def send_clear_mesh(self, widget):

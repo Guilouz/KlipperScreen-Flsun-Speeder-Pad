@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-import gi
 import logging
 import os
 import time
 import contextlib
+
+import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import GLib, Gtk, Pango
@@ -47,6 +48,7 @@ class JobStatusPanel(ScreenPanel):
         self.progress = self.zoffset = self.flowrate = self.vel = 0
         self.main_status_displayed = True
         self.velstore = self.flowstore = []
+        self.bt_scale = 1 if self._gtk.font_size_type == "extralarge" else .6
 
         data = ['pos_x', 'pos_y', 'pos_z', 'time_left', 'duration', 'slicer_time', 'file_time',
                 'filament_time', 'est_time', 'speed_factor', 'req_speed', 'max_accel', 'extrude_factor', 'zoffset',
@@ -132,7 +134,6 @@ class JobStatusPanel(ScreenPanel):
             self.current_extruder = self._printer.get_stat("toolhead", "extruder")
             diameter = float(self._printer.get_config_section(self.current_extruder)['filament_diameter'])
             self.fila_section = pi * ((diameter / 2) ** 2)
-        self.create_status_grid()
 
         self.grid.attach(overlay, 0, 0, 1, 1)
         self.grid.attach(fi_box, 1, 0, 3, 1)
@@ -151,8 +152,8 @@ class JobStatusPanel(ScreenPanel):
         if self._screen.printer.get_tools():
             for i, extruder in enumerate(self._printer.get_tools()):
                 self.labels[extruder] = Gtk.Label("-")
-                self.extruder_button[extruder] = self._gtk.ButtonImage(f"extruder-{i}",
-                                                                       None, None, .6, Gtk.PositionType.LEFT)
+                self.extruder_button[extruder] = self._gtk.ButtonImage(f"extruder-{i}", None, None, self.bt_scale,
+                                                                       Gtk.PositionType.LEFT)
                 self.extruder_button[extruder].set_label(self.labels[extruder].get_text())
                 self.extruder_button[extruder].connect("clicked", self.menu_item_clicked, "temperature",
                                                        {"panel": "temperature", "name": _("Temperature")})
@@ -164,8 +165,8 @@ class JobStatusPanel(ScreenPanel):
             self.current_extruder = None
         self.heater_button = {}
         if self._printer.has_heated_bed():
-            self.heater_button['heater_bed'] = self._gtk.ButtonImage("bed",
-                                                                     None, None, .6, Gtk.PositionType.LEFT)
+            self.heater_button['heater_bed'] = self._gtk.ButtonImage("bed", None, None, self.bt_scale,
+                                                                     Gtk.PositionType.LEFT)
             self.labels['heater_bed'] = Gtk.Label("-")
             self.heater_button['heater_bed'].set_label(self.labels['heater_bed'].get_text())
             self.heater_button['heater_bed'].connect("clicked", self.menu_item_clicked, "temperature",
@@ -177,8 +178,8 @@ class JobStatusPanel(ScreenPanel):
             if n >= nlimit:
                 break
             if device.startswith("heater_generic"):
-                self.heater_button[device] = self._gtk.ButtonImage("heater",
-                                                                   None, None, .6, Gtk.PositionType.LEFT)
+                self.heater_button[device] = self._gtk.ButtonImage("heater", None, None, self.bt_scale,
+                                                                   Gtk.PositionType.LEFT)
                 self.labels[device] = Gtk.Label("-")
                 self.heater_button[device].set_label(self.labels[device].get_text())
                 self.heater_button[device].connect("clicked", self.menu_item_clicked, "temperature",
@@ -187,9 +188,8 @@ class JobStatusPanel(ScreenPanel):
                 self.labels['temp_grid'].attach(self.heater_button[device], n, 0, 1, 1)
                 n += 1
         extra_item = not self._show_heater_power
-        printer_cfg = self._config.get_printer_config(self._screen.connected_printer)
-        if printer_cfg is not None:
-            titlebar_items = printer_cfg.get("titlebar_items", "")
+        if self.ks_printer_cfg is not None:
+            titlebar_items = self.ks_printer_cfg.get("titlebar_items", "")
             if titlebar_items is not None:
                 titlebar_items = [str(i.strip()) for i in titlebar_items.split(',')]
                 logging.info(f"Titlebar items: {titlebar_items}")
@@ -203,7 +203,7 @@ class JobStatusPanel(ScreenPanel):
                                     nlimit += 1
                                 if n >= nlimit:
                                     break
-                                self.heater_button[device] = self._gtk.ButtonImage("heat-up", None, None, .6,
+                                self.heater_button[device] = self._gtk.ButtonImage("heat-up", None, None, self.bt_scale,
                                                                                    Gtk.PositionType.LEFT)
                                 self.labels[device] = Gtk.Label("-")
                                 self.heater_button[device].set_label(self.labels[device].get_text())
@@ -214,38 +214,41 @@ class JobStatusPanel(ScreenPanel):
                                 n += 1
                                 break
 
-        self.z_button = self._gtk.ButtonImage("home-z", None, None, .6, Gtk.PositionType.LEFT)
+        self.z_button = self._gtk.ButtonImage("home-z", None, None, self.bt_scale, Gtk.PositionType.LEFT)
         self.z_button.set_label(self.labels['pos_z'].get_text())
         self.z_button.connect("clicked", self.create_move_grid)
         self.z_button.set_halign(Gtk.Align.START)
 
-        self.speed_button = self._gtk.ButtonImage("speed+", None, None, .6, Gtk.PositionType.LEFT)
+        self.speed_button = self._gtk.ButtonImage("speed+", None, None, self.bt_scale, Gtk.PositionType.LEFT)
         self.speed_button.set_label(self.labels['speed_factor'].get_text())
         self.speed_button.connect("clicked", self.create_move_grid)
         self.speed_button.set_halign(Gtk.Align.START)
 
-        self.extrusion_button = self._gtk.ButtonImage("extrude", None, None, .6, Gtk.PositionType.LEFT)
+        self.extrusion_button = self._gtk.ButtonImage("extrude", None, None, self.bt_scale, Gtk.PositionType.LEFT)
         self.extrusion_button.set_label(self.labels['extrude_factor'].get_text())
         self.extrusion_button.connect("clicked", self.create_extrusion_grid)
         self.extrusion_button.set_halign(Gtk.Align.START)
 
-        self.fan_button = self._gtk.ButtonImage("fan", None, None, .6, Gtk.PositionType.LEFT)
+        self.fan_button = self._gtk.ButtonImage("fan", None, None, self.bt_scale, Gtk.PositionType.LEFT)
         self.fan_button.set_label(self.labels['fan'].get_text())
         self.fan_button.connect("clicked", self.menu_item_clicked, "fan", {"panel": "fan", "name": _("Fan")})
         self.fan_button.set_halign(Gtk.Align.START)
 
         elapsed_label = self.labels['elapsed'].get_text() + "  " + self.labels['duration'].get_text()
-        self.elapsed_button = self._gtk.ButtonImage("clock", elapsed_label, None, .6, Gtk.PositionType.LEFT, False)
+        self.elapsed_button = self._gtk.ButtonImage("clock", elapsed_label, None,
+                                                    self.bt_scale, Gtk.PositionType.LEFT, False)
         self.elapsed_button.connect("clicked", self.create_time_grid)
         self.elapsed_button.set_halign(Gtk.Align.START)
 
         remaining_label = self.labels['left'].get_text() + "  " + self.labels['time_left'].get_text()
-        self.left_button = self._gtk.ButtonImage("hourglass", remaining_label, None, .6, Gtk.PositionType.LEFT, False)
+        self.left_button = self._gtk.ButtonImage("hourglass", remaining_label,
+                                                 None, self.bt_scale, Gtk.PositionType.LEFT, False)
         self.left_button.connect("clicked", self.create_time_grid)
         self.left_button.set_halign(Gtk.Align.START)
 
         layer_label = self.labels['layer_lbl'].get_text() # Changes
-        self.layer_button = self._gtk.ButtonImage("layer", layer_label, None, .6, Gtk.PositionType.LEFT, False) # Changes
+        self.layer_button = self._gtk.ButtonImage("layer", layer_label, None,
+                                                    self.bt_scale, Gtk.PositionType.LEFT, False) # Changes
         self.layer_button.connect("clicked", self.create_move_grid) # Changes
         self.layer_button.set_halign(Gtk.Align.START) # Changes
 
@@ -268,7 +271,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_extrusion_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color1", .66, Gtk.PositionType.TOP, False)
+        goback = self._gtk.ButtonImage("back", None, "color1", self.bt_scale, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -293,7 +296,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_move_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color2", .66, Gtk.PositionType.TOP, False)
+        goback = self._gtk.ButtonImage("back", None, "color2", self.bt_scale, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -324,7 +327,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_time_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color3", .66, Gtk.PositionType.TOP, False)
+        goback = self._gtk.ButtonImage("back", None, "color3", self.bt_scale, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
 
@@ -404,14 +407,10 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop") # Changes
 
     def save_offset(self, widget, device):
-        saved_z_offset = 0
-        if self._printer.config_section_exists("bltouch"): # Changes
-            saved_z_offset = float(self._screen.printer.get_config_section("bltouch")['z_offset'])
-
         sign = "+" if self.zoffset > 0 else "-"
         label = Gtk.Label()
         if device == "endstop": # Changes
-            label.set_text(_("Apply %.2f offset to Endstop?") % self.zoffset)
+            label.set_text(_("Apply %.2f offset to Endstop?") % (sign, abs(self.zoffset)))
         label.set_hexpand(True)
         label.set_halign(Gtk.Align.CENTER)
         label.set_vexpand(True)
@@ -622,8 +621,7 @@ class JobStatusPanel(ScreenPanel):
         fan_label = ""
         for fan in self.fans:
             with contextlib.suppress(KeyError):
-                fan_speed = int(round(self._printer.get_fan_speed(fan, data[fan]["speed"]), 2) * 100)
-                self.fans[fan]['speed'] = f"{fan_speed:3}%"
+                self.fans[fan]['speed'] = f"{self._screen.printer.get_fan_speed(fan) * 100:3.0f}%"
                 fan_label += f" {self.fans[fan]['name']}{self.fans[fan]['speed']}"
         if fan_label:
             self.labels['fan'].set_text(fan_label[:12])
@@ -799,6 +797,8 @@ class JobStatusPanel(ScreenPanel):
             self.buttons['button_grid'].attach(self.buttons['control'], 3, 0, 1, 1)
             self.enable_button("resume", "cancel")
         else:
+            offset = self._screen.printer.get_stat("gcode_move", "homing_origin")
+            self.zoffset = float(offset[2]) if offset else 0
             if self.zoffset != 0:
                 endstop = (self._screen.printer.config_section_exists("stepper_z") and
                            not self._screen.printer.get_config_section("stepper_z")['endstop_pin'].startswith("probe"))
@@ -806,7 +806,7 @@ class JobStatusPanel(ScreenPanel):
                     self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
-                if self._printer.config_section_exists("bltouch"): # Changes
+                if self._screen.printer.get_probe():
                     self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
                 else:
                     self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)

@@ -143,9 +143,6 @@ msgstr "OK"
 msgid "Actions"
 msgstr "Muligheder"
 
-msgid "Add Printer"
-msgstr "Tilføj printer"
-
 msgid "Add profile"
 msgstr ""
 
@@ -309,6 +306,9 @@ msgstr "Metode til beregning af tid"
 msgid "Exclude Object"
 msgstr ""
 
+msgid "Extra Large"
+msgstr ""
+
 msgid "Extrude"
 msgstr "Ekstrudér"
 
@@ -414,9 +414,6 @@ msgstr "Ikon-tema"
 msgid "Increase"
 msgstr "Forøg"
 
-msgid "Initializing"
-msgstr "Initialiserer"
-
 msgid "Initializing printer..."
 msgstr "Initialiserer printer..."
 
@@ -497,6 +494,9 @@ msgstr "Maks. acceleration til decceleration"
 
 msgid "Max Velocity"
 msgstr "Maks. hastighed"
+
+msgid "Maximum"
+msgstr ""
 
 msgid "Measure Both"
 msgstr ""
