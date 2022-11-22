@@ -18,24 +18,24 @@ class ZCalibratePanel(ScreenPanel):
     bs_delta = "0.1"
     bs_deltas = ["0.01", "0.05", "0.1", "0.5", "1"]
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
 
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
-        self.labels['start'] = self._gtk.ButtonImage('arrow-down', _("Move Z0"), 'color1')
+        self.labels['start'] = self._gtk.Button('arrow-down', _("Move Z0"), 'color1')
         script = {"script": "MOVE_TO_Z0"}
         self.labels['start'].connect("clicked", self._screen._confirm_send_action,
                                           _("Please remove leveling switch before move Z0."),
                                           "printer.gcode.script", script)
-        self.labels['home'] = self._gtk.ButtonImage("home", _("Home"), "color1")
+        self.labels['home'] = self._gtk.Button("home", _("Home"), "color1")
         self.labels['home'].connect("clicked", self.go_to_home, "home")
-        self.labels['z+'] = self._gtk.ButtonImage("z-farther", _("Raise Nozzle"), "color1")  
+        self.labels['z+'] = self._gtk.Button("z-farther", _("Raise Nozzle"), "color1")  
         self.labels['z+'].connect("clicked", self.change_babystepping, "+")
-        self.labels['zoffset'] = self._gtk.ButtonImage("refresh", " Z-Offset: 0.00" + _("mm"),
+        self.labels['zoffset'] = self._gtk.Button("refresh", " Z-Offset: 0.00" + _("mm"),
                                                            "color1", .6, Gtk.PositionType.LEFT, 1)
         self.labels['zoffset'].connect("clicked", self.change_babystepping, "reset")
-        self.labels['z-'] = self._gtk.ButtonImage("z-closer", _("Lower Nozzle"), "color1")
+        self.labels['z-'] = self._gtk.Button("z-closer", _("Lower Nozzle"), "color1")
         self.labels['z-'].connect("clicked", self.change_babystepping, "-")
         self.labels['move_dist'] = Gtk.Label(_("Move Distance (mm)"))
         self.labels['blank'] = Gtk.Label()
@@ -51,7 +51,7 @@ class ZCalibratePanel(ScreenPanel):
         bsgrid = Gtk.Grid()
         j = 0
         for i in self.bs_deltas:
-            self.labels[i] = self._gtk.Button(i)
+            self.labels[i] = self._gtk.Button(label=i)
             self.labels[i].connect("clicked", self.change_bs_delta, i)
             ctx = self.labels[i].get_style_context()
             if j == 0:

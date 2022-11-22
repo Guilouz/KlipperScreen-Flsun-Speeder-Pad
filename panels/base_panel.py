@@ -14,8 +14,8 @@ from ks_includes.screen_panel import ScreenPanel
 
 
 class BasePanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.current_panel = None
         self.time_min = -1
         self.time_format = self._config.get_main_config().getboolean("24htime", True)
@@ -23,30 +23,27 @@ class BasePanel(ScreenPanel):
         self.titlebar_items = []
         self.titlebar_name_type = None
         self.buttons_showing = {
-            'back': not back,
             'macros_shortcut': False,
-            'printer_select': False,
-            'estop': False,
+            'printer_select': len(self._config.get_printers()) > 1,
         }
         self.current_extruder = None
         # Action bar buttons
-        scale = 1.5 if self._gtk.font_size_type == "extralarge" else 1
-        self.control['back'] = self._gtk.ButtonImage('back', scale=scale)
+        self.control['back'] = self._gtk.Button('back', scale=self.bts)
         self.control['back'].connect("clicked", self.back)
-        self.control['home'] = self._gtk.ButtonImage('main', scale=scale)
-        self.control['home'].connect("clicked", self.menu_return, True)
+        self.control['home'] = self._gtk.Button('main', scale=self.bts)
+        self.control['home'].connect("clicked", self._screen._menu_go_home)
 
         if len(self._config.get_printers()) > 1:
-            self.control['printer_select'] = self._gtk.ButtonImage('shuffle', scale=scale)
+            self.control['printer_select'] = self._gtk.Button('shuffle', scale=self.bts)
             self.control['printer_select'].connect("clicked", self._screen.show_printer_select)
 
-        self.control['macros_shortcut'] = self._gtk.ButtonImage('custom-script', scale=scale)
+        self.control['macros_shortcut'] = self._gtk.Button('custom-script', scale=self.bts)
         self.control['macros_shortcut'].connect("clicked", self.menu_item_clicked, "gcode_macros", {
             "name": "Macros",
             "panel": "gcode_macros"
         })
 
-        self.control['estop'] = self._gtk.ButtonImage('emergency', scale=scale)
+        self.control['estop'] = self._gtk.Button('emergency', scale=self.bts)
         self.control['estop'].connect("clicked", self.emergency_stop)
 
         # Any action bar button should close the keyboard
@@ -67,10 +64,12 @@ class BasePanel(ScreenPanel):
         self.action_bar.get_style_context().add_class('action_bar')
         self.action_bar.add(self.control['back'])
         self.action_bar.add(self.control['home'])
-        if len(self._config.get_printers()) > 1:
+        self.show_back(False)
+        if self.buttons_showing['printer_select']:
             self.action_bar.add(self.control['printer_select'])
         self.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))
         self.action_bar.add(self.control['estop'])
+        self.show_estop(False)
 
         # Titlebar
 
@@ -123,10 +122,7 @@ class BasePanel(ScreenPanel):
             if not show or self._screen.printer.get_temp_store_devices() is None:
                 return
 
-            if self._gtk.font_size_type == "extralarge":
-                img_size = self._gtk.img_scale * .75
-            else:
-                img_size = self._gtk.img_scale * .5
+            img_size = self._gtk.img_scale * self.bts
             for device in self._screen.printer.get_temp_store_devices():
                 self.labels[device] = Gtk.Label(label="100º")
                 self.labels[device].set_ellipsize(Pango.EllipsizeMode.START)
@@ -200,10 +196,10 @@ class BasePanel(ScreenPanel):
 
     def add_content(self, panel):
         self.current_panel = panel
-        self.set_title(panel.get_title())
-        self.content.add(panel.get_content())
+        self.set_title(panel.title)
+        self.content.add(panel.content)
 
-    def back(self, widget):
+    def back(self, widget=None):
         if self.current_panel is None:
             return
 
@@ -245,14 +241,12 @@ class BasePanel(ScreenPanel):
         self.content.remove(widget)
 
     def show_back(self, show=True):
-        if show is True and self.buttons_showing['back'] is False:
+        if show:
             self.control['back'].set_sensitive(True)
             self.control['home'].set_sensitive(True)
-            self.buttons_showing['back'] = True
-        elif show is False and self.buttons_showing['back'] is True:
-            self.control['back'].set_sensitive(False)
-            self.control['home'].set_sensitive(False)
-            self.buttons_showing['back'] = False
+            return
+        self.control['back'].set_sensitive(False)
+        self.control['home'].set_sensitive(False)
 
     def show_macro_shortcut(self, show=True):
         if show is True and self.buttons_showing['macros_shortcut'] is False:
@@ -268,8 +262,6 @@ class BasePanel(ScreenPanel):
             self.buttons_showing['macros_shortcut'] = False
 
     def show_printer_select(self, show=True):
-        if len(self._config.get_printers()) <= 1:
-            return
         if show and self.buttons_showing['printer_select'] is False:
             self.action_bar.add(self.control['printer_select'])
             self.action_bar.reorder_child(self.control['printer_select'], 2)
@@ -306,12 +298,10 @@ class BasePanel(ScreenPanel):
         return True
 
     def show_estop(self, show=True):
-        if show and self.buttons_showing['estop'] is False:
+        if show:
             self.control['estop'].set_sensitive(True)
-            self.buttons_showing['estop'] = True
-        elif show is False and self.buttons_showing['estop']:
-            self.control['estop'].set_sensitive(False)
-            self.buttons_showing['estop'] = False
+            return
+        self.control['estop'].set_sensitive(False)
 
     def set_ks_printer_cfg(self, printer):
         ScreenPanel.ks_printer_cfg = self._config.get_printer_config(printer)

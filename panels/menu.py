@@ -17,8 +17,8 @@ class MenuPanel(ScreenPanel):
     i = 0
     j2_data = None
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.items = None
         self.grid = self._gtk.HomogeneousGrid()
 
@@ -82,7 +82,7 @@ class MenuPanel(ScreenPanel):
             j2_temp = env.from_string(item['name'])
             parsed_name = j2_temp.render()
 
-            b = self._gtk.ButtonImage(item['icon'], parsed_name, f"color{(i % 4) + 1}")
+            b = self._gtk.Button(item['icon'], parsed_name, f"color{(i % 4) + 1}")
             if item['panel'] is not None:
                 b.connect("clicked", self.menu_item_clicked, item['panel'], item)
             elif item['method'] is not None:

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:19+0100\n"
+"PO-Revision-Date: 2022-11-23 00:26+0100\n"
 "Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -18,6 +18,9 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -213,9 +216,6 @@ msgstr "Откалибровано, сохраните конфигурацию,
 
 msgid "Calibrating"
 msgstr "Калибровка"
-
-msgid "Calibrating..."
-msgstr "Калибровка…"
 
 msgid "Can't set above the maximum:"
 msgstr "Невозможно установить выше максимума:"
@@ -663,10 +663,6 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "Повторить #%s"
-
 msgid "Retrying"
 msgstr ""
 
@@ -817,23 +813,11 @@ msgstr "Обновление"
 msgid "Uploaded"
 msgstr "Дата"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "Скорость перемещения по осям XY (мм/с)"
 
 msgid "XY Speed (mm/s)"
 msgstr ""
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Калибр. Z"
@@ -849,12 +833,6 @@ msgstr "Z Наклон"
 
 msgid "Z offset:"
 msgstr ""
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

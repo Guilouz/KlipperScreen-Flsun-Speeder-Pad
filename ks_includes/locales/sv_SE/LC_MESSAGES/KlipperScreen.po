@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:19+0100\n"
+"PO-Revision-Date: 2022-11-23 00:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -212,9 +215,6 @@ msgstr "Kalibrerad, spara konfiguration för att göra den permanent"
 
 msgid "Calibrating"
 msgstr "Kalibrera"
-
-msgid "Calibrating..."
-msgstr "Kalibrera…"
 
 msgid "Can't set above the maximum:"
 msgstr "Kan inte ställa in över maxgränsen:"
@@ -661,10 +661,6 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr ""
-
 msgid "Retrying"
 msgstr ""
 
@@ -815,23 +811,11 @@ msgstr "Uppdaterar"
 msgid "Uploaded"
 msgstr "Uppladdad"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY rörelsehastighet (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr ""
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Z Kalibrering"
@@ -847,12 +831,6 @@ msgstr ""
 
 msgid "Z offset:"
 msgstr ""
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

@@ -22,11 +22,11 @@ SHAPERS = ['zv', 'mzv', 'zvd', 'ei', '2hump_ei', '3hump_ei']
 
 
 class InputShaperPanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.freq_xy_adj = {}
         self.freq_xy_combo = {}
-        self.calibrate_btn = self._gtk.ButtonImage("move", _('Finding ADXL'), "color1", lines=1)
+        self.calibrate_btn = self._gtk.Button("move", _('Finding ADXL'), "color1", lines=1)
         self.calibrate_btn.connect("clicked", self.on_popover_clicked)
         self.calibrate_btn.set_sensitive(False)
         self.status = Gtk.Label("")
@@ -94,13 +94,13 @@ class InputShaperPanel(ScreenPanel):
         self.content.add(box)
 
         pobox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        test_x = self._gtk.Button(_("Measure X"))
+        test_x = self._gtk.Button(label=_("Measure X"))
         test_x.connect("clicked", self.start_calibration, "x")
         pobox.pack_start(test_x, True, True, 5)
-        test_y = self._gtk.Button(_("Measure Y"))
+        test_y = self._gtk.Button(label=_("Measure Y"))
         test_y.connect("clicked", self.start_calibration, "y")
         pobox.pack_start(test_y, True, True, 5)
-        test_both = self._gtk.Button(_("Measure Both"))
+        test_both = self._gtk.Button(label=_("Measure Both"))
         test_both.connect("clicked", self.start_calibration, "both")
         pobox.pack_start(test_both, True, True, 5)
         self.labels['popover'] = Gtk.Popover()
@@ -123,7 +123,7 @@ class InputShaperPanel(ScreenPanel):
         if method == "both":
             self._screen._ws.klippy.gcode_script('SHAPER_CALIBRATE')
 
-        self.calibrate_btn.set_label(_('Calibrating...'))
+        self.calibrate_btn.set_label(_('Calibrating') + '...')
         self.calibrate_btn.set_sensitive(False)
 
     def set_opt_value(self, widget, opt, *args):

@@ -11,8 +11,8 @@ def create_panel(*args):
 
 
 class SettingsPanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.printers = self.settings = {}
         self.menu = ['settings_menu']
         options = self._config.get_configurable_options().copy()
@@ -119,8 +119,8 @@ class SettingsPanel(ScreenPanel):
             box.add(label)
             dev.add(box)
         elif option['type'] == "menu":
-            open_menu = self._gtk.ButtonImage("settings", style="color3")
-            open_menu.connect("clicked", self.load_menu, option['menu'])
+            open_menu = self._gtk.Button("settings", style="color3")
+            open_menu.connect("clicked", self.load_menu, option['menu'], option['name'])
             open_menu.set_hexpand(False)
             open_menu.set_halign(Gtk.Align.END)
             dev.add(open_menu)

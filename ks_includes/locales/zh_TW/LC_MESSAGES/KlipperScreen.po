@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:22+0100\n"
+"PO-Revision-Date: 2022-11-23 00:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -212,9 +215,6 @@ msgstr "校準，保存配置以使其永久化"
 
 msgid "Calibrating"
 msgstr "校正"
-
-msgid "Calibrating..."
-msgstr "校正…"
 
 msgid "Can't set above the maximum:"
 msgstr "不能設置超過最大值："
@@ -660,10 +660,6 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "重試 #%s"
-
 msgid "Retrying"
 msgstr ""
 
@@ -814,23 +810,11 @@ msgstr "更新"
 msgid "Uploaded"
 msgstr "上傳時間"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY 移動速度 (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr ""
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Z 校準"
@@ -846,12 +830,6 @@ msgstr "Z 傾斜"
 
 msgid "Z offset:"
 msgstr ""
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

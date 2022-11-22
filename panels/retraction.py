@@ -15,8 +15,8 @@ def create_panel(*args):
 
 class FWRetractionPanel(ScreenPanel):
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.options = None
         self.grid = Gtk.Grid()
         self.values = {}
@@ -131,7 +131,7 @@ class FWRetractionPanel(ScreenPanel):
         scale.get_style_context().add_class("option_slider")
         scale.connect("button-release-event", self.set_opt_value, option)
 
-        reset = self._gtk.ButtonImage("refresh", style="color1")
+        reset = self._gtk.Button("refresh", style="color1")
         reset.connect("clicked", self.reset_value, option)
         reset.set_hexpand(False)
 

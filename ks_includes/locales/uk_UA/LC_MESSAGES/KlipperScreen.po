@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:20+0100\n"
+"PO-Revision-Date: 2022-11-23 00:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -19,6 +19,9 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -214,9 +217,6 @@ msgstr "Відкалібровано, збережіть конфігураці�
 
 msgid "Calibrating"
 msgstr "Калібрування"
-
-msgid "Calibrating..."
-msgstr "Калібрування..."
 
 msgid "Can't set above the maximum:"
 msgstr "Не встановити вище макс.:"
@@ -664,10 +664,6 @@ msgstr "Швидкість втягування"
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "Повторіть #%s"
-
 msgid "Retrying"
 msgstr ""
 
@@ -818,23 +814,11 @@ msgstr "Оновлення"
 msgid "Uploaded"
 msgstr "Завантажено"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "Швидкість переміщення XY (мм/с)"
 
 msgid "XY Speed (mm/s)"
 msgstr "Швидкість XY (мм/с)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Калібровка Z"
@@ -850,12 +834,6 @@ msgstr "Z Нахил"
 
 msgid "Z offset:"
 msgstr "Зміщення по Z:"
-
-msgid "Z+"
-msgstr "Бебістеп Z+"
-
-msgid "Z-"
-msgstr "Бебістеп Z-"
 
 msgid "commit"
 msgid_plural "commits"

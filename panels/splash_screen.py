@@ -15,8 +15,8 @@ def create_panel(*args):
 
 class SplashScreenPanel(ScreenPanel):
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         image = self._gtk.Image("klipper", self._screen.width / 5, self._screen.height * .5)
         self.labels['text'] = Gtk.Label(_("Initializing printer..."))
         self.labels['text'].set_line_wrap(True)
@@ -24,17 +24,17 @@ class SplashScreenPanel(ScreenPanel):
         self.labels['text'].set_halign(Gtk.Align.CENTER)
         self.labels['text'].set_valign(Gtk.Align.CENTER)
 
-        self.labels['menu'] = self._gtk.ButtonImage("settings", _("Menu"), "color4")
+        self.labels['menu'] = self._gtk.Button("settings", _("Menu"), "color4")
         self.labels['menu'].connect("clicked", self._screen._go_to_submenu, "")
-        self.labels['restart'] = self._gtk.ButtonImage("refresh", _("Klipper Restart"), "color1")
+        self.labels['restart'] = self._gtk.Button("refresh", _("Klipper Restart"), "color1")
         self.labels['restart'].connect("clicked", self.restart)
-        self.labels['firmware_restart'] = self._gtk.ButtonImage("refresh", _("Firmware Restart"), "color2")
+        self.labels['firmware_restart'] = self._gtk.Button("refresh", _("Firmware Restart"), "color2")
         self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
-        self.labels['restart_system'] = self._gtk.ButtonImage("refresh", _("System Restart"), "color1")
+        self.labels['restart_system'] = self._gtk.Button("refresh", _("System Restart"), "color1")
         self.labels['restart_system'].connect("clicked", self.restart_system)
-        self.labels['shutdown'] = self._gtk.ButtonImage("shutdown", _('System Shutdown'), "color2")
+        self.labels['shutdown'] = self._gtk.Button("shutdown", _('System Shutdown'), "color2")
         self.labels['shutdown'].connect("clicked", self.shutdown)
-        self.labels['retry'] = self._gtk.ButtonImage("load", _('Retry'), "color3")
+        self.labels['retry'] = self._gtk.Button("load", _('Retry'), "color3")
         self.labels['retry'].connect("clicked", self.retry)
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -86,13 +86,13 @@ class SplashScreenPanel(ScreenPanel):
             self.labels['actions'].add(self.labels['restart_system'])
             self.labels['actions'].add(self.labels['shutdown'])
         self.labels['actions'].add(self.labels['menu'])
-        if self._screen._ws and not self._screen._ws.connecting:
+        if self._screen._ws and not self._screen._ws.connecting or self._screen.reinit_count > self._screen.max_retries:
             self.labels['actions'].add(self.labels['retry'])
         self.labels['actions'].show_all()
 
     def add_power_button(self, powerdevs):
         if powerdevs is not None:
-            self.labels['power'] = self._gtk.ButtonImage("shutdown", _("Power On Printer"), "color3")
+            self.labels['power'] = self._gtk.Button("shutdown", _("Power On Printer"), "color3")
             self.labels['power'].connect("clicked", self._screen.power_on, powerdevs)
             self.check_power_status()
             self.labels['actions'].add(self.labels['power'])
@@ -141,5 +141,9 @@ class SplashScreenPanel(ScreenPanel):
 
     def retry(self, widget):
         self.update_text((_("Connecting to %s") % self._screen.connecting_to_printer))
-        self._screen._ws.retry()
+        if self._screen._ws and not self._screen._ws.connecting:
+            self._screen._ws.retry()
+        else:
+            self._screen.reinit_count = 0
+            self._screen.init_printer()
         self.show_restart_buttons()

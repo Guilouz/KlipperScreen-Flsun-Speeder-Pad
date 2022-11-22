@@ -170,8 +170,9 @@ gcode:
 
 ## Changelog
 
+- 22/11/2022 : Latest KlipperScreen commits / Fixed Reprint button when print is cancelling
 - 21/11/2022 : Latest KlipperScreen commits
-- 18/11/2022 : Latest KlipperScreen commits
+- 18/11/2022 : Latest KlipperScreen commits / Added possibility to reset Z-Offset on Z Calibration menu
 - 16/11/2022 : Added support for printers icons on printer select screen
 - 09/11/2022 : Latest KlipperScreen commits
 - 04/11/2022 : Latest KlipperScreen commits

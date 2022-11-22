@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:16+0100\n"
+"PO-Revision-Date: 2022-11-23 00:24+0100\n"
 "Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -19,6 +19,9 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -214,9 +217,6 @@ msgstr "מכויל, שמור את התצורה כדי שהיא תהיה קבוע
 
 msgid "Calibrating"
 msgstr "מכייל"
-
-msgid "Calibrating..."
-msgstr "מכייל..."
 
 msgid "Can't set above the maximum:"
 msgstr "לא ניתן להגדיר מעל המקסימום:"
@@ -665,10 +665,6 @@ msgstr "מהירות משיכה"
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "נסה שוב #%s"
-
 msgid "Retrying"
 msgstr "מנסה שוב"
 
@@ -819,23 +815,11 @@ msgstr "מעדכן"
 msgid "Uploaded"
 msgstr "הועלה"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "מהירות תנועה XY (מ\"מ/שנייה)"
 
 msgid "XY Speed (mm/s)"
 msgstr "מהירות XY (mm/s)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "כיול Z"
@@ -851,12 +835,6 @@ msgstr "הטיה Z"
 
 msgid "Z offset:"
 msgstr "Z אוף-סט"
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

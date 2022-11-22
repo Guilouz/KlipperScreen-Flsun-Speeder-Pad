@@ -140,19 +140,7 @@ class KlippyGtk:
         stream.close_async(2)
         return pixbuf
 
-    def Button(self, label=None, style=None):
-        b = Gtk.Button(label=label)
-        b.set_hexpand(True)
-        b.set_vexpand(True)
-        b.set_can_focus(False)
-        b.props.relief = Gtk.ReliefStyle.NONE
-
-        if style is not None:
-            b.get_style_context().add_class(style)
-        b.connect("clicked", self.screen.reset_screensaver_timeout)
-        return b
-
-    def ButtonImage(self, image_name=None, label=None, style=None, scale=1.38, position=Gtk.PositionType.TOP, lines=2):
+    def Button(self, image_name=None, label=None, style=None, scale=1.38, position=Gtk.PositionType.TOP, lines=2):
         if self.font_size_type == "max" and label is not None and scale == 1.38:
             image_name = None
         b = Gtk.Button()
@@ -162,6 +150,8 @@ class KlippyGtk:
         b.set_vexpand(True)
         b.set_can_focus(False)
         if image_name is not None:
+            if label is None:
+                scale = scale * 1.5
             width = height = self.img_scale * scale
             b.set_image(self.Image(image_name, width, height))
         b.set_image_position(position)
@@ -204,7 +194,6 @@ class KlippyGtk:
             button.set_size_request((screen.width - 30) / 3, screen.height / 5)
 
         dialog.connect("response", self.screen.reset_screensaver_timeout)
-        dialog.connect("response", self.remove_dialog, dialog)
         dialog.connect("response", callback, *args)
         dialog.get_style_context().add_class("dialog")
 
@@ -225,11 +214,16 @@ class KlippyGtk:
                 Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.BLANK_CURSOR))
 
         self.screen.dialogs.append(dialog)
+        logging.info(f"Showing dialog {dialog}")
         return dialog
 
-    def remove_dialog(self, widget, response_id, dialog):
-        logging.info("Removing Dialog")
-        self.screen.dialogs.remove(dialog)
+    def remove_dialog(self, dialog, *args):
+        dialog.destroy()
+        if dialog in self.screen.dialogs:
+            logging.info("Removing Dialog")
+            self.screen.dialogs.remove(dialog)
+            return
+        logging.debug(f"Cannot remove dialog {dialog}")
 
     @staticmethod
     def HomogeneousGrid(width=None, height=None):

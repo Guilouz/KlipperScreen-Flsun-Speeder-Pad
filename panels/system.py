@@ -28,25 +28,25 @@ ALLOWED_SERVICES = (
 
 
 class SystemPanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.refresh = None
         self.update_status = None
         self.update_dialog = None
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
 
-        update_all = self._gtk.ButtonImage('arrow-up', _('Full Update'), 'color1')
+        update_all = self._gtk.Button('arrow-up', _('Full Update'), 'color1')
         update_all.connect("clicked", self.show_update_info, "full")
         update_all.set_vexpand(False)
-        self.refresh = self._gtk.ButtonImage('refresh', _('Refresh'), 'color2')
+        self.refresh = self._gtk.Button('refresh', _('Refresh'), 'color2')
         self.refresh.connect("clicked", self.refresh_updates)
         self.refresh.set_vexpand(False)
 
-        reboot = self._gtk.ButtonImage('refresh', _('Restart'), 'color3')
+        reboot = self._gtk.Button('refresh', _('Restart'), 'color3')
         reboot.connect("clicked", self.reboot_poweroff, "reboot")
         reboot.set_vexpand(False)
-        shutdown = self._gtk.ButtonImage('shutdown', _('Shutdown'), 'color4')
+        shutdown = self._gtk.Button('shutdown', _('Shutdown'), 'color4')
         shutdown.connect("clicked", self.reboot_poweroff, "poweroff")
         shutdown.set_vexpand(False)
 
@@ -75,7 +75,7 @@ class SystemPanel(ScreenPanel):
                 self.labels[f"{prog}_status"].connect("clicked", self.show_update_info, prog)
 
                 if prog in ALLOWED_SERVICES:
-                    self.labels[f"{prog}_restart"] = self._gtk.ButtonImage("refresh", scale=.7)
+                    self.labels[f"{prog}_restart"] = self._gtk.Button("refresh", scale=.7)
                     self.labels[f"{prog}_restart"].connect("clicked", self.restart, prog)
                     infogrid.attach(self.labels[f"{prog}_restart"], 0, i, 1, 1)
 
@@ -98,8 +98,8 @@ class SystemPanel(ScreenPanel):
     def activate(self):
         self.get_updates()
 
-    def finish_updating(self, widget, response_id):
-        widget.destroy()
+    def finish_updating(self, dialog, response_id):
+        self._gtk.remove_dialog(dialog)
         self._screen.set_updating(False)
         self.get_updates()
 
@@ -200,7 +200,7 @@ class SystemPanel(ScreenPanel):
             label.set_markup((
                 f'<b>{info["package_count"]} '
                 + ngettext("Package will be updated", "Packages will be updated", info["package_count"])
-                + f':</b>\n'
+                + ':</b>\n'
             ))
             label.set_halign(Gtk.Align.CENTER)
             vbox.add(label)
@@ -237,20 +237,20 @@ class SystemPanel(ScreenPanel):
         ]
         self._gtk.Dialog(self._screen, buttons, scroll, self.update_confirm, program)
 
-    def update_confirm(self, widget, response_id, program):
+    def update_confirm(self, dialog, response_id, program):
+        self._gtk.remove_dialog(dialog)
         if response_id == Gtk.ResponseType.OK:
             logging.debug(f"Updating {program}")
             self.update_program(self, program)
-        widget.destroy()
 
-    def reset_confirm(self, widget, response_id, program):
+    def reset_confirm(self, dialog, response_id, program):
+        self._gtk.remove_dialog(dialog)
         if response_id == Gtk.ResponseType.OK:
             logging.debug(f"Recovering hard {program}")
             self.reset_repo(self, program, True)
         if response_id == Gtk.ResponseType.APPLY:
             logging.debug(f"Recovering soft {program}")
             self.reset_repo(self, program, False)
-        widget.destroy()
 
     def reset_repo(self, widget, program, hard):
         if self._screen.is_updating():
@@ -408,11 +408,11 @@ class SystemPanel(ScreenPanel):
             ]  
         self._gtk.Dialog(self._screen, buttons, scroll, self.reboot_poweroff_confirm, method)
 
-    def reboot_poweroff_confirm(self, widget, response_id, method):
+    def reboot_poweroff_confirm(self, dialog, response_id, method):
+        self._gtk.remove_dialog(dialog)
         if response_id == Gtk.ResponseType.APPLY:
             if method == "reboot":
                 os.system("systemctl reboot")
             else:
                 os.system("shutdown -H now")
-        widget.destroy()
     # End Changes

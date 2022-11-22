@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-21 16:20+0100\n"
+"PO-Revision-Date: 2022-11-23 00:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "No mesh has been loaded"
 msgstr ""
@@ -212,9 +215,6 @@ msgstr "Kalibre edildi, kalıcı hale getirmek için yapılandırmayı kaydedin"
 
 msgid "Calibrating"
 msgstr "Kalibre Ediliyor"
-
-msgid "Calibrating..."
-msgstr "Kalibre Ediliyor..."
 
 msgid "Can't set above the maximum:"
 msgstr "Maksimumun üzerine ayarlanamaz:"
@@ -663,10 +663,6 @@ msgstr "Geri Çekme Hızı"
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "Yeniden Dene #%s"
-
 msgid "Retrying"
 msgstr "Yeniden Deneniyor"
 
@@ -817,23 +813,11 @@ msgstr "Yükleniyor"
 msgid "Uploaded"
 msgstr "Yüklendi"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY Hareket hızı (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr "XY Hızı (mm/s)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Z Kalibrasyonu"
@@ -849,12 +833,6 @@ msgstr "Z Eğim"
 
 msgid "Z offset:"
 msgstr "Z ofset:"
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

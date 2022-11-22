@@ -15,14 +15,14 @@ def create_panel(*args):
 
 
 class ExcludeObjectPanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self._screen = screen
         self.object_list = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         self.object_list.set_valign(Gtk.Align.CENTER)
         self.object_list.set_halign(Gtk.Align.START)
         self.buttons = {}
-        self.current_object = self._gtk.ButtonImage("delete", "", scale=.66, position=Gtk.PositionType.LEFT, lines=1) # Changes
+        self.current_object = self._gtk.Button("delete", "", scale=.66, position=Gtk.PositionType.LEFT, lines=1) # Changes
         self.current_object.connect("clicked", self.exclude_current)
         self.current_object.set_vexpand(False)
         self.excluded_objects = self._printer.get_stat("exclude_object", "excluded_objects")
@@ -61,7 +61,7 @@ class ExcludeObjectPanel(ScreenPanel):
 
     def add_object(self, name):
         if name not in self.buttons and name not in self.excluded_objects:
-            self.buttons[name] = self._gtk.Button(name.replace("_", " "))
+            self.buttons[name] = self._gtk.Button(label=name.replace("_", " "))
             self.buttons[name].get_children()[0].set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
             self.buttons[name].get_children()[0].set_line_wrap(True)
             self.buttons[name].connect("clicked", self.exclude_object, name)
@@ -116,7 +116,7 @@ class ExcludeObjectPanel(ScreenPanel):
                         self.object_list.remove(self.buttons[name])
                 self.update_graph()
                 if len(self.excluded_objects) == len(self.objects):
-                    self.menu_return(False)
+                    self._screen._menu_go_back()
         elif action == "notify_gcode_response" and "Excluding object" in data:
             self._screen.show_popup_message(data, level=1)
             self.update_graph()

@@ -17,8 +17,8 @@ CHANGEABLE_FANS = ["fan", "fan_generic"]
 
 
 class FanPanel(ScreenPanel):
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.fan_speed = {}
         self.devices = {}
         # Create a grid for all devices
@@ -72,10 +72,10 @@ class FanPanel(ScreenPanel):
         name.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
         fan_col = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
-        stop_btn = self._gtk.ButtonImage("cancel", None, "color1", 1)
+        stop_btn = self._gtk.Button("cancel", None, "color1", 1)
         stop_btn.set_hexpand(False)
         stop_btn.connect("clicked", self.update_fan_speed, fan, 0)
-        max_btn = self._gtk.ButtonImage("fan-on", _("Max"), "color2", 1)
+        max_btn = self._gtk.Button("fan-on", _("Max"), "color2", 1)
         max_btn.set_hexpand(False)
         max_btn.connect("clicked", self.update_fan_speed, fan, 100)
 

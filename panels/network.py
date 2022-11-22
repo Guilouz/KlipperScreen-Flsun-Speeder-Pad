@@ -18,8 +18,8 @@ def create_panel(*args):
 class NetworkPanel(ScreenPanel):
     initialized = False
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.show_add = False
         self.networks = {}
         self.interface = None
@@ -58,7 +58,7 @@ class NetworkPanel(ScreenPanel):
         self.labels['interface'].set_hexpand(True)
         self.labels['ip'] = Gtk.Label()
         self.labels['ip'].set_hexpand(True)
-        reload_networks = self._gtk.ButtonImage("refresh", None, "color1", .66)
+        reload_networks = self._gtk.Button("refresh", None, "color1", .66)
         reload_networks.connect("clicked", self.reload_networks)
         reload_networks.set_hexpand(False)
 
@@ -157,12 +157,12 @@ class NetworkPanel(ScreenPanel):
         labels.set_valign(Gtk.Align.CENTER)
         labels.set_halign(Gtk.Align.START)
 
-        connect = self._gtk.ButtonImage("load", style="color3")
+        connect = self._gtk.Button("load", style="color3")
         connect.connect("clicked", self.connect_network, ssid)
         connect.set_hexpand(False)
         connect.set_halign(Gtk.Align.END)
 
-        delete = self._gtk.ButtonImage("delete", style="color3")
+        delete = self._gtk.Button("delete", style="color3")
         delete.connect("clicked", self.remove_wifi_network, ssid)
         delete.set_size_request(60, 0)
         delete.set_hexpand(False)
@@ -251,10 +251,6 @@ class NetworkPanel(ScreenPanel):
                 del self.labels[i]
         self.show_add = False
 
-    @staticmethod
-    def close_dialog(widget, response_id):
-        widget.destroy()
-
     def connected_callback(self, ssid, prev_ssid):
         logging.info("Now connected to a new network")
         if ssid is not None:
@@ -293,7 +289,7 @@ class NetworkPanel(ScreenPanel):
         self.labels['connecting_info'].set_halign(Gtk.Align.START)
         self.labels['connecting_info'].set_valign(Gtk.Align.START)
         scroll.add(self.labels['connecting_info'])
-        self._gtk.Dialog(self._screen, buttons, scroll, self.close_dialog)
+        self._gtk.Dialog(self._screen, buttons, scroll, self._gtk.remove_dialog)
         self._screen.show_all()
 
         if ssid in list(self.networks):
@@ -341,7 +337,7 @@ class NetworkPanel(ScreenPanel):
         if "add_network" in self.labels:
             del self.labels['add_network']
 
-        label = self._gtk.Label(_("PSK for") + f' ssid')
+        label = self._gtk.Label(_("PSK for") + ' ssid')
         label.set_hexpand(False)
         self.labels['network_psk'] = Gtk.Entry()
         self.labels['network_psk'].set_text('')
@@ -350,7 +346,7 @@ class NetworkPanel(ScreenPanel):
         self.labels['network_psk'].connect("focus-in-event", self._show_keyboard)
         self.labels['network_psk'].grab_focus_without_selecting()
 
-        save = self._gtk.ButtonImage("sd", _("Save"), "color3")
+        save = self._gtk.Button("sd", _("Save"), "color3")
         save.set_hexpand(False)
         save.connect("clicked", self.add_new_network, ssid, True)
 
@@ -401,7 +397,7 @@ class NetworkPanel(ScreenPanel):
                 ipv4 = f"<b>IPv4:</b> {ifadd[netifaces.AF_INET][0]['addr']} "
             if netifaces.AF_INET6 in ifadd and len(ifadd[netifaces.AF_INET6]) > 0:
                 ipv6 = f"<b>IPv6:</b> {ifadd[netifaces.AF_INET6][0]['addr'].split('%')[0]} "
-            info = f'<b>' + _("Hostname") + f':</b> {hostname}\n{ipv4}\n{ipv6}\n'
+            info = '<b>' + _("Hostname") + f':</b> {hostname}\n{ipv4}\n{ipv6}\n'
         elif "psk" in netinfo:
             info = _("Password saved")
         if "encryption" in netinfo:
@@ -431,7 +427,7 @@ class NetworkPanel(ScreenPanel):
         connected = (
             f'<b>{self.interface}</b>\n\n'
             f'<small><b>' + _("Connected") + f'</b></small>\n'
-            f'<b>' + _("Hostname") + f':</b> {hostname}\n'
+            + '<b>' + _("Hostname") + f':</b> {hostname}\n'
             f'{ipv4}\n'
             f'{ipv6}\n'
         )

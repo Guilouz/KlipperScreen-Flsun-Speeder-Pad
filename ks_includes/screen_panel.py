@@ -14,7 +14,7 @@ class ScreenPanel:
     _gtk = None
     ks_printer_cfg = None
 
-    def __init__(self, screen, title, back=True):
+    def __init__(self, screen, title):
         self.menu = None
         ScreenPanel._screen = screen
         ScreenPanel._config = screen._config
@@ -33,6 +33,12 @@ class ScreenPanel:
         self.content.set_hexpand(True)
         self.content.set_vexpand(True)
         self._show_heater_power = self._config.get_main_config().getboolean('show_heater_power', False)
+        if self._gtk.font_size_type == "extralarge":
+            self.bts = 1
+        elif self._gtk.font_size_type == "large":
+            self.bts = .7
+        else:
+            self.bts = .5
 
     def emergency_stop(self, widget):
         if self._config.get_main_config().getboolean('confirm_estop', False):
@@ -40,12 +46,6 @@ class ScreenPanel:
                                               "printer.emergency_stop")
         else:
             self._screen._ws.klippy.emergency_stop()
-
-    def get(self):
-        return self.layout
-
-    def get_content(self):
-        return self.content
 
     def get_file_image(self, filename, width=None, height=None, small=False):
         if not self._files.has_thumbnail(filename):
@@ -61,25 +61,13 @@ class ScreenPanel:
             return self._gtk.PixbufFromHttp(loc[1], width, height)
         return None
 
-    def get_title(self):
-        return self.title
-
     def menu_item_clicked(self, widget, panel, item):
-        self._screen.show_panel(f'{self._screen._cur_panels[-1]}_{panel}', item['panel'], item['name'], 1, False)
-
-    def menu_return(self, widget, home=False):
-        if home is False:
-            self._screen._menu_go_back()
-            return
-        self._screen._menu_go_home()
-
-    def set_title(self, title):
-        self.title = title
+        self._screen.show_panel(panel, item['panel'], item['name'], 1, False)
 
     def show_all(self):
         self._screen.show_all()
 
-    def load_menu(self, widget, name):
+    def load_menu(self, widget, name, title=None):
         if f"{name}_menu" not in self.labels:
             return
 
@@ -89,12 +77,14 @@ class ScreenPanel:
         self.menu.append(f'{name}_menu')
         self.content.add(self.labels[self.menu[-1]])
         self.content.show_all()
+        if title:
+            self._screen.base_panel.set_title(f"{self.title} | {title}")
 
     def unload_menu(self, widget=None):
         logging.debug(f"self.menu: {self.menu}")
         if len(self.menu) <= 1 or self.menu[-2] not in self.labels:
             return
-
+        self._screen.base_panel.set_title(self._screen.panels[self._screen._cur_panels[-1]].title)
         self.menu.pop()
         for child in self.content.get_children():
             self.content.remove(child)

@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "No mesh has been loaded"
 msgstr ""
 
@@ -207,9 +210,6 @@ msgstr "Kalibrálva! Mentsd el a konfigurációt, hogy az állandó legyen"
 
 msgid "Calibrating"
 msgstr "Kalibrálás"
-
-msgid "Calibrating..."
-msgstr "Kalibrálás..."
 
 msgid "Can't set above the maximum:"
 msgstr "Nem állítható a maximum fölé:"
@@ -658,10 +658,6 @@ msgstr "Visszahúzási sebesség"
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "Újra #%s"
-
 msgid "Retrying"
 msgstr "Újrapróbálkozás"
 
@@ -812,23 +808,11 @@ msgstr "Frissítés"
 msgid "Uploaded"
 msgstr "Feltöltve"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY Mozgási seb. (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr "XY Sebesség (mm/s)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Z Kalibrálás"
@@ -844,12 +828,6 @@ msgstr "Z Dőlés"
 
 msgid "Z offset:"
 msgstr "Z eltolás:"
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

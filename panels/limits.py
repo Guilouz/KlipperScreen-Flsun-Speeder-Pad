@@ -14,8 +14,8 @@ def create_panel(*args):
 
 class LimitsPanel(ScreenPanel):
 
-    def __init__(self, screen, title, back=True):
-        super().__init__(screen, title, back)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.limits = {}
         self.options = None
         self.values = {}
@@ -94,7 +94,7 @@ class LimitsPanel(ScreenPanel):
         scale.connect("button-release-event", self.set_opt_value, option)
         self.values[option] = value
 
-        reset = self._gtk.ButtonImage("refresh", style="color1")
+        reset = self._gtk.Button("refresh", style="color1")
         reset.connect("clicked", self.reset_value, option)
         reset.set_hexpand(False)
 

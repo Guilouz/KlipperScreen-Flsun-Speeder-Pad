@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "No mesh has been loaded"
 msgstr ""
 
@@ -207,9 +210,6 @@ msgstr "Kalibreret, gem konfiguration for at gøre den permanent"
 
 msgid "Calibrating"
 msgstr "Kalibrerer"
-
-msgid "Calibrating..."
-msgstr "Kalibrerer..."
 
 msgid "Can't set above the maximum:"
 msgstr "Kan ikke indstilles over maksimum:"
@@ -656,10 +656,6 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "Prøv igen #%s"
-
 msgid "Retrying"
 msgstr ""
 
@@ -810,23 +806,11 @@ msgstr "Opdatering"
 msgid "Uploaded"
 msgstr "Uploadet"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY Flyt hastighed (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr "XY Hastighed (mm/s)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Kalibrér Z"
@@ -842,12 +826,6 @@ msgstr "Z-tilt"
 
 msgid "Z offset:"
 msgstr ""
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

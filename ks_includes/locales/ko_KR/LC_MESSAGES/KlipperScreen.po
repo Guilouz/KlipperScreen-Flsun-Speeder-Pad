@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2\n"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "No mesh has been loaded"
 msgstr ""
 
@@ -207,9 +210,6 @@ msgstr "교정됨, 설정을 저장합니다"
 
 msgid "Calibrating"
 msgstr "교정 중"
-
-msgid "Calibrating..."
-msgstr "교정 중.."
 
 msgid "Can't set above the maximum:"
 msgstr "최대 값을 초과하는 설정은 할 수 없습니다:"
@@ -655,10 +655,6 @@ msgstr "퇴출 속도"
 msgid "Retry"
 msgstr ""
 
-#, python-format
-msgid "Retry #%s"
-msgstr "재시도 #%s"
-
 msgid "Retrying"
 msgstr ""
 
@@ -809,23 +805,11 @@ msgstr "업데이트 중.."
 msgid "Uploaded"
 msgstr "업로드됨"
 
-msgid "X+"
-msgstr "X+"
-
-msgid "X-"
-msgstr "X-"
-
 msgid "XY Move Speed (mm/s)"
 msgstr "XY 이동 속도 (mm/s)"
 
 msgid "XY Speed (mm/s)"
 msgstr "XY 속도 (mm/s)"
-
-msgid "Y+"
-msgstr "Y+"
-
-msgid "Y-"
-msgstr "Y-"
 
 msgid "Z Calibrate"
 msgstr "Z 옵셋 교정"
@@ -841,12 +825,6 @@ msgstr "Z 기울기"
 
 msgid "Z offset:"
 msgstr "Z 옵셋:"
-
-msgid "Z+"
-msgstr "Z+"
-
-msgid "Z-"
-msgstr "Z-"
 
 msgid "commit"
 msgid_plural "commits"

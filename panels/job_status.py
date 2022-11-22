@@ -18,8 +18,8 @@ def create_panel(*args):
 
 
 class JobStatusPanel(ScreenPanel):
-    def __init__(self, screen, title, back=False):
-        super().__init__(screen, title, False)
+    def __init__(self, screen, title):
+        super().__init__(screen, title)
         self.extrusion_button = None
         self.elapsed_button = None
         self.left_button = None
@@ -48,7 +48,6 @@ class JobStatusPanel(ScreenPanel):
         self.progress = self.zoffset = self.flowrate = self.vel = 0
         self.main_status_displayed = True
         self.velstore = self.flowstore = []
-        self.bt_scale = 1 if self._gtk.font_size_type == "extralarge" else .6
 
         data = ['pos_x', 'pos_y', 'pos_z', 'time_left', 'duration', 'slicer_time', 'file_time',
                 'filament_time', 'est_time', 'speed_factor', 'req_speed', 'max_accel', 'extrude_factor', 'zoffset',
@@ -152,8 +151,8 @@ class JobStatusPanel(ScreenPanel):
         if self._screen.printer.get_tools():
             for i, extruder in enumerate(self._printer.get_tools()):
                 self.labels[extruder] = Gtk.Label("-")
-                self.extruder_button[extruder] = self._gtk.ButtonImage(f"extruder-{i}", None, None, self.bt_scale,
-                                                                       Gtk.PositionType.LEFT)
+                self.extruder_button[extruder] = self._gtk.Button(f"extruder-{i}", "", None, self.bts,
+                                                                  Gtk.PositionType.LEFT)
                 self.extruder_button[extruder].set_label(self.labels[extruder].get_text())
                 self.extruder_button[extruder].connect("clicked", self.menu_item_clicked, "temperature",
                                                        {"panel": "temperature", "name": _("Temperature")})
@@ -165,8 +164,7 @@ class JobStatusPanel(ScreenPanel):
             self.current_extruder = None
         self.heater_button = {}
         if self._printer.has_heated_bed():
-            self.heater_button['heater_bed'] = self._gtk.ButtonImage("bed", None, None, self.bt_scale,
-                                                                     Gtk.PositionType.LEFT)
+            self.heater_button['heater_bed'] = self._gtk.Button("bed", "", None, self.bts, Gtk.PositionType.LEFT)
             self.labels['heater_bed'] = Gtk.Label("-")
             self.heater_button['heater_bed'].set_label(self.labels['heater_bed'].get_text())
             self.heater_button['heater_bed'].connect("clicked", self.menu_item_clicked, "temperature",
@@ -178,8 +176,7 @@ class JobStatusPanel(ScreenPanel):
             if n >= nlimit:
                 break
             if device.startswith("heater_generic"):
-                self.heater_button[device] = self._gtk.ButtonImage("heater", None, None, self.bt_scale,
-                                                                   Gtk.PositionType.LEFT)
+                self.heater_button[device] = self._gtk.Button("heater", "", None, self.bts, Gtk.PositionType.LEFT, 1)
                 self.labels[device] = Gtk.Label("-")
                 self.heater_button[device].set_label(self.labels[device].get_text())
                 self.heater_button[device].connect("clicked", self.menu_item_clicked, "temperature",
@@ -203,8 +200,8 @@ class JobStatusPanel(ScreenPanel):
                                     nlimit += 1
                                 if n >= nlimit:
                                     break
-                                self.heater_button[device] = self._gtk.ButtonImage("heat-up", None, None, self.bt_scale,
-                                                                                   Gtk.PositionType.LEFT)
+                                self.heater_button[device] = self._gtk.Button("heat-up", "", None, self.bts,
+                                                                              Gtk.PositionType.LEFT, 1)
                                 self.labels[device] = Gtk.Label("-")
                                 self.heater_button[device].set_label(self.labels[device].get_text())
                                 self.heater_button[device].connect("clicked", self.menu_item_clicked, "temperature",
@@ -214,41 +211,38 @@ class JobStatusPanel(ScreenPanel):
                                 n += 1
                                 break
 
-        self.z_button = self._gtk.ButtonImage("home-z", None, None, self.bt_scale, Gtk.PositionType.LEFT)
+        self.z_button = self._gtk.Button("home-z", "", None, self.bts, Gtk.PositionType.LEFT, 1)
         self.z_button.set_label(self.labels['pos_z'].get_text())
         self.z_button.connect("clicked", self.create_move_grid)
         self.z_button.set_halign(Gtk.Align.START)
 
-        self.speed_button = self._gtk.ButtonImage("speed+", None, None, self.bt_scale, Gtk.PositionType.LEFT)
+        self.speed_button = self._gtk.Button("speed+", "", None, self.bts, Gtk.PositionType.LEFT, 1)
         self.speed_button.set_label(self.labels['speed_factor'].get_text())
         self.speed_button.connect("clicked", self.create_move_grid)
         self.speed_button.set_halign(Gtk.Align.START)
 
-        self.extrusion_button = self._gtk.ButtonImage("extrude", None, None, self.bt_scale, Gtk.PositionType.LEFT)
+        self.extrusion_button = self._gtk.Button("extrude", "", None, self.bts, Gtk.PositionType.LEFT, 1)
         self.extrusion_button.set_label(self.labels['extrude_factor'].get_text())
         self.extrusion_button.connect("clicked", self.create_extrusion_grid)
         self.extrusion_button.set_halign(Gtk.Align.START)
 
-        self.fan_button = self._gtk.ButtonImage("fan", None, None, self.bt_scale, Gtk.PositionType.LEFT)
+        self.fan_button = self._gtk.Button("fan", "", None, self.bts, Gtk.PositionType.LEFT, 1)
         self.fan_button.set_label(self.labels['fan'].get_text())
         self.fan_button.connect("clicked", self.menu_item_clicked, "fan", {"panel": "fan", "name": _("Fan")})
         self.fan_button.set_halign(Gtk.Align.START)
 
         elapsed_label = self.labels['elapsed'].get_text() + "  " + self.labels['duration'].get_text()
-        self.elapsed_button = self._gtk.ButtonImage("clock", elapsed_label, None,
-                                                    self.bt_scale, Gtk.PositionType.LEFT, False)
+        self.elapsed_button = self._gtk.Button("clock", elapsed_label, None, self.bts, Gtk.PositionType.LEFT, 1)
         self.elapsed_button.connect("clicked", self.create_time_grid)
         self.elapsed_button.set_halign(Gtk.Align.START)
 
         remaining_label = self.labels['left'].get_text() + "  " + self.labels['time_left'].get_text()
-        self.left_button = self._gtk.ButtonImage("hourglass", remaining_label,
-                                                 None, self.bt_scale, Gtk.PositionType.LEFT, False)
+        self.left_button = self._gtk.Button("hourglass", remaining_label, None, self.bts, Gtk.PositionType.LEFT, 1)
         self.left_button.connect("clicked", self.create_time_grid)
         self.left_button.set_halign(Gtk.Align.START)
 
         layer_label = self.labels['layer_lbl'].get_text() # Changes
-        self.layer_button = self._gtk.ButtonImage("layer", layer_label, None,
-                                                    self.bt_scale, Gtk.PositionType.LEFT, False) # Changes
+        self.layer_button = self._gtk.Button("layer", layer_label, None, self.bts, Gtk.PositionType.LEFT, 1) # Changes
         self.layer_button.connect("clicked", self.create_move_grid) # Changes
         self.layer_button.set_halign(Gtk.Align.START) # Changes
 
@@ -271,7 +265,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_extrusion_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color1", self.bt_scale, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back", None, "color1", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -296,7 +290,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_move_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color2", self.bt_scale, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back", None, "color2", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
         goback.get_style_context().add_class("printing-info")
@@ -327,7 +321,7 @@ class JobStatusPanel(ScreenPanel):
 
     def create_time_grid(self, widget=None):
         self.main_status_displayed = False
-        goback = self._gtk.ButtonImage("back", None, "color3", self.bt_scale, Gtk.PositionType.TOP, False)
+        goback = self._gtk.Button("back", None, "color3", self.bts, Gtk.PositionType.TOP, False)
         goback.connect("clicked", self.create_status_grid)
         goback.set_hexpand(False)
 
@@ -387,13 +381,14 @@ class JobStatusPanel(ScreenPanel):
     def create_buttons(self):
 
         self.buttons = {
-            'cancel': self._gtk.ButtonImage("stop", _("Cancel"), "color2"),
-            'control': self._gtk.ButtonImage("settings", _("Settings"), "color3"),
-            'fine_tune': self._gtk.ButtonImage("fine-tune", _("Fine Tuning"), "color4"),
-            'menu': self._gtk.ButtonImage("complete", _("Main Menu"), "color4"),
-            'pause': self._gtk.ButtonImage("pause", _("Pause"), "color1"),
-            'restart': self._gtk.ButtonImage("refresh", _("Reprint"), "color3"), # Changes
-            'resume': self._gtk.ButtonImage("resume", _("Resume"), "color1"),
+            'cancel': self._gtk.Button("stop", _("Cancel"), "color2"),
+            'control': self._gtk.Button("settings", _("Settings"), "color3"),
+            'fine_tune': self._gtk.Button("fine-tune", _("Fine Tuning"), "color4"),
+            'menu': self._gtk.Button("complete", _("Main Menu"), "color4"),
+            'pause': self._gtk.Button("pause", _("Pause"), "color1"),
+            'restart': self._gtk.Button("refresh", _("Reprint"), "color3"), # Changes
+            'resume': self._gtk.Button("resume", _("Resume"), "color1"),
+            'wait': self._gtk.Button("info",_("Please wait..."), "color1"), # Changes
             # Changes
             # Changes
         }
@@ -413,7 +408,7 @@ class JobStatusPanel(ScreenPanel):
     # Changes
 
     def restart(self, widget):
-        if self.filename != "none":
+        if self.state != "cancelling": # Changes
             self._screen._ws.klippy.print_start(self.filename)
             self.new_print()
 
@@ -443,17 +438,14 @@ class JobStatusPanel(ScreenPanel):
 
         self._gtk.Dialog(self._screen, buttons, label, self.cancel_confirm)
 
-    def cancel_confirm(self, widget, response_id):
-        widget.destroy()
-
+    def cancel_confirm(self, dialog, response_id):
+        self._gtk.remove_dialog(dialog)
         if response_id == Gtk.ResponseType.APPLY:
             self.menu_item_clicked(None, "exclude", {"panel": "exclude", "name": _("Exclude Object")})
             return
-
         if response_id == Gtk.ResponseType.CANCEL:
             self.enable_button("pause", "cancel")
             return
-
         logging.debug("Canceling print")
         self.set_state("cancelling")
         self.disable_button("pause", "resume", "cancel")
@@ -777,12 +769,15 @@ class JobStatusPanel(ScreenPanel):
             self.enable_button("resume", "cancel")
         else:
             #Changes
-            self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
-            self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
-
-            if self.filename is not None:
-                self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
+            if self.state == "cancelling":
+                self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
+                self.buttons['button_grid'].attach(Gtk.Label(""), 2, 0, 1, 1)
+                self.buttons['button_grid'].attach(self.buttons['wait'], 3, 0, 1, 1)
             if self.state != "cancelling":
+                self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
+                self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)
         self.show_all()
 
