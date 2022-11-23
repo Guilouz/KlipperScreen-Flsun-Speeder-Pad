@@ -391,6 +391,15 @@ class KlipperScreenConfig:
         file = os.path.join(klipper_config, self.configfile_name.lower())
         if os.path.exists(file):
             return file
+        
+        # Changes
+        klipper_config = os.path.join(os.path.expanduser("~/"), "printer_1_data", "config")
+        file = os.path.join(klipper_config, self.configfile_name)
+        if os.path.exists(file):
+            return file
+        file = os.path.join(klipper_config, self.configfile_name.lower())
+        if os.path.exists(file):
+            return file
 
         # OLD config folder
         klipper_config = os.path.join(os.path.expanduser("~/"), "klipper_config")
@@ -500,9 +509,12 @@ class KlipperScreenConfig:
         else:
             filepath = os.path.expanduser("~/")
             klipper_config = os.path.join(filepath, "printer_data", "config")
+            klipper_1_config = os.path.join(filepath, "printer_1_data", "config") # Changes
             old_klipper_config = os.path.join(filepath, "klipper_config")
             if os.path.exists(klipper_config):
                 filepath = os.path.join(klipper_config, self.configfile_name)
+            elif os.path.exists(klipper_1_config): # Changes
+                filepath = os.path.join(klipper_1_config, self.configfile_name) # Changes
             elif os.path.exists(old_klipper_config):
                 filepath = os.path.join(old_klipper_config, self.configfile_name)
             else:
