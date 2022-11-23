@@ -80,7 +80,6 @@ class KlipperScreen(Gtk.Window):
     printer = None
     subscriptions = []
     updating = False
-    update_queue = []
     _ws = None
     screensaver_timeout = None
     reinit_count = 0
@@ -155,7 +154,6 @@ class KlipperScreen(Gtk.Window):
         self.connecting_to_printer = name
         if self._ws is not None and self._ws.connected:
             self._ws.close()
-            return
 
         data = {
             "moonraker_host": "127.0.0.1",
@@ -182,8 +180,7 @@ class KlipperScreen(Gtk.Window):
             "startup": self.state_startup,
             "shutdown": self.state_shutdown
         }
-        self._remove_all_panels()
-        self.printer_initializing(_("Connecting to %s") % name)
+        self.printer_initializing(_("Connecting to %s") % name, remove=True)
 
         self._ws = KlippyWebsocket(self,
                                    {
@@ -453,9 +450,6 @@ class KlipperScreen(Gtk.Window):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-    def is_updating(self):
-        return self.updating
-
     def _go_to_submenu(self, widget, name):
         logging.info(f"#### Go to submenu {name}")
         # Find current menu item
@@ -625,24 +619,14 @@ class KlipperScreen(Gtk.Window):
             self.screensaver_timeout = GLib.timeout_add_seconds(self.blanking_time, self.show_screensaver)
         return
 
-    def set_updating(self, updating=False):
-        if self.updating is True and updating is False and len(self.update_queue) > 0:
-            i = self.update_queue.pop()
-            self.update_queue = []
-            i[0]()
-        self.updating = updating
-
     def show_printer_select(self, widget=None):
         self.base_panel.show_heaters(False)
         self.show_panel("printer_select", "printer_select", _("Printer Select"), 2)
 
     def state_execute(self, callback):
-        if self.is_updating():
-            self.update_queue.append([callback])
-        else:
-            self.reinit_count = 0
-            self.init_printer()
-            callback()
+        self.reinit_count = 0
+        self.init_printer()
+        callback()
 
     def websocket_disconnected(self, msg):
         self.printer_initializing(msg, remove=True)
