@@ -7,6 +7,7 @@ import os
 import subprocess
 import pathlib
 import traceback  # noqa
+import locale
 
 import gi
 
@@ -15,6 +16,7 @@ from gi.repository import Gtk, Gdk, GLib, Pango
 from importlib import import_module
 from jinja2 import Environment
 from signal import SIGTERM
+from sys import exit
 
 from ks_includes import functions
 from ks_includes.KlippyWebsocket import KlippyWebsocket
@@ -51,10 +53,10 @@ klipperscreendir = pathlib.Path(__file__).parent.resolve()
 
 
 def set_text_direction(lang=None):
-    rtl_languages = ['he_IL']
+    rtl_languages = ['he']
     if lang is None:
         for lng in rtl_languages:
-            if os.getenv('LANG').startswith(lng):
+            if locale.getdefaultlocale()[0].startswith(lng):
                 lang = lng
                 break
     if lang in rtl_languages:
@@ -86,6 +88,11 @@ class KlipperScreen(Gtk.Window):
     max_retries = 4
 
     def __init__(self, args, version):
+        try:
+            super().__init__(title="KlipperScreen")
+        except Exception as e:
+            logging.exception(e)
+            raise RuntimeError from e
         self.blanking_time = 600
         self.use_dpms = True
         self.apiclient = None
@@ -98,10 +105,10 @@ class KlipperScreen(Gtk.Window):
         self._config = KlipperScreenConfig(configfile, self)
         self.lang_ltr = set_text_direction(self._config.get_main_config().get("language", None))
 
-        Gtk.Window.__init__(self)
         self.connect("key-press-event", self._key_press_event)
-        self.set_title("KlipperScreen")
         monitor = Gdk.Display.get_default().get_primary_monitor()
+        if monitor is None:
+            raise RuntimeError("Couldn't get default monitor")
         self.width = self._config.get_main_config().getint("width", monitor.get_geometry().width)
         self.height = self._config.get_main_config().getint("height", monitor.get_geometry().height)
         self.set_default_size(self.width, self.height)
@@ -983,8 +990,14 @@ def main():
     functions.patch_threading_excepthook()
 
     logging.info(f"KlipperScreen version: {version}")
-
-    win = KlipperScreen(args, version)
+    if not Gtk.init_check(None)[0]:
+        logging.critical("Failed to initialize Gtk")
+        raise RuntimeError
+    try:
+        win = KlipperScreen(args, version)
+    except Exception as e:
+        logging.exception("Failed to initialize window")
+        raise RuntimeError from e
     win.connect("destroy", Gtk.main_quit)
     win.show_all()
     Gtk.main()
@@ -995,3 +1008,4 @@ if __name__ == "__main__":
         main()
     except Exception as ex:
         logging.exception(f"Fatal error in main loop:\n{ex}")
+        exit(1)
