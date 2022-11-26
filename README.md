@@ -31,9 +31,19 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 ## Installation
 
+- Make sure previous installation of KlipperScreen is removed (with Kiauh).
+- In SSH, enter the following commands (one at a time) to install KlipperScreen:
+```
+sudo apt install autoconf
+git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+cd ~/KlipperScreen
+./scripts/KlipperScreen-install.sh
+```
+Note: Installation may take several minutes.
+
 - Go to your Mainsail Web interface then select the `Machine` tab.
-- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
-- Now, still on Mainsail, open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
+- Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
 
 ```
 [update_manager KlipperScreen]
@@ -58,7 +68,18 @@ install_script: scripts/KlipperScreen-install.sh
 
 ## Restoration
 
-- If you want to go back to the official version, you can simply restore the previously downloaded `moonraker.conf` file or re-edit the `[update_manager KlipperScreen]` section and click the refresh button on the `Update Manager` tile:
+- Make sure previous installation of KlipperScreen is removed (with Kiauh).
+- In SSH, enter the following commands (one at a time) to install KlipperScreen:
+```
+sudo apt install autoconf
+git clone https://github.com/jordanruthe/KlipperScreen.git
+cd ~/KlipperScreen
+./scripts/KlipperScreen-install.sh
+```
+Note: Installation may take several minutes.
+
+- Go to your Mainsail Web interface then select the `Machine` tab.
+- Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
 
 ```
 [update_manager KlipperScreen]
