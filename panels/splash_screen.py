@@ -42,7 +42,7 @@ class SplashScreenPanel(ScreenPanel):
         self.labels['actions'].set_vexpand(False)
         self.labels['actions'].set_halign(Gtk.Align.CENTER)
         self.labels['actions'].set_homogeneous(True)
-        self.labels['actions'].set_size_request(self._screen.base_panel.content.get_allocation().width, 0)
+        self.labels['actions'].set_size_request(self._gtk.get_content_width(), -1) # Changes
 
         scroll = self._gtk.ScrolledWindow()
         scroll.set_hexpand(True)
