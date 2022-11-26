@@ -71,7 +71,6 @@ install_script: scripts/KlipperScreen-install.sh
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
 ```
-sudo apt install autoconf
 git clone https://github.com/jordanruthe/KlipperScreen.git
 cd ~/KlipperScreen
 ./scripts/KlipperScreen-install.sh
