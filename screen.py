@@ -187,6 +187,7 @@ class KlipperScreen(Gtk.Window):
             "startup": self.state_startup,
             "shutdown": self.state_shutdown
         }
+        self.printer.busy_cb = self.process_busy_state
         self.printer_initializing(_("Connecting to %s") % name, remove=True)
 
         self._ws = KlippyWebsocket(self,
@@ -512,7 +513,7 @@ class KlipperScreen(Gtk.Window):
         self.remove_keyboard()
         if self._config.get_main_config().getboolean('autoclose_popups', True):
             self.close_popup_message()
-        self._remove_current_panel()
+        self._remove_current_panel(True)
 
     def _menu_go_home(self, widget=None):
         logging.info("#### Menu go home")
@@ -630,6 +631,9 @@ class KlipperScreen(Gtk.Window):
         self.base_panel.show_heaters(False)
         self.show_panel("printer_select", "printer_select", _("Printer Select"), 2)
 
+    def process_busy_state(self, busy):
+        self.process_update("notify_busy", busy)
+
     def state_execute(self, callback):
         self.reinit_count = 0
         self.init_printer()
@@ -741,9 +745,14 @@ class KlipperScreen(Gtk.Window):
                         "printer.gcode.script",
                         script
                     )
+        self.process_update(action, data)
+
+    def process_update(self, action, data):
         self.base_panel.process_update(action, data)
-        if self._cur_panels and self._cur_panels[-1] in self.subscriptions:
-            self.panels[self._cur_panels[-1]].process_update(action, data)
+        for x in self.subscriptions:
+            self.panels[x].process_update(action, data)
+        if "job_status" in self._cur_panels:
+            self.panels["job_status"].process_update(action, data)
 
     def _confirm_send_action(self, widget, text, method, params=None):
         buttons = [
@@ -960,7 +969,7 @@ class KlipperScreen(Gtk.Window):
         keyval_name = Gdk.keyval_name(event.keyval)
         if keyval_name == "Escape":
             self._menu_go_home()
-        elif keyval_name == "BackSpace" and len(self._cur_panels) > 1:
+        elif keyval_name == "BackSpace" and len(self._cur_panels) > 1 and self.keyboard is None:
             self.base_panel.back()
 
 

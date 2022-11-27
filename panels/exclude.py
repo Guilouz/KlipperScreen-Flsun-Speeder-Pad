@@ -22,7 +22,7 @@ class ExcludeObjectPanel(ScreenPanel):
         self.object_list.set_valign(Gtk.Align.CENTER)
         self.object_list.set_halign(Gtk.Align.START)
         self.buttons = {}
-        self.current_object = self._gtk.Button("delete", "", scale=.66, position=Gtk.PositionType.LEFT, lines=1) # Changes
+        self.current_object = self._gtk.Button("delete", "", scale=self.bts, position=Gtk.PositionType.LEFT, lines=1) # Changes
         self.current_object.connect("clicked", self.exclude_current)
         self.current_object.set_vexpand(False)
         self.excluded_objects = self._printer.get_stat("exclude_object", "excluded_objects")
@@ -47,7 +47,7 @@ class ExcludeObjectPanel(ScreenPanel):
             if self._screen.vertical_mode:
                 grid.attach(self.labels['map'], 0, 2, 2, 1)
                 grid.attach(scroll, 0, 3, 2, 1)
-                scroll.set_size_request(self._screen.width, -1)
+                scroll.set_size_request(self._gtk.get_content_width(), -1)
             else:
                 grid.attach(self.labels['map'], 0, 2, 1, 1)
                 grid.attach(scroll, 1, 2, 1, 1)

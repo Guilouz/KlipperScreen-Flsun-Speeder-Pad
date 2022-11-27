@@ -19,10 +19,7 @@ button:active {
 }
 
 .button_active {
-    background-color: rgba(0,0,0,0);
-    border-color: #d81549;
-    border-style: dashed;
-    border-width: .25em;
+    background-color: rgba(0,0,0,0.5);
     border-radius: 1em;
 }
 
@@ -209,10 +206,6 @@ popover button {
 
 .printing-status {
     color: #e2e2e2;
-}
-
-.printing-progress-bar {
-    color: #006064;
 }
 
 .printing-progress-text {

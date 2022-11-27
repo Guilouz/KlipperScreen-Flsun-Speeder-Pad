@@ -59,13 +59,14 @@ class KlippyGtk:
         return self.action_bar_height
 
     def get_content_width(self):
+        if self.screen.vertical_mode:
+            return self.width
         return self.width - self.action_bar_width
 
     def get_content_height(self):
         if self.screen.vertical_mode:
             return self.height - self.titlebar_height - self.action_bar_height
-        else:
-            return self.height - self.titlebar_height
+        return self.height - self.titlebar_height
 
     def get_font_size(self):
         return self.font_size

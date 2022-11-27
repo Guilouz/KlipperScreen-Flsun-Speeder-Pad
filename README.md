@@ -189,6 +189,7 @@ gcode:
 
 ## Changelog
 
+- 27/11/2022 : Latest KlipperScreen commits / Improvements
 - 24/11/2022 : Latest KlipperScreen commits
 - 23/11/2022 : Latest KlipperScreen commits / Fixed Reprint button when print is cancelling
 - 21/11/2022 : Latest KlipperScreen commits

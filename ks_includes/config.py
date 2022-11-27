@@ -123,7 +123,7 @@ class KlipperScreenConfig:
                 if locale.getdefaultlocale()[0].startswith(language):
                     logging.debug("Using system lang")
                     lang = language
-        if lang not in self.lang_list:
+        if lang is not None and lang not in self.lang_list:
             # try to match a parent
             for language in self.lang_list:
                 if lang.startswith(language):
@@ -392,7 +392,7 @@ class KlipperScreenConfig:
         file = os.path.join(klipper_config, self.configfile_name.lower())
         if os.path.exists(file):
             return file
-        
+
         # Changes
         klipper_config = os.path.join(os.path.expanduser("~/"), "printer_1_data", "config")
         file = os.path.join(klipper_config, self.configfile_name)

@@ -43,7 +43,7 @@ class BasePanel(ScreenPanel):
             "panel": "gcode_macros"
         })
 
-        self.control['estop'] = self._gtk.Button('emergency', scale=0.8) # Changes)
+        self.control['estop'] = self._gtk.Button('emergency', scale=0.8) # Changes
         self.control['estop'].connect("clicked", self.emergency_stop)
 
         # Any action bar button should close the keyboard
@@ -55,11 +55,10 @@ class BasePanel(ScreenPanel):
         if self._screen.vertical_mode:
             self.action_bar.set_hexpand(True)
             self.action_bar.set_vexpand(False)
-            self.action_bar.set_size_request(0, self._gtk.get_action_bar_height())
         else:
             self.action_bar.set_hexpand(False)
             self.action_bar.set_vexpand(True)
-            self.action_bar.set_size_request(self._gtk.get_action_bar_width(), 0)
+        self.action_bar.set_size_request(self._gtk.get_action_bar_width(), self._gtk.get_action_bar_height())
 
         self.action_bar.get_style_context().add_class('action_bar')
         self.action_bar.add(self.control['back'])
@@ -88,7 +87,7 @@ class BasePanel(ScreenPanel):
         self.control['time_box'].pack_end(self.control['time'], True, True, 20) # Changes
 
         self.titlebar = Gtk.Box(spacing=5)
-        self.titlebar.set_size_request(0, self._gtk.get_titlebar_height())
+        self.titlebar.set_size_request(self._gtk.get_content_width(), self._gtk.get_titlebar_height())
         self.titlebar.set_valign(Gtk.Align.CENTER)
         self.titlebar.add(self.control['temp_box'])
         self.titlebar.add(self.titlelbl)
@@ -211,9 +210,29 @@ class BasePanel(ScreenPanel):
             self._screen._menu_go_back()
 
     def process_update(self, action, data):
+        if action == "notify_update_response":
+            if self.update_dialog is None:
+                self.show_update_dialog()
+            with contextlib.suppress(KeyError):
+                self.labels['update_progress'].set_text(
+                    f"{self.labels['update_progress'].get_text().strip()}\n"
+                    f"{data['message']}\n")
+            with contextlib.suppress(KeyError):
+                if data['complete']:
+                    logging.info("Update complete")
+                    if self.update_dialog is not None:
+                        try:
+                            self.update_dialog.set_response_sensitive(Gtk.ResponseType.OK, True)
+                            self.update_dialog.get_widget_for_response(Gtk.ResponseType.OK).show()
+                            return
+                        except AttributeError:
+                            logging.error("error trying to show the updater button the dialog might be closed")
+                    self._screen.updating = False
+                    for dialog in self._screen.dialogs:
+                        self._gtk.remove_dialog(dialog)
+
         if action != "notify_status_update" or self._screen.printer is None:
             return
-
         devices = self._screen.printer.get_temp_store_devices()
         if devices is not None:
             for device in devices:
@@ -313,3 +332,37 @@ class BasePanel(ScreenPanel):
                 logging.info(f"Titlebar name type: {self.titlebar_name_type} items: {self.titlebar_items}")
             else:
                 self.titlebar_items = []
+
+    def show_update_dialog(self):
+        if self.update_dialog is not None:
+            return
+        button = [{"name": _("Finish"), "response": Gtk.ResponseType.OK}]
+        self.labels['update_progress'] = Gtk.Label()
+        self.labels['update_progress'].set_halign(Gtk.Align.START)
+        self.labels['update_progress'].set_valign(Gtk.Align.START)
+        self.labels['update_progress'].set_ellipsize(Pango.EllipsizeMode.END)
+        self.labels['update_scroll'] = self._gtk.ScrolledWindow()
+        self.labels['update_scroll'].set_property("overlay-scrolling", True)
+        self.labels['update_scroll'].add(self.labels['update_progress'])
+        self.labels['update_scroll'].connect("size-allocate", self._autoscroll)
+        dialog = self._gtk.Dialog(self._screen, button, self.labels['update_scroll'], self.finish_updating)
+        dialog.connect("delete-event", self.close_update_dialog)
+        dialog.set_response_sensitive(Gtk.ResponseType.OK, False)
+        dialog.get_widget_for_response(Gtk.ResponseType.OK).hide()
+        self.update_dialog = dialog
+        self._screen.updating = True
+
+    def finish_updating(self, dialog, response_id):
+        if response_id != Gtk.ResponseType.OK:
+            return
+        logging.info("Finishing update")
+        self._screen.updating = False
+        self._gtk.remove_dialog(dialog)
+        self._screen._menu_go_home()
+
+    def close_update_dialog(self, *args):
+        logging.info("Closing update dialog")
+        if self.update_dialog in self._screen.dialogs:
+            self._screen.dialogs.remove(self.update_dialog)
+        self.update_dialog = None
+        self._screen._menu_go_home()

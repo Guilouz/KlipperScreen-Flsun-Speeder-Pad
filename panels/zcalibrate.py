@@ -23,6 +23,8 @@ class ZCalibratePanel(ScreenPanel):
 
         grid = self._gtk.HomogeneousGrid()
         grid.set_row_homogeneous(False)
+        offset = self._screen.printer.get_stat("gcode_move", "homing_origin")
+        offset = float(offset[2]) if offset else 0
         self.labels['start'] = self._gtk.Button('arrow-down', _("Move Z0"), 'color1')
         script = {"script": "MOVE_TO_Z0"}
         self.labels['start'].connect("clicked", self._screen._confirm_send_action,
@@ -32,8 +34,8 @@ class ZCalibratePanel(ScreenPanel):
         self.labels['home'].connect("clicked", self.go_to_home, "home")
         self.labels['z+'] = self._gtk.Button("z-farther", _("Raise Nozzle"), "color1")  
         self.labels['z+'].connect("clicked", self.change_babystepping, "+")
-        self.labels['zoffset'] = self._gtk.Button("refresh", " Z-Offset: 0.00" + _("mm"),
-                                                           "color1", .6, Gtk.PositionType.LEFT, 1)
+        self.labels['zoffset'] = self._gtk.Button("refresh", f' Z-Offset: {offset:.2f}' + _("mm"),
+                                                  "color1", self.bts, Gtk.PositionType.LEFT, 1)
         self.labels['zoffset'].connect("clicked", self.change_babystepping, "reset")
         self.labels['z-'] = self._gtk.Button("z-closer", _("Lower Nozzle"), "color1")
         self.labels['z-'].connect("clicked", self.change_babystepping, "-")
@@ -56,7 +58,7 @@ class ZCalibratePanel(ScreenPanel):
             ctx = self.labels[i].get_style_context()
             if j == 0:
                 ctx.add_class("distbutton_top")
-            elif j == len(self.bs_deltas)-1:
+            elif j == len(self.bs_deltas) - 1:
                 ctx.add_class("distbutton_bottom")
             else:
                 ctx.add_class("distbutton")
@@ -77,8 +79,12 @@ class ZCalibratePanel(ScreenPanel):
 
     def change_babystepping(self, widget, direction):
         if direction == "reset":
-            self.labels['zoffset'].set_label(' Z-Offset: 0.00mm')
-            self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0 MOVE=1")
+            homed_axes = self._screen.printer.get_stat("toolhead", "homed_axes")
+            if homed_axes == "xyz":
+                self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0 MOVE=1")
+                self.labels['zoffset'].set_label(' Z-Offset: 0.00mm')
+            else:
+                self._screen.show_popup_message(_("Home is required before resetting Z-Offset!"))
         elif direction == "+":
             gcode = "SET_GCODE_OFFSET Z_ADJUST=%s MOVE=1" % self.bs_delta
         else:

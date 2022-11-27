@@ -19,29 +19,30 @@ class BedMeshPanel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.clear = None
-        self.profiles = {}
         self.show_create = False
         self.active_mesh = None
-        addprofile = self._gtk.Button("increase", " " + _("Add profile"), "color1", .66, Gtk.PositionType.LEFT, 1)
-        addprofile.connect("clicked", self.show_create_profile)
-        addprofile.set_hexpand(True)
-        self.clear = self._gtk.Button("cancel", " " + _("Clear"), "color2", .66, Gtk.PositionType.LEFT, 1)
-        self.clear.connect("clicked", self.send_clear_mesh)
-        self.clear.set_hexpand(True)
+        self.profiles = {}
+        self.buttons = {
+            'add': self._gtk.Button("increase", " " + _("Add profile"), "color1", .66, Gtk.PositionType.LEFT, 1),
+            'calib': self._gtk.Button("refresh", " " + _("Bed Level"), "color3", .66, Gtk.PositionType.LEFT, 1), # Changes
+            'clear': self._gtk.Button("cancel", " " + _("Clear"), "color2", .66, Gtk.PositionType.LEFT, 1),
+        }
+        self.buttons['add'].connect("clicked", self.show_create_profile)
+        self.buttons['add'].set_hexpand(True)
+        self.buttons['clear'].connect("clicked", self.send_clear_mesh)
+        self.buttons['clear'].set_hexpand(True)
         script = {"script": "BED_LEVELING"} # Changes
-        calibrate = self._gtk.Button("refresh", " " + _("Bed Level"), "color3", .66, Gtk.PositionType.LEFT, 1) # Changes
-        calibrate.connect("clicked", self._screen._confirm_send_action,
+        self.buttons['calib'].connect("clicked", self._screen._confirm_send_action,
                                           _("Please plug in leveling switch before auto-leveling."),
                                           "printer.gcode.script", script) # Changes
-        calibrate.set_hexpand(True)
+        self.buttons['calib'].set_hexpand(True)
 
         topbar = Gtk.Box(spacing=5)
         topbar.set_hexpand(True)
         topbar.set_vexpand(False)
-        topbar.add(addprofile)
-        topbar.add(self.clear)
-        topbar.add(calibrate)
+        topbar.add(self.buttons['add'])
+        topbar.add(self.buttons['clear'])
+        topbar.add(self.buttons['calib'])
 
         # Create a grid for all profiles
         self.labels['profiles'] = Gtk.Grid()
@@ -72,6 +73,7 @@ class BedMeshPanel(ScreenPanel):
         self.load_meshes()
         with contextlib.suppress(KeyError):
             self.activate_mesh(self._screen.printer.get_stat("bed_mesh", "profile_name"))
+        self.process_busy(self._printer.busy)
 
     def activate_mesh(self, profile):
         if self.active_mesh is not None:
@@ -81,7 +83,7 @@ class BedMeshPanel(ScreenPanel):
             logging.info("Clearing active profile")
             self.active_mesh = None
             self.update_graph()
-            self.clear.set_sensitive(False)
+            self.buttons['clear'].set_sensitive(False)
             return
         if profile not in self.profiles:
             self.add_profile(profile)
@@ -92,7 +94,7 @@ class BedMeshPanel(ScreenPanel):
         self.profiles[profile]['name'].get_style_context().add_class("button_active")
         self.active_mesh = profile
         self.update_graph(profile=profile)
-        self.clear.set_sensitive(True)
+        self.buttons['clear'].set_sensitive(True)
 
     def retrieve_bm(self, profile):
         if profile is None:
@@ -185,7 +187,20 @@ class BedMeshPanel(ScreenPanel):
             if prof not in bm_profiles:
                 self.remove_profile(prof)
 
+    def process_busy(self, busy):
+        for button in self.buttons:
+            if button == 'clear':
+                self.buttons[button].set_sensitive(self.active_mesh is not None)
+                continue
+            self.buttons[button].set_sensitive((not busy))
+        for profile in self.profiles:
+            self.profiles[profile]["save"].set_sensitive((not busy))
+            self.profiles[profile]["delete"].set_sensitive((not busy))
+
     def process_update(self, action, data):
+        if action == "notify_busy":
+            self.process_busy(data)
+            return
         if action == "notify_status_update":
             with contextlib.suppress(KeyError):
                 self.activate_mesh(data['bed_mesh']['profile_name'])
@@ -216,7 +231,7 @@ class BedMeshPanel(ScreenPanel):
         if not self.profiles:
             self.active_mesh = None
             self.update_graph()
-            self.clear.set_sensitive(False)
+            self.buttons['clear'].set_sensitive(False)
 
     def show_create_profile(self, widget):
 

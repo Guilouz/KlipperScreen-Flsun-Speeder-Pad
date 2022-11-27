@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
+msgid "Home is required before resetting Z-Offset!"
+msgstr ""
+
 msgid "Please wait..."
 msgstr ""
 
