@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-27 17:28+0100\n"
+"PO-Revision-Date: 2022-12-01 22:19+0100\n"
 "Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "Home is required before resetting Z-Offset!"
@@ -436,6 +436,9 @@ msgstr "ממשק"
 msgid "Invalid"
 msgstr "לא חוקי"
 
+msgid "Invalid password"
+msgstr ""
+
 msgid "Invert X"
 msgstr "הפוך את X"
 
@@ -462,6 +465,9 @@ msgstr "קליפר מנסה לעלות"
 
 msgid "Klipper will reboot"
 msgstr "קליפר יבצע אתחול"
+
+msgid "KlipperScreen will reboot"
+msgstr ""
 
 msgid "Language"
 msgstr "שפה"
@@ -629,11 +635,17 @@ msgstr "פרוב אוף-סט"
 msgid "Profile Name:"
 msgstr "שם פרופיל:"
 
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr ""
+
 msgid "Quad Gantry Level"
 msgstr "יישור הגנטרי הריבועי"
 
 msgid "Raise Nozzle"
 msgstr "הגבה דיזה"
+
+msgid "Recover"
+msgstr ""
 
 msgid "Recover Hard"
 msgstr "שחזור מלא"
@@ -739,9 +751,6 @@ msgstr ""
 msgid "Small"
 msgstr "קטן"
 
-msgid "Sort:"
-msgstr "מיין"
-
 msgid "Speed (mm/s)"
 msgstr "מהירות (מ\"מ/שניות)"
 
@@ -783,10 +792,6 @@ msgstr "טמפ' (°C)"
 
 msgid "Temperature"
 msgstr "טמפרטורה"
-
-#, python-format
-msgid "To apply %s KlipperScreen needs to be restarted"
-msgstr "כדי ליישם %s צריך להפעיל מחדש את KlipperScreen"
 
 msgid "Total:"
 msgstr "סך הכל:"
@@ -867,3 +872,6 @@ msgstr "מ\"מ/ש"
 
 msgid "mm/s²"
 msgstr "mm/s²"
+
+msgid "mm³/s"
+msgstr ""

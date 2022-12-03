@@ -171,6 +171,7 @@ class NetworkPanel(ScreenPanel):
         delete.set_halign(Gtk.Align.END)
 
         network = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        network.get_style_context().add_class("frame-item")
         network.set_hexpand(True)
         network.set_vexpand(False)
 
@@ -182,11 +183,7 @@ class NetworkPanel(ScreenPanel):
         else:
             buttons.pack_end(connect, False, False, 0)
         network.add(buttons)
-
-        frame = Gtk.Frame()
-        frame.get_style_context().add_class("frame-item")
-        self.networks[ssid] = frame
-        frame.add(network)
+        self.networks[ssid] = network
 
         nets = sorted(list(self.networks), reverse=False)
         if connected_ssid in nets:
@@ -289,7 +286,8 @@ class NetworkPanel(ScreenPanel):
         self.labels['connecting_info'].set_halign(Gtk.Align.START)
         self.labels['connecting_info'].set_valign(Gtk.Align.START)
         scroll.add(self.labels['connecting_info'])
-        self._gtk.Dialog(self._screen, buttons, scroll, self._gtk.remove_dialog)
+        dialog = self._gtk.Dialog(self._screen, buttons, scroll, self._gtk.remove_dialog)
+        dialog.set_title(_("Starting WiFi Association"))
         self._screen.show_all()
 
         if ssid in list(self.networks):

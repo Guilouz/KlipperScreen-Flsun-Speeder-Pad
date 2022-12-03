@@ -23,9 +23,9 @@ class BedMeshPanel(ScreenPanel):
         self.active_mesh = None
         self.profiles = {}
         self.buttons = {
-            'add': self._gtk.Button("increase", " " + _("Add profile"), "color1", .66, Gtk.PositionType.LEFT, 1),
-            'calib': self._gtk.Button("refresh", " " + _("Bed Level"), "color3", .66, Gtk.PositionType.LEFT, 1), # Changes
-            'clear': self._gtk.Button("cancel", " " + _("Clear"), "color2", .66, Gtk.PositionType.LEFT, 1),
+            'add': self._gtk.Button("increase", " " + _("Add profile"), "color1", self.bts, Gtk.PositionType.LEFT, 1),
+            'calib': self._gtk.Button("refresh", " " + _("Bed Level"), "color3", self.bts, Gtk.PositionType.LEFT, 1), # Changes
+            'clear': self._gtk.Button("cancel", " " + _("Clear"), "color2", self.bts, Gtk.PositionType.LEFT, 1),
         }
         self.buttons['add'].connect("clicked", self.show_create_profile)
         self.buttons['add'].set_hexpand(True)
@@ -46,7 +46,6 @@ class BedMeshPanel(ScreenPanel):
 
         # Create a grid for all profiles
         self.labels['profiles'] = Gtk.Grid()
-        self.labels['profiles'].get_style_context().add_class("frame-item")
         self.labels['profiles'].set_valign(Gtk.Align.CENTER)
 
         scroll = self._gtk.ScrolledWindow()
@@ -73,7 +72,6 @@ class BedMeshPanel(ScreenPanel):
         self.load_meshes()
         with contextlib.suppress(KeyError):
             self.activate_mesh(self._screen.printer.get_stat("bed_mesh", "profile_name"))
-        self.process_busy(self._printer.busy)
 
     def activate_mesh(self, profile):
         if self.active_mesh is not None:
@@ -130,8 +128,8 @@ class BedMeshPanel(ScreenPanel):
         name.connect("clicked", self.update_graph, profile)
 
         buttons = {
-            "save": self._gtk.Button("complete", None, "color4", .75),
-            "delete": self._gtk.Button("cancel", None, "color2", .75),
+            "save": self._gtk.Button("complete", None, "color4", self.bts),
+            "delete": self._gtk.Button("cancel", None, "color2", self.bts),
         }
         buttons["save"].connect("clicked", self.send_save_mesh, profile)
         buttons["delete"].connect("clicked", self.send_remove_mesh, profile)
@@ -147,17 +145,14 @@ class BedMeshPanel(ScreenPanel):
         button_box.add(buttons["delete"])
 
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        box.get_style_context().add_class("frame-item")
         box.pack_start(name, True, True, 0)
         box.pack_start(button_box, False, False, 0)
-
-        frame = Gtk.Frame()
-        frame.get_style_context().add_class("frame-item")
-        frame.add(box)
 
         self.profiles[profile] = {
             "name": name,
             "button_box": button_box,
-            "row": frame,
+            "row": box,
             "save": buttons["save"],
             "delete": buttons["delete"],
         }

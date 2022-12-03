@@ -148,7 +148,8 @@ class SystemPanel(ScreenPanel):
                     {"name": _("Recover Soft"), "response": Gtk.ResponseType.APPLY},
                     {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
                 ]
-                self._gtk.Dialog(self._screen, recoverybuttons, scroll, self.reset_confirm, program)
+                dialog = self._gtk.Dialog(self._screen, recoverybuttons, scroll, self.reset_confirm, program)
+                dialog.set_title(_("Recover"))
                 return
             else:
                 if info['version'] == info['remote_version']:
@@ -212,7 +213,8 @@ class SystemPanel(ScreenPanel):
             {"name": _("Update"), "response": Gtk.ResponseType.OK},
             {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
         ]
-        self._gtk.Dialog(self._screen, buttons, scroll, self.update_confirm, program)
+        dialog = self._gtk.Dialog(self._screen, buttons, scroll, self.update_confirm, program)
+        dialog.set_title(_("Update"))
 
     def update_confirm(self, dialog, response_id, program):
         self._gtk.remove_dialog(dialog)

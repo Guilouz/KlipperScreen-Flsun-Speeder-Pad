@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 msgid "Home is required before resetting Z-Offset!"
 msgstr ""
@@ -429,6 +429,9 @@ msgstr "Felület"
 msgid "Invalid"
 msgstr "Érvénytelen"
 
+msgid "Invalid password"
+msgstr ""
+
 msgid "Invert X"
 msgstr "Fordított X"
 
@@ -455,6 +458,9 @@ msgstr "Klipper megpróbálja elindítani"
 
 msgid "Klipper will reboot"
 msgstr "A Klipper újraindul"
+
+msgid "KlipperScreen will reboot"
+msgstr ""
 
 msgid "Language"
 msgstr "Nyelv"
@@ -622,11 +628,17 @@ msgstr "Szonda eltolás"
 msgid "Profile Name:"
 msgstr "Profil név:"
 
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr ""
+
 msgid "Quad Gantry Level"
 msgstr "Négy állású szint"
 
 msgid "Raise Nozzle"
 msgstr "Fúvóka fel"
+
+msgid "Recover"
+msgstr ""
 
 msgid "Recover Hard"
 msgstr "Hárdver visszaállítása"
@@ -732,9 +744,6 @@ msgstr "Szeletelő:"
 msgid "Small"
 msgstr "Kicsi"
 
-msgid "Sort:"
-msgstr "Fajta:"
-
 msgid "Speed (mm/s)"
 msgstr "Sebesség (mm/s)"
 
@@ -776,10 +785,6 @@ msgstr "Hőmérséklet (°C)"
 
 msgid "Temperature"
 msgstr "Hőfok"
-
-#, python-format
-msgid "To apply %s KlipperScreen needs to be restarted"
-msgstr "A %s KlipperScreen alkalmazásához újra kell indítani"
 
 msgid "Total:"
 msgstr "Teljes:"
@@ -856,3 +861,6 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
+
+msgid "mm³/s"
+msgstr ""

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-27 17:28+0100\n"
+"PO-Revision-Date: 2022-12-03 02:26+0100\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
+
+msgid "Min"
+msgstr "Min"
 
 msgid "Home is required before resetting Z-Offset!"
 msgstr "Un Home est requis avant de réinitialiser le Z-Offset !"
@@ -437,6 +440,9 @@ msgstr "Interface"
 msgid "Invalid"
 msgstr "Invalide"
 
+msgid "Invalid password"
+msgstr "Mot de passe incorrect"
+
 msgid "Invert X"
 msgstr "Inverser l'axe X"
 
@@ -463,6 +469,9 @@ msgstr "Klipper tente de démarrer"
 
 msgid "Klipper will reboot"
 msgstr "Klipper va redémarrer"
+
+msgid "KlipperScreen will reboot"
+msgstr "KlipperScreen va redémarrer"
 
 msgid "Language"
 msgstr "Langue"
@@ -630,11 +639,17 @@ msgstr "Décalage du palpeur"
 msgid "Profile Name:"
 msgstr "Nom du profil:"
 
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr "Fournissez KlipperScreen.log lorsque vous demandez de l’aide.\n"
+
 msgid "Quad Gantry Level"
 msgstr "Portique à quatre niveaux"
 
 msgid "Raise Nozzle"
 msgstr "Eloigner la buse"
+
+msgid "Recover"
+msgstr "Récupération"
 
 msgid "Recover Hard"
 msgstr "Récupération Hard"
@@ -740,9 +755,6 @@ msgstr "Slicer:"
 msgid "Small"
 msgstr "Petite"
 
-msgid "Sort:"
-msgstr "Trier:"
-
 msgid "Speed (mm/s)"
 msgstr "Vitesse (mm/s)"
 
@@ -784,10 +796,6 @@ msgstr "Temp (°C)"
 
 msgid "Temperature"
 msgstr "Températures"
-
-#, python-format
-msgid "To apply %s KlipperScreen needs to be restarted"
-msgstr "Pour appliquer %s, KlipperScreen doit être redémarré"
 
 msgid "Total:"
 msgstr "Total:"
@@ -864,3 +872,6 @@ msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"
+
+msgid "mm³/s"
+msgstr "mm³/s"

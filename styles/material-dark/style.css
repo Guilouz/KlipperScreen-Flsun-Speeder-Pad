@@ -93,11 +93,6 @@ entry {
     border-color: rgba(0,0,0,0);
 }
 
-frame {
-    color: #e2e2e2;
-    border-bottom-color: #1f1f1f;
-}
-
 label {
     color: #e2e2e2;
 }

@@ -1,21 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR Elektrickser@gmail.com, 2021
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-12-01 22:17+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: boyon\n"
 "Language-Team: \n"
-"Language: de_DE\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
 
 msgid "Home is required before resetting Z-Offset!"
@@ -128,297 +123,287 @@ msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
-msgstr "%s wird auf Version aktualisiert"
+msgstr "%s を最新にアップデートします"
 
 msgid "(default)"
-msgstr "(Standard)"
+msgstr "(デフォルト)"
 
 msgid "24 Hour Time"
-msgstr "24h-Zeit"
+msgstr "24時間表記"
 
 msgid "A FIRMWARE_RESTART may fix the issue."
-msgstr "Ein FIRMWARE_RESTART kann das Problem beheben."
+msgstr "ファームウェアの更新を行うと不具合が解決する場合があります"
 
 msgid "ADXL Not Configured"
-msgstr ""
+msgstr "ADXL が構成されていません"
 
 msgid "Abort"
-msgstr "Abbrechen"
+msgstr "中止する"
 
 msgid "Acceleration:"
-msgstr "Beschleunigung:"
+msgstr "加速度:"
 
 msgid "Accept"
-msgstr "OK"
+msgstr "承諾する"
 
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "操作"
 
 msgid "Add profile"
-msgstr ""
+msgstr "プロファイルの追加"
 
 msgid "Apply"
-msgstr ""
+msgstr "適用する"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr ""
+msgstr "エンドストップにオフセットに  %.2f を適用しますか？"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr ""
+msgstr "プローブオフセットに  %s%.2f を適用しますか？"
 
 msgid "Are you sure do you want to exclude the object?"
-msgstr ""
+msgstr "対象を除外しますか？"
 
 msgid "Are you sure you want to run Emergency Stop?"
-msgstr "Sind Sie sicher, dass Sie Not-Aus ausführen möchten?"
+msgstr "緊急停止しますか？"
 
 msgid "Are you sure you wish to cancel this print?"
-msgstr "Möchten Sie diesen Druck wirklich abbrechen?"
+msgstr "印刷を中断しますか？"
 
 msgid "Are you sure you wish to disable motors?"
-msgstr "Möchten Sie die Motoren wirklich deaktivieren?"
+msgstr "モーターの制御を無効にしますか？"
 
 msgid "Are you sure you wish to reboot the system?"
-msgstr "Möchten Sie das System wirklich neu starten?"
+msgstr "システムを再起動しますか？"
 
 msgid "Are you sure you wish to shutdown the system?"
-msgstr "Möchten Sie das System wirklich herunterfahren?"
+msgstr "システムをシャットダウンしますか？"
 
 msgid "Auto"
-msgstr "Auto"
+msgstr "自動"
 
 msgid "Auto-calibrate"
-msgstr "Automatisch kalibrieren"
+msgstr "自動校正"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "自動終了通知"
 
 msgid "Auto-scroll"
-msgstr "Auto-scroll"
+msgstr "自動スクロール"
 
 msgid "Bed Level"
-msgstr "Druckbett leveln"
+msgstr "ベッドレベル"
 
 msgid "Bed Mesh"
-msgstr "Druckbett Mesh-Level"
+msgstr "ベッドメッシュ"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "ベッドスクリュー設定:"
 
 msgid "Calibrate"
-msgstr "Höheneinstellung"
+msgstr "校正"
 
 msgid "Calibrated"
-msgstr "Kalibriert"
+msgstr "構成済み"
 
 msgid "Calibrated, save configuration to make it permanent"
-msgstr "Kalibriert, Konfiguration speichern, um sie dauerhaft zu machen"
+msgstr "校正完了しました。次回起動時以降も適用するには設定を保存してください"
 
 msgid "Calibrating"
-msgstr "Kalibrieren"
+msgstr "校正中"
 
 msgid "Can't set above the maximum:"
-msgstr "Kann nicht über dem Maximum eingestellt werden:"
+msgstr "上限値を超えて設定できません:"
 
 msgid "Cancel"
-msgstr "Abbruch"
+msgstr "キャンセル"
 
 msgid "Cancel Print"
-msgstr "Druck abbrechen"
+msgstr "印刷をキャンセルする"
 
 msgid "Cancelled"
-msgstr "Abgebrochen"
+msgstr "キャンセル済"
 
 msgid "Cancelling"
-msgstr "Wird unterbrochen"
+msgstr "キャンセル中"
 
 msgid "Cannot connect to Moonraker"
-msgstr "Es kann keine Verbindung zu Moonraker hergestellt werden"
+msgstr "Moonrakerに接続できません"
 
 msgid "Channel"
-msgstr "Kanal"
+msgstr "チャンネル"
 
 msgid "Check ADXL Wiring"
-msgstr ""
+msgstr "ADXL Wiring を検査する"
 
 msgid "Checking for updates, please wait..."
 msgstr ""
 
 msgid "Clear"
-msgstr ""
+msgstr "クリア"
 
 msgid "Close"
-msgstr "Schließen"
+msgstr "終了"
 
 msgid "Complete"
-msgstr "Fertiggestellt"
+msgstr "完了"
 
 msgid "Configuration"
-msgstr "Einstellungen"
+msgstr "設定"
 
 msgid "Confirm Emergency Stop"
-msgstr "Not-Aus bestätigen"
+msgstr "緊急停止時に確認する"
 
 msgid "Connected"
-msgstr "Verbunden"
+msgstr "接続済み"
 
 #, python-format
 msgid "Connecting to %s"
-msgstr "Verbinden zu %s"
+msgstr "%s へ接続中・・・"
 
 msgid "Console"
-msgstr "Konsole"
+msgstr "コンソール"
 
 msgid "Continue"
-msgstr "Fortsetzen"
+msgstr "継続"
 
 msgid "Cooldown"
-msgstr "Abkühlen"
+msgstr "クールダウン"
 
 msgid "Date"
-msgstr "Datum"
+msgstr "日付"
 
 msgid "Decrease"
-msgstr "Verringern"
+msgstr "減少"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "ファイルを削除しますか？"
 
 msgid "Deselect"
-msgstr "Abwählen"
+msgstr "選択解除"
 
 msgid "Disable Motors"
-msgstr "Motoren deaktivieren"
+msgstr "モーターの無効化"
 
 msgid "Disable XY"
-msgstr "Achse XY deaktivieren"
+msgstr "XY軸制御の無効化"
 
 msgid "Distance (mm)"
-msgstr "Entfernung (mm)"
+msgstr "距離(mm)"
 
 #, python-format
 msgid "Do you want to recover %s?"
-msgstr "Möchtest du zurück zu %s?"
+msgstr "元に戻しますか %s ？"
 
 msgid "Elapsed:"
-msgstr "Druckzeit:"
+msgstr "経過時間:"
 
 msgid "Error"
-msgstr "Fehler"
+msgstr "エラー"
 
 msgid "Estimated Time Method"
-msgstr "Druckzeit"
+msgstr "予定時刻"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "対象の除外"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "特大"
 
 msgid "Extrude"
-msgstr "Filament fördern"
+msgstr "吐出"
 
 msgid "Extrusion +"
-msgstr "Extrusion +"
+msgstr "吐出＋"
 
 msgid "Extrusion -"
-msgstr "Extrusion -"
+msgstr "吐出－"
 
 msgid "Failed, adjust position first"
-msgstr "Fehlgeschlagen, Position zuerst anpassen"
+msgstr "失敗時は最初に位置を調整する"
 
 msgid "Fan"
-msgstr "Lüfter"
+msgstr "ファン"
 
 msgid "Filament Used"
-msgstr "Filamentverbrauch"
+msgstr "使用済フィラメント"
 
 msgid "Filament total:"
-msgstr "Filament insgesamt:"
+msgstr "フィラメント 総量:"
 
 msgid "Filament used:"
-msgstr "Filamentverbrauch:"
+msgstr "フィラメント 使用済:"
 
 msgid "Filament:"
-msgstr "Filament:"
+msgstr "フィラメント:"
 
 msgid "File"
-msgstr "Datei"
+msgstr "ファイル"
 
 msgid "File:"
-msgstr "Datei:"
+msgstr "ファイル:"
 
 msgid "Finding ADXL"
-msgstr "ADXL finden"
+msgstr "ADXLを検索中"
 
 msgid "Fine Tuning"
-msgstr "Feintuning"
+msgstr "Fine Tuning"
 
 msgid "Finish"
-msgstr "Ziel"
+msgstr "完了"
 
 msgid "Firmware Restart"
-msgstr "Firmware Neu starten"
+msgstr "ファームウェアの再起動"
 
 msgid "Flow:"
-msgstr ""
+msgstr "流量:"
 
 msgid "Flowrate:"
-msgstr ""
+msgstr "フローレート:"
 
 msgid "Font Size"
-msgstr "Schriftgröße"
+msgstr "フォントサイズ"
 
 msgid "Full Update"
-msgstr "Voll Aktualisieren"
+msgstr "フルアップデート"
 
 msgid "Go Back"
-msgstr "Zurück"
+msgstr "戻る"
 
 msgid "Height:"
-msgstr ""
+msgstr "高さ:"
 
 msgid "Hidden"
-msgstr "Versteckt"
+msgstr "非表示"
 
 msgid "Hide"
-msgstr "Verstecken"
+msgstr "隠す"
 
 msgid "Hide sensors in Temp."
-msgstr "Sensoren in Temp ausblenden."
+msgstr "温度を非表示にする"
 
 msgid "Hide temp."
-msgstr ""
+msgstr "温度を非表示にする"
 
 msgid "Home All"
 msgstr ""
-"Alle Achsen\n"
-"zurücksetzen"
 
 msgid "Home X"
-msgstr ""
-"Achse X\n"
-"zurücksetzen"
+msgstr "Home X"
 
 msgid "Home XY"
-msgstr ""
-"Achse XY\n"
-"zurücksetzen"
+msgstr "Home XY"
 
 msgid "Home Y"
-msgstr ""
-"Achse Y\n"
-"zurücksetzen"
+msgstr "Home Y"
 
 msgid "Home Z"
-msgstr ""
-"Achse Z\n"
-"zurücksetzen"
+msgstr "Home Z"
 
 msgid "Homing"
-msgstr "Grundposition"
+msgstr "Homing"
 
 msgid "Host"
 msgstr ""
@@ -427,142 +412,142 @@ msgid "Hostname"
 msgstr "Hostname"
 
 msgid "Icon Theme"
-msgstr "Icon Theme"
+msgstr "アイコンテーマ"
 
 msgid "Increase"
-msgstr "Erhöhen"
+msgstr "増加"
 
 msgid "Initializing printer..."
-msgstr "Drucker wird initialisiert..."
+msgstr ""
 
 msgid "Input Shaper"
 msgstr ""
 
 msgid "Interface"
-msgstr "Interface"
+msgstr "インターフェース"
 
 msgid "Invalid"
-msgstr "Ungültig"
+msgstr "不正"
 
 msgid "Invalid password"
 msgstr ""
 
 msgid "Invert X"
-msgstr "Achse X invertieren"
+msgstr "X軸を反対にする"
 
 msgid "Invert Y"
-msgstr "Achse Y invertieren"
+msgstr "Y軸を反対にする"
 
 msgid "Invert Z"
-msgstr "Achse Z invertieren"
+msgstr "X軸を反対にする"
 
 msgid "Klipper Restart"
-msgstr "Klipper Neu starten"
+msgstr "Klipperを再起動する"
 
 msgid "Klipper has disconnected"
-msgstr "Klipper nicht verbunden"
+msgstr "Klipperの接続が切れました"
 
 msgid "Klipper has encountered an error."
-msgstr "Klipper hat einen Fehler festgestellt."
+msgstr "Klipperのエラーが発生しました"
 
 msgid "Klipper has shutdown"
-msgstr "Klipper abgeschaltet"
+msgstr "Klipperはシャットダウンしました"
 
 msgid "Klipper is attempting to start"
-msgstr "Klipper ist startbereit"
+msgstr "Klipperは起動中です"
 
 msgid "Klipper will reboot"
-msgstr "Klipper startet neu"
+msgstr "Klipperは再起動します"
 
 msgid "KlipperScreen will reboot"
-msgstr ""
+msgstr "KlipperScreenは再起動します"
 
 msgid "Language"
-msgstr "Sprache"
+msgstr "言語"
 
 msgid "Large"
-msgstr "Groß"
+msgstr "大"
 
 msgid "Layer:"
-msgstr ""
+msgstr "レイヤー:"
 
 msgid "Left:"
-msgstr "Restzeit:"
+msgstr "左:"
 
 msgid "Limits"
-msgstr "Grenzwerte"
+msgstr "制限"
 
 msgid "Load"
-msgstr "Laden"
+msgstr ""
 
 msgid "Lower Nozzle"
-msgstr "Düse absenken"
+msgstr "ノズルが低い"
 
 msgid "Macro shortcut on sidebar"
-msgstr "Makro Verknüpfung in Sidebar"
+msgstr "サイドバーのマクロショートカット"
 
 msgid "Macros"
-msgstr "Makros"
+msgstr "マクロ"
 
 msgid "Main Menu"
-msgstr "Hauptmenü"
+msgstr "メインメニュー"
 
 msgid "Max"
-msgstr ""
+msgstr "最大"
 
 msgid "Max Acceleration"
-msgstr "Max Beschleunigung"
+msgstr "最大加速度"
 
 msgid "Max Acceleration to Deceleration"
-msgstr "Max Verzögerung"
+msgstr "減速時の最大加速度"
 
 msgid "Max Velocity"
-msgstr "Max Geschwindigkeit"
+msgstr "最大速度"
 
 msgid "Maximum"
-msgstr ""
+msgstr "最大"
 
 msgid "Measure Both"
-msgstr ""
+msgstr "両方計測する"
 
 msgid "Measure X"
-msgstr ""
+msgstr "X軸を計測する"
 
 msgid "Measure Y"
-msgstr ""
+msgstr "Y軸を計測する"
 
 msgid "Medium"
-msgstr "Mittel"
+msgstr "中"
 
 msgid "Menu"
-msgstr "Menü"
+msgstr "メニュー"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "メッシュ較正"
 
 msgid "Modified"
-msgstr "Modifiziert"
+msgstr "変更"
 
 msgid "Moonraker: connected"
-msgstr "Moonraker: Verbunden"
+msgstr "Moonraker: 接続済"
 
 msgid "Move"
-msgstr "Bewegen"
+msgstr "移動"
 
 msgid "Move Distance (mm)"
-msgstr "Bewegungsdistanz (mm)"
+msgstr "移動距離"
 
 msgid "Name"
-msgstr "Name"
+msgstr "名称"
 
 msgid "Network"
-msgstr "Netzwerk"
+msgstr "ネットワーク"
 
 msgid "Never"
-msgstr ""
+msgstr "未"
 
 msgid "New"
-msgstr "Neu"
+msgstr "新"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -570,246 +555,245 @@ msgid ""
 msgstr ""
 
 msgid "Nothing selected"
-msgstr "Nichts ausgewählt"
+msgstr "未選択"
 
 #, python-format
 msgid "Outdated by %d"
-msgstr "Veraltet von %d"
+msgstr ""
 
 msgid "PSK for"
-msgstr "PSK für"
+msgstr ""
 
 msgid "Package will be updated"
 msgid_plural "Packages will be updated"
-msgstr[0] "Paket wird aktualisiert"
-msgstr[1] "Pakete werden aktualisiert"
+msgstr[0] ""
 
 msgid "Part Fan"
 msgstr ""
 
 msgid "Password saved"
-msgstr "Passwort gespeichert"
+msgstr "パスワードを保存しました"
 
 msgid "Pause"
-msgstr "Pause"
+msgstr "一時停止"
 
 msgid "Paused"
-msgstr "Pausiert"
+msgstr "一時停止中"
 
 msgid "Perform a full upgrade?"
-msgstr "Vollständiges Upgrade durchführen?"
+msgstr "フルアップデートしますか？"
 
 msgid "Pins"
-msgstr ""
+msgstr "Pins"
 
 msgid "Please recompile and flash the micro-controller."
-msgstr "Please recompile and flash the micro-controller."
+msgstr "マイクロコントローラーをリコンパイル＆フラッシュしてください"
 
 msgid "Power"
-msgstr "Ein"
+msgstr "電源"
 
 msgid "Power On Printer"
-msgstr "Drucker einschalten"
+msgstr "プリンター電源"
 
 msgid "Pressure Advance:"
 msgstr ""
 
 msgid "Print"
-msgstr "Druck"
+msgstr "印刷"
 
 msgid "Print Control"
-msgstr "Druck Steuerung"
+msgstr "印刷制御"
 
 msgid "Print Time"
-msgstr "Druckzeit"
+msgstr "印刷時間"
 
 msgid "Printer"
-msgstr ""
+msgstr "プリンター"
 
 msgid "Printer Connections"
-msgstr "Drucker Verbindungen"
+msgstr "プリンター接続状態"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "プリンターの選択"
 
 msgid "Printing"
-msgstr "Drucken"
+msgstr "印刷中"
 
 msgid "Probe Offset"
-msgstr ""
+msgstr "プローブオフセット"
 
 msgid "Profile Name:"
-msgstr "Profilname:"
+msgstr "プロファイル:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
 msgstr ""
 
 msgid "Quad Gantry Level"
-msgstr "Quad Gantry Level"
+msgstr "ガントリーレベル"
 
 msgid "Raise Nozzle"
-msgstr "Düse anheben"
+msgstr ""
 
 msgid "Recover"
 msgstr ""
 
 msgid "Recover Hard"
-msgstr "Rücksetzen Hard"
+msgstr ""
 
 msgid "Recover Soft"
-msgstr "Rücksetzen Soft"
+msgstr ""
 
 msgid "Reference"
-msgstr "Referenz"
+msgstr ""
 
 msgid "Refresh"
-msgstr ""
+msgstr "最新表示"
 
 msgid "Restart"
-msgstr "Neustart"
+msgstr "再起動"
 
 msgid "Resume"
-msgstr "Fortsetzen"
+msgstr "再開"
 
 msgid "Retract"
-msgstr "Zurückziehen"
+msgstr "リトラクトする"
 
 msgid "Retraction"
-msgstr "Rückzug"
+msgstr "リトラクション"
 
 msgid "Retraction Length"
-msgstr "Rückzugslänge"
+msgstr "リトラクション長さ"
 
 msgid "Retraction Speed"
-msgstr "Rückzugsgeschwindigkeit"
+msgstr "リトラクションスピード"
 
 msgid "Retry"
-msgstr ""
+msgstr "再試行"
 
 msgid "Retrying"
-msgstr ""
+msgstr "再試行中"
 
 msgid "Save"
-msgstr "Speichern"
+msgstr "保存"
 
 msgid "Save Config"
-msgstr "Einstellungen speichern"
+msgstr "設定の保存"
 
 msgid "Save Z"
-msgstr "Speichern Sie Z"
+msgstr "Z軸の保存"
 
 msgid "Save configuration?"
-msgstr "Konfiguration speichern?"
+msgstr "設定を保存しますか？"
 
 msgid "Saved"
-msgstr "Gerettet"
+msgstr "保存しました"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr ""
+msgstr "保存しました offset: %s"
 
 msgid "Screen DPMS"
-msgstr "Bildschirm-DPMS"
+msgstr ""
 
 msgid "Screen Power Off Time"
-msgstr "Bildschirm abschalten in"
+msgstr ""
 
 msgid "Screws Adjust"
-msgstr "Schrauben Einstellen"
+msgstr ""
 
 msgid "Select"
-msgstr "Wählen"
+msgstr ""
 
 msgid "Send"
-msgstr "Schicken"
+msgstr ""
 
 #, python-format
 msgid "Sending Power ON signal to: %s"
-msgstr "Senden des Einschaltsignals an: %s"
+msgstr ""
 
 msgid "Set Temp"
-msgstr "Temp. einstellen"
+msgstr "温度設定"
 
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "設定"
 
 msgid "Show"
-msgstr "Zeigen"
+msgstr "表示"
 
 msgid "Show Heater Power"
 msgstr ""
 
 msgid "Shutdown"
-msgstr ""
+msgstr "シャットダウン"
 
 msgid "Size"
-msgstr "Größe"
+msgstr "サイズ"
 
 msgid "Slicer"
-msgstr "Slicer"
+msgstr "スライサー"
 
 msgid "Slicer Time correction (%)"
-msgstr "Slicer-Zeitkorrektur (%)"
+msgstr "スライサーの補正時間(%)"
 
 msgid "Slicer:"
-msgstr ""
+msgstr "スライサー:"
 
 msgid "Small"
-msgstr "Klein"
+msgstr "小"
 
 msgid "Speed (mm/s)"
-msgstr "Geschwindigkeit (mm/s)"
-
-msgid "Speed +"
-msgstr "Geschwindigkeit +"
-
-msgid "Speed -"
-msgstr "Geschwindigkeit -"
-
-msgid "Speed:"
-msgstr "Geschwindigkeit:"
-
-msgid "Square Corner Velocity"
-msgstr "Eckgeschwindigkeit"
-
-msgid "Start"
-msgstr "Starten"
-
-msgid "Starting WiFi Association"
-msgstr "Wi-Fi Association starten"
-
-msgid "Starting recovery for"
-msgstr "Starte Wiederherstellung für"
-
-msgid "Starting update for"
-msgstr "Starte Update für"
-
-msgid "System"
-msgstr "System"
-
-msgid "System Restart"
-msgstr "Drucker Neustarten"
-
-msgid "System Shutdown"
-msgstr "Drucker Ausschalten"
-
-msgid "Temp (°C)"
-msgstr "Temp (°C)"
-
-msgid "Temperature"
-msgstr "Temperatur"
-
-msgid "Total:"
-msgstr "Gesamt:"
-
-msgid "Unknown Heater"
-msgstr "Unbekannte Heizung"
-
-msgid "Unknown screw position"
 msgstr ""
 
+msgid "Speed +"
+msgstr ""
+
+msgid "Speed -"
+msgstr ""
+
+msgid "Speed:"
+msgstr ""
+
+msgid "Square Corner Velocity"
+msgstr "四隅の速度"
+
+msgid "Start"
+msgstr "開始"
+
+msgid "Starting WiFi Association"
+msgstr "Wifi接続開始中"
+
+msgid "Starting recovery for"
+msgstr "回復中"
+
+msgid "Starting update for"
+msgstr "更新中"
+
+msgid "System"
+msgstr "システム"
+
+msgid "System Restart"
+msgstr "システムの再起動"
+
+msgid "System Shutdown"
+msgstr "システムのシャットダウン"
+
+msgid "Temp (°C)"
+msgstr "温度 (°C)"
+
+msgid "Temperature"
+msgstr "温度"
+
+msgid "Total:"
+msgstr "全体:"
+
+msgid "Unknown Heater"
+msgstr "無効なヒーター"
+
+msgid "Unknown screw position"
+msgstr "無効なのスクリュー位置"
+
 msgid "Unload"
-msgstr "Entladen"
+msgstr "アンロード"
 
 msgid "Unretract Extra Length"
 msgstr ""
@@ -817,65 +801,61 @@ msgstr ""
 msgid "Unretract Speed"
 msgstr ""
 
-# Respect the number of characters
-# english text barely fits in small screens
 msgid "Up To Date"
-msgstr "Aktuell"
+msgstr "最新"
 
 msgid "Update"
-msgstr "Update"
+msgstr "更新"
 
 msgid "Updating"
-msgstr "Aktualisierung"
+msgstr "更新中"
 
 msgid "Uploaded"
-msgstr "Hochgeladen"
+msgstr "アップロード済"
 
 msgid "XY Move Speed (mm/s)"
-msgstr "XY Bewegungsgeschwindigkeit (mm/s)"
+msgstr "XY移動速度 (mm/s)"
 
 msgid "XY Speed (mm/s)"
-msgstr "XY Geschwindigkeit (mm/s)"
+msgstr "XY速度 (mm/s)"
 
 msgid "Z Calibrate"
-msgstr "Höhe Kalibrieren"
+msgstr "Z軸 校正"
 
 msgid "Z Move Speed (mm/s)"
-msgstr "Z Bewegungsgeschwindigkeit (mm/s)"
+msgstr "X軸 移動速度 (mm/s)"
 
 msgid "Z Speed (mm/s)"
-msgstr "Z Geschwindigkeit (mm/s)"
+msgstr ""
 
 msgid "Z Tilt"
-msgstr "Z-Achse ausrichten"
+msgstr ""
 
 msgid "Z offset:"
-msgstr "Z Offset:"
+msgstr ""
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "Änderung"
-msgstr[1] "Änderungen"
+msgstr[0] ""
 
 msgid "dBm"
-msgstr "dBm"
+msgstr ""
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "Stunde"
-msgstr[1] "Stunden"
+msgstr[0] ""
 
 msgid "minutes"
-msgstr "Minuten"
+msgstr "分"
 
 msgid "mm"
-msgstr "mm"
+msgstr ""
 
 msgid "mm/s"
-msgstr "mm/s"
+msgstr ""
 
 msgid "mm/s²"
-msgstr "mm/s²"
+msgstr ""
 
 msgid "mm³/s"
 msgstr ""

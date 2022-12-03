@@ -85,6 +85,7 @@ class KlipperScreen(Gtk.Window):
     screensaver_timeout = None
     reinit_count = 0
     max_retries = 4
+    initialized = False
 
     def __init__(self, args, version):
         try:
@@ -255,6 +256,7 @@ class KlipperScreen(Gtk.Window):
         try:
             return self.load_panel[panel](*args)
         except Exception as e:
+            logging.exception(e)
             raise RuntimeError(f"Unable to create panel: {panel}\n{e}") from e
 
     def show_panel(self, panel_name, panel_type, title, remove=None, pop=True, **kwargs):
@@ -274,21 +276,22 @@ class KlipperScreen(Gtk.Window):
                         del self.panels[panel_name]
                     self.show_error_modal(f"Unable to load panel {panel_type}", f"{e}")
                     return
-
-            logging.debug(f"Attaching panel {panel_name}")
-            self.base_panel.add_content(self.panels[panel_name])
-            self.base_panel.show_back(len(self._cur_panels) > 0)
-
-            if hasattr(self.panels[panel_name], "process_update"):
-                self.add_subscription(panel_name)
-            if hasattr(self.panels[panel_name], "activate"):
-                self.panels[panel_name].activate()
-            self.show_all()
+            self._cur_panels.append(panel_name)
+            self.attach_panel(panel_name)
         except Exception as e:
             logging.exception(f"Error attaching panel:\n{e}")
 
-        self._cur_panels.append(panel_name)
+    def attach_panel(self, panel_name):
+        self.base_panel.add_content(self.panels[panel_name])
         logging.debug(f"Current panel hierarchy: {' > '.join(self._cur_panels)}")
+        self.base_panel.show_back(len(self._cur_panels) > 1)
+        if hasattr(self.panels[panel_name], "process_update"):
+            self.add_subscription(panel_name)
+            self.process_update("notify_status_update", self.printer.data)
+            self.process_update("notify_busy", self.printer.busy)
+        if hasattr(self.panels[panel_name], "activate"):
+            self.panels[panel_name].activate()
+        self.show_all()
 
     def show_popup_message(self, message, level=3):
         self.close_screensaver()
@@ -358,8 +361,8 @@ class KlipperScreen(Gtk.Window):
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(message)
 
-        help_msg = _("Provide /tmp/KlipperScreen.log when asking for help.\n")
-        help_msg += _("KlipperScreen will be restarted")
+        help_msg = _("Provide KlipperScreen.log when asking for help.\n")
+        help_msg += _("KlipperScreen will reboot")
         help_notice = Gtk.Label(label=help_msg)
         help_notice.set_line_wrap(True)
 
@@ -373,7 +376,8 @@ class KlipperScreen(Gtk.Window):
         buttons = [
             {"name": _("Go Back"), "response": Gtk.ResponseType.CANCEL}
         ]
-        self.gtk.Dialog(self, buttons, grid, self.error_modal_response)
+        dialog = self.gtk.Dialog(self, buttons, grid, self.error_modal_response)
+        dialog.set_title(_("Error"))
 
     def error_modal_response(self, dialog, response_id):
         self.gtk.remove_dialog(dialog)
@@ -470,7 +474,7 @@ class KlipperScreen(Gtk.Window):
         self.close_screensaver()
 
     def _remove_current_panel(self, pop=True):
-        if len(self._cur_panels) <= 0:
+        if len(self._cur_panels) < 1:
             self.reload_panels()
             return
         self.base_panel.remove(self.panels[self._cur_panels[-1]].content)
@@ -478,30 +482,19 @@ class KlipperScreen(Gtk.Window):
             self.panels[self._cur_panels[-1]].deactivate()
         if self._cur_panels[-1] in self.subscriptions:
             self.subscriptions.remove(self._cur_panels[-1])
-        if pop is True:
-            self._cur_panels.pop()
-            if len(self._cur_panels) > 0:
-                self.base_panel.add_content(self.panels[self._cur_panels[-1]])
-                self.base_panel.show_back(len(self._cur_panels) != 1)
-                if hasattr(self.panels[self._cur_panels[-1]], "activate"):
-                    self.panels[self._cur_panels[-1]].activate()
-                if hasattr(self.panels[self._cur_panels[-1]], "process_update"):
-                    self.add_subscription(self._cur_panels[-1])
-                self.show_all()
+        if pop:
+            del self._cur_panels[-1]
+            self.attach_panel(self._cur_panels[-1])
 
-    def _menu_go_back(self, widget=None):
-        logging.info("#### Menu go back")
+    def _menu_go_back(self, widget=None, home=False):
+        logging.info(f"#### Menu go {'home' if home else 'back'}")
         self.remove_keyboard()
         if self._config.get_main_config().getboolean('autoclose_popups', True):
             self.close_popup_message()
-        self._remove_current_panel(True)
-
-    def _menu_go_home(self, widget=None):
-        logging.info("#### Menu go home")
-        self.remove_keyboard()
-        self.close_popup_message()
         while len(self._cur_panels) > 1:
             self._remove_current_panel()
+            if not home:
+                break
 
     def add_subscription(self, panel_name):
         if panel_name not in self.subscriptions:
@@ -628,11 +621,13 @@ class KlipperScreen(Gtk.Window):
         self.files = None
         self.printer.reset()
         self.printer = None
+        self.initialized = False
         self.connect_printer(self.connecting_to_printer)
 
     def state_disconnected(self):
         logging.debug("### Going to disconnected")
         self.close_screensaver()
+        self.initialized = False
         self.printer_initializing(_("Klipper has disconnected"), remove=True)
 
     def state_error(self):
@@ -730,12 +725,10 @@ class KlipperScreen(Gtk.Window):
                     )
         self.process_update(action, data)
 
-    def process_update(self, action, data):
-        self.base_panel.process_update(action, data)
+    def process_update(self, *args):
+        GLib.idle_add(self.base_panel.process_update, *args)
         for x in self.subscriptions:
-            self.panels[x].process_update(action, data)
-        if "job_status" in self._cur_panels:
-            self.panels["job_status"].process_update(action, data)
+            GLib.idle_add(self.panels[x].process_update, *args)
 
     def _confirm_send_action(self, widget, text, method, params=None):
         buttons = [
@@ -763,11 +756,14 @@ class KlipperScreen(Gtk.Window):
         if self.confirm is not None:
             self.gtk.remove_dialog(self.confirm)
         self.confirm = self.gtk.Dialog(self, buttons, label, self._confirm_send_action_response, method, params)
+        self.confirm.set_title("KlipperScreen")
 
     def _confirm_send_action_response(self, dialog, response_id, method, params):
         self.gtk.remove_dialog(dialog)
         if response_id == Gtk.ResponseType.OK:
             self._send_action(None, method, params)
+        if method == "server.files.delete_directory":
+            GLib.timeout_add_seconds(2, self.files.refresh_files)
 
     def _send_action(self, widget, method, params):
         logging.info(f"{method}: {params}")
@@ -873,6 +869,7 @@ class KlipperScreen(Gtk.Window):
         self.files.refresh_files()
 
         logging.info("Printer initialized")
+        self.initialized = True
         self.reinit_count = 0
 
     def base_panel_show_all(self):
@@ -888,10 +885,10 @@ class KlipperScreen(Gtk.Window):
     def printer_printing(self):
         self.close_screensaver()
         self.close_popup_message()
-        self.show_panel('job_status', "job_status", _("Printing"), 2)
         self.base_panel_show_all()
         for dialog in self.dialogs:
             self.gtk.remove_dialog(dialog)
+        self.show_panel('job_status', "job_status", _("Printing"), 2)
 
     def show_keyboard(self, widget=None, event=None, entry=None):
         if self.keyboard is not None:
@@ -951,7 +948,7 @@ class KlipperScreen(Gtk.Window):
     def _key_press_event(self, widget, event):
         keyval_name = Gdk.keyval_name(event.keyval)
         if keyval_name == "Escape":
-            self._menu_go_home()
+            self._menu_go_back(home=True)
         elif keyval_name == "BackSpace" and len(self._cur_panels) > 1 and self.keyboard is None:
             self.base_panel.back()
 

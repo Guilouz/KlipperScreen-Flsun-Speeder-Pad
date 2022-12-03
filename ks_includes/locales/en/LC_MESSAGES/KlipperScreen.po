@@ -11,7 +11,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
+
+msgid "Min"
+msgstr ""
 
 msgid "Home is required before resetting Z-Offset!"
 msgstr ""
@@ -429,6 +432,9 @@ msgstr ""
 msgid "Invalid"
 msgstr ""
 
+msgid "Invalid password"
+msgstr ""
+
 msgid "Invert X"
 msgstr ""
 
@@ -454,6 +460,9 @@ msgid "Klipper is attempting to start"
 msgstr ""
 
 msgid "Klipper will reboot"
+msgstr ""
+
+msgid "KlipperScreen will reboot"
 msgstr ""
 
 msgid "Language"
@@ -620,10 +629,16 @@ msgstr ""
 msgid "Profile Name:"
 msgstr ""
 
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr ""
+
 msgid "Quad Gantry Level"
 msgstr ""
 
 msgid "Raise Nozzle"
+msgstr ""
+
+msgid "Recover"
 msgstr ""
 
 msgid "Recover Hard"
@@ -730,9 +745,6 @@ msgstr ""
 msgid "Small"
 msgstr ""
 
-msgid "Sort:"
-msgstr ""
-
 msgid "Speed (mm/s)"
 msgstr ""
 
@@ -773,10 +785,6 @@ msgid "Temp (°C)"
 msgstr ""
 
 msgid "Temperature"
-msgstr ""
-
-#, python-format
-msgid "To apply %s KlipperScreen needs to be restarted"
 msgstr ""
 
 msgid "Total:"
@@ -853,4 +861,7 @@ msgid "mm/s"
 msgstr ""
 
 msgid "mm/s²"
+msgstr ""
+
+msgid "mm³/s"
 msgstr ""

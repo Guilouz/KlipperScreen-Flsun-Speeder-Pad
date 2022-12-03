@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-11-27 17:30+0100\n"
+"PO-Revision-Date: 2022-12-01 22:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 msgid "Home is required before resetting Z-Offset!"
 msgstr ""
@@ -434,6 +434,9 @@ msgstr "接口"
 msgid "Invalid"
 msgstr "无效"
 
+msgid "Invalid password"
+msgstr ""
+
 msgid "Invert X"
 msgstr "反转X轴"
 
@@ -460,6 +463,9 @@ msgstr "Klipper正在启动"
 
 msgid "Klipper will reboot"
 msgstr "Klipper将重新启动"
+
+msgid "KlipperScreen will reboot"
+msgstr ""
 
 msgid "Language"
 msgstr "语言"
@@ -624,11 +630,17 @@ msgstr "探头偏移"
 msgid "Profile Name:"
 msgstr "配置文件名称:"
 
+msgid "Provide KlipperScreen.log when asking for help.\n"
+msgstr ""
+
 msgid "Quad Gantry Level"
 msgstr "龙门架调平"
 
 msgid "Raise Nozzle"
 msgstr "升高喷嘴"
+
+msgid "Recover"
+msgstr ""
 
 msgid "Recover Hard"
 msgstr "重置(Hard)"
@@ -734,9 +746,6 @@ msgstr "切片:"
 msgid "Small"
 msgstr "小"
 
-msgid "Sort:"
-msgstr "排序:"
-
 msgid "Speed (mm/s)"
 msgstr "速度(mm/s)"
 
@@ -778,10 +787,6 @@ msgstr "温度 (°C)"
 
 msgid "Temperature"
 msgstr "温度控制"
-
-#, python-format
-msgid "To apply %s KlipperScreen needs to be restarted"
-msgstr "要应用%s请重新启动KlipperScreen"
 
 msgid "Total:"
 msgstr "总:"
@@ -855,4 +860,7 @@ msgid "mm/s"
 msgstr ""
 
 msgid "mm/s²"
+msgstr ""
+
+msgid "mm³/s"
 msgstr ""
