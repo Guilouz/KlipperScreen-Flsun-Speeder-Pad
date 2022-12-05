@@ -163,7 +163,15 @@ class KlipperScreen(Gtk.Window):
         self.connecting_to_printer = name
         if self._ws is not None and self._ws.connected:
             self._ws.close()
-
+            self.connected_printer = None
+            if self.files:
+                self.files.reset()
+                self.files = None
+            if self.printer:
+                self.printer.reset()
+                self.printer = None
+        self.connecting = True
+        self.initialized = False
         data = {
             "moonraker_host": "127.0.0.1",
             "moonraker_port": "7125",
@@ -391,6 +399,9 @@ class KlipperScreen(Gtk.Window):
         self._ws.send_method("machine.services.restart", {"service": "KlipperScreen"})  # Fallback
 
     def init_style(self):
+        settings = Gtk.Settings.get_default()
+        settings.set_property("gtk-theme-name", "Adwaita")
+        settings.set_property("gtk-application-prefer-dark-theme", False)
         css_data = pathlib.Path(os.path.join(klipperscreendir, "styles", "base.css")).read_text()
 
         with open(os.path.join(klipperscreendir, "styles", "base.conf")) as f:
@@ -530,6 +541,7 @@ class KlipperScreen(Gtk.Window):
         close.grab_focus()
         self.screensaver = box
         self.screensaver.show_all()
+        self.power_devices(None, self._config.get_main_config().get("screen_off_devices", ""), on=False)
         return False
 
     def close_screensaver(self, widget=None):
@@ -546,6 +558,7 @@ class KlipperScreen(Gtk.Window):
             logging.info(f"Restoring Dialog {dialog}")
             dialog.show()
         self.show_all()
+        self.power_devices(None, self._config.get_main_config().get("screen_on_devices", ""), on=True)
         return False
 
     def check_dpms_state(self):
@@ -613,8 +626,6 @@ class KlipperScreen(Gtk.Window):
         self.process_update("notify_busy", busy)
 
     def state_execute(self, callback):
-        self.reinit_count = 0
-        self.init_printer()
         callback()
 
     def websocket_disconnected(self, msg):
@@ -633,6 +644,8 @@ class KlipperScreen(Gtk.Window):
         self.close_screensaver()
         self.initialized = False
         self.printer_initializing(_("Klipper has disconnected"), remove=True)
+        self.reinit_count = 0
+        self.init_printer()
 
     def state_error(self):
         self.close_screensaver()
@@ -690,12 +703,12 @@ class KlipperScreen(Gtk.Window):
         if self.connecting:
             return
         if action == "notify_klippy_disconnected":
-            self.printer.change_state("disconnected")
+            self.printer.process_update({'webhooks': {'state': "disconnected"}})
             return
         elif action == "notify_klippy_shutdown":
-            self.printer.change_state("shutdown")
+            self.printer.process_update({'webhooks': {'state': "shutdown"}})
         elif action == "notify_klippy_ready":
-            self.printer.change_state("ready")
+            self.printer.process_update({'webhooks': {'state': "ready"}})
         elif action == "notify_status_update" and self.printer.state != "shutdown":
             self.printer.process_update(data)
         elif action == "notify_filelist_changed":
@@ -779,32 +792,24 @@ class KlipperScreen(Gtk.Window):
             self.show_panel('splash_screen', "splash_screen", None, 2)
         self.panels['splash_screen'].update_text(msg)
 
-    def search_power_devices(self, power_devices):
-        if self.connected_printer is None or not power_devices:
-            return
+    def search_power_devices(self, devices):
         found_devices = []
-        devices = self.printer.get_power_devices()
-        logging.debug("Power devices: %s", devices)
-        if devices is not None:
-            for device in devices:
-                for power_device in power_devices:
-                    if device == power_device and power_device not in found_devices:
-                        found_devices.append(power_device)
-        if found_devices:
-            logging.info("Found %s", found_devices)
+        if self.connected_printer is None or not devices:
             return found_devices
-        else:
-            logging.info("Associated power devices not found")
-            return None
+        devices = [str(i.strip()) for i in devices.split(',')]
+        power_devices = self.printer.get_power_devices()
+        if power_devices:
+            found_devices = [dev for dev in devices if dev in power_devices]
+            logging.info(f"Found {found_devices}", )
+        return found_devices
 
-    def power_on(self, widget, devices):
-        for device in devices:
-            if self.printer.get_power_device_status(device) == "off":
-                self.show_popup_message(_("Sending Power ON signal to: %s") % devices, level=1)
-                logging.info("%s is OFF, Sending Power ON signal", device)
-                self._ws.klippy.power_device_on(device)
-            elif self.printer.get_power_device_status(device) == "on":
-                logging.info("%s is ON", device)
+    def power_devices(self, widget=None, devices=None, on=False):
+        devs = self.search_power_devices(devices)
+        for dev in devs:
+            if on:
+                self._ws.klippy.power_device_on(dev)
+            else:
+                self._ws.klippy.power_device_off(dev)
 
     def init_printer(self):
         if self.reinit_count > self.max_retries or 'printer_select' in self._cur_panels:
@@ -863,11 +868,9 @@ class KlipperScreen(Gtk.Window):
             self.printer_initializing("Error getting printer object data with extra items")
             GLib.timeout_add_seconds(3, self.init_printer)
             return
-
-        tempstore = self.apiclient.send_request("server/temperature_store")
-        if tempstore is not False:
-            self.printer.init_temp_store(tempstore['result'])
         self.printer.process_update(data['result']['status'])
+        self.init_tempstore()
+        GLib.timeout_add_seconds(2, self.init_tempstore)  # If devices changed it takes a while to register
 
         self.files.initialize()
         self.files.refresh_files()
@@ -875,6 +878,16 @@ class KlipperScreen(Gtk.Window):
         logging.info("Printer initialized")
         self.initialized = True
         self.reinit_count = 0
+
+    def init_tempstore(self):
+        self.printer.init_temp_store(self.apiclient.send_request("server/temperature_store"))
+        server_config = self.apiclient.send_request("server/config")
+        if server_config:
+            try:
+                self.printer.tempstore_size = server_config["result"]["config"]["data_store"]["temperature_store_size"]
+                logging.info(f"Temperature store size: {self.printer.tempstore_size}")
+            except KeyError:
+                logging.error("Couldn't get the temperature store size")
 
     def base_panel_show_all(self):
         self.base_panel.show_macro_shortcut(self._config.get_main_config().getboolean('side_macro_shortcut', True))

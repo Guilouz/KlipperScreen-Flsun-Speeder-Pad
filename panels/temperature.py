@@ -175,6 +175,8 @@ class TemperaturePanel(ScreenPanel):
                 logging.info(f"Setting {heater} to {target}")
 
     def update_graph_visibility(self):
+        if not self._printer.get_temp_store_devices():
+            return
         count = 0
         for device in self.devices:
             visible = self._config.get_config().getboolean(f"graph {self._screen.connected_printer}",
@@ -335,7 +337,7 @@ class TemperaturePanel(ScreenPanel):
         else:
             name.get_style_context().add_class("graph_label_hidden")
 
-        can_target = self._printer.get_temp_store_device_has_target(device)
+        can_target = self._printer.device_has_target(device)
         self.labels['da'].add_object(device, "temperatures", rgb, False, True)
         if can_target:
             self.labels['da'].add_object(device, "targets", rgb, True, False)
@@ -455,7 +457,7 @@ class TemperaturePanel(ScreenPanel):
         popover.connect('closed', self.popover_closed)
         self.labels['popover'] = popover
 
-        for d in self._printer.get_temp_store_devices():
+        for d in (self._printer.get_tools() + self._printer.get_heaters()):
             self.add_device(d)
 
         return self.left_panel
@@ -501,22 +503,13 @@ class TemperaturePanel(ScreenPanel):
     def process_update(self, action, data):
         if action != "notify_status_update":
             return
-
-        for x in self._printer.get_tools():
+        for x in (self._printer.get_tools() + self._printer.get_heaters()):
             self.update_temp(
                 x,
                 self._printer.get_dev_stat(x, "temperature"),
                 self._printer.get_dev_stat(x, "target"),
                 self._printer.get_dev_stat(x, "power"),
             )
-        for h in self._printer.get_heaters():
-            self.update_temp(
-                h,
-                self._printer.get_dev_stat(h, "temperature"),
-                self._printer.get_dev_stat(h, "target"),
-                self._printer.get_dev_stat(h, "power"),
-            )
-        return
 
     def show_numpad(self, widget, device=None):
         for d in self.active_heaters:
