@@ -113,7 +113,7 @@ class InputShaperPanel(ScreenPanel):
 
     def start_calibration(self, widget, method):
         self.labels['popover'].popdown()
-        if self._screen.printer.get_stat("toolhead", "homed_axes") != "xyz":
+        if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
             self._screen._ws.klippy.gcode_script(KlippyGcodes.HOME)
         self.calibrating_axis = method
         if method == "x":
@@ -152,17 +152,11 @@ class InputShaperPanel(ScreenPanel):
 
     def activate(self):
         # This will return the current values
-        self._screen._ws.klippy.gcode_script(
-            'SET_INPUT_SHAPER'
-        )
+        self._screen._ws.klippy.gcode_script('SET_INPUT_SHAPER')
         # Check for the accelerometer
-        self._screen._ws.klippy.gcode_script(
-            'ACCELEROMETER_QUERY'
-        )
+        self._screen._ws.klippy.gcode_script('ACCELEROMETER_QUERY')
         # Send at least two commands, with my accelerometer the first command after a reboot will fail
-        self._screen._ws.klippy.gcode_script(
-            'MEASURE_AXES_NOISE'
-        )
+        self._screen._ws.klippy.gcode_script('MEASURE_AXES_NOISE')
 
     def process_update(self, action, data):
         if action != "notify_gcode_response":

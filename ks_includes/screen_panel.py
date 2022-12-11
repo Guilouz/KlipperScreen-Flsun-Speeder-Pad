@@ -26,8 +26,6 @@ class ScreenPanel:
         self.title = title
         self.devices = {}
         self.active_heaters = []
-        self.layout = Gtk.Layout()
-        self.layout.set_size(screen.width, screen.height)
         self.content = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.content.get_style_context().add_class("content")
         self.content.set_hexpand(True)
@@ -64,9 +62,6 @@ class ScreenPanel:
 
     def menu_item_clicked(self, widget, panel, item):
         self._screen.show_panel(panel, item['panel'], item['name'], 1, False)
-
-    def show_all(self):
-        self._screen.show_all()
 
     def load_menu(self, widget, name, title=None):
         if f"{name}_menu" not in self.labels:

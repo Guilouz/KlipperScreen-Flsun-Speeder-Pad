@@ -9,11 +9,11 @@ FBDEV="xserver-xorg-video-fbdev"
 PYTHON="python3-virtualenv virtualenv python3-distutils"
 PYGOBJECT="libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0"
 MISC="librsvg2-common libopenjp2-7 libatlas-base-dev wireless-tools libdbus-glib-1-dev autoconf"
-OPTIONAL="xserver-xorg-legacy fonts-nanum fonts-ipafont"
+OPTIONAL="xserver-xorg-legacy fonts-nanum fonts-ipafont, libmpv-dev"
 
 # moonraker will check this list when updating
 # if new packages are required for existing installs add them below too.
-PKGLIST="libdbus-glib-1-dev autoconf fonts-ipafont"
+PKGLIST="libdbus-glib-1-dev autoconf fonts-ipafont, libmpv-dev"
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -109,10 +109,16 @@ create_virtualenv()
     source ${KSENV}/bin/activate
     pip --disable-pip-version-check install -r ${KSPATH}/scripts/KlipperScreen-requirements.txt
     if [ $? -gt 0 ]; then
-        echo "Error: pip install exited with status code $?"
-        echo "Unable to install dependencies, aborting install."
-        deactivate
-        exit 1
+        echo_error "Error: pip install exited with status code $?"
+        echo_text "Trying again with new tools..."
+        sudo apt-get install -y build-essential cmake
+        pip install --upgrade pip setuptools
+        pip install -r ${KSPATH}/scripts/KlipperScreen-requirements.txt
+        if [ $? -gt 0 ]; then
+            echo_error "Unable to install dependencies, aborting install."
+            deactivate
+            exit 1
+        fi
     fi
     deactivate
     echo_ok "Virtual enviroment created"

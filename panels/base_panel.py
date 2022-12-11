@@ -59,9 +59,8 @@ class BasePanel(ScreenPanel):
         else:
             self.action_bar.set_hexpand(False)
             self.action_bar.set_vexpand(True)
-        self.action_bar.set_size_request(self._gtk.get_action_bar_width(), self._gtk.get_action_bar_height())
-
         self.action_bar.get_style_context().add_class('action_bar')
+        self.action_bar.set_size_request(self._gtk.action_bar_width, self._gtk.action_bar_height)
         self.action_bar.add(self.control['back'])
         self.action_bar.add(self.control['home'])
         self.show_back(False)
@@ -88,7 +87,7 @@ class BasePanel(ScreenPanel):
         self.control['time_box'].pack_end(self.control['time'], True, True, 20) # Changes
 
         self.titlebar = Gtk.Box(spacing=5)
-        self.titlebar.set_size_request(self._gtk.get_content_width(), self._gtk.get_titlebar_height())
+        self.titlebar.get_style_context().add_class("title_bar")
         self.titlebar.set_valign(Gtk.Align.CENTER)
         self.titlebar.add(self.control['temp_box'])
         self.titlebar.add(self.titlelbl)
@@ -96,9 +95,6 @@ class BasePanel(ScreenPanel):
 
         # Main layout
         self.main_grid = Gtk.Grid()
-        # To achieve rezisability this needs to be removed
-        # The main issue is that currently the content doesn't expand correctly
-        self.main_grid.set_size_request(self._screen.width, self._screen.height)
 
         if self._screen.vertical_mode:
             self.main_grid.attach(self.titlebar, 0, 0, 1, 1)
@@ -111,19 +107,17 @@ class BasePanel(ScreenPanel):
             self.main_grid.attach(self.titlebar, 1, 0, 1, 1)
             self.main_grid.attach(self.content, 1, 1, 1, 1)
 
-        # Layout is and content are on screen_panel
-        self.layout.add(self.main_grid)
         self.update_time()
 
     def show_heaters(self, show=True):
         try:
             for child in self.control['temp_box'].get_children():
                 self.control['temp_box'].remove(child)
-            if not show or self._screen.printer.get_temp_store_devices() is None:
+            if not show or self._printer.get_temp_store_devices() is None:
                 return
 
             img_size = self._gtk.img_scale * self.bts
-            for device in self._screen.printer.get_temp_store_devices():
+            for device in self._printer.get_temp_store_devices():
                 self.labels[device] = Gtk.Label(label="100º")
                 self.labels[device].set_ellipsize(Pango.EllipsizeMode.START)
 
@@ -137,18 +131,18 @@ class BasePanel(ScreenPanel):
             nlimit = int(round(log(self._screen.width, 10) * 5 - 10.5))
 
             n = 0
-            if self._screen.printer.get_tools():
-                self.current_extruder = self._screen.printer.get_stat("toolhead", "extruder")
+            if self._printer.get_tools():
+                self.current_extruder = self._printer.get_stat("toolhead", "extruder")
                 if self.current_extruder and f"{self.current_extruder}_box" in self.labels:
                     self.control['temp_box'].add(self.labels[f"{self.current_extruder}_box"])
                     n += 1
 
-            if self._screen.printer.has_heated_bed():
+            if self._printer.has_heated_bed():
                 self.control['temp_box'].add(self.labels['heater_bed_box'])
                 n += 1
 
             # Options in the config have priority
-            for device in self._screen.printer.get_temp_store_devices():
+            for device in self._printer.get_temp_store_devices():
                 # Users can fill the bar if they want
                 if n >= nlimit + 1:
                     break
@@ -160,7 +154,7 @@ class BasePanel(ScreenPanel):
                         break
 
             # If there is enough space fill with heater_generic
-            for device in self._screen.printer.get_temp_store_devices():
+            for device in self._printer.get_temp_store_devices():
                 if n >= nlimit:
                     break
                 if device.startswith("heater_generic"):
@@ -172,7 +166,7 @@ class BasePanel(ScreenPanel):
 
     def get_icon(self, device, img_size):
         if device.startswith("extruder"):
-            if self._screen.printer.extrudercount > 1:
+            if self._printer.extrudercount > 1:
                 if device == "extruder":
                     device = "extruder0"
                 return self._gtk.Image(f"extruder-{device[8:]}", img_size, img_size)
@@ -233,10 +227,10 @@ class BasePanel(ScreenPanel):
 
         if action != "notify_status_update" or self._screen.printer is None:
             return
-        devices = self._screen.printer.get_temp_store_devices()
+        devices = self._printer.get_temp_store_devices()
         if devices is not None:
             for device in devices:
-                temp = self._screen.printer.get_dev_stat(device, "temperature")
+                temp = self._printer.get_dev_stat(device, "temperature")
                 if temp is not None and device in self.labels:
                     name = ""
                     if not (device.startswith("extruder") or device.startswith("heater_bed")):

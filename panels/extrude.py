@@ -19,7 +19,7 @@ class ExtrudePanel(ScreenPanel):
     def __init__(self, screen, title):
         super().__init__(screen, title)
         self.current_extruder = self._printer.get_stat("toolhead", "extruder")
-        macros = self._screen.printer.get_gcode_macros()
+        macros = self._printer.get_gcode_macros()
         self.load_filament = any("LOAD_FILAMENT" in macro.upper() for macro in macros)
         self.unload_filament = any("UNLOAD_FILAMENT" in macro.upper() for macro in macros)
 
@@ -134,8 +134,8 @@ class ExtrudePanel(ScreenPanel):
                 self.labels[x]['label'].set_halign(Gtk.Align.CENTER)
                 self.labels[x]['label'].set_hexpand(True)
                 self.labels[x]['label'].set_ellipsize(Pango.EllipsizeMode.END)
-                self.labels[x]['switch'].set_property("width-request", round(self._gtk.get_font_size() * 2))
-                self.labels[x]['switch'].set_property("height-request", round(self._gtk.get_font_size()))
+                self.labels[x]['switch'].set_property("width-request", round(self._gtk.font_size * 2))
+                self.labels[x]['switch'].set_property("height-request", round(self._gtk.font_size))
                 self.labels[x]['switch'].connect("notify::active", self.enable_disable_fs, name, x)
                 self.labels[x]['box'].pack_start(self.labels[x]['label'], True, True, 5)
                 self.labels[x]['box'].pack_start(self.labels[x]['switch'], False, False, 5)

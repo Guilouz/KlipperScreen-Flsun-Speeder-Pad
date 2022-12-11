@@ -13,6 +13,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
 
+msgid "Camera"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Min"
+msgstr ""
+
 msgid "Home is required before resetting Z-Offset!"
 msgstr ""
 

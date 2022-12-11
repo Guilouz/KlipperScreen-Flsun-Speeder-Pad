@@ -203,7 +203,12 @@ trough {
 }
 
 .action_bar {
-    /*border-right: 2px solid #444;*/
+    /* min-width: 4.5em; */
+    /* min-height: 4.5em; */
+}
+
+.title_bar {
+    min-height: 2em;
 }
 
 .content {
@@ -287,10 +292,14 @@ trough {
     margin: 0;
 }
 
-.heater-grid button{
+.heater-grid button {
     margin: .2em;
     min-height: 2.9em;
     padding: 0 .5em;
+}
+
+.heater-grid-temp {
+    min-width: 8em;
 }
 
 .keyboard_box {
@@ -307,8 +316,17 @@ trough {
     border-radius: 0.7em;
 }
 
+.message_popup_popover {
+    border: 0;
+    background-color: Transparent;
+    padding: 0;
+}
+
 .message_popup {
-    border-bottom: .1em solid white;
+    border: .1em solid white;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0;
 }
 
 .message_popup button{

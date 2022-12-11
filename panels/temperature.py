@@ -7,7 +7,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 
 from ks_includes.screen_panel import ScreenPanel
-from ks_includes.widgets.graph import HeaterGraph
+from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
 
 
@@ -43,7 +43,7 @@ class TemperaturePanel(ScreenPanel):
             self.show_preheat = True
             selection.extend(self._printer.get_heaters())
         else:
-            current_extruder = self._screen.printer.get_stat("toolhead", "extruder")
+            current_extruder = self._printer.get_stat("toolhead", "extruder")
             if current_extruder:
                 selection.append(current_extruder)
 
@@ -64,7 +64,6 @@ class TemperaturePanel(ScreenPanel):
             self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
 
         self.content.add(self.grid)
-        self.layout.show_all()
 
     def create_right_panel(self):
         cooldown = self._gtk.Button('cool-down', _('Cooldown'), "color4", self.bts, Gtk.PositionType.LEFT, 1)
@@ -428,12 +427,12 @@ class TemperaturePanel(ScreenPanel):
 
         name = Gtk.Label("")
         temp = Gtk.Label(_("Temp (°C)"))
-        temp.set_size_request(self._gtk.font_size * 6, -1)
+        temp.get_style_context().add_class("heater-grid-temp")
 
         self.labels['devices'].attach(name, 0, 0, 1, 1)
         self.labels['devices'].attach(temp, 1, 0, 1, 1)
 
-        self.labels['da'] = HeaterGraph(self._printer, self._gtk.get_font_size())
+        self.labels['da'] = HeaterGraph(self._printer, self._gtk.font_size)
         self.labels['da'].set_vexpand(True)
 
         scroll = self._gtk.ScrolledWindow()
