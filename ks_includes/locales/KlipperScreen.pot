@@ -18,6 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Camera"
 msgstr ""
 
