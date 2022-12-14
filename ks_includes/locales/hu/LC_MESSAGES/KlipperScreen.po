@@ -322,7 +322,7 @@ msgid "Exclude Object"
 msgstr "Objektum kizárása"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra nagy"
 
 msgid "Extrude"
 msgstr "Száladagolás"
@@ -442,7 +442,7 @@ msgid "Invalid"
 msgstr "Érvénytelen"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Érvénytelen jelszó"
 
 msgid "Invert X"
 msgstr "Fordított X"
@@ -472,7 +472,7 @@ msgid "Klipper will reboot"
 msgstr "A Klipper újraindul"
 
 msgid "KlipperScreen will reboot"
-msgstr ""
+msgstr "A KlipperScreen újraindul"
 
 msgid "Language"
 msgstr "Nyelv"
@@ -517,7 +517,7 @@ msgid "Max Velocity"
 msgstr "Max sebesség"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Maximum"
 
 msgid "Measure Both"
 msgstr "Mindkettő mérése"
@@ -535,7 +535,7 @@ msgid "Menu"
 msgstr "Menü"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "Háló kalibrálása"
 
 msgid "Modified"
 msgstr "Módosított"
@@ -556,7 +556,7 @@ msgid "Network"
 msgstr "Hálózat"
 
 msgid "Never"
-msgstr ""
+msgstr "Soha"
 
 msgid "New"
 msgstr "Új"
@@ -629,7 +629,7 @@ msgid "Printer Connections"
 msgstr "Nyomtató csatlakozások"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "Nyomtató kiválasztása"
 
 msgid "Printing"
 msgstr "Nyomtatás"
@@ -641,7 +641,7 @@ msgid "Profile Name:"
 msgstr "Profil név:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Add meg a KlipperScreen.log-ot, amikor segítséget kérsz.\\n\n"
 
 msgid "Quad Gantry Level"
 msgstr "Négy állású szint"
@@ -650,7 +650,7 @@ msgid "Raise Nozzle"
 msgstr "Fúvóka fel"
 
 msgid "Recover"
-msgstr ""
+msgstr "Visszaállítása"
 
 msgid "Recover Hard"
 msgstr "Hárdver visszaállítása"
@@ -683,7 +683,7 @@ msgid "Retraction Speed"
 msgstr "Visszahúzási sebesség"
 
 msgid "Retry"
-msgstr ""
+msgstr "Újra"
 
 msgid "Retrying"
 msgstr "Újrapróbálkozás"
