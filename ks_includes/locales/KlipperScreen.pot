@@ -30,9 +30,6 @@ msgstr ""
 msgid "Min"
 msgstr ""
 
-msgid "Home is required before resetting Z-Offset!"
-msgstr ""
-
 msgid "Please wait..."
 msgstr ""
 

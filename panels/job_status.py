@@ -229,7 +229,7 @@ class JobStatusPanel(ScreenPanel):
         szfe.attach(self.buttons['speed'], 0, 0, 3, 1)
         szfe.attach(self.buttons['z'], 2, 1, 2, 1) # Changes
         szfe.attach(self.buttons['elapsed'], 0, 2, 3, 1) # Changes
-        szfe.attach(self.buttons['left'], 2, 2, 2, 1) # Changes
+        szfe.attach(self.buttons['layers'], 2, 2, 2, 1) # Changes
         if self._screen.printer.get_tools():
             szfe.attach(self.buttons['extrusion'], 0, 1, 3, 1)
         if self._screen.printer.get_fans():
@@ -240,7 +240,7 @@ class JobStatusPanel(ScreenPanel):
         info.get_style_context().add_class("printing-info")
         info.attach(self.labels['temp_grid'], 0, 0, 1, 1)
         info.attach(szfe, 0, 1, 1, 2)
-        info.attach(self.buttons['layers'], 0, 3, 1, 1) # Changes
+        info.attach(self.buttons['left'], 0, 3, 1, 1) # Changes
         # Changes
         self.status_grid = info
 

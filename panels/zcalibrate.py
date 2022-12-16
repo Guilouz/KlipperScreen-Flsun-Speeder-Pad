@@ -79,12 +79,7 @@ class ZCalibratePanel(ScreenPanel):
 
     def change_babystepping(self, widget, direction):
         if direction == "reset":
-            homed_axes = self._screen.printer.get_stat("toolhead", "homed_axes")
-            if homed_axes == "xyz":
-                self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0 MOVE=1")
-                self.labels['zoffset'].set_label(' Z-Offset: 0.00mm')
-            else:
-                self._screen.show_popup_message(_("Home is required before resetting Z-Offset!"))
+            gcode = "SET_GCODE_OFFSET Z=0"
         elif direction == "+":
             gcode = "SET_GCODE_OFFSET Z_ADJUST=%s MOVE=1" % self.bs_delta
         else:
