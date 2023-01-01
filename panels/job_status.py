@@ -230,9 +230,9 @@ class JobStatusPanel(ScreenPanel):
         szfe.attach(self.buttons['z'], 2, 1, 2, 1) # Changes
         szfe.attach(self.buttons['elapsed'], 0, 2, 3, 1) # Changes
         szfe.attach(self.buttons['layers'], 2, 2, 2, 1) # Changes
-        if self._screen.printer.get_tools():
+        if self._printer.get_tools():
             szfe.attach(self.buttons['extrusion'], 0, 1, 3, 1)
-        if self._screen.printer.get_fans():
+        if self._printer.get_fans():
             szfe.attach(self.buttons['fan'], 2, 0, 2, 1) # Changes
 
         info = Gtk.Grid()
