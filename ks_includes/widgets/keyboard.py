@@ -8,7 +8,7 @@ from gi.repository import Gtk, GLib
 
 
 class Keyboard(Gtk.Box):
-    langs = ["de", "en", "fr", "es"] # Changes
+    langs = ["de", "en", "fr", "es"]
 
     def __init__(self, screen, close_cb, entry=None):
         super().__init__(orientation=Gtk.Orientation.VERTICAL)
@@ -21,7 +21,6 @@ class Keyboard(Gtk.Box):
         language = self.detect_language(screen._config.get_main_config().get("language", None))
         logging.info(f"Keyboard {language}")
 
-        # Start Changes
         if language == "de":
             self.keys = [
                 [
@@ -45,7 +44,7 @@ class Keyboard(Gtk.Box):
                     ["ABC", "abc", "123", ".", ",", "?", "!", "'"],
                 ]
             ]
-        if language == "fr":
+        elif language == "fr":
             self.keys = [
                 [
                     ["a", "z", "e", "r", "t", "y", "u", "i", "o", "p", "⌫"],
@@ -92,7 +91,6 @@ class Keyboard(Gtk.Box):
                 ]
             ]
 
-            # End Changes
             if language == "es":
                 self.keys[0][1].append("ñ")
                 self.keys[1][1].append("Ñ")
