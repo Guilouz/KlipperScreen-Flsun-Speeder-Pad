@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-12-24 21:41+0100\n"
+"PO-Revision-Date: 2023-02-11 22:39+0100\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,6 +17,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid "not found!"
+msgstr "non trouvée !"
+
+msgid "Z Offset Calibration"
+msgstr "Calibration du Z-Offset"
+
+msgid "EndStops Calibration"
+msgstr "Calibration EndStops"
+
+msgid "Automatic Delta Calibration"
+msgstr "Calibration Delta Automatique"
+
+msgid "Manual Delta Calibration"
+msgstr "Calibration Delta Manuelle"
+
+msgid "Apply a safety Offset"
+msgstr "Appliquer un Offset de sécurité"
+
+msgid ""
+"Do you want to apply a 2mm safety offset?\n"
+"\n"
+"This could prevent the nozzle from scraping or sinking on the bed in the "
+"event of an incorrect adjustment of Z Offset.\n"
+"\n"
+"Then start a print and adjust the first layer using babysteps via the 'Fine "
+"Tuning' button."
+msgstr ""
+"Voulez-vous appliquer un décalage de 2mm de sécurité ?\n"
+"\n"
+"Cela pourrait éviter que la buse vienne gratter ou s'enfoncer sur le plateau "
+"en cas d'un mauvais ajustement du Z-Offset.\n"
+"\n"
+"Démarrez ensuite une impression et ajustez la première couche à l'aide des "
+"babysteps via le bouton 'Ajustements'."
 
 msgid "Rename/Move:"
 msgstr "Renommer :"
@@ -29,9 +64,6 @@ msgstr "Plein écran"
 
 msgid "Min"
 msgstr "Min"
-
-msgid "Home is required before resetting Z-Offset!"
-msgstr "Un Home est requis avant de réinitialiser le Z-Offset !"
 
 msgid "Please wait..."
 msgstr "Patientez…"
@@ -113,6 +145,9 @@ msgstr "Calibration Endstops"
 msgid "Calibrations"
 msgstr "Calibrations"
 
+msgid "Multiple Calibrations"
+msgstr "Calibrations multiples"
+
 msgid "Please plug in leveling switch before Delta Calibration."
 msgstr "Veuillez connecter le palpeur avant de démarrer la Calibration Delta."
 
@@ -120,8 +155,33 @@ msgid "Please plug in leveling switch before auto-leveling."
 msgstr ""
 "Veuillez connecter le palpeur avant de démarrer le nivellement automatique."
 
-msgid "Please remove leveling switch before move Z0."
-msgstr "Veuillez déconnecter le palpeur avant le déplacement vers Z=0."
+msgid ""
+"Please plug in leveling switch before mesuring Z-Offset.\n"
+"Once the hotend is up, it can be removed to perform the measurement."
+msgstr ""
+"Veuillez connecter le palpeur avant de mesurer le Z-Offset.\n"
+"Une fois la hotend relevée, il peut être retiré pour effectuer la mesure."
+
+msgid "Do you want to start Endstops calibration?"
+msgstr "Voulez-vous démarrer la calibration des Endstops ?"
+
+msgid ""
+"Do you want to start Manual Delta calibration with 'paper test'?\n"
+"\n"
+"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
+"and then moving the nozzle to different Z heights until one feels a small "
+"amount of friction when pushing the paper back and forth.\n"
+"\n"
+"It's not needed to plug in leveling switch for this calibration."
+msgstr ""
+"Voulez-vous démarrer la calibration Delta manuelle avec le 'test papier' ?\n"
+"\n"
+"Il s'agit de placer un morceau de 'papier pour photocopieuse' entre le "
+"plateau et la buse, puis de déplacer la buse à différentes hauteurs Z "
+"jusqu'à ce que l'on ressente une petite friction lorsque l'on pousse le "
+"papier d'avant en arrière.\n"
+"\n"
+"Il n'est pas nécessaire de connecter le palpeur pour cette calibration."
 
 msgid "Move Z0"
 msgstr "Aller à Z0"
@@ -177,11 +237,11 @@ msgstr "Appliquer"
 
 #, python-format
 msgid "Apply %.2f offset to Endstop?"
-msgstr "Appliquer un décalage de %.2f au Endstop ?"
+msgstr "Appliquer une compensation de %.2f au Endstop ?"
 
 #, python-format
 msgid "Apply %s%.2f offset to Probe?"
-msgstr "Appliquer un décalage de %s%.2f au palpeur ?"
+msgstr "Appliquer une compensation de %s%.2f au Z-Offset du palpeur ?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Êtes-vous sûr de vouloir exclure l’objet ?"
@@ -211,7 +271,9 @@ msgid "Auto-close notifications"
 msgstr "Fermeture automatique des notifications"
 
 msgid "Auto-scroll"
-msgstr "Défilement automatique"
+msgstr ""
+"Défilement\n"
+"automatique"
 
 msgid "Bed Level"
 msgstr "Nivellement"
@@ -229,7 +291,8 @@ msgid "Calibrated"
 msgstr "Calibré"
 
 msgid "Calibrated, save configuration to make it permanent"
-msgstr "Calibré, enregistrez la configuration pour la rendre permanente"
+msgstr ""
+"Calibration terminée, enregistrez la configuration pour la rendre permanente."
 
 msgid "Calibrating"
 msgstr "Calibration"
@@ -405,7 +468,9 @@ msgid "Hide sensors in Temp."
 msgstr "Masquer les capteurs dans Températures"
 
 msgid "Hide temp."
-msgstr "Masquer températures"
+msgstr ""
+"Masquer les\n"
+"températures"
 
 msgid "Home All"
 msgstr "Home XYZ"
@@ -643,7 +708,7 @@ msgid "Printing"
 msgstr "Impression"
 
 msgid "Probe Offset"
-msgstr "Décalage du palpeur"
+msgstr "Z-Offset"
 
 msgid "Profile Name:"
 msgstr "Nom du profil:"
@@ -709,11 +774,11 @@ msgid "Save configuration?"
 msgstr "Enregistrer la configuration ?"
 
 msgid "Saved"
-msgstr "Enregistré"
+msgstr "Actuel"
 
 #, python-format
 msgid "Saved offset: %s"
-msgstr "Décalage enregistré: %s"
+msgstr "Nouveau Z-Offset enregistré : %s"
 
 msgid "Screen DPMS"
 msgstr "Écran DPMS"

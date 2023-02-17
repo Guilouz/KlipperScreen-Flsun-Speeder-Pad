@@ -21,6 +21,17 @@ button:active {
     border-radius: 1em;
 }
 
+button:disabled {
+    background-color: rgba(0,0,0,0);
+}
+
+button.color1:disabled,
+button.color2:disabled,
+button.color3:disabled,
+button.color4:disabled {
+    border-bottom-color: grey;
+}
+
 button.color1 {
     border-bottom-color: #2196f3;
 }
@@ -162,11 +173,11 @@ textview .time {
 }
 
 popover {
-    background-color: #2196f3;
+    background-color: #cccccc;
 }
 
 popover button {
-    background-color: #2196f3;
+    background-color: #20303D;
 }
 
 .printing-status {

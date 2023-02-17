@@ -374,9 +374,9 @@ class JobStatusPanel(ScreenPanel):
             'pause': self._gtk.Button("pause", _("Pause"), "color1"),
             'restart': self._gtk.Button("refresh", _("Reprint"), "color3"), # Changes
             'resume': self._gtk.Button("resume", _("Resume"), "color1"),
+            #'save_offset_probe': self._gtk.Button("home-z", _("Save") + "\n" + "Z-Offset", "color1"), # Changes
+            #'save_offset_endstop': self._gtk.Button("home-z", _("Save") + "\n" + "Z-Endstop", "color2"), # Changes
             'wait': self._gtk.Button("info",_("Please wait..."), "color1"), # Changes
-            # Changes
-            # Changes
         }
         self.buttons['cancel'].connect("clicked", self.cancel)
         self.buttons['control'].connect("clicked", self._screen._go_to_submenu, "")
@@ -386,12 +386,46 @@ class JobStatusPanel(ScreenPanel):
         self.buttons['pause'].connect("clicked", self.pause)
         self.buttons['restart'].connect("clicked", self.restart)
         self.buttons['resume'].connect("clicked", self.resume)
-        # Changes
-        # Changes
+        #self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe") Changes
+        #self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop") Changes
 
-    # Changes
+    # Start Changes
+    #def save_offset(self, widget, device):
+        #sign = "+" if self.zoffset > 0 else "-"
+        #label = Gtk.Label()
+        #if device == "probe":
+            #probe = self._printer.get_probe()
+            #saved_z_offset = probe['z_offset'] if probe else "?"
+            #label.set_label(_("Apply %s%.2f offset to Probe?") % (sign, abs(self.zoffset))
+                            #+ "\n\n"
+                            #+ _("Saved offset: %s") % saved_z_offset)
+        #elif device == "endstop":
+            #label.set_label(_("Apply %.2f offset to Endstop?") % (sign, abs(self.zoffset)))
+        #label.set_hexpand(True)
+        #label.set_halign(Gtk.Align.CENTER)
+        #label.set_vexpand(True)
+        #label.set_valign(Gtk.Align.CENTER)
+        #label.set_line_wrap(True)
+        #label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
-    # Changes
+        #grid = self._gtk.HomogeneousGrid()
+        #grid.attach(label, 0, 0, 1, 1)
+        #buttons = [
+            #{"name": _("Apply"), "response": Gtk.ResponseType.APPLY},
+            #{"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
+        #]
+        #dialog = self._gtk.Dialog(self._screen, buttons, grid, self.save_confirm, device)
+        #dialog.set_title(_("Save Z"))
+
+    #def save_confirm(self, dialog, response_id, device):
+        #self._gtk.remove_dialog(dialog)
+        #if response_id == Gtk.ResponseType.APPLY:
+            #if device == "probe":
+                #self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_PROBE")
+            #if device == "endstop":
+                #self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_ENDSTOP")
+            #self._screen._ws.klippy.gcode_script("SAVE_CONFIG")
+    #End Changes
 
     def restart(self, widget):
         if self.filename != "none":
@@ -722,7 +756,29 @@ class JobStatusPanel(ScreenPanel):
             self.enable_button("resume", "cancel")
             self.can_close = False
         else:
-            #Changes
+        #Start Changes
+            #offset = self._printer.get_stat("gcode_move", "homing_origin")
+            #self.zoffset = float(offset[2]) if offset else 0
+            #if self.zoffset != 0:
+                #endstop = (self._printer.config_section_exists("stepper_z") and
+                           #not self._printer.get_config_section("stepper_z")['endstop_pin'].startswith("probe"))
+                #if endstop:
+                    #self.buttons['button_grid'].attach(self.buttons["save_offset_endstop"], 0, 0, 1, 1)
+                #else:
+                    #self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                #if self._printer.get_probe():
+                    #self.buttons['button_grid'].attach(self.buttons["save_offset_probe"], 1, 0, 1, 1)
+                #else:
+                    #self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
+            #else:
+                #self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
+                #self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
+
+            #if self.filename is not None:
+                #self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
+            #if self.state != "cancelling":
+                #self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)
+                #self.can_close = True
             if self.state == "cancelling":
                 self.buttons['button_grid'].attach(Gtk.Label(""), 0, 0, 1, 1)
                 self.buttons['button_grid'].attach(Gtk.Label(""), 1, 0, 1, 1)
@@ -734,6 +790,7 @@ class JobStatusPanel(ScreenPanel):
                 self.buttons['button_grid'].attach(self.buttons['restart'], 2, 0, 1, 1)
                 self.buttons['button_grid'].attach(self.buttons['menu'], 3, 0, 1, 1)
                 self.can_close = True
+        # End Changes        
         self.content.show_all()
 
     def show_file_thumbnail(self):

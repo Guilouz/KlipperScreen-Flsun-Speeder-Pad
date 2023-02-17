@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2022-12-12 22:58+0100\n"
+"PO-Revision-Date: 2023-01-22 17:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -17,6 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid "Z Offset Calibration"
+msgstr ""
+
+msgid "EndStops Calibration"
+msgstr ""
+
+msgid "Automatic Delta Calibration"
+msgstr ""
+
+msgid "Manual Delta Calibration"
+msgstr ""
+
+msgid "Apply a safety Offset"
+msgstr ""
+
+msgid ""
+"Do you want to apply a 2mm safety offset?\n"
+"\n"
+"This could prevent the nozzle from scraping or sinking on the bed in the "
+"event of an incorrect adjustment of Z Offset.\n"
+"\n"
+"Then start a print and adjust the first layer using babysteps via the 'Fine "
+"Tuning' button."
+msgstr ""
 
 msgid "Rename/Move:"
 msgstr ""
@@ -28,9 +53,6 @@ msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
-msgstr ""
-
-msgid "Home is required before resetting Z-Offset!"
 msgstr ""
 
 msgid "Please wait..."
@@ -111,16 +133,31 @@ msgstr ""
 msgid "Calibrations"
 msgstr ""
 
+msgid "Multiple Calibrations"
+msgstr ""
+
 msgid "Please plug in leveling switch before Delta Calibration."
 msgstr ""
 
 msgid "Please plug in leveling switch before auto-leveling."
 msgstr ""
 
-msgid "Please remove leveling switch before move Z0."
+msgid ""
+"Please plug in leveling switch before mesuring Z-Offset.\n"
+"Once the hotend is up, it can be removed to perform the measurement."
 msgstr ""
 
-msgid "Move Z0"
+msgid "Do you want to start Endstops calibration?"
+msgstr ""
+
+msgid ""
+"Do you want to start Manual Delta calibration with 'paper test'?\n"
+"\n"
+"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
+"and then moving the nozzle to different Z heights until one feels a small "
+"amount of friction when pushing the paper back and forth.\n"
+"\n"
+"It's not needed to plug in leveling switch for this calibration."
 msgstr ""
 
 msgid "LED"
