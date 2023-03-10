@@ -95,10 +95,11 @@ install_script: scripts/KlipperScreen-install.sh
 
 - This version of KlipperScreen use the following Macros:
 
-  - `Endstops Calibrate` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
-  - `Calibrate` function use `[gcode_macro DELTA_CALIBRATION]`
+  - `Z Offset Calibration` function use `[gcode_macro Z_OFFSET_CALIBRATION]`
+  - `EndStops Calibration` function use `[gcode_macro ENDSTOPS_CALIBRATION]`
+  - `Automatic Delta Calibration` function use `[gcode_macro DELTA_CALIBRATION]`
+  - `Apply a safety Offset` function use `[gcode_macro SECURITY_OFFSET]`
   - `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
-  - `Move Z0` function in `Z Calibrate` menu use `[gcode_macro MOVE_TO_Z0]`
   - `Hotend LED Off` function use `[gcode_macro LED_HOTEND_OFF]`
   - `Hotend LED On` function use `[gcode_macro LED_HOTEND_ON]`
   - `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
