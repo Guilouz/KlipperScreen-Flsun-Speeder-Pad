@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-01-22 17:18+0100\n"
+"PO-Revision-Date: 2023-03-11 16:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -206,7 +206,7 @@ msgid "Actions"
 msgstr "Керування"
 
 msgid "Add profile"
-msgstr ""
+msgstr "Додати профіль"
 
 msgid "Apply"
 msgstr "Застосувати"
@@ -220,7 +220,7 @@ msgid "Apply %s%.2f offset to Probe?"
 msgstr "Застосувати зміщення %s%.2f до зонда?"
 
 msgid "Are you sure do you want to exclude the object?"
-msgstr ""
+msgstr "Ви впевнені, що бажаєте виключити об’єкт?"
 
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Ви впевнені, що хочете запустити аварійну зупинку?"
@@ -244,7 +244,7 @@ msgid "Auto-calibrate"
 msgstr "Автоматичне калібрування"
 
 msgid "Auto-close notifications"
-msgstr ""
+msgstr "Автоматичне закриття сповіщень"
 
 msgid "Auto-scroll"
 msgstr "Автоматична прокрутка"
@@ -256,7 +256,7 @@ msgid "Bed Mesh"
 msgstr "Сітка столу"
 
 msgid "Bed screw configuration:"
-msgstr ""
+msgstr "Конфігурація гвинтів ліжка:"
 
 msgid "Calibrate"
 msgstr "Калібрування"
@@ -295,7 +295,7 @@ msgid "Check ADXL Wiring"
 msgstr "Перевірте підключення ADXL"
 
 msgid "Checking for updates, please wait..."
-msgstr ""
+msgstr "Перевірка оновлень, зачекайте…"
 
 msgid "Clear"
 msgstr "Очистити"
@@ -335,7 +335,7 @@ msgid "Decrease"
 msgstr "Зменшити"
 
 msgid "Delete File?"
-msgstr ""
+msgstr "Видалити файл?"
 
 msgid "Deselect"
 msgstr "Відміна"
@@ -363,10 +363,10 @@ msgid "Estimated Time Method"
 msgstr "Метод розрахунку часу"
 
 msgid "Exclude Object"
-msgstr ""
+msgstr "Виключити об’єкт"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Дуже Великий"
 
 msgid "Extrude"
 msgstr "Видавити"
@@ -462,7 +462,7 @@ msgid "Homing"
 msgstr "До дому"
 
 msgid "Host"
-msgstr ""
+msgstr "Хост"
 
 msgid "Hostname"
 msgstr "Назва хоста"
@@ -477,7 +477,7 @@ msgid "Initializing printer..."
 msgstr "Ініціалізація принтера..."
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Input Shaper"
 
 msgid "Interface"
 msgstr "Інтерфейс"
@@ -486,7 +486,7 @@ msgid "Invalid"
 msgstr "Недійсний"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Недійсний пароль"
 
 msgid "Invert X"
 msgstr "Інвертувати X"
@@ -516,7 +516,7 @@ msgid "Klipper will reboot"
 msgstr "Klipper перезавантажиться"
 
 msgid "KlipperScreen will reboot"
-msgstr ""
+msgstr "KlipperScreen перезавантажиться"
 
 msgid "Language"
 msgstr "Мова"
@@ -549,7 +549,7 @@ msgid "Main Menu"
 msgstr "Main Menu"
 
 msgid "Max"
-msgstr ""
+msgstr "Макс"
 
 msgid "Max Acceleration"
 msgstr "Макс. прискорення"
@@ -561,7 +561,7 @@ msgid "Max Velocity"
 msgstr "Макс. швидкість"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Максимум"
 
 msgid "Measure Both"
 msgstr "Виміряти все"
@@ -579,7 +579,7 @@ msgid "Menu"
 msgstr "Меню"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "Калібрування сітки столу"
 
 msgid "Modified"
 msgstr "Змінено"
@@ -597,10 +597,10 @@ msgid "Name"
 msgstr "Ім'я"
 
 msgid "Network"
-msgstr "Сітка"
+msgstr "Мережа"
 
 msgid "Never"
-msgstr ""
+msgstr "Ніколи"
 
 msgid "New"
 msgstr "Новий"
@@ -609,6 +609,8 @@ msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
+"Автоматичне визначення не підтримується, його потрібно налаштувати у "
+"klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Не вибрано"
@@ -627,7 +629,7 @@ msgstr[1] "Пакет оновлено"
 msgstr[2] "Пакет оновлено"
 
 msgid "Part Fan"
-msgstr ""
+msgstr "Охолодження моделі"
 
 msgid "Password saved"
 msgstr "Пароль збережено"
@@ -643,6 +645,8 @@ msgstr "Виконати повне оновлення?"
 
 msgid "Pins"
 msgstr ""
+"Керування\n"
+"контактами"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Будь ласка, перекомпілюйте та перепрошійте мікроконтролер."
@@ -666,13 +670,13 @@ msgid "Print Time"
 msgstr "Час друку"
 
 msgid "Printer"
-msgstr ""
+msgstr "Принтер"
 
 msgid "Printer Connections"
 msgstr "Підключення принтера"
 
 msgid "Printer Select"
-msgstr ""
+msgstr "Вибір Принтера"
 
 msgid "Printing"
 msgstr "Друк"
@@ -684,7 +688,7 @@ msgid "Profile Name:"
 msgstr "Ім'я профілю:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Надайте KlipperScreen.log, коли звертаєтесь по допомогу.\\n\n"
 
 msgid "Quad Gantry Level"
 msgstr "Портальне вирівнювання"
@@ -693,7 +697,7 @@ msgid "Raise Nozzle"
 msgstr "Підняти сопло"
 
 msgid "Recover"
-msgstr ""
+msgstr "Відновити"
 
 msgid "Recover Hard"
 msgstr "Відновити все"
@@ -706,6 +710,8 @@ msgstr "Довідка"
 
 msgid "Refresh"
 msgstr ""
+"Перевірка\n"
+"Оновлень"
 
 msgid "Restart"
 msgstr "Перезапуск"
@@ -726,10 +732,10 @@ msgid "Retraction Speed"
 msgstr "Швидкість втягування"
 
 msgid "Retry"
-msgstr ""
+msgstr "Повторіть спробу"
 
 msgid "Retrying"
-msgstr ""
+msgstr "Повторна спроба"
 
 msgid "Save"
 msgstr "Зберегти"
@@ -779,10 +785,10 @@ msgid "Show"
 msgstr "Показати"
 
 msgid "Show Heater Power"
-msgstr ""
+msgstr "Показати Потужність Нагрівача"
 
 msgid "Shutdown"
-msgstr ""
+msgstr "Вимкнути"
 
 msgid "Size"
 msgstr "Розмір"
@@ -848,7 +854,7 @@ msgid "Unknown Heater"
 msgstr "Невідомий нагрівач"
 
 msgid "Unknown screw position"
-msgstr ""
+msgstr "Невідоме положення гвинта"
 
 msgid "Unload"
 msgstr "Вийняти"
@@ -860,7 +866,7 @@ msgid "Unretract Speed"
 msgstr "Швидкість повернення"
 
 msgid "Up To Date"
-msgstr "Оновити"
+msgstr "Актуально"
 
 msgid "Update"
 msgstr "Оновлення"
