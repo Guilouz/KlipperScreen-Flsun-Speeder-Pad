@@ -60,9 +60,9 @@ class ZCalibratePanel(ScreenPanel):
         if self.probe:
             self._add_button(_("Z Offset Calibration"), "probe", pobox)
             functions.append("probe")
-        self._add_button(_("EndStops Calibration"), "endstop", pobox)
-        functions.append("endstop")
         if "delta" in self._printer.get_config_section("printer")['kinematics']:
+            self._add_button(_("EndStops Calibration"), "endstop", pobox)
+            functions.append("endstop")
             if "probe" in functions:
                 self._add_button(_("Automatic Delta Calibration"), "delta", pobox)
                 functions.append("delta")
