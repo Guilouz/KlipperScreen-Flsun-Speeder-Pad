@@ -165,7 +165,7 @@ class ZCalibratePanel(ScreenPanel):
                 self._screen.show_popup_message("Macro SECURITY_OFFSET " + _("not found!"))
             else:
                 script = {"script": "SECURITY_OFFSET"}
-                self._screen._confirm_send_action(None, _("Do you want to apply a 2mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."), "printer.gcode.script", script)
+                self._screen._confirm_send_action(None, _("Do you want to apply a 1mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."), "printer.gcode.script", script)
         # End Changes
 
     def _move_to_position(self):

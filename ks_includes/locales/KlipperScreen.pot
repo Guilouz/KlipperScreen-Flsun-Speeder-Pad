@@ -36,7 +36,7 @@ msgstr ""
 msgid "Apply a safety Offset"
 msgstr ""
 
-msgid "Do you want to apply a 2mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."
+msgid "Do you want to apply a 1mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."
 msgstr ""
 
 msgid "Rename/Move:"

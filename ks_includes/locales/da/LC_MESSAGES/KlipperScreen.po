@@ -29,7 +29,7 @@ msgid "Apply a safety Offset"
 msgstr ""
 
 msgid ""
-"Do you want to apply a 2mm safety offset?\n"
+"Do you want to apply a 1mm safety offset?\n"
 "\n"
 "This could prevent the nozzle from scraping or sinking on the bed in the "
 "event of an incorrect adjustment of Z Offset.\n"
