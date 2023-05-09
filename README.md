@@ -148,7 +148,7 @@ filename: ~/printer_data/config/variables.cfg
 - And must be used with this Macros:
 ```
 [gcode_macro SET_GCODE_OFFSET]
-description: Saving Gcode Offset
+description: Saving Z-Offset
 rename_existing: _SET_GCODE_OFFSET
 gcode:
   {% if printer.save_variables.variables.gcode_offsets %}
@@ -172,7 +172,7 @@ gcode:
   {% if printer.save_variables.variables.gcode_offsets %}
   {% set offsets = printer.save_variables.variables.gcode_offsets %}
   _SET_GCODE_OFFSET {% for axis, offset in offsets.items() if offsets[axis] %}{ "%s=%s " % (axis, offset) }{% endfor %}
-  { action_respond_info("Loaded gcode offsets from saved variables [%s]" % (offsets)) }
+  { action_respond_info("Loaded Z-Offset from variables.cfg file: %s" % (offsets)) }
   {% endif %}
 ```
 
