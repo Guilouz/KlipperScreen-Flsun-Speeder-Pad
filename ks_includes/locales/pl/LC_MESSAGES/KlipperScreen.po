@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:49+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -18,6 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -42,15 +47,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -211,11 +207,11 @@ msgid "Apply"
 msgstr ""
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
 msgstr ""
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
+msgid "Apply %s%.3f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -263,11 +259,11 @@ msgstr "Kalibracja"
 msgid "Calibrated"
 msgstr ""
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Skalibrowano, zapisz konfigurację aby została na stałe"
-
 msgid "Calibrating"
 msgstr "Kalibracja"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Nie można ustawić powyżej maksymum:"
@@ -330,8 +326,8 @@ msgstr "Studzenie"
 msgid "Date"
 msgstr "Data"
 
-msgid "Decrease"
-msgstr "Obniż"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr ""
@@ -424,6 +420,9 @@ msgstr "Rozmiar trzcionki"
 msgid "Full Update"
 msgstr "Pełny Aktualizacja"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Powróć"
 
@@ -468,9 +467,6 @@ msgstr "Nazwa hosta"
 
 msgid "Icon Theme"
 msgstr "Motyw Ikon"
-
-msgid "Increase"
-msgstr "Zwiększ"
 
 msgid "Initializing printer..."
 msgstr "Drukarka Startuje..."
@@ -706,6 +702,9 @@ msgstr "Sprawdzenie"
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Restartuj"
 
@@ -763,10 +762,6 @@ msgstr "Zaznacz"
 
 msgid "Send"
 msgstr "Wysłać"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Wysyłam sygnał włączenia do: %s"
 
 msgid "Set Temp"
 msgstr "Ustaw Temperaturę"
@@ -906,8 +901,11 @@ msgstr[0] "godzina"
 msgstr[1] "godziny"
 msgstr[2] "godzin"
 
-msgid "minutes"
-msgstr "minut"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 msgid "mm"
 msgstr "mm"

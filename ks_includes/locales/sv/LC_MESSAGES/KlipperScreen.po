@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:50+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -41,15 +46,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -210,11 +206,11 @@ msgid "Apply"
 msgstr ""
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
 msgstr ""
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
+msgid "Apply %s%.3f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -262,11 +258,11 @@ msgstr "Kalibrera"
 msgid "Calibrated"
 msgstr ""
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Kalibrerad, spara konfiguration för att göra den permanent"
-
 msgid "Calibrating"
 msgstr "Kalibrera"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Kan inte ställa in över maxgränsen:"
@@ -329,8 +325,8 @@ msgstr "Nedkylning"
 msgid "Date"
 msgstr "Datum"
 
-msgid "Decrease"
-msgstr "Minska"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr ""
@@ -423,6 +419,9 @@ msgstr "Textstorlek"
 msgid "Full Update"
 msgstr "Fullständig Uppdatering"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Gå tillbaka"
 
@@ -467,9 +466,6 @@ msgstr "Värdnamn"
 
 msgid "Icon Theme"
 msgstr "Ikon tema"
-
-msgid "Increase"
-msgstr "Öka"
 
 msgid "Initializing printer..."
 msgstr "Initierar skrivaren..."
@@ -704,6 +700,9 @@ msgstr "Referens"
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Starta om"
 
@@ -761,10 +760,6 @@ msgstr "Välj"
 
 msgid "Send"
 msgstr "Skicka"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Skickar ström PÅ-signal till: %s"
 
 msgid "Set Temp"
 msgstr ""
@@ -902,8 +897,10 @@ msgid_plural "hours"
 msgstr[0] "timme"
 msgstr[1] "timmar"
 
-msgid "minutes"
-msgstr "minuter"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "mm"
 msgstr "mm"

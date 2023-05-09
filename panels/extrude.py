@@ -237,12 +237,12 @@ class ExtrudePanel(ScreenPanel):
     def load_unload(self, widget, direction):
         if direction == "-":
             if not self.unload_filament:
-                self._screen.show_popup_message("Macro UNLOAD_FILAMENT " + _("not found!")) # Changes
+                self._screen.show_popup_message("Macro UNLOAD_FILAMENT " + _("not found!\nPlease update your configuration files.")) # Changes
             else:
                 self._screen._ws.klippy.gcode_script(f"UNLOAD_FILAMENT SPEED={self.speed * 60}")
         if direction == "+":
             if not self.load_filament:
-                self._screen.show_popup_message("Macro LOAD_FILAMENT " + _("not found!")) # Changes
+                self._screen.show_popup_message("Macro LOAD_FILAMENT " + _("not found!\nPlease update your configuration files.")) # Changes
             else:
                 self._screen._ws.klippy.gcode_script(f"LOAD_FILAMENT SPEED={self.speed * 60}")
 

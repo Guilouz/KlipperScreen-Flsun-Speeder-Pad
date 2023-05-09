@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Czech\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:47+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: Jan Stanka (stanky@email.cz)\n"
 "Language: cs\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -41,15 +46,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -210,12 +206,12 @@ msgid "Apply"
 msgstr "Použít"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "Použít %.2f přesah k Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "Použít %s%.3f přesah k Endstop?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "Použít %s%.2f přesah k Sondě?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "Použít %s%.3f přesah k Sondě?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Opravdu chceš vyjmout objekt?"
@@ -262,11 +258,11 @@ msgstr "Kalibrace"
 msgid "Calibrated"
 msgstr "Zkalibrováno"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Zkalibrováno, uložit změny jako trvalé"
-
 msgid "Calibrating"
 msgstr "Kalibruji"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Nemohu nastavit víc než max:"
@@ -329,8 +325,8 @@ msgstr "Zchladit"
 msgid "Date"
 msgstr "Datum"
 
-msgid "Decrease"
-msgstr "Snížit"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr "Smazat soubor?"
@@ -423,6 +419,9 @@ msgstr "Velikost fontu"
 msgid "Full Update"
 msgstr "Úplný update"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Zpět"
 
@@ -467,9 +466,6 @@ msgstr "Hostname"
 
 msgid "Icon Theme"
 msgstr "Sada ikon"
-
-msgid "Increase"
-msgstr "Zvětšit"
 
 msgid "Initializing printer..."
 msgstr "Startuji tiskárnu ..."
@@ -705,6 +701,9 @@ msgstr "Reference"
 msgid "Refresh"
 msgstr "Obnovit"
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Restart"
 
@@ -762,10 +761,6 @@ msgstr "Vyber"
 
 msgid "Send"
 msgstr "Odeslat"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Odeslat ZAP do %s"
 
 msgid "Set Temp"
 msgstr "Nastav teplotu"
@@ -905,8 +900,11 @@ msgstr[0] "hodina"
 msgstr[1] "hodiny"
 msgstr[2] "hodin"
 
-msgid "minutes"
-msgstr "min"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 msgid "mm"
 msgstr "mm"

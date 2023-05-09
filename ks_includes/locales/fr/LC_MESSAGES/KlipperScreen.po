@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-31 20:59+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:21+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,8 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-msgid "not found!"
-msgstr "non trouvée !"
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
+"non trouvée !\n"
+"Veuillez mettre à jour vos fichiers de configuration."
 
 msgid "Z Offset Calibration"
 msgstr "Calibration du Z-Offset"
@@ -52,15 +56,6 @@ msgstr ""
 "\n"
 "Démarrez ensuite une impression et ajustez la première couche à l'aide des "
 "babysteps via le bouton 'Ajustements'."
-
-msgid "Rename/Move:"
-msgstr "Renommer :"
-
-msgid "Camera"
-msgstr "Caméra"
-
-msgid "Fullscreen"
-msgstr "Plein écran"
 
 msgid "Min"
 msgstr "Min"
@@ -183,9 +178,6 @@ msgstr ""
 "\n"
 "Il n'est pas nécessaire de connecter le palpeur pour cette calibration."
 
-msgid "Move Z0"
-msgstr "Aller à Z0"
-
 msgid "LED"
 msgstr "LED"
 
@@ -236,12 +228,12 @@ msgid "Apply"
 msgstr "Appliquer"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "Appliquer une compensation de %.2f au Endstop ?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "Appliquer une compensation de %s%.3f au Endstop ?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "Appliquer une compensation de %s%.2f au Z-Offset du palpeur ?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "Appliquer une compensation de %s%.3f au Z-Offset du palpeur ?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Êtes-vous sûr de vouloir exclure l’objet ?"
@@ -290,12 +282,11 @@ msgstr "Calibration Delta"
 msgid "Calibrated"
 msgstr "Calibré"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr ""
-"Calibration terminée, enregistrez la configuration pour la rendre permanente."
-
 msgid "Calibrating"
 msgstr "Calibration"
+
+msgid "Camera"
+msgstr "Caméra"
 
 msgid "Can't set above the maximum:"
 msgstr "Impossible de définir au-dessus du maximum:"
@@ -358,8 +349,8 @@ msgstr "Refroidir"
 msgid "Date"
 msgstr "Date"
 
-msgid "Decrease"
-msgstr "Diminuer"
+msgid "Delete Directory?"
+msgstr "Supprimer le dossier ?"
 
 msgid "Delete File?"
 msgstr "Supprimer le fichier ?"
@@ -452,6 +443,9 @@ msgstr "Taille de la police"
 msgid "Full Update"
 msgstr "Mettre à jour"
 
+msgid "Fullscreen"
+msgstr "Plein écran"
+
 msgid "Go Back"
 msgstr "Retour"
 
@@ -498,9 +492,6 @@ msgstr "Nom d’hôte"
 
 msgid "Icon Theme"
 msgstr "Thème"
-
-msgid "Increase"
-msgstr "Augmenter"
 
 msgid "Initializing printer..."
 msgstr "Démarrage de l'imprimante..."
@@ -737,6 +728,9 @@ msgstr "Référence"
 msgid "Refresh"
 msgstr "Rafraîchir"
 
+msgid "Rename/Move:"
+msgstr "Renommer :"
+
 msgid "Restart"
 msgstr "Redémarrer"
 
@@ -794,10 +788,6 @@ msgstr "Sélectionner"
 
 msgid "Send"
 msgstr "Envoyer"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Envoi du signal de mise sous tension à: %s"
 
 msgid "Set Temp"
 msgstr "Régler la température"
@@ -935,8 +925,10 @@ msgid_plural "hours"
 msgstr[0] "heure"
 msgstr[1] "heures"
 
-msgid "minutes"
-msgstr "minutes"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minute"
+msgstr[1] "minutes"
 
 msgid "mm"
 msgstr "mm"

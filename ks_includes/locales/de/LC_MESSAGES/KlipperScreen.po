@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:47+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -41,15 +46,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -210,11 +206,11 @@ msgid "Apply"
 msgstr ""
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
 msgstr ""
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
+msgid "Apply %s%.3f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -262,11 +258,11 @@ msgstr "Höheneinstellung"
 msgid "Calibrated"
 msgstr "Kalibriert"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Kalibriert, Konfiguration speichern, um sie dauerhaft zu machen"
-
 msgid "Calibrating"
 msgstr "Kalibrieren"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Kann nicht über dem Maximum eingestellt werden:"
@@ -329,8 +325,8 @@ msgstr "Abkühlen"
 msgid "Date"
 msgstr "Datum"
 
-msgid "Decrease"
-msgstr "Verringern"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr ""
@@ -423,6 +419,9 @@ msgstr "Schriftgröße"
 msgid "Full Update"
 msgstr "Voll Aktualisieren"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Zurück"
 
@@ -477,9 +476,6 @@ msgstr "Hostname"
 
 msgid "Icon Theme"
 msgstr "Icon Theme"
-
-msgid "Increase"
-msgstr "Erhöhen"
 
 msgid "Initializing printer..."
 msgstr "Drucker wird initialisiert..."
@@ -714,6 +710,9 @@ msgstr "Referenz"
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Neustart"
 
@@ -771,10 +770,6 @@ msgstr "Wählen"
 
 msgid "Send"
 msgstr "Schicken"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Senden des Einschaltsignals an: %s"
 
 msgid "Set Temp"
 msgstr "Temp. einstellen"
@@ -914,8 +909,10 @@ msgid_plural "hours"
 msgstr[0] "Stunde"
 msgstr[1] "Stunden"
 
-msgid "minutes"
-msgstr "Minuten"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "mm"
 msgstr "mm"

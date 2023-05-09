@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:49+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:15+0200\n"
 "Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -18,6 +18,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -42,15 +47,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -211,12 +207,12 @@ msgid "Apply"
 msgstr "Применить"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "Применить смещение %.2f к Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "Применить смещение %s%.3f  к Endstop?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "Применить смещение %s%.2f к зонду?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "Применить смещение %s%.3f  к зонду?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Вы уверены, что хотите исключить объект?"
@@ -263,11 +259,11 @@ msgstr "Калибровка"
 msgid "Calibrated"
 msgstr "Откалиброванный"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Откалибровано, сохраните конфигурацию, чтобы сделать ее постоянной"
-
 msgid "Calibrating"
 msgstr "Калибровка"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Невозможно установить выше максимума:"
@@ -330,8 +326,8 @@ msgstr "Остудить"
 msgid "Date"
 msgstr "Дата"
 
-msgid "Decrease"
-msgstr "Уменьшить"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr "Удалить Файл?"
@@ -424,6 +420,9 @@ msgstr "Размер шрифта"
 msgid "Full Update"
 msgstr "Полный Обновлять"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Назад"
 
@@ -468,9 +467,6 @@ msgstr "Имя хоста"
 
 msgid "Icon Theme"
 msgstr "Темы"
-
-msgid "Increase"
-msgstr "Поднять"
 
 msgid "Initializing printer..."
 msgstr "Принтер стартует..."
@@ -708,6 +704,9 @@ msgstr "Ссылка"
 msgid "Refresh"
 msgstr "Обновить"
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Перезагрузка"
 
@@ -765,10 +764,6 @@ msgstr "Выбирать"
 
 msgid "Send"
 msgstr "Отправить"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Отправка сигнала включения питания на: %s"
 
 msgid "Set Temp"
 msgstr "Заданная температура"
@@ -908,8 +903,11 @@ msgstr[0] "час"
 msgstr[1] "часа"
 msgstr[2] "часа"
 
-msgid "minutes"
-msgstr "минут"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 msgid "mm"
 msgstr "мм"

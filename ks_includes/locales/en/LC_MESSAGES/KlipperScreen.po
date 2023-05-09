@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,7 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-msgid "not found!"
+msgid ""
+"not found!\n"
+"Please update your configuration files."
 msgstr ""
 
 msgid "Z Offset Calibration"
@@ -39,15 +41,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -208,11 +201,11 @@ msgid "Apply"
 msgstr ""
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
 msgstr ""
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
+msgid "Apply %s%.3f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -260,10 +253,10 @@ msgstr ""
 msgid "Calibrated"
 msgstr ""
 
-msgid "Calibrated, save configuration to make it permanent"
+msgid "Calibrating"
 msgstr ""
 
-msgid "Calibrating"
+msgid "Camera"
 msgstr ""
 
 msgid "Can't set above the maximum:"
@@ -327,7 +320,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-msgid "Decrease"
+msgid "Delete Directory?"
 msgstr ""
 
 msgid "Delete File?"
@@ -421,6 +414,9 @@ msgstr ""
 msgid "Full Update"
 msgstr ""
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr ""
 
@@ -464,9 +460,6 @@ msgid "Hostname"
 msgstr ""
 
 msgid "Icon Theme"
-msgstr ""
-
-msgid "Increase"
 msgstr ""
 
 msgid "Initializing printer..."
@@ -702,6 +695,9 @@ msgstr ""
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr ""
 
@@ -758,10 +754,6 @@ msgid "Select"
 msgstr ""
 
 msgid "Send"
-msgstr ""
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
 msgstr ""
 
 msgid "Set Temp"
@@ -900,8 +892,10 @@ msgid_plural "hours"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "minutes"
-msgstr ""
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "mm"
 msgstr ""

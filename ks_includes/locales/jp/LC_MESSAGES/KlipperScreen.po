@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: boyon\n"
 "Language-Team: \n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -36,15 +41,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -205,12 +201,12 @@ msgid "Apply"
 msgstr "適用する"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "エンドストップにオフセットに  %.2f を適用しますか？"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "エンドストップにオフセットに  %s%.3f を適用しますか？"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "プローブオフセットに  %s%.2f を適用しますか？"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "プローブオフセットに  %s%.3f を適用しますか？"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "対象を除外しますか？"
@@ -257,11 +253,11 @@ msgstr "校正"
 msgid "Calibrated"
 msgstr "構成済み"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "校正完了しました。次回起動時以降も適用するには設定を保存してください"
-
 msgid "Calibrating"
 msgstr "校正中"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "上限値を超えて設定できません:"
@@ -324,8 +320,8 @@ msgstr "クールダウン"
 msgid "Date"
 msgstr "日付"
 
-msgid "Decrease"
-msgstr "減少"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr "ファイルを削除しますか？"
@@ -418,6 +414,9 @@ msgstr "フォントサイズ"
 msgid "Full Update"
 msgstr "フルアップデート"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "戻る"
 
@@ -462,9 +461,6 @@ msgstr "Hostname"
 
 msgid "Icon Theme"
 msgstr "アイコンテーマ"
-
-msgid "Increase"
-msgstr "増加"
 
 msgid "Initializing printer..."
 msgstr ""
@@ -698,6 +694,9 @@ msgstr ""
 msgid "Refresh"
 msgstr "最新表示"
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "再起動"
 
@@ -754,10 +753,6 @@ msgid "Select"
 msgstr ""
 
 msgid "Send"
-msgstr ""
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
 msgstr ""
 
 msgid "Set Temp"
@@ -894,8 +889,9 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
-msgid "minutes"
-msgstr "分"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
 
 msgid "mm"
 msgstr ""

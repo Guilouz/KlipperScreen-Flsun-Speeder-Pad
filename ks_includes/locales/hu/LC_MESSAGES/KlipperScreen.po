@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: AntoszHUN\n"
 "Language-Team: \n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -36,15 +41,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -205,12 +201,12 @@ msgid "Apply"
 msgstr "Alkalmaz"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "Alkalmazod %.2f eltolást az Endstopra?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "Alkalmazod %s%.3f eltolást az Endstopra?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "Alkalmazod %s%.2f eltolást a szondára?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "Alkalmazod %s%.3f eltolást a szondára?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Biztosan kizárod az objektumot?"
@@ -257,11 +253,11 @@ msgstr "Kalibrálás"
 msgid "Calibrated"
 msgstr "Kalibrálva"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Kalibrálva! Mentsd el a konfigurációt, hogy az állandó legyen"
-
 msgid "Calibrating"
 msgstr "Kalibrálás"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Nem állítható a maximum fölé:"
@@ -324,8 +320,8 @@ msgstr "Lehűtés"
 msgid "Date"
 msgstr "Dátum"
 
-msgid "Decrease"
-msgstr "Csökkent"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr "Fájl törlése?"
@@ -418,6 +414,9 @@ msgstr "Betűméret"
 msgid "Full Update"
 msgstr "Teljes Frissítés"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Visszalépés"
 
@@ -462,9 +461,6 @@ msgstr "Gazdanév"
 
 msgid "Icon Theme"
 msgstr "Ikon téma"
-
-msgid "Increase"
-msgstr "Növel"
 
 msgid "Initializing printer..."
 msgstr "Nyomtató inicializálása..."
@@ -701,6 +697,9 @@ msgstr "Referencia"
 msgid "Refresh"
 msgstr "Frissítés"
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Újraindítás"
 
@@ -758,10 +757,6 @@ msgstr "Kijelölés"
 
 msgid "Send"
 msgstr "Küldés"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Bekapcsolási jel küldése ide: %s"
 
 msgid "Set Temp"
 msgstr "Hőfok megadás"
@@ -899,8 +894,10 @@ msgid_plural "hours"
 msgstr[0] "óra"
 msgstr[1] "órák"
 
-msgid "minutes"
-msgstr "perc"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "mm"
 msgstr "mm"

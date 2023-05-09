@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: SRBJ\n"
 "Language-Team: \n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -36,15 +41,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -205,11 +201,11 @@ msgid "Apply"
 msgstr ""
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
+msgid "Apply %s%.3f offset to Endstop?"
 msgstr ""
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
+msgid "Apply %s%.3f offset to Probe?"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -257,11 +253,11 @@ msgstr "Kalibrér"
 msgid "Calibrated"
 msgstr "Kalibreret"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Kalibreret, gem konfiguration for at gøre den permanent"
-
 msgid "Calibrating"
 msgstr "Kalibrerer"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "Kan ikke indstilles over maksimum:"
@@ -324,8 +320,8 @@ msgstr "Afkøling"
 msgid "Date"
 msgstr "Dato"
 
-msgid "Decrease"
-msgstr "Formindsk"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr ""
@@ -418,6 +414,9 @@ msgstr "Skriftstørrelse"
 msgid "Full Update"
 msgstr "Fuld Opdatering"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "Gå tilbage"
 
@@ -462,9 +461,6 @@ msgstr "Værtsnavn"
 
 msgid "Icon Theme"
 msgstr "Ikon-tema"
-
-msgid "Increase"
-msgstr "Forøg"
 
 msgid "Initializing printer..."
 msgstr "Initialiserer printer..."
@@ -699,6 +695,9 @@ msgstr "Reference"
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "Genstart"
 
@@ -756,10 +755,6 @@ msgstr "Vælg"
 
 msgid "Send"
 msgstr "Sende"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Sender Power ON-signal til: %s"
 
 msgid "Set Temp"
 msgstr "Indstil Temp"
@@ -897,8 +892,10 @@ msgid_plural "hours"
 msgstr[0] "time"
 msgstr[1] "timer"
 
-msgid "minutes"
-msgstr "minutter"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "mm"
 msgstr "mm"

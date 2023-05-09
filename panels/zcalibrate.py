@@ -141,19 +141,19 @@ class ZCalibratePanel(ScreenPanel):
         # Start Changes
         if method == "probe":
             if not self.z_offset_calibration:
-                self._screen.show_popup_message("Macro Z_OFFSET_CALIBRATION " + _("not found!"))
+                self._screen.show_popup_message("Macro Z_OFFSET_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "Z_OFFSET_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Please plug in leveling switch before mesuring Z-Offset.\nOnce the hotend is up, it can be removed to perform the measurement."), "printer.gcode.script", script)
         elif method == "endstop":
             if not self.endstops_calibration:
-                self._screen.show_popup_message("Macro ENDSTOPS_CALIBRATION " + _("not found!"))
+                self._screen.show_popup_message("Macro ENDSTOPS_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "ENDSTOPS_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Do you want to start Endstops calibration?"), "printer.gcode.script", script)
         elif method == "delta":
             if not self.delta_calibration:
-                self._screen.show_popup_message("Macro DELTA_CALIBRATION " + _("not found!"))
+                self._screen.show_popup_message("Macro DELTA_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "DELTA_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Please plug in leveling switch before Delta Calibration."), "printer.gcode.script", script)
@@ -162,7 +162,7 @@ class ZCalibratePanel(ScreenPanel):
             #self._screen._confirm_send_action(None, _("Do you want to start Manual Delta calibration with 'paper test'?\n\nIt involves placing a piece of 'copy machine paper' between bed and nozzle, and then moving the nozzle to different Z heights until one feels a small amount of friction when pushing the paper back and forth.\n\nIt's not needed to plug in leveling switch for this calibration."), "printer.gcode.script", script)
         elif method == "gcode_offset":
             if not self.security_offset:
-                self._screen.show_popup_message("Macro SECURITY_OFFSET " + _("not found!"))
+                self._screen.show_popup_message("Macro SECURITY_OFFSET " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "SECURITY_OFFSET"}
                 self._screen._confirm_send_action(None, _("Do you want to apply a 1mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."), "printer.gcode.script", script)

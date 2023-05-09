@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
-"PO-Revision-Date: 2023-03-27 21:48+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"PO-Revision-Date: 2023-05-09 14:30+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -41,15 +46,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -210,12 +206,12 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "Aplicar %.2f desfase al final de carrera?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "Aplicar %s%.3f desfase al final de carrera?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "Aplicar %s%.2f desfase al sensor?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "Aplicar %s%.3f desfase al sensor?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "¿Está seguro de excluir este objeto?"
@@ -262,11 +258,11 @@ msgstr "Calibrar"
 msgid "Calibrated"
 msgstr "Calibrado"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "Calibrado, guarde su configuración para hacerlo permanente"
-
 msgid "Calibrating"
 msgstr "Calibrando"
+
+msgid "Camera"
+msgstr "Camara"
 
 msgid "Can't set above the maximum:"
 msgstr "Error: Valor sobre el máximo:"
@@ -329,8 +325,8 @@ msgstr "Enfriar"
 msgid "Date"
 msgstr "Fecha"
 
-msgid "Decrease"
-msgstr "Disminuir"
+msgid "Delete Directory?"
+msgstr "Borrar Carpeta?"
 
 msgid "Delete File?"
 msgstr "¿Borrar archivo?"
@@ -364,7 +360,7 @@ msgid "Exclude Object"
 msgstr "Excluir Objeto"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra Grande"
 
 msgid "Extrude"
 msgstr "Extruir"
@@ -423,6 +419,9 @@ msgstr "Tamaño del texto"
 msgid "Full Update"
 msgstr "Actualizar Todo"
 
+msgid "Fullscreen"
+msgstr "Pantalla Completa"
+
 msgid "Go Back"
 msgstr "Volver"
 
@@ -468,9 +467,6 @@ msgstr "Hostname"
 msgid "Icon Theme"
 msgstr "Tema de Iconos"
 
-msgid "Increase"
-msgstr "Aumentar"
-
 msgid "Initializing printer..."
 msgstr "Iniciando Impresora..."
 
@@ -484,7 +480,7 @@ msgid "Invalid"
 msgstr "Invalido"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Contraseña invalida"
 
 msgid "Invert X"
 msgstr "Invertir X"
@@ -514,7 +510,7 @@ msgid "Klipper will reboot"
 msgstr "Klipper se reiniciará"
 
 msgid "KlipperScreen will reboot"
-msgstr ""
+msgstr "KlipperScreen se reiniciará"
 
 msgid "Language"
 msgstr "Idioma"
@@ -559,7 +555,7 @@ msgid "Max Velocity"
 msgstr "Max. Velocidad"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Maximo"
 
 msgid "Measure Both"
 msgstr "Medir Ambos"
@@ -577,7 +573,7 @@ msgid "Menu"
 msgstr "Menú"
 
 msgid "Mesh calibrate"
-msgstr ""
+msgstr "Calibrar Malla"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -598,7 +594,7 @@ msgid "Network"
 msgstr "Red"
 
 msgid "Never"
-msgstr ""
+msgstr "Nunca"
 
 msgid "New"
 msgstr "Nuevo"
@@ -683,7 +679,7 @@ msgid "Profile Name:"
 msgstr "Nombre del perfil:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr ""
+msgstr "Provea KlipperScreen.log cuando pida ayuda.\\n\n"
 
 msgid "Quad Gantry Level"
 msgstr "Nivelación cuádruple"
@@ -692,7 +688,7 @@ msgid "Raise Nozzle"
 msgstr "Levantar Boquilla"
 
 msgid "Recover"
-msgstr ""
+msgstr "Recuperar"
 
 msgid "Recover Hard"
 msgstr "Recuperar Hard"
@@ -705,6 +701,9 @@ msgstr "Referencia"
 
 msgid "Refresh"
 msgstr "Actualizar"
+
+msgid "Rename/Move:"
+msgstr "Renombrar/Movar"
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -725,7 +724,7 @@ msgid "Retraction Speed"
 msgstr "Velocidad de Retracción"
 
 msgid "Retry"
-msgstr ""
+msgstr "Reintentar"
 
 msgid "Retrying"
 msgstr "Reintentando"
@@ -763,10 +762,6 @@ msgstr "Seleccionar"
 
 msgid "Send"
 msgstr "Enviar"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "Enviando señal de encendido a: %s"
 
 msgid "Set Temp"
 msgstr "Establecer Temp"
@@ -904,8 +899,10 @@ msgid_plural "hours"
 msgstr[0] "hora"
 msgstr[1] "horas"
 
-msgid "minutes"
-msgstr "minutos"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minuto"
+msgstr[1] "minutos"
 
 msgid "mm"
 msgstr "mm"
@@ -917,4 +914,4 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"

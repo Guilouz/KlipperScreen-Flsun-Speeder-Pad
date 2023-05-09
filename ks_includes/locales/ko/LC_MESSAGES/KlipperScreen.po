@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 02:40+0200\n"
+"POT-Creation-Date: 2023-05-07 07:02-0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: NSteven\n"
 "Language-Team: NSteven\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.2.2\n"
+
+msgid ""
+"not found!\n"
+"Please update your configuration files."
+msgstr ""
 
 msgid "Z Offset Calibration"
 msgstr ""
@@ -36,15 +41,6 @@ msgid ""
 "\n"
 "Then start a print and adjust the first layer using babysteps via the 'Fine "
 "Tuning' button."
-msgstr ""
-
-msgid "Rename/Move:"
-msgstr ""
-
-msgid "Camera"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Min"
@@ -205,12 +201,12 @@ msgid "Apply"
 msgstr "확인"
 
 #, python-format
-msgid "Apply %.2f offset to Endstop?"
-msgstr "엔드스탑 높이 기준을 %.2f 높이의 옵셋으로 설정 하시겠습니까?"
+msgid "Apply %s%.3f offset to Endstop?"
+msgstr "엔드스탑 높이 기준을 %s%.3f 높이의 옵셋으로 설정 하시겠습니까?"
 
 #, python-format
-msgid "Apply %s%.2f offset to Probe?"
-msgstr "프로브 높이 기준을 %s%.2f 높이의 옵셋으로 설정 하시겠습니까?"
+msgid "Apply %s%.3f offset to Probe?"
+msgstr "프로브 높이 기준을 %s%.3f 높이의 옵셋으로 설정 하시겠습니까?"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr ""
@@ -257,11 +253,11 @@ msgstr "교정"
 msgid "Calibrated"
 msgstr "교정됨"
 
-msgid "Calibrated, save configuration to make it permanent"
-msgstr "교정됨, 설정을 저장합니다"
-
 msgid "Calibrating"
 msgstr "교정 중"
+
+msgid "Camera"
+msgstr ""
 
 msgid "Can't set above the maximum:"
 msgstr "최대 값을 초과하는 설정은 할 수 없습니다:"
@@ -324,8 +320,8 @@ msgstr "가열 중단"
 msgid "Date"
 msgstr "날짜"
 
-msgid "Decrease"
-msgstr "낮추기"
+msgid "Delete Directory?"
+msgstr ""
 
 msgid "Delete File?"
 msgstr ""
@@ -418,6 +414,9 @@ msgstr "글꼴 크기"
 msgid "Full Update"
 msgstr "전체 업데이트"
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Go Back"
 msgstr "뒤로"
 
@@ -462,9 +461,6 @@ msgstr "호스트 이름"
 
 msgid "Icon Theme"
 msgstr "아이콘 테마"
-
-msgid "Increase"
-msgstr "높이기"
 
 msgid "Initializing printer..."
 msgstr "프린터 초기화 중.."
@@ -698,6 +694,9 @@ msgstr "참조"
 msgid "Refresh"
 msgstr ""
 
+msgid "Rename/Move:"
+msgstr ""
+
 msgid "Restart"
 msgstr "재시작"
 
@@ -755,10 +754,6 @@ msgstr "선택"
 
 msgid "Send"
 msgstr "보내기"
-
-#, python-format
-msgid "Sending Power ON signal to: %s"
-msgstr "전원 켜기 신호 송신 ㅈ: %s"
 
 msgid "Set Temp"
 msgstr "온도 설정"
@@ -894,8 +889,9 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "시간"
 
-msgid "minutes"
-msgstr "분"
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
 
 msgid "mm"
 msgstr "mm"
