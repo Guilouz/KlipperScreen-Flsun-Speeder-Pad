@@ -47,9 +47,9 @@ Note: Installation may take several minutes.
 ```
 [update_manager KlipperScreen]
 type: git_repo
-path: /home/pi/KlipperScreen
+path: ~/KlipperScreen
 origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-env: /home/pi/.KlipperScreen-env/bin/python
+env: ~/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
