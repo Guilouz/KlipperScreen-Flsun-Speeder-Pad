@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-05-09 14:21+0200\n"
+"PO-Revision-Date: 2023-05-14 23:36+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -637,10 +637,10 @@ msgstr "Rien de sélectionné"
 
 #, python-format
 msgid "Outdated by %d"
-msgstr "Obsolète par %d"
+msgstr "Version dépassée de %d"
 
 msgid "PSK for"
-msgstr "PSK pour"
+msgstr "Clé de sécurité pour"
 
 msgid "Package will be updated"
 msgid_plural "Packages will be updated"
@@ -914,8 +914,8 @@ msgstr "Z-Offset:"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] "changement"
-msgstr[1] "changements"
+msgstr[0] "changement "
+msgstr[1] "changements "
 
 msgid "dBm"
 msgstr "dBm"
