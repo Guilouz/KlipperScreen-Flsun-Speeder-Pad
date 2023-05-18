@@ -26,16 +26,28 @@ class SplashScreenPanel(ScreenPanel):
 
         self.labels['menu'] = self._gtk.Button("settings", _("Menu"), "color4")
         self.labels['menu'].connect("clicked", self._screen._go_to_submenu, "")
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['menu'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.labels['restart'] = self._gtk.Button("refresh", _("Klipper Restart"), "color1")
         self.labels['restart'].connect("clicked", self.restart)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['restart'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.labels['firmware_restart'] = self._gtk.Button("refresh", _("Firmware Restart"), "color2")
         self.labels['firmware_restart'].connect("clicked", self.firmware_restart)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['firmware_restart'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.labels['restart_system'] = self._gtk.Button("refresh", _("System Restart"), "color1")
         self.labels['restart_system'].connect("clicked", self.restart_system)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['restart_system'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.labels['shutdown'] = self._gtk.Button("shutdown", _('System Shutdown'), "color2")
         self.labels['shutdown'].connect("clicked", self.shutdown)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['shutdown'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.labels['retry'] = self._gtk.Button("load", _('Retry'), "color3")
         self.labels['retry'].connect("clicked", self.retry)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['retry'].connect("pressed", self._screen._button_pressed_feedback) # Changes
 
         self.labels['actions'] = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         self.labels['actions'].set_hexpand(True)
@@ -92,6 +104,8 @@ class SplashScreenPanel(ScreenPanel):
     def add_power_button(self, powerdevs):
         self.labels['power'] = self._gtk.Button("shutdown", _("Power On Printer"), "color3")
         self.labels['power'].connect("clicked", self._screen.power_devices, powerdevs, True)
+        if self._config.get_main_config().getboolean('touch_sound', True): # Changes
+            self.labels['power'].connect("pressed", self._screen._button_pressed_feedback) # Changes
         self.check_power_status()
         self.labels['actions'].add(self.labels['power'])
 

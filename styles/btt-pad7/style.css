@@ -1,0 +1,250 @@
+* {
+    color: white;
+}
+
+window {
+    background-color: #13181C;
+    background-image: url("./styles/btt-pad7/background.png");
+    background-size: cover;
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    border-radius: 0.3em;
+}
+
+button:active {
+    background-color: #b82f37;
+    border-radius: 0.3em;
+}
+
+.button_active {
+    background-color: #b82f37;
+    border-radius: 0.3em;
+}
+
+button:disabled {
+    background-color: rgba(0,0,0,0);
+}
+
+button.color1:disabled,
+button.color2:disabled,
+button.color3:disabled,
+button.color4:disabled {
+    border-bottom-color: grey;
+}
+
+button.color1 {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #b82f37;
+}
+
+button.color2 {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #b82f37;
+}
+
+button.color3 {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #b82f37;
+}
+
+button.color4 {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #b82f37;
+}
+
+button.active {
+    background-color: #b82f37;
+}
+
+button.update {
+    background: #b82f37;
+    border: .1em solid #cccccc;
+}
+
+button.invalid {
+    background: #e61e1e;
+    border-color: #e61e1e;
+}
+
+button.color1:active, button.color2:active, button.color3:active, button.color4:active {
+    background-color: #b82f37;
+    border-bottom-color: #b82f37;
+}
+
+button.update:active, button.invalid:active {
+    background: rgba(0,0,0,0.25);
+    border-color: #cccccc;
+}
+
+combobox box button {
+    border-color: #cccccc;
+}
+
+switch {
+    background-color: #404E57;
+}
+
+switch:checked {
+    background-color: #b82f37;
+}
+
+entry {
+    background-color: rgba(0,0,0,0.25);
+    border-color: #b82f37;
+}
+
+label {
+    color: white;
+}
+
+menu {
+    background-color: rgba(0,0,0,0.25);
+    border-color: #cccccc;
+}
+
+menuitem {
+    background-color: rgba(0,0,0,0.25);
+    border-color: #cccccc;
+}
+
+trough {
+    background-color: #404E57;
+    color: white;
+    border-color: black;
+}
+
+trough highlight, trough progress {
+    background-color: #b82f37;
+    color: white;
+    border-color: black;
+}
+
+scale-mark {
+    color: white;
+}
+
+scrollbar, scrollbar button, scrollbar trough {
+    background-color: rgba(0,0,0,0);
+}
+
+scrollbar slider {
+    background-color: #404E57;
+}
+
+textview .time {
+    color: grey;
+}
+
+.popup {
+    background-color: black;
+}
+
+.dialog {
+    border: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.1);
+}
+
+.dialog button {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #2fa0b8;
+}
+
+.dialog button:nth-child(1) {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #42b82f;
+}
+
+.dialog button:nth-child(2) {
+    background-color: rgba(0,0,0,0.25);
+    border-bottom-color: #b82f37;
+}
+
+.dialog button:active {
+    background-color: #b82f37;
+    border-bottom-color: #b82f37;
+}
+
+.distbutton_active {
+    background-color: #b82f37;
+}
+
+.distbutton_top {
+    border-color: white;
+}
+
+.distbutton {
+    border-color: white;
+    border-left-color: #ccc;
+}
+
+.distbutton_bottom {
+    border-color: white;
+    border-left-color: #ccc;
+}
+
+.fan_slider {
+    color: white;
+}
+
+.message_popup {
+    border-bottom-color: white;
+}
+
+.numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
+    border-color: white;
+}
+
+popover {
+    background-color: #cccccc;
+}
+
+popover button {
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 0.3em;
+}
+
+.printing-status {
+    color: #f0f0f0;
+}
+
+.printing-progress-text {
+    color: white;
+}
+
+.printing-status-label {
+    color: #ccc;
+}
+
+.tempbutton_top {
+    border-color: white;
+}
+
+.tempbutton, .tempbutton_bottom {
+    border-color: white;
+    border-top-color: #ccc;
+}
+
+.message {
+    border-color: #981E1F;
+    color: white;
+    background-color: #981E1F;
+}
+
+.message button {
+    background-color: white;
+    color: black;
+}
+
+.warning {
+    background-color: rgba(30, 204, 39, 0.7);
+}
+
+.error {
+    background-color: rgba(204, 30, 30, 0.7);
+}
+
+.keyboard_pad {
+    background-color: rgba(0,0,0,0.25);
+}

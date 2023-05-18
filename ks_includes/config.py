@@ -150,8 +150,8 @@ class KlipperScreenConfig:
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_macro_shortcut', 'use-matchbox-keyboard',
-                    'show_heater_power'
-                )
+                    'show_heater_power', 'touch_sound',
+                ) # Changes
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
                     'print_estimate_method', 'screen_blanking', "screen_on_devices", "screen_off_devices",
@@ -264,6 +264,10 @@ class KlipperScreenConfig:
                                   "value": "True"}},
             {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
                                    "value": "False", "callback": screen.reload_panels}},
+            # Start Changes
+            {"touch_sound": {"section": "main", "name": _("Touch sound (BigTreeTech Pad7)"), "type": "binary",
+                                   "value": "False", "callback": screen.restart_ks}},
+            # End Changes
             # {"": {"section": "main", "name": _(""), "type": ""}}
         ]
 
