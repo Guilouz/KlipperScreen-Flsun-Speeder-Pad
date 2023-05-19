@@ -10,7 +10,6 @@ window {
 
 button {
     background-color: rgba(0,0,0,0);
-    border-radius: 0.3em;
 }
 
 button:active {
@@ -37,21 +36,25 @@ button.color4:disabled {
 button.color1 {
     background-color: rgba(0,0,0,0.25);
     border-bottom-color: #b82f37;
+    border-radius: 0.3em;
 }
 
 button.color2 {
     background-color: rgba(0,0,0,0.25);
     border-bottom-color: #b82f37;
+    border-radius: 0.3em;
 }
 
 button.color3 {
     background-color: rgba(0,0,0,0.25);
     border-bottom-color: #b82f37;
+    border-radius: 0.3em;
 }
 
 button.color4 {
     background-color: rgba(0,0,0,0.25);
     border-bottom-color: #b82f37;
+    border-radius: 0.3em;
 }
 
 button.active {
