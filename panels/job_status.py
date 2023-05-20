@@ -43,6 +43,8 @@ class JobStatusPanel(ScreenPanel):
         self.mms2 = _("mm/s²")
         self.mms3 = _("mm³/s")
         self.status_grid = self.move_grid = self.time_grid = self.extrusion_grid = None
+        macros = self._printer.get_gcode_macros() # Changes
+        self.neopixels = any("NEOPIXEL_ON" in macro.upper() for macro in macros) # Changes
 
         data = ['pos_x', 'pos_y', 'pos_z', 'time_left', 'duration', 'slicer_time', 'file_time',
                 'filament_time', 'est_time', 'speed_factor', 'req_speed', 'max_accel', 'extrude_factor', 'zoffset',
@@ -486,7 +488,8 @@ class JobStatusPanel(ScreenPanel):
     def close_panel(self, widget=None):
         if self.can_close:
             logging.debug("Closing job_status panel")
-            self._screen._ws.klippy.gcode_script(f"NEOPIXEL_ON") # Changes
+            if self.neopixels: # Changes
+                self._screen._ws.klippy.gcode_script(f"NEOPIXEL_ON") # Changes
             self._screen.printer_ready()
             self._printer.change_state("ready")
 
