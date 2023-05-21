@@ -18,6 +18,21 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "PID Calibrations"
+msgstr ""
+
+msgid "Hotend PID"
+msgstr ""
+
+msgid "Bed PID"
+msgstr ""
+
+msgid "Do you want to start PID calibration for Hotend?"
+msgstr ""
+
+msgid "Do you want to start PID calibration for Bed?"
+msgstr ""
+
 msgid "Touch sound (BigTreeTech Pad7)"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-05-18 17:45+0200\n"
+"PO-Revision-Date: 2023-05-22 00:58+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,6 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.3.1\n"
+
+msgid "PID Calibrations"
+msgstr "Calibrations PID"
+
+msgid "Hotend PID"
+msgstr "PID Buse"
+
+msgid "Bed PID"
+msgstr "PID Plateau"
+
+msgid "Do you want to start PID calibration for Hotend?"
+msgstr "Voulez-vous démarrer la calibration PID de la buse ?"
+
+msgid "Do you want to start PID calibration for Bed?"
+msgstr "Voulez-vous démarrer la calibration PID du plateau ?"
 
 msgid "Touch sound (BigTreeTech Pad7)"
 msgstr "Son des touches (BigTreeTech Pad7)"

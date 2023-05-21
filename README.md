@@ -100,6 +100,8 @@ install_script: scripts/KlipperScreen-install.sh
   - `Automatic Delta Calibration` function use `[gcode_macro DELTA_CALIBRATION]`
   - `Apply a safety Offset` function use `[gcode_macro SECURITY_OFFSET]`
   - `Bed Mesh` function use `[gcode_macro BED_LEVELING]`
+  - `Hotend PID` function use `[gcode_macro PID_HOTEND]`
+  - `Bed PID` function use `[gcode_macro PID_BED]`
   - `Hotend LED Off` function use `[gcode_macro LED_HOTEND_OFF]`
   - `Hotend LED On` function use `[gcode_macro LED_HOTEND_ON]`
   - `Logo LED Off` function use `[gcode_macro LED_LOGO_OFF]`
@@ -188,6 +190,7 @@ gcode:
 
 ## Changelog
 
+- 22/05/2023 : Latest KlipperScreen commits / Added new PID section in Calibrations menu
 - 18/05/2023 : Latest KlipperScreen commits / Added support for BigTreeTech Pad7 (theme and touch sound)
 - 10/03/2023 : Latest KlipperScreen commits
 - 17/02/2023 : Improved menu and Z Calibrate Panel / Latest KlipperScreen commits
