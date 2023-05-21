@@ -340,8 +340,9 @@ class KlipperScreen(Gtk.Window):
         self.popup_message.show_all()
 
         if self._config.get_main_config().getboolean('autoclose_popups', True):
-            if self.popup_timeout:
+            if self.popup_timeout is not None:
                 GLib.source_remove(self.popup_timeout)
+                self.popup_timeout = None
             self.popup_timeout = GLib.timeout_add_seconds(10, self.close_popup_message)
 
         return False
@@ -501,6 +502,7 @@ class KlipperScreen(Gtk.Window):
         if self._cur_panels[-1] in self.subscriptions:
             self.subscriptions.remove(self._cur_panels[-1])
         if pop:
+            del self.panels[self._cur_panels[-1]]
             del self._cur_panels[-1]
             self.attach_panel(self._cur_panels[-1])
 
@@ -689,7 +691,7 @@ class KlipperScreen(Gtk.Window):
     def toggle_macro_shortcut(self, value):
         self.base_panel.show_macro_shortcut(value)
 
-    def change_language(self, lang):
+    def change_language(self, widget, lang):
         self._config.install_language(lang)
         self.lang_ltr = set_text_direction(lang)
         self._config._create_configurable_options(self)
