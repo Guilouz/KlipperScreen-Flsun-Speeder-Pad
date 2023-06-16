@@ -45,12 +45,14 @@ class PrintPanel(ScreenPanel):
         sbox.set_vexpand(False)
         for i, (name, val) in enumerate(self.sort_items.items(), start=1):
             s = self._gtk.Button(None, val, f"color{i % 4}", .5, Gtk.PositionType.RIGHT, 1)
+            s.get_style_context().add_class("buttons_slim")
             if name == self.sort_current[0]:
                 s.set_image(self._gtk.Image(self.sort_icon[self.sort_current[1]], self._gtk.img_scale * self.bts))
             s.connect("clicked", self.change_sort, name)
             self.labels[f'sort_{name}'] = s
             sbox.add(s)
         refresh = self._gtk.Button("refresh", style="color4", scale=self.bts)
+        refresh.get_style_context().add_class("buttons_slim")
         refresh.connect('clicked', self._refresh_files)
         sbox.add(refresh)
         sbox.set_hexpand(True)
@@ -151,6 +153,7 @@ class PrintPanel(ScreenPanel):
         self.dir_panels[directory].attach(self.files[filepath], 0, pos, 1, 1)
         if show is True:
             self.dir_panels[directory].show_all()
+        return False
 
     def _create_row(self, fullpath, filename=None):
         name = Gtk.Label()
@@ -230,6 +233,7 @@ class PrintPanel(ScreenPanel):
             self.labels['files'][filepath]['icon'].set_image(Gtk.Image.new_from_pixbuf(pixbuf))
         else:
             self.labels['files'][filepath]['icon'].set_image(self._gtk.Image("file"))
+        return False
 
     def confirm_delete_file(self, widget, filepath):
         logging.debug(f"Sending delete_file {filepath}")
@@ -388,6 +392,7 @@ class PrintPanel(ScreenPanel):
         flist = sorted(self._screen.files.get_file_list(), key=lambda item: '/' in item)
         for file in flist:
             GLib.idle_add(self.add_file, file)
+        return False
 
     def update_file(self, filename):
         if filename not in self.labels['files']:
@@ -411,9 +416,11 @@ class PrintPanel(ScreenPanel):
             logging.debug(f"updatefiles: {updatedfiles}")
             for file in updatedfiles:
                 self.update_file(file)
+        return False
 
     def _refresh_files(self, widget=None):
         self._files.refresh_files()
+        return False
 
     def show_rename(self, widget, fullpath):
         self.source = fullpath
