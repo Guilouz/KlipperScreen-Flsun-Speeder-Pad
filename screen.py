@@ -55,7 +55,7 @@ def set_text_direction(lang=None):
     rtl_languages = ['he']
     if lang is None:
         for lng in rtl_languages:
-            if locale.getdefaultlocale()[0].startswith(lng):
+            if locale.getlocale()[0].startswith(lng):
                 lang = lng
                 break
     if lang in rtl_languages:
@@ -192,6 +192,7 @@ class KlipperScreen(Gtk.Window):
         self.connecting = True
         self.initialized = False
 
+        ind = 0
         logging.info(f"Connecting to printer: {name}")
         for printer in self.printers:
             if name == list(printer)[0]:
@@ -1013,7 +1014,7 @@ def main():
     functions.patch_threading_excepthook()
 
     logging.info(f"KlipperScreen version: {version}")
-    if not Gtk.init_check(None)[0]:
+    if not Gtk.init_check():
         logging.critical("Failed to initialize Gtk")
         raise RuntimeError
     try:
