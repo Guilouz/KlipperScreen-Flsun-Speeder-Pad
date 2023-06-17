@@ -867,7 +867,6 @@ class KlipperScreen(Gtk.Window):
         config = self.apiclient.send_request("printer/objects/query?configfile")
         if config is False:
             return self._init_printer("Error getting printer configuration")
-
         # Reinitialize printer, in case the printer was shut down and anything has changed.
         self.printer.reinit(printer_info['result'], config['result']['status'])
 
