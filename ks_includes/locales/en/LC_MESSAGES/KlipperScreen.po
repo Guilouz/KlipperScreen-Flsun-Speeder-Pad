@@ -350,9 +350,6 @@ msgstr ""
 msgid "Disable Motors"
 msgstr ""
 
-msgid "Disable XY"
-msgstr ""
-
 msgid "Distance (mm)"
 msgstr ""
 
@@ -793,9 +790,6 @@ msgid "Size"
 msgstr ""
 
 msgid "Slicer"
-msgstr ""
-
-msgid "Slicer Time correction (%)"
 msgstr ""
 
 msgid "Slicer:"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-05-22 00:58+0200\n"
+"PO-Revision-Date: 2023-06-22 02:56+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -378,9 +378,6 @@ msgstr "Désélectionner"
 
 msgid "Disable Motors"
 msgstr "Désactiver les moteurs"
-
-msgid "Disable XY"
-msgstr "Désactiver XY"
 
 msgid "Distance (mm)"
 msgstr "Distance (mm)"
@@ -827,9 +824,6 @@ msgstr "Taille"
 
 msgid "Slicer"
 msgstr "Slicer"
-
-msgid "Slicer Time correction (%)"
-msgstr "Correction de la durée du slicer (%)"
 
 msgid "Slicer:"
 msgstr "Slicer:"
