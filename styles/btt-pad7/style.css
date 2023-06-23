@@ -96,6 +96,7 @@ switch:checked {
 entry {
     background-color: rgba(0,0,0,0.25);
     border-color: #b82f37;
+    margin-right: 5;
 }
 
 label {
@@ -193,6 +194,10 @@ textview .time {
 
 .message_popup {
     border-bottom-color: white;
+}
+
+.numpad{
+    margin-right: 3;
 }
 
 .numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
