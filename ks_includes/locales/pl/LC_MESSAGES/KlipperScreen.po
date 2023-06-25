@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-22 02:49+0200\n"
+"PO-Revision-Date: 2023-06-25 22:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -598,7 +598,7 @@ msgid "Never"
 msgstr "Nigdy"
 
 msgid "New"
-msgstr "Nowy"
+msgstr "Nowe"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -744,7 +744,7 @@ msgid "Save configuration?"
 msgstr "Zapisać konfigurację?"
 
 msgid "Saved"
-msgstr "Zapisano"
+msgstr "Zapisane"
 
 #, python-format
 msgid "Saved offset: %s"
@@ -913,7 +913,7 @@ msgid "mm"
 msgstr "mm"
 
 msgid "mm/s"
-msgstr "mm/s²"
+msgstr "mm/s"
 
 msgid "mm/s²"
 msgstr "mm/s²"

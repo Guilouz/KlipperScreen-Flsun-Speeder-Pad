@@ -45,6 +45,7 @@ class JobStatusPanel(ScreenPanel):
         self.status_grid = self.move_grid = self.time_grid = self.extrusion_grid = None
         macros = self._printer.get_gcode_macros() # Changes
         self.neopixels = any("NEOPIXEL_ON" in macro.upper() for macro in macros) # Changes
+        self.ledhotend = any("LED_HOTEND_OFF" in macro.upper() for macro in macros) # Changes
 
         data = ['pos_x', 'pos_y', 'pos_z', 'time_left', 'duration', 'slicer_time', 'file_time',
                 'filament_time', 'est_time', 'speed_factor', 'req_speed', 'max_accel', 'extrude_factor', 'zoffset',
@@ -481,7 +482,8 @@ class JobStatusPanel(ScreenPanel):
         self.set_state("cancelling")
         self.disable_button("pause", "resume", "cancel")
         self._screen._ws.klippy.print_cancel()
-        self._screen._ws.klippy.gcode_script(f"LED_HOTEND_OFF") # Changes
+        if self.ledhotend: # Changes
+            self._screen._ws.klippy.gcode_script(f"LED_HOTEND_OFF") # Changes
 
     def close_panel(self, widget=None):
         if self.can_close:
