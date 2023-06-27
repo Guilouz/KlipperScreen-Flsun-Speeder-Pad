@@ -294,6 +294,9 @@ class KlipperScreen(Gtk.Window):
                         del self.panels[panel_name]
                     self.show_error_modal(f"Unable to load panel {panel_type}", f"{e}")
                     return
+            elif 'extra' in kwargs:
+                logging.info(f"extra: {kwargs['extra']}")
+                self.panels[panel_name].__init__(self, title, **kwargs)
 
             self._cur_panels.append(panel_name)
             if panel_name in self.panels_reinit:
@@ -755,7 +758,7 @@ class KlipperScreen(Gtk.Window):
                 elif "unknown" in data.lower() and \
                         not ("TESTZ" in data or "MEASURE_AXES_NOISE" in data or "ACCELEROMETER_QUERY" in data):
                     self.show_popup_message(data)
-                elif "SAVE_CONFIG" in data and self.printer.state == "ready":
+                elif "SAVE_CONFIG" in data and self.printer.state == "ready" and not "PID parameters:" in data: # Changes
                     script = {"script": "SAVE_CONFIG"}
                     self._confirm_send_action(
                         None,

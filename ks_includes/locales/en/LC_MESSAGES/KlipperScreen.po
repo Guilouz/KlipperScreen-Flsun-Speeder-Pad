@@ -11,21 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-msgid "PID Calibrations"
+msgid "Initiate a PID calibration for:"
 msgstr ""
 
-msgid "Hotend PID"
-msgstr ""
-
-msgid "Bed PID"
-msgstr ""
-
-msgid "Do you want to start PID calibration for Hotend?"
-msgstr ""
-
-msgid "Do you want to start PID calibration for Bed?"
+msgid "It may take more than 5 minutes depending on the heater power."
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-05-25 00:22+0200\n"
+"PO-Revision-Date: 2023-06-27 12:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -17,8 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
+
+msgid "Touch sound (BigTreeTech Pad7)"
+msgstr ""
 
 msgid ""
 "not found!\n"
@@ -338,9 +347,6 @@ msgstr "Відміна"
 
 msgid "Disable Motors"
 msgstr "Вимкнути мотори"
-
-msgid "Disable XY"
-msgstr "Вимкнути XY"
 
 msgid "Distance (mm)"
 msgstr "Відстань (мм)"
@@ -792,9 +798,6 @@ msgstr "Розмір"
 
 msgid "Slicer"
 msgstr "Слайсер"
-
-msgid "Slicer Time correction (%)"
-msgstr "Виправлення часу слайсера (%)"
 
 msgid "Slicer:"
 msgstr "Слайсер:"

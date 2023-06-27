@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-05-09 14:30+0200\n"
+"PO-Revision-Date: 2023-06-27 12:29+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,7 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
+
+msgid "Touch sound (BigTreeTech Pad7)"
+msgstr ""
 
 msgid ""
 "not found!\n"
@@ -336,9 +345,6 @@ msgstr "Deseleccionar"
 
 msgid "Disable Motors"
 msgstr "Desactivar Motores"
-
-msgid "Disable XY"
-msgstr "Desactivar XY"
 
 msgid "Distance (mm)"
 msgstr "Distancia (mm)"
@@ -783,9 +789,6 @@ msgstr "Tamaño"
 
 msgid "Slicer"
 msgstr "Slicer"
-
-msgid "Slicer Time correction (%)"
-msgstr "Corrección del tiempo del Slicer (%)"
 
 msgid "Slicer:"
 msgstr "Slicer:"

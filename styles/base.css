@@ -36,7 +36,7 @@ button.color4:disabled label {
 
 button label {
     margin-top: .25em;
-    margin-bottom: .5em;
+    margin-bottom: 0;
 }
 
 button.color1 {
@@ -417,6 +417,7 @@ trough {
 .printing-info {
     margin-right: .25em;
 }
+
 .printing-info button {
     margin: 0 .1em;
     background-color: rgba(0, 0, 0, 0.1);

@@ -11,15 +11,15 @@ from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
 
 
-def create_panel(*args):
-    return TemperaturePanel(*args)
+def create_panel(*args, **kwargs):
+    return TemperaturePanel(*args, **kwargs)
 
 
 class TemperaturePanel(ScreenPanel):
     graph_update = None
     active_heater = None
 
-    def __init__(self, screen, title):
+    def __init__(self, screen, title, extra=None):
         super().__init__(screen, title)
         self.popover_timeout = None
         self.left_panel = None
@@ -32,20 +32,18 @@ class TemperaturePanel(ScreenPanel):
         self.grid = self._gtk.HomogeneousGrid()
         self._gtk.reset_temp_color()
         self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
+        macros = self._printer.get_gcode_macros() # Changes
+        self.pid_start = any("_PID_KS_START" in macro.upper() for macro in macros) # Changes
+        self.pid_end = any("_PID_KS_END" in macro.upper() for macro in macros) # Changes
 
         # When printing start in temp_delta mode and only select tools
-        state = self._printer.state
-        logging.info(state)
         selection = []
-        if state not in ["printing", "paused"]:
-            for extruder in self._printer.get_tools():
-                selection.append(extruder)
+        if self._printer.state not in ["printing", "paused"]:
+            selection.extend(iter(self._printer.get_tools()))
             self.show_preheat = True
             selection.extend(self._printer.get_heaters())
-        else:
-            current_extruder = self._printer.get_stat("toolhead", "extruder")
-            if current_extruder:
-                selection.append(current_extruder)
+        elif extra:
+            selection.append(extra)
 
         # Select heaters
         for h in selection:
@@ -224,7 +222,7 @@ class TemperaturePanel(ScreenPanel):
             self.active_heaters.append(device)
             self.devices[device]['name'].get_style_context().add_class("button_active")
             self.devices[device]['select'].set_label(_("Deselect"))
-            logging.info(f"Seselecting {device}")
+            logging.info(f"Selecting {device}")
         return
 
     def set_temperature(self, widget, setting):
@@ -405,11 +403,9 @@ class TemperaturePanel(ScreenPanel):
 
     def change_target_temp(self, temp):
         name = self.active_heater.split()[1] if len(self.active_heater.split()) > 1 else self.active_heater
-        max_temp = int(float(self._printer.get_config_section(self.active_heater)['max_temp']))
-        if temp > max_temp:
-            self._screen.show_popup_message(_("Can't set above the maximum:") + f' {max_temp}')
+        temp = self.verify_max_temp(temp)
+        if temp is False:
             return
-        temp = max(temp, 0)
 
         if self.active_heater.startswith('extruder'):
             self._screen._ws.klippy.set_tool_temp(self._printer.get_tool_number(self.active_heater), temp)
@@ -423,6 +419,36 @@ class TemperaturePanel(ScreenPanel):
             logging.info(f"Unknown heater: {self.active_heater}")
             self._screen.show_popup_message(_("Unknown Heater") + " " + self.active_heater)
         self._printer.set_dev_stat(self.active_heater, "target", temp)
+
+    def verify_max_temp(self, temp):
+        temp = int(temp)
+        max_temp = int(float(self._printer.get_config_section(self.active_heater)['max_temp']))
+        logging.debug(f"{temp}/{max_temp}")
+        if temp > max_temp:
+            self._screen.show_popup_message(_("Can't set above the maximum:") + f' {max_temp}' + "C°") # Changes
+            return False
+        return max(temp, 0)
+
+    def pid_calibrate(self, temp):
+        if self.verify_max_temp(temp): # Changes
+            if not self.pid_start or not self.pid_end: # Changes
+                script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
+                self._screen._confirm_send_action(
+                    None,
+                    _("Initiate a PID calibration for:") + f" {self.active_heater} @ {temp} ºC"
+                    + "\n\n" + _("It may take more than 5 minutes depending on the heater power."),
+                    "printer.gcode.script",
+                    script
+                ) # Changes
+            else: # Changes
+                script = {"script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"}
+                self._screen._confirm_send_action(
+                    None,
+                    _("Initiate a PID calibration for:") + f" {self.active_heater} @ {temp} ºC"
+                    + "\n\n" + _("It may take more than 5 minutes depending on the heater power."),
+                    "printer.gcode.script",
+                    script
+                )
 
     def create_left_panel(self):
 
@@ -522,7 +548,10 @@ class TemperaturePanel(ScreenPanel):
         self.devices[self.active_heater]['name'].get_style_context().add_class("button_active")
 
         if "keypad" not in self.labels:
-            self.labels["keypad"] = Keypad(self._screen, self.change_target_temp, self.hide_numpad)
+            self.labels["keypad"] = Keypad(self._screen, self.change_target_temp, self.pid_calibrate, self.hide_numpad)
+        can_pid = self._printer.state not in ["printing", "paused"] \
+            and self._screen.printer.config[self.active_heater]['control'] == 'pid'
+        self.labels["keypad"].show_pid(can_pid)
         self.labels["keypad"].clear()
 
         if self._screen.vertical_mode:

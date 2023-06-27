@@ -11,7 +11,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
+
+msgid "Touch sound (BigTreeTech Pad7)"
+msgstr ""
 
 msgid ""
 "not found!\n"
@@ -331,9 +340,6 @@ msgstr "Kijelölés törlése"
 
 msgid "Disable Motors"
 msgstr "Motorok letiltása"
-
-msgid "Disable XY"
-msgstr "XY Letiltása"
 
 msgid "Distance (mm)"
 msgstr "Távolság (mm)"
@@ -778,9 +784,6 @@ msgstr "Méret"
 
 msgid "Slicer"
 msgstr "Szeletelő"
-
-msgid "Slicer Time correction (%)"
-msgstr "Szeletelő idő javítása (%)"
 
 msgid "Slicer:"
 msgstr "Szeletelő:"

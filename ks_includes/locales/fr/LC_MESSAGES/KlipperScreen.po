@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-22 02:56+0200\n"
+"PO-Revision-Date: 2023-06-27 12:30+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,22 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-msgid "PID Calibrations"
-msgstr "Calibrations PID"
+msgid "Initiate a PID calibration for:"
+msgstr "Démarrer la calibration PID pour :"
 
-msgid "Hotend PID"
-msgstr "PID Buse"
-
-msgid "Bed PID"
-msgstr "PID Plateau"
-
-msgid "Do you want to start PID calibration for Hotend?"
-msgstr "Voulez-vous démarrer la calibration PID de la buse ?"
-
-msgid "Do you want to start PID calibration for Bed?"
-msgstr "Voulez-vous démarrer la calibration PID du plateau ?"
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr "Cela peut prendre plus de 5 minutes selon la puissance du chauffe."
 
 msgid "Touch sound (BigTreeTech Pad7)"
 msgstr "Son des touches (BigTreeTech Pad7)"
@@ -115,25 +106,25 @@ msgid "Hotend (All)"
 msgstr "Hotend (Toutes)"
 
 msgid "Hotend (One by One)"
-msgstr "Hotend (Une par Une)"
+msgstr "Hotend (1 par 1)"
 
 msgid "Bed (All)"
 msgstr "Plateau (Toutes)"
 
 msgid "Bed (One by One)"
-msgstr "Plateau (Une par Une)"
+msgstr "Plateau  (1 par 1)"
 
 msgid "Progress (All)"
-msgstr "Progression (Toutes)"
+msgstr "Avancée (Toutes)"
 
 msgid "Progress (One by One)"
-msgstr "Progression (Une par Une)"
+msgstr "Avancée (1 par 1)"
 
 msgid "Speed (All)"
 msgstr "Vitesse (Toutes)"
 
 msgid "Speed (One by One)"
-msgstr "Vitesse (Une par Une)"
+msgstr "Vitesse (1 par 1)"
 
 msgid "Print Status"
 msgstr "Etat d’impression"
@@ -295,7 +286,7 @@ msgid "Bed screw configuration:"
 msgstr "Configuration des vis:"
 
 msgid "Calibrate"
-msgstr "Calibration Delta"
+msgstr "Calibration"
 
 msgid "Calibrated"
 msgstr "Calibré"
@@ -307,7 +298,7 @@ msgid "Camera"
 msgstr "Caméra"
 
 msgid "Can't set above the maximum:"
-msgstr "Impossible de définir au-dessus du maximum:"
+msgstr "Impossible de définir au-dessus du maximum :"
 
 msgid "Cancel"
 msgstr "Annuler"

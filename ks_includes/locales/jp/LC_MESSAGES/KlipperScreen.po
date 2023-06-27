@@ -11,7 +11,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
+
+msgid "Touch sound (BigTreeTech Pad7)"
+msgstr ""
 
 msgid ""
 "not found!\n"
@@ -331,9 +340,6 @@ msgstr "選択解除"
 
 msgid "Disable Motors"
 msgstr "モーターの無効化"
-
-msgid "Disable XY"
-msgstr "XY軸制御の無効化"
 
 msgid "Distance (mm)"
 msgstr "距離(mm)"
@@ -775,9 +781,6 @@ msgstr "サイズ"
 
 msgid "Slicer"
 msgstr "スライサー"
-
-msgid "Slicer Time correction (%)"
-msgstr "スライサーの補正時間(%)"
 
 msgid "Slicer:"
 msgstr "スライサー:"
