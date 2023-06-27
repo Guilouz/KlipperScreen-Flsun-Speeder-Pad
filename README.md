@@ -190,37 +190,4 @@ gcode:
 
 ## Changelog
 
-- 22/05/2023 : Latest KlipperScreen commits / Added new PID section in Calibrations menu
-- 18/05/2023 : Latest KlipperScreen commits / Added support for BigTreeTech Pad7 (theme and touch sound)
-- 10/03/2023 : Latest KlipperScreen commits
-- 17/02/2023 : Improved menu and Z Calibrate Panel / Latest KlipperScreen commits
-- 11/12/2022 : Latest KlipperScreen commits
-- 06/12/2022 : Latest KlipperScreen commits
-- 04/12/2022 : Latest KlipperScreen commits
-- 03/12/2022 : Latest KlipperScreen commits
-- 27/11/2022 : Latest KlipperScreen commits / Improvements
-- 24/11/2022 : Latest KlipperScreen commits
-- 23/11/2022 : Latest KlipperScreen commits / Fixed Reprint button when print is cancelling
-- 21/11/2022 : Latest KlipperScreen commits
-- 18/11/2022 : Latest KlipperScreen commits / Added possibility to reset Z-Offset on Z Calibration menu
-- 16/11/2022 : Added support for printers icons on printer select screen
-- 09/11/2022 : Latest KlipperScreen commits
-- 04/11/2022 : Latest KlipperScreen commits
-- 29/10/2022 : Latest KlipperScreen commits
-- 25/10/2022 : Added searching KlipperScreen.conf file in new directories
-- 16/10/2022 : Latest KlipperScreen commits
-- 08/10/2022 : Fixed heaters not showing their respective power percentages
-- 04/10/2022 : Latest KlipperScreen commits
-- 23/09/2022 : Added layers on Job Status Screen
-- 18/09/2022 : Added support for bed mesh profiles and bed mesh visualization
-- 11/09/2022 : Added settings to Show Heater Power
-- 10/09/2022 : Some menus now use Macros
-- 08/09/2022 : Added Support for Neopixels
-- 05/09/2022 : Updated to latest KlipperScreen v0.2.6
-- 03/09/2022 : Improvements
-- 28/08/2022 : Latest KlipperScreen commits / Power on Hotend LED when calibrate Z-Offset
-- 17/08/2022 : Added Home button in Z Calibrate menu / Translate Input Shaper menu / Improvements
-- 16/08/2022 : Improved moves speeds / Improved French translation
-- 14/08/2022 : Improved extrude/retract speeds / Improved French translation
-- 13/08/2022 : Latest KlipperScreen commits
-- 10/08/2022 : First release
+Changelog is available here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/wiki/KlipperScreen-Changelog
