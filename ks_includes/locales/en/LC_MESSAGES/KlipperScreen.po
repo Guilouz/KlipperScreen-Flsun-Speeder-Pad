@@ -13,6 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
+msgid "Show Scrollbars Arrows"
+msgstr ""
+
 msgid "Initiate a PID calibration for:"
 msgstr ""
 

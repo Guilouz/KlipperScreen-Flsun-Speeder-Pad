@@ -178,6 +178,28 @@ scrollbar slider {
     background-color: #404E57;
 }
 
+scrollbar.vertical.with-steppers {
+    -GtkScrollbar-has-backward-stepper: true;
+    -GtkScrollbar-has-forward-stepper: true;
+}
+
+scrollbar.with-steppers button {
+    min-width: 2.5em;
+    min-height: 2.5em;
+}
+
+scrollbar.vertical.with-steppers button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.vertical.with-steppers button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+undershoot.top, undershoot.bottom {
+    background-image: none;
+}
+
 separator {
     margin: 1em 2em;
     background-color: rgba(255, 255, 255, 0.5);
