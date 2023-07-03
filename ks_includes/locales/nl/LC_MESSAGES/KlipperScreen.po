@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:33+0200\n"
+"PO-Revision-Date: 2023-07-03 19:00+0200\n"
 "Last-Translator: Thijs Triemstra <info@collab.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -18,10 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -205,9 +202,6 @@ msgstr "Acceleratie:"
 msgid "Accept"
 msgstr "Accepteer"
 
-msgid "Actions"
-msgstr "Acties"
-
 msgid "Add profile"
 msgstr "Profiel toevoegen"
 
@@ -308,9 +302,6 @@ msgstr "Sluiten"
 
 msgid "Complete"
 msgstr "Voltooid"
-
-msgid "Configuration"
-msgstr "Configuratie"
 
 msgid "Confirm Emergency Stop"
 msgstr "Bevestig Nood Stop"
@@ -446,6 +437,9 @@ msgstr "Verberg sensoren in Temp."
 msgid "Hide temp."
 msgstr "Verberg temp."
 
+msgid "Home"
+msgstr "Home"
+
 msgid "Home All"
 msgstr "Home alles"
 
@@ -461,9 +455,6 @@ msgstr "Home Y"
 msgid "Home Z"
 msgstr "Home Z"
 
-msgid "Homing"
-msgstr "Homing"
-
 msgid "Host"
 msgstr "Host"
 
@@ -475,6 +466,9 @@ msgstr "Icoon Thema"
 
 msgid "Initializing printer..."
 msgstr "Initialiseren printer…"
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -496,6 +490,9 @@ msgstr "Invert Y"
 
 msgid "Invert Z"
 msgstr "Invert Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Herstarten"
@@ -586,6 +583,9 @@ msgstr "Aangepast"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: verbonden"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Beweeg"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:31+0200\n"
+"PO-Revision-Date: 2023-07-03 18:57+0200\n"
 "Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -20,10 +20,7 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -207,9 +204,6 @@ msgstr "האצה"
 msgid "Accept"
 msgstr "אשר"
 
-msgid "Actions"
-msgstr "פעולות"
-
 msgid "Add profile"
 msgstr "הוסף פרופיל"
 
@@ -310,9 +304,6 @@ msgstr "סגור"
 
 msgid "Complete"
 msgstr "הסתיים"
-
-msgid "Configuration"
-msgstr "קונפיגורציה"
 
 msgid "Confirm Emergency Stop"
 msgstr "אשר עצירת חירום"
@@ -448,6 +439,9 @@ msgstr "הסתר חיישנים בטמפ'."
 msgid "Hide temp."
 msgstr "הסתר טמפרטורה"
 
+msgid "Home"
+msgstr "איפוס"
+
 msgid "Home All"
 msgstr "איפוס XYZ"
 
@@ -463,9 +457,6 @@ msgstr "איפוס Y"
 msgid "Home Z"
 msgstr "איפוס Z"
 
-msgid "Homing"
-msgstr "איפוס צירים"
-
 msgid "Host"
 msgstr "שרת"
 
@@ -477,6 +468,9 @@ msgstr "ערכת נושא"
 
 msgid "Initializing printer..."
 msgstr "מאתחל מדפסת..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "מעצב גימור"
@@ -498,6 +492,9 @@ msgstr "הפוך את Y"
 
 msgid "Invert Z"
 msgstr "הפוך את Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "אתחול קליפר"
@@ -588,6 +585,9 @@ msgstr "שונה"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: מחובר"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "הזזת צירים"
@@ -925,4 +925,4 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"

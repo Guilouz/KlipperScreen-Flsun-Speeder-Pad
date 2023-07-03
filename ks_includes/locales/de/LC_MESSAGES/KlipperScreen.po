@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:27+0200\n"
+"PO-Revision-Date: 2023-07-03 18:53+0200\n"
 "Last-Translator: livinhack\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -18,10 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -205,9 +202,6 @@ msgstr "Beschleunigung:"
 msgid "Accept"
 msgstr "OK"
 
-msgid "Actions"
-msgstr "Aktionen"
-
 msgid "Add profile"
 msgstr "Profil hinzufügen"
 
@@ -308,9 +302,6 @@ msgstr "Schließen"
 
 msgid "Complete"
 msgstr "Fertiggestellt"
-
-msgid "Configuration"
-msgstr "Einstellungen"
 
 msgid "Confirm Emergency Stop"
 msgstr "Not-Aus bestätigen"
@@ -446,6 +437,9 @@ msgstr "Sensoren in Temp ausblenden."
 msgid "Hide temp."
 msgstr "Temp. ausblenden"
 
+msgid "Home"
+msgstr "Achse neupositionieren"
+
 msgid "Home All"
 msgstr "Alle Achsen zurücksetzen"
 
@@ -461,9 +455,6 @@ msgstr "Achse Y neupositionieren"
 msgid "Home Z"
 msgstr "Achse Z neupositionieren"
 
-msgid "Homing"
-msgstr "Grundposition"
-
 msgid "Host"
 msgstr "Host"
 
@@ -475,6 +466,9 @@ msgstr "Icon Theme"
 
 msgid "Initializing printer..."
 msgstr "Drucker wird initialisiert..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -496,6 +490,9 @@ msgstr "Achse Y invertieren"
 
 msgid "Invert Z"
 msgstr "Achse Z invertieren"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Neustart"
@@ -586,6 +583,9 @@ msgstr "Modifiziert"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: Verbunden"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Bewegen"

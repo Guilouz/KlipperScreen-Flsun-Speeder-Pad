@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-02 11:23+0200\n"
+"PO-Revision-Date: 2023-07-03 19:06+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,14 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
+msgid "Configurations"
+msgstr "Configurations"
+
 msgid "Show Scrollbars Arrows"
 msgstr "Afficher les flèches de défilement"
-
-msgid "Initiate a PID calibration for:"
-msgstr "Démarrer la calibration PID pour :"
-
-msgid "It may take more than 5 minutes depending on the heater power."
-msgstr "Cela peut prendre plus de 5 minutes selon la puissance du chauffe."
 
 msgid "Touch sound (BigTreeTech Pad7)"
 msgstr "Son des touches (BigTreeTech Pad7)"
@@ -230,9 +227,6 @@ msgstr "Accélération:"
 msgid "Accept"
 msgstr "Accepter"
 
-msgid "Actions"
-msgstr "Actions"
-
 msgid "Add profile"
 msgstr "Ajouter un profil"
 
@@ -335,9 +329,6 @@ msgstr "Fermer"
 
 msgid "Complete"
 msgstr "Impression terminée"
-
-msgid "Configuration"
-msgstr "Configurations"
 
 msgid "Confirm Emergency Stop"
 msgstr "Confirmer l'arrêt d'urgence"
@@ -475,6 +466,9 @@ msgstr ""
 "Masquer les\n"
 "températures"
 
+msgid "Home"
+msgstr "Home"
+
 msgid "Home All"
 msgstr "Home XYZ"
 
@@ -490,9 +484,6 @@ msgstr "Home Y"
 msgid "Home Z"
 msgstr "Home Z"
 
-msgid "Homing"
-msgstr "Home"
-
 msgid "Host"
 msgstr "Hôte"
 
@@ -504,6 +495,9 @@ msgstr "Thème"
 
 msgid "Initializing printer..."
 msgstr "Démarrage de l'imprimante..."
+
+msgid "Initiate a PID calibration for:"
+msgstr "Démarrer la calibration PID pour :"
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -525,6 +519,9 @@ msgstr "Inverser l'axe Y"
 
 msgid "Invert Z"
 msgstr "Inverser l'axe Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr "Cela peut prendre plus de 5 minutes selon la puissance du chauffe."
 
 msgid "Klipper Restart"
 msgstr "Redémarrer Klipper"
@@ -615,6 +612,9 @@ msgstr "Modifié"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: connecté"
+
+msgid "More"
+msgstr "Plus"
 
 msgid "Move"
 msgstr "Mouvements"

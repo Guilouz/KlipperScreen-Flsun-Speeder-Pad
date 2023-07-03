@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:34+0200\n"
+"PO-Revision-Date: 2023-07-03 19:01+0200\n"
 "Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -19,10 +19,7 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -206,9 +203,6 @@ msgstr "Ускорение:"
 msgid "Accept"
 msgstr "Применить"
 
-msgid "Actions"
-msgstr "Действия"
-
 msgid "Add profile"
 msgstr "Добавить профиль"
 
@@ -309,9 +303,6 @@ msgstr "Закрыть"
 
 msgid "Complete"
 msgstr "Готово"
-
-msgid "Configuration"
-msgstr "Параметр"
 
 msgid "Confirm Emergency Stop"
 msgstr "Подтвердить аварийную остановку"
@@ -447,6 +438,9 @@ msgstr "Скрыть датчики в Temp."
 msgid "Hide temp."
 msgstr "Скрыть температуру."
 
+msgid "Home"
+msgstr "Парковать"
+
 msgid "Home All"
 msgstr "Парковать все"
 
@@ -462,9 +456,6 @@ msgstr "Парковать Y"
 msgid "Home Z"
 msgstr "Парковать Z"
 
-msgid "Homing"
-msgstr "Парковка"
-
 msgid "Host"
 msgstr "Хост"
 
@@ -476,6 +467,9 @@ msgstr "Темы"
 
 msgid "Initializing printer..."
 msgstr "Принтер стартует..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "Входной шейпер"
@@ -497,6 +491,9 @@ msgstr "Инверсия Y"
 
 msgid "Invert Z"
 msgstr "Инверсия Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Рестарт"
@@ -587,6 +584,9 @@ msgstr "Изменено"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: подключен"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Двигать"

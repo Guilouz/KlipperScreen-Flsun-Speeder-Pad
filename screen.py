@@ -713,6 +713,8 @@ class KlipperScreen(Gtk.Window):
         self.lang_ltr = set_text_direction(lang)
         self.env.install_gettext_translations(self._config.get_lang())
         self._config._create_configurable_options(self)
+        self._config.set('main', 'language', lang)
+        self._config.save_user_config_options()
         self.reload_panels()
 
     def reload_panels(self, *args):
@@ -735,7 +737,7 @@ class KlipperScreen(Gtk.Window):
             self.printer.process_update({'webhooks': {'state': "ready"}})
         elif action == "notify_status_update" and self.printer.state != "shutdown":
             self.printer.process_update(data)
-            if 'manual_probe' in data and data['manual_probe']['is_active'] and 'zcalibrate' not in self._cur_panels:
+            if 'manual_probe' in data and data['manual_probe']['is_active'] and 'zoffset' not in self._cur_panels:
                 self.show_panel('zoffset', "zcalibrate", None, 1, False)
         elif action == "notify_filelist_changed":
             if self.files is not None:

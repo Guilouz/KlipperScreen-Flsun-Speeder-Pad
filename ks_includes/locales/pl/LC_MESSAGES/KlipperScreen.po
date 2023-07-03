@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:33+0200\n"
+"PO-Revision-Date: 2023-07-03 19:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -19,10 +19,7 @@ msgstr ""
 "|| n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -206,9 +203,6 @@ msgstr "Przyśpieszenie:"
 msgid "Accept"
 msgstr "Akceptuj"
 
-msgid "Actions"
-msgstr "Akcje"
-
 msgid "Add profile"
 msgstr "Dodaj profil"
 
@@ -309,9 +303,6 @@ msgstr "Zamknij"
 
 msgid "Complete"
 msgstr "Zakończone"
-
-msgid "Configuration"
-msgstr "Konfiguracja"
 
 msgid "Confirm Emergency Stop"
 msgstr "Potwierdzaj awaryjny stop"
@@ -447,6 +438,9 @@ msgstr "Ukryj sensory w Temp."
 msgid "Hide temp."
 msgstr "Ukryj temp."
 
+msgid "Home"
+msgstr "Bazuj"
+
 msgid "Home All"
 msgstr "Bazuj wszystkie"
 
@@ -462,9 +456,6 @@ msgstr "Bazuj Y"
 msgid "Home Z"
 msgstr "Bazuj Z"
 
-msgid "Homing"
-msgstr "Bazowanie"
-
 msgid "Host"
 msgstr "Gospodarz"
 
@@ -476,6 +467,9 @@ msgstr "Motyw ikon"
 
 msgid "Initializing printer..."
 msgstr "Inicjowanie drukarki..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -497,6 +491,9 @@ msgstr "Odwróć Y"
 
 msgid "Invert Z"
 msgstr "Odwróć Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Restartuj Klipper"
@@ -587,6 +584,9 @@ msgstr "Zmodyfikowane"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: połączony"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Ruch"

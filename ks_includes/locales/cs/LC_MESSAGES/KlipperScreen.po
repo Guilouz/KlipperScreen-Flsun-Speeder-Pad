@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Czech\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-06-27 12:26+0200\n"
+"PO-Revision-Date: 2023-07-03 18:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: Jan Stanka (stanky@email.cz)\n"
 "Language: cs\n"
@@ -18,10 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -205,9 +202,6 @@ msgstr "Zrychlení:"
 msgid "Accept"
 msgstr "Přijmout"
 
-msgid "Actions"
-msgstr "Akce"
-
 msgid "Add profile"
 msgstr "Přidat profil"
 
@@ -308,9 +302,6 @@ msgstr "Zavřít"
 
 msgid "Complete"
 msgstr "Hotovo"
-
-msgid "Configuration"
-msgstr "Konfigurace"
 
 msgid "Confirm Emergency Stop"
 msgstr "Potvrzovat Emergency Stop"
@@ -446,6 +437,9 @@ msgstr "Skrýt senzory v Temp."
 msgid "Hide temp."
 msgstr "Skrýt teplotu"
 
+msgid "Home"
+msgstr "Zaparkovat"
+
 msgid "Home All"
 msgstr "Zaparkovat XYZ"
 
@@ -461,9 +455,6 @@ msgstr "Zaparkovat Y"
 msgid "Home Z"
 msgstr "Zaparkovat Z"
 
-msgid "Homing"
-msgstr "Domů"
-
 msgid "Host"
 msgstr "Host"
 
@@ -475,6 +466,9 @@ msgstr "Sada ikon"
 
 msgid "Initializing printer..."
 msgstr "Startuji tiskárnu ..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr ""
@@ -496,6 +490,9 @@ msgstr "Otočit Y"
 
 msgid "Invert Z"
 msgstr "Otočit Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Restart"
@@ -586,6 +583,9 @@ msgstr "Změněno"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: připojen"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Posun"

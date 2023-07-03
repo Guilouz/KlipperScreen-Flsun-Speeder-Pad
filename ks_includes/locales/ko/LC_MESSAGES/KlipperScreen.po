@@ -13,10 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -200,9 +197,6 @@ msgstr "가속도:"
 msgid "Accept"
 msgstr "확인"
 
-msgid "Actions"
-msgstr "툴 헤드 제어"
-
 msgid "Add profile"
 msgstr ""
 
@@ -303,9 +297,6 @@ msgstr "닫기"
 
 msgid "Complete"
 msgstr "완료"
-
-msgid "Configuration"
-msgstr "환경 설정"
 
 msgid "Confirm Emergency Stop"
 msgstr "비상정지 확인창 표시"
@@ -441,6 +432,9 @@ msgstr "온도 섹션에서 센서 항목 숨김."
 msgid "Hide temp."
 msgstr "온도 숨김"
 
+msgid "Home"
+msgstr "축 홈"
+
 msgid "Home All"
 msgstr "전체 홈"
 
@@ -456,9 +450,6 @@ msgstr "Y축 홈"
 msgid "Home Z"
 msgstr "Z축 홈"
 
-msgid "Homing"
-msgstr "툴 헤드 위치 초기화"
-
 msgid "Host"
 msgstr ""
 
@@ -470,6 +461,9 @@ msgstr "아이콘 테마"
 
 msgid "Initializing printer..."
 msgstr "프린터 초기화 중.."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "인풋 셰이퍼"
@@ -491,6 +485,9 @@ msgstr "Y축 반전"
 
 msgid "Invert Z"
 msgstr "Z축 반전"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "클리퍼 재시작"
@@ -581,6 +578,9 @@ msgstr "수정됨"
 
 msgid "Moonraker: connected"
 msgstr "문래커: 연결됨"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "툴 헤드 이동"

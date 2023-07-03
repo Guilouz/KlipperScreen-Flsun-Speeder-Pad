@@ -13,10 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-msgid "Initiate a PID calibration for:"
-msgstr ""
-
-msgid "It may take more than 5 minutes depending on the heater power."
+msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -200,9 +197,6 @@ msgstr "Gyorsulás:"
 msgid "Accept"
 msgstr "Elfogad"
 
-msgid "Actions"
-msgstr "Műveletek"
-
 msgid "Add profile"
 msgstr "Profil hozzáadása"
 
@@ -303,9 +297,6 @@ msgstr "Bezárás"
 
 msgid "Complete"
 msgstr "Befejezve"
-
-msgid "Configuration"
-msgstr "Konfiguráció"
 
 msgid "Confirm Emergency Stop"
 msgstr "Vészleállítás megerősítése"
@@ -441,6 +432,9 @@ msgstr "Hőfok szenzorok elrejtése."
 msgid "Hide temp."
 msgstr "Hőfok elrejtése"
 
+msgid "Home"
+msgstr "kezdőpont"
+
 msgid "Home All"
 msgstr "X-Y-Z kezdőpont"
 
@@ -456,9 +450,6 @@ msgstr "Y kezdőpont"
 msgid "Home Z"
 msgstr "Z kezdőpont"
 
-msgid "Homing"
-msgstr "Kezdőpont"
-
 msgid "Host"
 msgstr "Gazda"
 
@@ -470,6 +461,9 @@ msgstr "Ikon téma"
 
 msgid "Initializing printer..."
 msgstr "Nyomtató inicializálása..."
+
+msgid "Initiate a PID calibration for:"
+msgstr ""
 
 msgid "Input Shaper"
 msgstr "Bemeneti alakító"
@@ -491,6 +485,9 @@ msgstr "Fordított Y"
 
 msgid "Invert Z"
 msgstr "Fordított Z"
+
+msgid "It may take more than 5 minutes depending on the heater power."
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Újraindítása"
@@ -581,6 +578,9 @@ msgstr "Módosított"
 
 msgid "Moonraker: connected"
 msgstr "Moonraker: csatlakoztatva"
+
+msgid "More"
+msgstr ""
 
 msgid "Move"
 msgstr "Mozgatás"
@@ -912,4 +912,4 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr ""
+msgstr "mm³/s"
