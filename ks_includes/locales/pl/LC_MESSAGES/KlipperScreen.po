@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 19:00+0200\n"
+"PO-Revision-Date: 2023-07-04 11:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -421,7 +421,7 @@ msgid "Fullscreen"
 msgstr "Pełny ekran"
 
 msgid "Go Back"
-msgstr "Wróć"
+msgstr "Powróć"
 
 msgid "Height:"
 msgstr "Wysokość:"
@@ -469,7 +469,7 @@ msgid "Initializing printer..."
 msgstr "Inicjowanie drukarki..."
 
 msgid "Initiate a PID calibration for:"
-msgstr ""
+msgstr "Rozpoczęcie kalibracji PID dla:"
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -493,7 +493,7 @@ msgid "Invert Z"
 msgstr "Odwróć Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
-msgstr ""
+msgstr "Może to potrwać dłużej niż 5 minut w zależności od mocy grzałki."
 
 msgid "Klipper Restart"
 msgstr "Restartuj Klipper"
@@ -586,7 +586,7 @@ msgid "Moonraker: connected"
 msgstr "Moonraker: połączony"
 
 msgid "More"
-msgstr ""
+msgstr "Więcej"
 
 msgid "Move"
 msgstr "Ruch"
@@ -657,7 +657,7 @@ msgid "Power On Printer"
 msgstr "Zasilanie włączone"
 
 msgid "Pressure Advance:"
-msgstr "Natężenie docisku:"
+msgstr "Pressure Advance:"
 
 msgid "Print"
 msgstr "Drukuj"
@@ -811,7 +811,7 @@ msgid "Speed:"
 msgstr "Prędkość:"
 
 msgid "Square Corner Velocity"
-msgstr "Prędkość w narożniku prostokątnym"
+msgstr "Prędkość na rogu kwadratu"
 
 msgid "Start"
 msgstr "Start"
