@@ -70,7 +70,7 @@ install_script: scripts/KlipperScreen-install.sh
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone https://github.com/jordanruthe/KlipperScreen.git
+git clone https://github.com/KlipperScreen/KlipperScreen.git
 cd ~/KlipperScreen
 ./scripts/KlipperScreen-install.sh
 ```
@@ -83,7 +83,7 @@ Note: Installation may take several minutes.
 [update_manager KlipperScreen]
 type: git_repo
 path: ~/KlipperScreen
-origin: https://github.com/jordanruthe/KlipperScreen.git
+origin: https://github.com/KlipperScreen/KlipperScreen.git
 env: ~/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
