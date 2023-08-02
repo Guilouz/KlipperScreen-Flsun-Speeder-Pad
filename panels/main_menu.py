@@ -1,20 +1,14 @@
 import logging
-
 import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
-from panels.menu import MenuPanel
-
+from panels.menu import Panel as MenuPanel
 from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
 
 
-def create_panel(*args, **kwargs):
-    return MainPanel(*args, **kwargs)
-
-
-class MainPanel(MenuPanel):
+class Panel(MenuPanel):
     def __init__(self, screen, title, items=None):
         super().__init__(screen, title, items)
         self.graph_retry_timeout = None
@@ -226,7 +220,8 @@ class MainPanel(MenuPanel):
         return max(temp, 0)
 
     def pid_calibrate(self, temp):
-        if self.verify_max_temp(temp): # Changes
+        if self.verify_max_temp(temp):
+            # Start Changes
             if not self.pid_start or not self.pid_end: # Changes
                 script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
@@ -245,6 +240,7 @@ class MainPanel(MenuPanel):
                     "printer.gcode.script",
                     script
                 )
+                # End Changes
 
     def create_left_panel(self):
 
@@ -252,7 +248,7 @@ class MainPanel(MenuPanel):
         self.labels['devices'].get_style_context().add_class('heater-grid')
         self.labels['devices'].set_vexpand(False)
 
-        name = Gtk.Label(label="")
+        name = Gtk.Label()
         temp = Gtk.Label(_("Temp (°C)"))
         temp.get_style_context().add_class("heater-grid-temp")
 
@@ -262,7 +258,7 @@ class MainPanel(MenuPanel):
         self.labels['da'] = HeaterGraph(self._printer, self._gtk.font_size)
         self.labels['da'].set_vexpand(True)
 
-        scroll = self._gtk.ScrolledWindow(steppers=False)
+        scroll = self._gtk.ScrolledWindow(steppers=False) # Changes
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(self.labels['devices'])
 

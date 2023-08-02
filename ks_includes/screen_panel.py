@@ -60,11 +60,11 @@ class ScreenPanel:
             return self._gtk.PixbufFromHttp(loc[1], width, height)
         return None
 
-    def menu_item_clicked(self, widget, panel_type, item):
+    def menu_item_clicked(self, widget, item):
         if 'extra' in item:
-            self._screen.show_panel(panel_type, item['panel'], item['name'], 1, False, extra=item['extra'])
+            self._screen.show_panel(item['panel'], item['name'], extra=item['extra'])
             return
-        self._screen.show_panel(panel_type, item['panel'], item['name'], 1, False)
+        self._screen.show_panel(item['panel'], item['name'])
 
     def load_menu(self, widget, name, title=None):
         logging.info(f"loading menu {name}")
@@ -125,13 +125,13 @@ class ScreenPanel:
 
     @staticmethod
     def format_time(seconds):
-        if seconds is None or seconds <= 0:
+        if seconds is None or seconds < 1:
             return "-"
         days = seconds // 86400
         seconds %= 86400
         hours = seconds // 3600
         seconds %= 3600
-        minutes = seconds // 60
+        minutes = round(seconds / 60)
         seconds %= 60
         return f"{f'{days:2.0f}d ' if days > 0 else ''}" \
                f"{f'{hours:2.0f}h ' if hours > 0 else ''}" \

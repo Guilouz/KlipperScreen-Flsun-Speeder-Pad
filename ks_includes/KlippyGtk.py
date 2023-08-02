@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-import contextlib
 import logging
 import os
 import pathlib
-
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -248,7 +246,8 @@ class KlippyGtk:
             b.connect("pressed", self.screen._button_pressed_feedback) # Changes
         return b
 
-    def ScrolledWindow(self, steppers=True):
+    # Changes
+    def ScrolledWindow(self, steppers=True): # Changes
         scroll = Gtk.ScrolledWindow()
         scroll.set_property("overlay-scrolling", False)
         scroll.set_vexpand(True)
@@ -256,6 +255,6 @@ class KlippyGtk:
                           Gdk.EventMask.TOUCH_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK)
         scroll.set_kinetic_scrolling(True)
-        if self.screen._config.get_main_config().getboolean("show_scroll_steppers", fallback=False) and steppers:
-            scroll.get_vscrollbar().get_style_context().add_class("with-steppers")
+        if self.screen._config.get_main_config().getboolean("show_scroll_steppers", fallback=False) and steppers: # Changes
+            scroll.get_vscrollbar().get_style_context().add_class("with-steppers") # Changes
         return scroll

@@ -329,6 +329,9 @@ msgstr ""
 msgid "Do you want to recover %s?"
 msgstr ""
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
+
 msgid "Elapsed:"
 msgstr ""
 
@@ -790,6 +793,9 @@ msgid "Speed:"
 msgstr ""
 
 msgid "Square Corner Velocity"
+msgstr ""
+
+msgid "Standby"
 msgstr ""
 
 msgid "Start"

@@ -1,21 +1,14 @@
 import logging
-import contextlib
-
 import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
-
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 from ks_includes.widgets.bedmap import BedMap
 
 
-def create_panel(*args):
-    return BedMeshPanel(*args)
-
-
-class BedMeshPanel(ScreenPanel):
+class Panel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
@@ -196,9 +189,10 @@ class BedMeshPanel(ScreenPanel):
         if action == "notify_busy":
             self.process_busy(data)
             return
-        if action == "notify_status_update":
-            with contextlib.suppress(KeyError):
-                self.activate_mesh(data['bed_mesh']['profile_name'])
+        if action != "notify_status_update":
+            return
+        if 'bed_mesh' in data and 'profile_name' in data['bed_mesh']:
+            self.activate_mesh(data['bed_mesh']['profile_name'])
 
     def remove_create(self):
         if self.show_create is False:
@@ -278,7 +272,7 @@ class BedMeshPanel(ScreenPanel):
 
         # Load zcalibrate to do a manual mesh
         if not self._printer.get_probe():
-            self.menu_item_clicked(widget, "refresh", {"name": _("Mesh calibrate"), "panel": "zcalibrate"})
+            self.menu_item_clicked(widget, {"name": _("Mesh calibrate"), "panel": "zcalibrate"})
 
     def send_clear_mesh(self, widget):
         self._screen._ws.klippy.gcode_script("BED_MESH_CLEAR")

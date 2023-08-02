@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 19:06+0200\n"
+"PO-Revision-Date: 2023-07-30 21:59+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -370,6 +370,9 @@ msgstr "Distance (mm)"
 #, python-format
 msgid "Do you want to recover %s?"
 msgstr "Voulez-vous récupérer %s ?"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS n’a pas pu se charger et a été désactivé"
 
 msgid "Elapsed:"
 msgstr "Écoulé:"
@@ -839,6 +842,9 @@ msgstr "Vitesse:"
 
 msgid "Square Corner Velocity"
 msgstr "Vélocité des angles droits"
+
+msgid "Standby"
+msgstr "En veille"
 
 msgid "Start"
 msgstr "Démarrer"

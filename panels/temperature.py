@@ -1,21 +1,15 @@
 import logging
-import contextlib
-
 import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
-
+from contextlib import suppress
 from ks_includes.screen_panel import ScreenPanel
 from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
 
 
-def create_panel(*args, **kwargs):
-    return TemperaturePanel(*args, **kwargs)
-
-
-class TemperaturePanel(ScreenPanel):
+class Panel(ScreenPanel):
     graph_update = None
     active_heater = None
 
@@ -233,7 +227,7 @@ class TemperaturePanel(ScreenPanel):
                 target = None
                 max_temp = float(self._printer.get_config_section(heater)['max_temp'])
                 name = heater.split()[1] if len(heater.split()) > 1 else heater
-                with contextlib.suppress(KeyError):
+                with suppress(KeyError):
                     for i in self.preheat_options[setting]:
                         logging.info(f"{self.preheat_options[setting]}")
                         if i == name:
@@ -250,19 +244,19 @@ class TemperaturePanel(ScreenPanel):
                         self._screen._ws.klippy.set_tool_temp(self._printer.get_tool_number(heater), target)
                 elif heater.startswith('heater_bed'):
                     if target is None:
-                        with contextlib.suppress(KeyError):
+                        with suppress(KeyError):
                             target = self.preheat_options[setting]["bed"]
                     if self.validate(heater, target, max_temp):
                         self._screen._ws.klippy.set_bed_temp(target)
                 elif heater.startswith('heater_generic '):
                     if target is None:
-                        with contextlib.suppress(KeyError):
+                        with suppress(KeyError):
                             target = self.preheat_options[setting]["heater_generic"]
                     if self.validate(heater, target, max_temp):
                         self._screen._ws.klippy.set_heater_temp(name, target)
                 elif heater.startswith('temperature_fan '):
                     if target is None:
-                        with contextlib.suppress(KeyError):
+                        with suppress(KeyError):
                             target = self.preheat_options[setting]["temperature_fan"]
                     if self.validate(heater, target, max_temp):
                         self._screen._ws.klippy.set_temp_fan_temp(name, target)
@@ -282,7 +276,7 @@ class TemperaturePanel(ScreenPanel):
         return False
 
     def preheat_gcode(self, setting):
-        with contextlib.suppress(KeyError):
+        with suppress(KeyError):
             self._screen._ws.klippy.gcode_script(self.preheat_options[setting]['gcode'])
         return False
 
@@ -430,8 +424,9 @@ class TemperaturePanel(ScreenPanel):
         return max(temp, 0)
 
     def pid_calibrate(self, temp):
-        if self.verify_max_temp(temp): # Changes
-            if not self.pid_start or not self.pid_end: # Changes
+        if self.verify_max_temp(temp):
+            # Start Changes
+            if not self.pid_start or not self.pid_end:
                 script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
                     None,
@@ -449,6 +444,7 @@ class TemperaturePanel(ScreenPanel):
                     "printer.gcode.script",
                     script
                 )
+                # End Changes
 
     def create_left_panel(self):
 
@@ -456,7 +452,7 @@ class TemperaturePanel(ScreenPanel):
         self.labels['devices'].get_style_context().add_class('heater-grid')
         self.labels['devices'].set_vexpand(False)
 
-        name = Gtk.Label("")
+        name = Gtk.Label()
         temp = Gtk.Label(_("Temp (°C)"))
         temp.get_style_context().add_class("heater-grid-temp")
 
@@ -466,7 +462,7 @@ class TemperaturePanel(ScreenPanel):
         self.labels['da'] = HeaterGraph(self._printer, self._gtk.font_size)
         self.labels['da'].set_vexpand(True)
 
-        scroll = self._gtk.ScrolledWindow(steppers=False)
+        scroll = self._gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(self.labels['devices'])
 
