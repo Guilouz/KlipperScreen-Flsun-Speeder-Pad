@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-30 20:09+0200\n"
+"PO-Revision-Date: 2023-08-04 17:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -322,6 +322,9 @@ msgstr "Kontynuuj"
 
 msgid "Cooldown"
 msgstr "Studzenie"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "Nie udało się wczytać DPMS i został on wyłączony"
 
 msgid "Date"
 msgstr "Data"
@@ -812,6 +815,9 @@ msgstr "Prędkość:"
 
 msgid "Square Corner Velocity"
 msgstr "Prędkość na rogu kwadratu"
+
+msgid "Standby"
+msgstr "Tryb gotowości"
 
 msgid "Start"
 msgstr "Start"

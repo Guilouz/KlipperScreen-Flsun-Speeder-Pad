@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-29 13:07+0200\n"
+"PO-Revision-Date: 2023-08-04 17:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -194,13 +194,13 @@ msgid "ADXL Not Configured"
 msgstr "未配置ADXL"
 
 msgid "Abort"
-msgstr "取消"
+msgstr "放弃"
 
 msgid "Acceleration:"
 msgstr "加速度："
 
 msgid "Accept"
-msgstr "应用"
+msgstr "接受"
 
 msgid "Add profile"
 msgstr "添加配置文件"
@@ -322,6 +322,9 @@ msgstr "继续"
 msgid "Cooldown"
 msgstr "冷却"
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr "屏幕省电管理系统无法加载已禁用"
+
 msgid "Date"
 msgstr "日期"
 
@@ -432,7 +435,7 @@ msgid "Hide"
 msgstr "隐藏"
 
 msgid "Hide sensors in Temp."
-msgstr "在温度显示中隐藏其他传感器"
+msgstr "在温度显示中隐藏传感器"
 
 msgid "Hide temp."
 msgstr "隐藏温度"
@@ -694,10 +697,10 @@ msgid "Recover"
 msgstr "恢复"
 
 msgid "Recover Hard"
-msgstr "硬恢复(git recover hard)"
+msgstr "版本回退(清空修改内容)"
 
 msgid "Recover Soft"
-msgstr "软恢复(git reset)"
+msgstr "版本回退(保留修改内容)"
 
 msgid "Reference"
 msgstr "参考"
@@ -807,6 +810,9 @@ msgstr "速度："
 
 msgid "Square Corner Velocity"
 msgstr "直角速度"
+
+msgid "Standby"
+msgstr "待机"
 
 msgid "Start"
 msgstr "开始"

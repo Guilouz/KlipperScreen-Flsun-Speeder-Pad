@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 18:53+0200\n"
+"PO-Revision-Date: 2023-08-04 17:23+0200\n"
 "Last-Translator: livinhack\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -319,6 +319,9 @@ msgstr "Konsole"
 msgid "Continue"
 msgstr "Fortsetzen"
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS konnte nicht geladen werden und wurde deaktiviert"
+
 msgid "Cooldown"
 msgstr "Abkühlen"
 
@@ -468,7 +471,7 @@ msgid "Initializing printer..."
 msgstr "Drucker wird initialisiert..."
 
 msgid "Initiate a PID calibration for:"
-msgstr ""
+msgstr "Initiieren einer PID-Kalibrierung für:"
 
 msgid "Input Shaper"
 msgstr "Input Shaper"
@@ -492,7 +495,7 @@ msgid "Invert Z"
 msgstr "Achse Z invertieren"
 
 msgid "It may take more than 5 minutes depending on the heater power."
-msgstr ""
+msgstr "Je nach Leistung der Heizung kann dies mehr als 5 Minuten dauern."
 
 msgid "Klipper Restart"
 msgstr "Klipper Neustart"
@@ -585,7 +588,7 @@ msgid "Moonraker: connected"
 msgstr "Moonraker: Verbunden"
 
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 msgid "Move"
 msgstr "Bewegen"
@@ -810,6 +813,9 @@ msgstr "Geschwindigkeit:"
 
 msgid "Square Corner Velocity"
 msgstr "Eckgeschwindigkeit"
+
+msgid "Standby"
+msgstr "Standby"
 
 msgid "Start"
 msgstr "Starten"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-29 13:10+0200\n"
+"PO-Revision-Date: 2023-08-04 17:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -323,6 +323,9 @@ msgstr "Продовжити"
 
 msgid "Cooldown"
 msgstr "Охолодження"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS не вдалося завантажити, і його було вимкнено"
 
 msgid "Date"
 msgstr "Дата"
@@ -819,6 +822,9 @@ msgstr "Швидкість:"
 
 msgid "Square Corner Velocity"
 msgstr "Квадратна кутова швидкість"
+
+msgid "Standby"
+msgstr "Очікування"
 
 msgid "Start"
 msgstr "СТАРТ"
