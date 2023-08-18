@@ -223,8 +223,7 @@ class Panel(ScreenPanel):
         for tool in self._printer.get_tools():
             self.labels[tool].get_style_context().remove_class("button_active")
         self.labels[extruder].get_style_context().add_class("button_active")
-
-         self._screen._send_action(widget, "printer.gcode.script",
+        self._screen._send_action(widget, "printer.gcode.script",
                                   {"script": f"T{self._printer.get_tool_number(extruder)}"})
 
     def change_speed(self, widget, speed):
