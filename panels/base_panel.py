@@ -151,7 +151,7 @@ class BasePanel(ScreenPanel):
                         break
 
             # If there is enough space fill with heater_generic
-            for device in self._printer.get_temp_store_devices():
+            for device in self._printer.get_heaters():
                 if n >= nlimit:
                     break
                 if device.startswith("heater_generic"):
@@ -228,7 +228,7 @@ class BasePanel(ScreenPanel):
 
         if action != "notify_status_update" or self._screen.printer is None:
             return
-        devices = self._printer.get_temp_store_devices()
+        devices = (self._printer.get_tools() + self._printer.get_heaters())
         if devices is not None:
             for device in devices:
                 temp = self._printer.get_dev_stat(device, "temperature")
@@ -256,37 +256,15 @@ class BasePanel(ScreenPanel):
     def remove(self, widget):
         self.content.remove(widget)
 
-    def show_back(self, show=True):
-        self.control['back'].set_sensitive(show)
+    def set_control_sensitive(self, value=True, control='shortcut'):
+        self.control[control].set_sensitive(value)
 
-    def show_home(self, show=True):
-        self.control['home'].set_sensitive(show)
-
-    def show_macro_shortcut(self, show=True):
-        if show is True and self.buttons_showing['macros_shortcut'] is False:
-            self.action_bar.add(self.control['macros_shortcut'])
-            if self.buttons_showing['printer_select'] is False:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 2)
-            else:
-                self.action_bar.reorder_child(self.control['macros_shortcut'], 3)
-            self.control['macros_shortcut'].show()
-            self.buttons_showing['macros_shortcut'] = True
-        elif show is False and self.buttons_showing['macros_shortcut'] is True:
-            self.action_bar.remove(self.control['macros_shortcut'])
-            self.buttons_showing['macros_shortcut'] = False
-
-    def toggle_macro_shorcut_sensitive(self, value=True):
-        self.control['macros_shortcut'].set_sensitive(value)
+    def show_shortcut(self, show=True):
+        self.control['shortcut'].set_visible(show)
+        self.set_control_sensitive(self._screen._cur_panels[-1] != self.shorcut['panel'])
 
     def show_printer_select(self, show=True):
-        if show and self.buttons_showing['printer_select'] is False:
-            self.action_bar.add(self.control['printer_select'])
-            self.action_bar.reorder_child(self.control['printer_select'], 2)
-            self.buttons_showing['printer_select'] = True
-            self.control['printer_select'].show()
-        elif show is False and self.buttons_showing['printer_select']:
-            self.action_bar.remove(self.control['printer_select'])
-            self.buttons_showing['printer_select'] = False
+        self.control['printer_select'].set_visible(show)
 
     def set_title(self, title):
         if not title:
@@ -313,12 +291,6 @@ class BasePanel(ScreenPanel):
             self.time_min = now.minute
             self.time_format = confopt
         return True
-
-    def show_estop(self, show=True):
-        if show:
-            self.control['estop'].set_sensitive(True)
-            return
-        self.control['estop'].set_sensitive(False)
 
     def set_ks_printer_cfg(self, printer):
         ScreenPanel.ks_printer_cfg = self._config.get_printer_config(printer)
