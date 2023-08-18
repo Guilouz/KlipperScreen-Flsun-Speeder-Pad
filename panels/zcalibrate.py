@@ -54,7 +54,7 @@ class Panel(ScreenPanel):
         if "PROBE_CALIBRATE" in self._printer.available_commands:
             self._add_button(_("Z Offset Calibration"), "probe", pobox)
             functions.append("probe")
-        if "Z_ENDSTOP_CALIBRATE" in self._printer.available_commands:
+        if "DELTA_CALIBRATE" in self._printer.available_commands:
             self._add_button(_("EndStops Calibration"), "endstop", pobox)
             functions.append("endstop")
         if "DELTA_CALIBRATE" in self._printer.available_commands:
