@@ -317,6 +317,9 @@ msgstr "Folytat"
 msgid "Cooldown"
 msgstr "Lehűtés"
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS betöltése nem sikerült, ezért le van tiltva"
+
 msgid "Date"
 msgstr "Dátum"
 
@@ -805,6 +808,9 @@ msgstr "Sebesség:"
 
 msgid "Square Corner Velocity"
 msgstr "Sebesség a sarkokban"
+
+msgid "Standby"
+msgstr "Készenlét"
 
 msgid "Start"
 msgstr "Indítás"

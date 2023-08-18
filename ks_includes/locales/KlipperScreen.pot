@@ -404,9 +404,6 @@ msgstr ""
 msgid "Full Update"
 msgstr ""
 
-msgid "Fullscreen"
-msgstr ""
-
 msgid "Go Back"
 msgstr ""
 

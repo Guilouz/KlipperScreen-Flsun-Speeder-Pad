@@ -3,7 +3,6 @@ import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
 
@@ -51,12 +50,14 @@ class Panel(ScreenPanel):
         # Start Changes
         functions = []
         pobox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        if self.probe:
+
+        if "PROBE_CALIBRATE" in self._printer.available_commands:
             self._add_button(_("Z Offset Calibration"), "probe", pobox)
             functions.append("probe")
-        if "delta" in self._printer.get_config_section("printer")['kinematics']:
+        if "Z_ENDSTOP_CALIBRATE" in self._printer.available_commands:
             self._add_button(_("EndStops Calibration"), "endstop", pobox)
             functions.append("endstop")
+        if "DELTA_CALIBRATE" in self._printer.available_commands:
             if "probe" in functions:
                 self._add_button(_("Automatic Delta Calibration"), "delta", pobox)
                 functions.append("delta")
@@ -130,6 +131,7 @@ class Panel(ScreenPanel):
 
     def start_calibration(self, widget, method):
         self.labels['popover'].popdown()
+        self.buttons['start'].set_sensitive(False)
         # Changes
         
         # Start Changes
@@ -239,19 +241,13 @@ class Panel(ScreenPanel):
         logging.info(f"Moving to X:{x_position} Y:{y_position}")
         self._screen._ws.klippy.gcode_script(f'G0 X{x_position} Y{y_position} F3000')
 
-    def process_busy(self, busy):
-        if busy:
-            for button in self.buttons:
-                self.buttons[button].set_sensitive(False)
-        elif self._printer.get_stat("manual_probe", "is_active"):
+    def activate(self):
+        if self._printer.get_stat("manual_probe", "is_active"):
             self.buttons_calibrating()
         else:
             self.buttons_not_calibrating()
 
     def process_update(self, action, data):
-        if action == "notify_busy":
-            self.process_busy(data)
-            return
         if action == "notify_status_update":
             if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
                 self.widgets['zposition'].set_text("Z : ?") #Changes
@@ -283,18 +279,18 @@ class Panel(ScreenPanel):
         self.distance = distance
 
     def move(self, widget, direction):
-        self._screen._ws.klippy.gcode_script(KlippyGcodes.testz_move(f"{direction}{self.distance}"))
+        self._screen._ws.klippy.gcode_script(f"TESTZ Z={direction}{self.distance}")
 
     def abort(self, widget):
         logging.info("Aborting calibration")
-        self._screen._ws.klippy.gcode_script(KlippyGcodes.ABORT)
+        self._screen._ws.klippy.gcode_script("ABORT")
         self.buttons_not_calibrating()
         #self._screen._menu_go_back() # Changes
         self._screen._ws.klippy.gcode_script("G28") # Changes
 
     def accept(self, widget):
         logging.info("Accepting Z position")
-        self._screen._ws.klippy.gcode_script(KlippyGcodes.ACCEPT)
+        self._screen._ws.klippy.gcode_script("ACCEPT")
         self._screen._ws.klippy.gcode_script("G28") # Changes
 
     def buttons_calibrating(self):

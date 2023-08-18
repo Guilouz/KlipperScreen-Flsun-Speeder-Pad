@@ -167,6 +167,7 @@ class Panel(ScreenPanel):
 
     def update_graph_visibility(self):
         if not self._printer.get_temp_store_devices():
+            logging.debug(f"Could not create graph tempstore: {self._printer.get_temp_store_devices()}")
             return
         count = 0
         for device in self.devices:
@@ -176,11 +177,9 @@ class Panel(ScreenPanel):
             self.labels['da'].set_showing(device, visible)
             if visible:
                 count += 1
-                self.devices[device]['name'].get_style_context().add_class(self.devices[device]['class'])
-                self.devices[device]['name'].get_style_context().remove_class("graph_label_hidden")
+                self.devices[device]['name'].get_style_context().add_class("graph_label")
             else:
-                self.devices[device]['name'].get_style_context().add_class("graph_label_hidden")
-                self.devices[device]['name'].get_style_context().remove_class(self.devices[device]['class'])
+                self.devices[device]['name'].get_style_context().remove_class("graph_label")
         if count > 0:
             if self.labels['da'] not in self.left_panel:
                 self.left_panel.add(self.labels['da'])
@@ -262,7 +261,7 @@ class Panel(ScreenPanel):
                         self._screen._ws.klippy.set_temp_fan_temp(name, target)
             # This small delay is needed to properly update the target if the user configured something above
             # and then changed the target again using preheat gcode
-            GLib.timeout_add(250, self.preheat_gcode, setting)
+            GLib.timeout_add(250, self.preheat_gcode, widget, setting)
 
     def validate(self, heater, target=None, max_temp=None):
         if target is not None and max_temp is not None:
@@ -275,9 +274,10 @@ class Panel(ScreenPanel):
         logging.debug(f"Invalid {heater} Target:{target}/{max_temp}")
         return False
 
-    def preheat_gcode(self, setting):
+    def preheat_gcode(self, widget, setting):
         with suppress(KeyError):
-            self._screen._ws.klippy.gcode_script(self.preheat_options[setting]['gcode'])
+            script = {"script": self.preheat_options[setting]['gcode']}
+            self._screen._send_action(widget, "printer.gcode.script", script)
         return False
 
     def add_device(self, device):
@@ -327,11 +327,10 @@ class Panel(ScreenPanel):
 
         name = self._gtk.Button(image, self.prettify(devname), None, self.bts, Gtk.PositionType.LEFT, 1)
         name.set_alignment(0, .5)
+        name.get_style_context().add_class(class_name)
         visible = self._config.get_config().getboolean(f"graph {self._screen.connected_printer}", device, fallback=True)
         if visible:
-            name.get_style_context().add_class(class_name)
-        else:
-            name.get_style_context().add_class("graph_label_hidden")
+            name.get_style_context().add_class("graph_label")
 
         can_target = self._printer.device_has_target(device)
         self.labels['da'].add_object(device, "temperatures", rgb, False, True)
