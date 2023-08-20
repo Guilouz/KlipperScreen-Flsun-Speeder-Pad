@@ -18,6 +18,27 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Poedit 3.1.1\n"
 
+msgid "Last Used"
+msgstr ""
+
+msgid "Archived"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Material"
+msgstr ""
+
+msgid "Remaining weight"
+msgstr ""
+
+msgid "Remaining length"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
 msgid "Configurations"
 msgstr ""
 

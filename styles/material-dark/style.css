@@ -4,6 +4,8 @@
     color: #e2e2e2;
 }
 
+list row,
+treeview.view,
 window {
     background-color: #121212;
     background-image: url("./styles/material-dark/background.svg");
@@ -86,11 +88,13 @@ combobox box button {
     border-color: #cccccc;
 }
 
+treeview.view check,
 switch {
     background-color: #404E57;
     border-color: #121212;
 }
 
+treeview.view check:checked,
 switch:checked {
     background-color: #2196f3;
 }

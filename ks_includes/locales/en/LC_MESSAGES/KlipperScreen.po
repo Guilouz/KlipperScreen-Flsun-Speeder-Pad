@@ -13,6 +13,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
+msgid "Last Used"
+msgstr ""
+
+msgid "Archived"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Material"
+msgstr ""
+
+msgid "Remaining weight"
+msgstr ""
+
+msgid "Remaining length"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
 msgid "Configurations"
 msgstr ""
 
@@ -415,9 +436,6 @@ msgid "Font Size"
 msgstr ""
 
 msgid "Full Update"
-msgstr ""
-
-msgid "Fullscreen"
 msgstr ""
 
 msgid "Go Back"

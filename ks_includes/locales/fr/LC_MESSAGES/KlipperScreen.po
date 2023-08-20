@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-30 21:59+0200\n"
+"PO-Revision-Date: 2023-08-20 19:09+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,6 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.3.2\n"
+
+msgid "Last Used"
+msgstr "Dernière utilisation"
+
+msgid "Archived"
+msgstr "Archivé"
+
+msgid "Filter"
+msgstr "Filtre"
+
+msgid "Material"
+msgstr "Matériau"
+
+msgid "Remaining weight"
+msgstr "Poids restant"
+
+msgid "Remaining length"
+msgstr "Longueur restante"
+
+msgid "All"
+msgstr "Tout"
 
 msgid "Configurations"
 msgstr "Configurations"
@@ -445,9 +466,6 @@ msgstr "Taille de la police"
 
 msgid "Full Update"
 msgstr "Mettre à jour"
-
-msgid "Fullscreen"
-msgstr "Plein écran"
 
 msgid "Go Back"
 msgstr "Retour"
@@ -953,3 +971,6 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Plein écran"
