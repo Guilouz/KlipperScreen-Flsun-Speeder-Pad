@@ -400,6 +400,7 @@ class Panel(ScreenPanel):
         #elif device == "endstop":
             #label.set_label(_("Apply %s%.3f offset to Endstop?") % (sign, abs(self.zoffset)))
         #label.set_hexpand(True)
+        #label.set_halign(Gtk.Align.CENTER)
         #label.set_vexpand(True)
         #label.set_valign(Gtk.Align.CENTER)
         #label.set_line_wrap(True)
@@ -427,7 +428,8 @@ class Panel(ScreenPanel):
         if self.filename:
             self.disable_button("restart")
             if self.state == "error":
-                self._screen._ws.klippy.gcode_script("SDCARD_RESET_FILE")
+                script = {"script": "SDCARD_RESET_FILE"}
+                self._screen._send_action(None, "printer.gcode.script", script)
             self._screen._ws.klippy.print_start(self.filename)
             logging.info(f"Starting print: {self.filename}")
             self.new_print()

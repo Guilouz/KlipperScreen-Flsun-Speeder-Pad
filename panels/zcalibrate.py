@@ -131,7 +131,6 @@ class Panel(ScreenPanel):
 
     def start_calibration(self, widget, method):
         self.labels['popover'].popdown()
-        self.buttons['start'].set_sensitive(False)
         # Changes
         
         # Start Changes
@@ -241,13 +240,19 @@ class Panel(ScreenPanel):
         logging.info(f"Moving to X:{x_position} Y:{y_position}")
         self._screen._ws.klippy.gcode_script(f'G0 X{x_position} Y{y_position} F3000')
 
-    def activate(self):
-        if self._printer.get_stat("manual_probe", "is_active"):
+    def process_busy(self, busy):
+        if busy:
+            for button in self.buttons:
+                self.buttons[button].set_sensitive(False)
+        elif self._printer.get_stat("manual_probe", "is_active"):
             self.buttons_calibrating()
         else:
             self.buttons_not_calibrating()
 
     def process_update(self, action, data):
+        if action == "notify_busy":
+            self.process_busy(data)
+            return
         if action == "notify_status_update":
             if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
                 self.widgets['zposition'].set_text("Z : ?") #Changes
