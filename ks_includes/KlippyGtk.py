@@ -159,6 +159,8 @@ class KlippyGtk:
         b.set_hexpand(True)
         b.set_vexpand(True)
         b.set_can_focus(False)
+        b.set_image_position(position)
+        b.set_always_show_image(True)
         if image_name is not None:
             if scale is None:
                 scale = self.button_image_scale
@@ -166,8 +168,6 @@ class KlippyGtk:
                 scale = scale * 1.4
             width = height = self.img_scale * scale
             b.set_image(self.Image(image_name, width, height))
-        b.set_image_position(position)
-        b.set_always_show_image(True)
 
         if label is not None:
             format_label(b, lines)
