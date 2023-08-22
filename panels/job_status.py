@@ -384,8 +384,8 @@ class Panel(ScreenPanel):
         self.buttons['pause'].connect("clicked", self.pause)
         self.buttons['restart'].connect("clicked", self.restart)
         self.buttons['resume'].connect("clicked", self.resume)
-        #self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe") Changes
-        #self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop") Changes
+        #self.buttons['save_offset_probe'].connect("clicked", self.save_offset, "probe") # Changes
+        #self.buttons['save_offset_endstop'].connect("clicked", self.save_offset, "endstop") # Changes
 
     # Start Changes
     #def save_offset(self, widget, device):
@@ -423,13 +423,13 @@ class Panel(ScreenPanel):
             #if device == "endstop":
                 #self._screen._ws.klippy.gcode_script("Z_OFFSET_APPLY_ENDSTOP")
             #self._screen._ws.klippy.gcode_script("SAVE_CONFIG")
+    # End Changes
 
     def restart(self, widget):
         if self.filename:
             self.disable_button("restart")
             if self.state == "error":
-                script = {"script": "SDCARD_RESET_FILE"}
-                self._screen._send_action(None, "printer.gcode.script", script)
+                self._screen._ws.klippy.gcode_script("SDCARD_RESET_FILE")
             self._screen._ws.klippy.print_start(self.filename)
             logging.info(f"Starting print: {self.filename}")
             self.new_print()

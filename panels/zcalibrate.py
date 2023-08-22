@@ -18,7 +18,6 @@ class Panel(ScreenPanel):
         self.endstops_calibration = any("ENDSTOPS_CALIBRATION" in macro.upper() for macro in macros) # Changes
         self.delta_calibration = any("DELTA_CALIBRATION" in macro.upper() for macro in macros) # Changes
         self.security_offset = any("SECURITY_OFFSET" in macro.upper() for macro in macros) # Changes
-
         self.z_offset = None
         self.probe = self._printer.get_probe()
         if self.probe:
@@ -47,26 +46,31 @@ class Panel(ScreenPanel):
         self.buttons['complete'].connect("clicked", self.accept)
         self.buttons['cancel'].connect("clicked", self.abort)
 
-        # Start Changes
         functions = []
         pobox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
+        #if "Z_ENDSTOP_CALIBRATE" in self._printer.available_commands:
+            #self._add_button("Endstop", "endstop", pobox)
+            #functions.append("endstop")
         if "PROBE_CALIBRATE" in self._printer.available_commands:
-            self._add_button(_("Z Offset Calibration"), "probe", pobox)
+            self._add_button(_("Z Offset Calibration"), "probe", pobox) # Changes
             functions.append("probe")
-        if "DELTA_CALIBRATE" in self._printer.available_commands:
-            self._add_button(_("EndStops Calibration"), "endstop", pobox)
-            functions.append("endstop")
+        #if "BED_MESH_CALIBRATE" in self._printer.available_commands and "probe" not in functions:
+            # This is used to do a manual bed mesh if there is no probe
+            #self._add_button("Bed mesh", "mesh", pobox)
+           # functions.append("mesh")
+        if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
+            self._add_button(_("EndStops Calibration"), "endstop", pobox) # Changes
+            functions.append("endstop") # Changes
         if "DELTA_CALIBRATE" in self._printer.available_commands:
             if "probe" in functions:
-                self._add_button(_("Automatic Delta Calibration"), "delta", pobox)
+                self._add_button(_("Automatic Delta Calibration"), "delta", pobox) # Changes
                 functions.append("delta")
             # Since probes may not be accturate enough for deltas, always show the manual method
-            #self._add_button(_("Manual Delta Calibration"), "delta_manual", pobox) # Changes
-            #functions.append("delta_manual") # Changes
-        self._add_button(_("Apply a safety Offset"), "gcode_offset", pobox)
-        functions.append("gcode_offset")
-        # End Changes
+            #self._add_button("Delta Manual", "delta_manual", pobox)
+            #functions.append("delta_manual")
+        self._add_button(_("Apply a safety Offset"), "gcode_offset", pobox) # Changes
+        functions.append("gcode_offset") 
 
         logging.info(f"Available functions for calibration: {functions}")
 
@@ -131,9 +135,21 @@ class Panel(ScreenPanel):
 
     def start_calibration(self, widget, method):
         self.labels['popover'].popdown()
-        # Changes
-        
+        self.buttons['start'].set_sensitive(False)
         # Start Changes
+        #if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
+            #self._screen._ws.klippy.gcode_script("G28")
+        #if method == "probe":
+            #self._move_to_position()
+            #self._screen._ws.klippy.gcode_script("PROBE_CALIBRATE")
+        #elif method == "mesh":
+            #self._screen._ws.klippy.gcode_script("BED_MESH_CALIBRATE")
+        #elif method == "delta":
+            #self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE")
+        #elif method == "delta_manual":
+            #self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE METHOD=manual")
+        #elif method == "endstop":
+            #self._screen._ws.klippy.gcode_script("Z_ENDSTOP_CALIBRATE")
         if method == "probe":
             if not self.z_offset_calibration:
                 self._screen.show_popup_message("Macro Z_OFFSET_CALIBRATION " + _("not found!\nPlease update your configuration files."))
@@ -240,19 +256,13 @@ class Panel(ScreenPanel):
         logging.info(f"Moving to X:{x_position} Y:{y_position}")
         self._screen._ws.klippy.gcode_script(f'G0 X{x_position} Y{y_position} F3000')
 
-    def process_busy(self, busy):
-        if busy:
-            for button in self.buttons:
-                self.buttons[button].set_sensitive(False)
-        elif self._printer.get_stat("manual_probe", "is_active"):
+    def activate(self):
+        if self._printer.get_stat("manual_probe", "is_active"):
             self.buttons_calibrating()
         else:
             self.buttons_not_calibrating()
 
     def process_update(self, action, data):
-        if action == "notify_busy":
-            self.process_busy(data)
-            return
         if action == "notify_status_update":
             if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
                 self.widgets['zposition'].set_text("Z : ?") #Changes

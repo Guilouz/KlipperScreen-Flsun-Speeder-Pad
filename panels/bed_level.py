@@ -309,6 +309,7 @@ class Panel(ScreenPanel):
                 self._screen._ws.klippy.gcode_script("Z_TILT_ADJUST")
 
     def go_to_position(self, widget, position):
+        widget.set_sensitive(False)
         self.home()
         logging.debug(f"Going to position: {position}")
         script = [
@@ -317,14 +318,10 @@ class Panel(ScreenPanel):
             f"G1 X{position[0]} Y{position[1]} F{self.horizontal_speed * 60}\n",
             f"G1 Z{self.probe_z_height} F{self.lift_speed * 60}\n"
         ]
-        self._screen._ws.klippy.gcode_script(
-            "\n".join(script)
-        )
+        self._screen._send_action(widget, "printer.gcode.script", {"script": "\n".join(script)})
 
     def disable_motors(self, widget):
-        self._screen._ws.klippy.gcode_script(
-            "M18"  # Disable motors
-        )
+        self._screen._send_action(widget, "printer.gcode.script", {"script": "M18"})
 
     def process_busy(self, busy):
         for button in self.buttons:
@@ -403,7 +400,8 @@ class Panel(ScreenPanel):
         return sorted(screws, key=lambda s: (float(s[1]), float(s[0])))
 
     def screws_tilt_calculate(self, widget):
+        widget.set_sensitive(False)
         self.home()
         self.response_count = 0
         self.buttons['screws'].set_sensitive(False)
-        self._screen._ws.klippy.gcode_script("SCREWS_TILT_CALCULATE")
+        self._screen._send_action(widget, "printer.gcode.script", {"script": "SCREWS_TILT_CALCULATE"})

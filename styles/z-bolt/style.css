@@ -6,8 +6,8 @@ list row,
 treeview.view,
 window {
     background-color: #13181C;
-    background-image: url("./styles/z-bolt/background.svg");
-    background-size: cover;
+    /* background-image: url("./styles/z-bolt/background.svg"); */
+    /* background-size: cover; */
 }
 
 button {

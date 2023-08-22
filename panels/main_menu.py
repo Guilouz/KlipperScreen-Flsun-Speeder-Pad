@@ -207,7 +207,6 @@ class Panel(MenuPanel):
 
     def pid_calibrate(self, temp):
         if self.verify_max_temp(temp):
-            # Start Changes
             if not self.pid_start or not self.pid_end: # Changes
                 script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
@@ -216,8 +215,9 @@ class Panel(MenuPanel):
                     + "\n\n" + _("It may take more than 5 minutes depending on the heater power."),
                     "printer.gcode.script",
                     script
-                ) # Changes
-            else: # Changes
+                )
+            # Start Changes
+            else:
                 script = {"script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"}
                 self._screen._confirm_send_action(
                     None,
@@ -226,7 +226,7 @@ class Panel(MenuPanel):
                     "printer.gcode.script",
                     script
                 )
-                # End Changes
+            # End Changes
 
     def create_left_panel(self):
 
@@ -244,7 +244,7 @@ class Panel(MenuPanel):
         self.labels['da'] = HeaterGraph(self._printer, self._gtk.font_size)
         self.labels['da'].set_vexpand(True)
 
-        scroll = self._gtk.ScrolledWindow(steppers=False) # Changes
+        scroll = self._gtk.ScrolledWindow(steppers=False)
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.add(self.labels['devices'])
 

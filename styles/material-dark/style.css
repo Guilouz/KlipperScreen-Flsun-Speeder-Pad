@@ -7,9 +7,9 @@
 list row,
 treeview.view,
 window {
-    background-color: #121212;
-    background-image: url("./styles/material-dark/background.svg");
-    background-size: cover;
+    background-color: #13181C;
+    /* background-image: url("./styles/material-dark/background.svg"); */
+    /* background-size: cover; */
 }
 
 button {
@@ -21,7 +21,7 @@ button:active {
 }
 
 .button_active {
-    background-color: rgba(0,0,0,0.5);
+    background-color: #2196f3;
     border-radius: 1em;
 }
 
@@ -37,25 +37,25 @@ button.color4:disabled {
 }
 
 button.color1 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border-color: #2196f3;
     border-radius: 1em;
 }
 
 button.color2 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border-color: #2196f3;
     border-radius: 1em;
 }
 
 button.color3 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border-color: #2196f3;
     border-radius: 1em;
 }
 
 button.color4 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border-color: #2196f3;
     border-radius: 1em;
 }
@@ -69,7 +69,7 @@ button.active {
 }
 
 button.update {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border: 0;
     border-bottom: .3em solid;
     border-bottom-color: #849900;
@@ -77,7 +77,7 @@ button.update {
 }
 
 button.invalid {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border: 0;
     border-bottom: .3em solid;
     border-bottom-color: #B71C1C;
@@ -159,7 +159,7 @@ textview .time {
 }
 
 .dialog button {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
     border-bottom-color: #1f1f1f;
     border-radius: .75em;
 }
@@ -174,7 +174,7 @@ textview .time {
 
 .tempbutton_top, .tempbutton, .tempbutton_bottom, .distbutton_top, .distbutton, .distbutton_bottom  {
     border-color: #121212;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
 }
 
 .distbutton_active {
@@ -203,7 +203,7 @@ textview .time {
 
 .numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
     border-color: #121212;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.25);
 }
 
 popover {

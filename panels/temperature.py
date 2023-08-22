@@ -261,7 +261,7 @@ class Panel(ScreenPanel):
                         self._screen._ws.klippy.set_temp_fan_temp(name, target)
             # This small delay is needed to properly update the target if the user configured something above
             # and then changed the target again using preheat gcode
-            GLib.timeout_add(250, self.preheat_gcode, setting)
+            GLib.timeout_add(250, self.preheat_gcode, widget, setting)
 
     def validate(self, heater, target=None, max_temp=None):
         if target is not None and max_temp is not None:
@@ -274,9 +274,10 @@ class Panel(ScreenPanel):
         logging.debug(f"Invalid {heater} Target:{target}/{max_temp}")
         return False
 
-    def preheat_gcode(self, setting):
+    def preheat_gcode(self, widget, setting):
         with suppress(KeyError):
-            self._screen._ws.klippy.gcode_script(self.preheat_options[setting]['gcode'])
+            script = {"script": self.preheat_options[setting]['gcode']}
+            self._screen._send_action(widget, "printer.gcode.script", script)
         return False
 
     def add_device(self, device):
@@ -423,8 +424,7 @@ class Panel(ScreenPanel):
 
     def pid_calibrate(self, temp):
         if self.verify_max_temp(temp):
-            # Start Changes
-            if not self.pid_start or not self.pid_end:
+            if not self.pid_start or not self.pid_end: # Changes
                 script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
                     None,
@@ -432,8 +432,9 @@ class Panel(ScreenPanel):
                     + "\n\n" + _("It may take more than 5 minutes depending on the heater power."),
                     "printer.gcode.script",
                     script
-                ) # Changes
-            else: # Changes
+                )
+            # Start Changes
+            else:
                 script = {"script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"}
                 self._screen._confirm_send_action(
                     None,
@@ -442,7 +443,7 @@ class Panel(ScreenPanel):
                     "printer.gcode.script",
                     script
                 )
-                # End Changes
+            # End Changes
 
     def create_left_panel(self):
 

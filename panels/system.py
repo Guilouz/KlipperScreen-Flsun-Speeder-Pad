@@ -319,6 +319,16 @@ class Panel(ScreenPanel):
             label = Gtk.Label(label=_("Are you sure you wish to shutdown the system?"))
         vbox.add(label)
         scroll.add(vbox)
+        #buttons = [
+            #{"name": _("Host"), "response": Gtk.ResponseType.OK},
+            #{"name": _("Printer"), "response": Gtk.ResponseType.APPLY},
+            #{"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
+        #]
+        #dialog = self._gtk.Dialog(self._screen, buttons, scroll, self.reboot_poweroff_confirm, method)
+        #if method == "reboot":
+            #dialog.set_title(_("Restart"))
+        #else:
+            #dialog.set_title(_("Shutdown"))
         #Start Changes
         if method == "reboot":
             buttons = [
@@ -331,9 +341,21 @@ class Panel(ScreenPanel):
                 {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
             ]  
         self._gtk.Dialog(self._screen, buttons, scroll, self.reboot_poweroff_confirm, method)
+        # End Changes
 
     def reboot_poweroff_confirm(self, dialog, response_id, method):
         self._gtk.remove_dialog(dialog)
+        #if response_id == Gtk.ResponseType.OK:
+            #if method == "reboot":
+                #os.system("systemctl reboot -i")
+            #else:
+                #os.system("systemctl poweroff -i")
+        #elif response_id == Gtk.ResponseType.APPLY:
+            #if method == "reboot":
+                #self._screen._ws.send_method("machine.reboot")
+            #else:
+                #self._screen._ws.send_method("machine.shutdown")
+        # Start Changes
         if response_id == Gtk.ResponseType.APPLY:
             if method == "reboot":
                 os.system("systemctl reboot -i")

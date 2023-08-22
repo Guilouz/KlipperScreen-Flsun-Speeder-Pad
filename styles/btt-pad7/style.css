@@ -6,8 +6,8 @@ list row,
 treeview.view,
 window {
     background-color: #13181C;
-    background-image: url("./styles/btt-pad7/background.png");
-    background-size: cover;
+    /* background-image: url("./styles/btt-pad7/background.png"); */
+    /* background-size: cover; */
 }
 
 button {
