@@ -73,7 +73,7 @@ button.update {
 
 button.invalid {
     background: #e61e1e;
-    border-color: #e61e1e;
+    border: .1em solid #cccccc;
 }
 
 button.color1:active, button.color2:active, button.color3:active, button.color4:active {
@@ -83,8 +83,7 @@ button.color1:active, button.color2:active, button.color3:active, button.color4:
 
 button.update:active, button.invalid:active {
     background: rgba(0,0,0,0.25);
-    border: .4em solid rgba(0,0,0,0);
-    border-radius: 0.4em;
+    border: .1em solid #cccccc;
 }
 
 combobox box button {
