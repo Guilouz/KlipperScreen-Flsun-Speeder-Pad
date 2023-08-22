@@ -83,7 +83,8 @@ button.color1:active, button.color2:active, button.color3:active, button.color4:
 
 button.update:active, button.invalid:active {
     background: rgba(0,0,0,0.25);
-    border-color: #cccccc;
+    border: .4em solid rgba(0,0,0,0);
+    border-radius: 0.4em;
 }
 
 combobox box button {
@@ -218,6 +219,7 @@ popover {
 popover button {
     background-color: rgba(0,0,0,0.7);
     border-radius: 0.3em;
+    min-height: 4em;
 }
 
 .printing-status {

@@ -25,7 +25,6 @@ button:active {
 
 .button_active {
     background-color: #2196f3;
-    border-radius: 1em;
 }
 
 button:disabled {
@@ -63,28 +62,29 @@ button.color4 {
     border-radius: 1em;
 }
 
-button.color1:active, button.color2:active, button.color3:active, button.color4:active, button.update:active, button.invalid:active, .dialog button:active, .dialog button:nth-child(1):active, .dialog button:nth-child(2):active {
-    border-color: rgba(0,0,0,0);
-}
-
 button.active {
     background-color: #2196f3;
 }
 
 button.update {
-    background-color: rgba(0,0,0,0.25);
-    border: 0;
-    border-bottom: .3em solid;
-    border-bottom-color: #849900;
-    border-radius: .75em;
+    background: #2196f3;
+    border: .1em solid #cccccc;
 }
 
 button.invalid {
-    background-color: rgba(0,0,0,0.25);
-    border: 0;
-    border-bottom: .3em solid;
-    border-bottom-color: #B71C1C;
-    border-radius: .75em;
+    background: #e61e1e;
+    border-color: #e61e1e;
+}
+
+button.color1:active, button.color2:active, button.color3:active, button.color4:active {
+    background-color: #2196f3;
+    border-bottom-color: #2196f3;
+}
+
+button.update:active, button.invalid:active {
+    background: rgba(0,0,0,0.25);
+    border: .4em solid rgba(0,0,0,0);
+    border-radius: 0.4em;
 }
 
 combobox box button {
@@ -94,7 +94,6 @@ combobox box button {
 treeview.view check,
 switch {
     background-color: #404E57;
-    border-color: #121212;
 }
 
 treeview.view check:checked,
@@ -102,13 +101,10 @@ switch:checked {
     background-color: #2196f3;
 }
 
-switch slider {
-    border: 0;
-}
-
 entry {
-    background-color: #1f1f1f;
-    border-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0.25);
+    border-color: #2196f3;
+    margin-right: 5;
 }
 
 label {
@@ -116,18 +112,19 @@ label {
 }
 
 menu {
-    background-color: #13181C;
+    background-color: rgba(0,0,0,0.25);
     border-color: #cccccc;
 }
 
 menuitem {
-    background-color: #13181C;
+    background-color: rgba(0,0,0,0.25);
     border-color: #cccccc;
 }
 
 trough {
     background-color: #404E57;
     color: #e2e2e2;
+    border-color: black;
 }
 
 trough highlight, trough progress {
@@ -157,8 +154,8 @@ textview .time {
 }
 
 .dialog {
-    border: #121212;
-    background-color: #121212;
+    border: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.1);
 }
 
 .dialog button {
@@ -168,20 +165,39 @@ textview .time {
 }
 
 .dialog button:nth-child(1) {
+    background-color: rgba(0,0,0,0.25);
     border-bottom-color: #849900;
+    border-radius: .75em;
 }
 
 .dialog button:nth-child(2) {
+    background-color: rgba(0,0,0,0.25);
     border-bottom-color: #B71C1C;
+    border-radius: .75em;
 }
 
-.tempbutton_top, .tempbutton, .tempbutton_bottom, .distbutton_top, .distbutton, .distbutton_bottom  {
-    border-color: #121212;
-    background-color: rgba(0,0,0,0.25);
+.dialog button:active {
+    background-color: #2196f3;
+    border-bottom-color: #2196f3;
+    border-radius: .75em;
 }
 
 .distbutton_active {
     background-color: #2196f3;
+}
+
+.distbutton_top {
+    border-color: white;
+}
+
+.distbutton {
+    border-color: white;
+    border-left-color: #ccc;
+}
+
+.distbutton_bottom {
+    border-color: white;
+    border-left-color: #ccc;
 }
 
 .fan_slider {
@@ -190,6 +206,10 @@ textview .time {
 
 .message_popup {
     border-bottom-color: #e2e2e2;
+}
+
+.numpad{
+    margin-right: 3;
 }
 
 .message_popup_echo, .message_popup_echo button {
@@ -206,7 +226,6 @@ textview .time {
 
 .numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
     border-color: #121212;
-    background-color: rgba(0,0,0,0.25);
 }
 
 popover {
@@ -215,6 +234,8 @@ popover {
 
 popover button {
     background-color: rgba(0,0,0,0.9);
+    border-radius: 0.3em;
+    min-height: 4em;
 }
 
 .printing-status {
@@ -227,6 +248,15 @@ popover button {
 
 .printing-status-label {
     color: #9E9E9E;
+}
+
+.tempbutton_top {
+    border-color: white;
+}
+
+.tempbutton, .tempbutton_bottom {
+    border-color: white;
+    border-top-color: #ccc;
 }
 
 .message {
@@ -249,5 +279,5 @@ popover button {
 }
 
 .keyboard_pad {
-    background-color: #090909;
+    background-color: rgba(0,0,0,0.25);
 }

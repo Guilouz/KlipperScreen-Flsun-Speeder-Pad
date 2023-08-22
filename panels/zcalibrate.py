@@ -127,7 +127,7 @@ class Panel(ScreenPanel):
     def _add_button(self, label, method, pobox):
         popover_button = self._gtk.Button(label=label)
         popover_button.connect("clicked", self.start_calibration, method)
-        pobox.pack_start(popover_button, True, True, 15) # Changes
+        pobox.pack_start(popover_button, True, True, 10) # Changes
 
     def on_popover_clicked(self, widget):
         self.labels['popover'].set_relative_to(widget)
