@@ -2,12 +2,15 @@
     color: white;
 }
 
-list row,
-treeview.view,
 window {
     background-color: #13181C;
     /* background-image: url("./styles/btt-pad7/background.png"); */
     /* background-size: cover; */
+}
+
+list row,
+treeview.view {
+    background-color: #13181C;
 }
 
 button {
