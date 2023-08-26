@@ -49,10 +49,15 @@ class Panel(ScreenPanel):
         self.reload_macros()
 
     def add_gcode_macro(self, macro):
-        # Support for hiding macros by name
-        if macro.startswith("_"):
+        section = self._printer.get_macro(macro)
+        if section:
+            if "rename_existing" in section:
+                return
+            if "gcode" in section:
+                gcode = section["gcode"].split("\n")
+        else:
+            logging.debug(f"Couldn't load {macro}\n{section}")
             return
-
         name = Gtk.Label()
         name.set_markup(f"<big><b>{macro}</b></big>")
         name.set_hexpand(True)
@@ -80,12 +85,6 @@ class Panel(ScreenPanel):
             "params": {},
         }
         pattern = r'params\.(?P<param>..*)\|default\((?P<default>..*)\).*'
-        gcode = self._printer.get_macro(macro)
-        if gcode and "gcode" in gcode:
-            gcode = gcode["gcode"].split("\n")
-        else:
-            logging.debug(f"Couldn't load {macro}\n{gcode}")
-            return
         i = 0
         for line in gcode:
             if line.startswith("{") and "params." in line:
@@ -132,7 +131,9 @@ class Panel(ScreenPanel):
     def load_gcode_macros(self):
         for macro in self._printer.get_gcode_macros():
             macro = macro[12:].strip()
-            if macro.startswith("_"):  # Support for hiding macros by name
+            # Support for hiding macros by _
+            if macro.startswith("_") or macro.upper() in ('LOAD_FILAMENT', 'UNLOAD_FILAMENT'):
+                logging.info(f"Skipping macro {macro}")
                 continue
             self.options[macro] = {
                 "name": macro,
