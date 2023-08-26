@@ -84,7 +84,7 @@ Note: Installation may take several minutes.
 type: git_repo
 path: ~/KlipperScreen
 origin: https://github.com/KlipperScreen/KlipperScreen.git
-env: ~/.KlipperScreen-env/bin/python
+virtualenv: ~/.KlipperScreen-env
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
