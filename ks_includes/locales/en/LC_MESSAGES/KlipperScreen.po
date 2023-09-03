@@ -480,6 +480,9 @@ msgstr ""
 msgid "Hostname"
 msgstr ""
 
+msgid "ID"
+msgstr ""
+
 msgid "Icon Theme"
 msgstr ""
 
@@ -532,6 +535,10 @@ msgid "Klipper will reboot"
 msgstr ""
 
 msgid "KlipperScreen will reboot"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
 
 msgid "Language"
@@ -622,6 +629,9 @@ msgid "Never"
 msgstr ""
 
 msgid "New"
+msgstr ""
+
+msgid "No elegible macros:"
 msgstr ""
 
 msgid ""
@@ -921,6 +931,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
 
 msgid "minute"
 msgid_plural "minutes"

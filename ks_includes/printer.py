@@ -38,7 +38,6 @@ class Printer:
         self.fancount = 0
         self.output_pin_count = 0
         self.tempstore = {}
-        self.spoolman = False
         self.busy = False
         if not self.store_timeout:
             self.store_timeout = GLib.timeout_add_seconds(1, self._update_temp_store)
@@ -202,7 +201,15 @@ class Printer:
         return output_pins
 
     def get_gcode_macros(self):
-        return self.get_config_section_list("gcode_macro ")
+        macros = []
+        for macro in self.get_config_section_list("gcode_macro "):
+            macro = macro[12:].strip()
+            if macro.startswith("_") or macro.upper() in ('LOAD_FILAMENT', 'UNLOAD_FILAMENT'):
+                continue
+            if self.get_macro(macro) and "rename_existing" in self.get_macro(macro):
+                continue
+            macros.append(macro)
+        return macros
 
     def get_heaters(self):
         heaters = []

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-08-22 11:46+0200\n"
+"PO-Revision-Date: 2023-09-03 23:43+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -511,6 +511,9 @@ msgstr "Hôte"
 msgid "Hostname"
 msgstr "Nom d’hôte"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "Icon Theme"
 msgstr "Thème"
 
@@ -564,6 +567,12 @@ msgstr "Klipper va redémarrer"
 
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen va redémarrer"
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
+"Les macros LOAD_FILAMENT/UNLOAD_FILAMENT sont masquées et doivent être "
+"utilisées depuis le menu Extrusion"
 
 msgid "Language"
 msgstr "Langue"
@@ -654,6 +663,9 @@ msgstr "Jamais"
 
 msgid "New"
 msgstr "Nouveau"
+
+msgid "No elegible macros:"
+msgstr "Aucune macros éligible :"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -954,6 +966,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "heure"
 msgstr[1] "heures"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "Les macros qui utilisent ‘rename_existing’ sont masquées"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "Les macros dont le nom commence par ‘_’ sont masquées"
 
 msgid "minute"
 msgid_plural "minutes"

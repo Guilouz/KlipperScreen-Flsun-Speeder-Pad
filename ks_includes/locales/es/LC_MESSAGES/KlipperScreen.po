@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 18:54+0200\n"
+"PO-Revision-Date: 2023-09-03 23:45+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -205,16 +205,22 @@ msgstr "Aceptar"
 msgid "Add profile"
 msgstr "Agregar perfil"
 
+msgid "All"
+msgstr "Todos"
+
 msgid "Apply"
 msgstr "Aplicar"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr "Aplicar %s%.3f desfase al final de carrera?"
+msgstr "Aplicar %s%.3f al fin de carrera?"
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr "Aplicar %s%.3f desfase al sensor?"
+msgstr "Aplicar %s%.3f al sensor?"
+
+msgid "Archived"
+msgstr "Archivados"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "¿Está seguro de excluir este objeto?"
@@ -322,6 +328,9 @@ msgstr "Continuar"
 msgid "Cooldown"
 msgstr "Enfriar"
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS falló en cargar y ha sido deshabilitado"
+
 msgid "Date"
 msgstr "Fecha"
 
@@ -392,6 +401,9 @@ msgstr "Archivo"
 msgid "File:"
 msgstr "Archivo:"
 
+msgid "Filter"
+msgstr "Filtro"
+
 msgid "Finding ADXL"
 msgstr "Buscando ADXL"
 
@@ -416,9 +428,6 @@ msgstr "Tamaño del texto"
 msgid "Full Update"
 msgstr "Actualizar Todo"
 
-msgid "Fullscreen"
-msgstr "Pantalla Completa"
-
 msgid "Go Back"
 msgstr "Volver"
 
@@ -438,7 +447,7 @@ msgid "Hide temp."
 msgstr "Ocultar temp."
 
 msgid "Home"
-msgstr "Origen"
+msgstr "Inicio"
 
 msgid "Home All"
 msgstr "Origen XYZ"
@@ -461,6 +470,9 @@ msgstr "Anfitrión"
 msgid "Hostname"
 msgstr "Hostname"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "Icon Theme"
 msgstr "Tema de Iconos"
 
@@ -468,7 +480,7 @@ msgid "Initializing printer..."
 msgstr "Iniciando Impresora..."
 
 msgid "Initiate a PID calibration for:"
-msgstr ""
+msgstr "Iniciar calibración PID para:"
 
 msgid "Input Shaper"
 msgstr "Corrección de Resonancias"
@@ -493,6 +505,7 @@ msgstr "Invertir Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr ""
+"Puede tardar más de 5 minutos dependiendo de la potencia del calentador."
 
 msgid "Klipper Restart"
 msgstr "Reiniciar Klipper"
@@ -515,11 +528,19 @@ msgstr "Klipper se reiniciará"
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen se reiniciará"
 
+msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and shold be used from extrude"
+msgstr ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT están ocultos y deberían ser usados desde "
+"extruir"
+
 msgid "Language"
 msgstr "Idioma"
 
 msgid "Large"
 msgstr "Grande"
+
+msgid "Last Used"
+msgstr "Ultimo usado"
 
 msgid "Layer:"
 msgstr "Capa:"
@@ -544,6 +565,9 @@ msgstr "Macros"
 
 msgid "Main Menu"
 msgstr "Menú"
+
+msgid "Material"
+msgstr "Material"
 
 msgid "Max"
 msgstr "Max"
@@ -585,7 +609,7 @@ msgid "Moonraker: connected"
 msgstr "Moonraker: conectado"
 
 msgid "More"
-msgstr ""
+msgstr "Más"
 
 msgid "Move"
 msgstr "Mover"
@@ -604,6 +628,9 @@ msgstr "Nunca"
 
 msgid "New"
 msgstr "Nuevo"
+
+msgid "No elegible macros:"
+msgstr "No hay macros elegibles:"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -685,7 +712,7 @@ msgid "Profile Name:"
 msgstr "Nombre del perfil:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Provea KlipperScreen.log cuando pida ayuda.\\n\n"
+msgstr "Provea KlipperScreen.log cuando pida ayuda.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Nivelación cuádruple"
@@ -709,7 +736,7 @@ msgid "Refresh"
 msgstr "Actualizar"
 
 msgid "Rename/Move:"
-msgstr "Renombrar/Movar"
+msgstr "Renombrar/Mover:"
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -781,6 +808,9 @@ msgstr "Mostrar"
 msgid "Show Heater Power"
 msgstr "Mostrar potencia del calentador"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Mostrar botones de desplazamiento"
+
 msgid "Shutdown"
 msgstr "Apagar"
 
@@ -810,6 +840,9 @@ msgstr "Velocidad:"
 
 msgid "Square Corner Velocity"
 msgstr "Velocidad de esquina"
+
+msgid "Standby"
+msgstr "En espera"
 
 msgid "Start"
 msgstr "Iniciar"
@@ -901,6 +934,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "hora"
 msgstr[1] "horas"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "los macros que usan 'rename_existing' están ocultos"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "los macros con nombre comenzando en '_' están ocultos"
 
 msgid "minute"
 msgid_plural "minutes"

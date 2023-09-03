@@ -212,11 +212,11 @@ class KlippyGtk:
                 spinner.hide()
             widget.set_sensitive(True)
 
-    def Dialog(self, screen, buttons, content, callback=None, *args):
-        dialog = Gtk.Dialog()
-        dialog.set_default_size(screen.width, screen.height)
+    def Dialog(self, title, buttons, content, callback=None, *args):
+        dialog = Gtk.Dialog(title=title)
+        dialog.set_default_size(self.width, self.height)
         dialog.set_resizable(False)
-        dialog.set_transient_for(screen)
+        dialog.set_transient_for(self.screen)
         dialog.set_modal(True)
 
         for button in buttons:
@@ -224,7 +224,7 @@ class KlippyGtk:
             button = dialog.get_widget_for_response(button['response'])
             if self.touch_sound_value == True: # Changes
                 button.connect("pressed", self.screen._button_pressed_feedback) # Changes
-            button.set_size_request((screen.width - 30) / 3, screen.height / 5)
+            button.set_size_request((self.width - 30) / 3, self.height / 5)
             format_label(button, 3)
 
         dialog.connect("response", self.screen.reset_screensaver_timeout)
@@ -248,7 +248,7 @@ class KlippyGtk:
                 Gdk.Cursor.new_for_display(Gdk.Display.get_default(), Gdk.CursorType.BLANK_CURSOR))
 
         self.screen.dialogs.append(dialog)
-        logging.info(f"Showing dialog {dialog}")
+        logging.info(f"Showing dialog {dialog.get_title()} {dialog.get_size()}")
         return dialog
 
     def remove_dialog(self, dialog, *args):

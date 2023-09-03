@@ -26,7 +26,7 @@ class Panel(ScreenPanel):
         self.grid = self._gtk.HomogeneousGrid()
         self._gtk.reset_temp_color()
         self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
-        macros = self._printer.get_gcode_macros() # Changes
+        macros = self._printer.get_config_section_list("gcode_macro ") # Changes
         self.pid_start = any("_PID_KS_START" in macro.upper() for macro in macros) # Changes
         self.pid_end = any("_PID_KS_END" in macro.upper() for macro in macros) # Changes
 

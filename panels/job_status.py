@@ -40,7 +40,7 @@ class Panel(ScreenPanel):
         self.mms2 = _("mm/s²")
         self.mms3 = _("mm³/s")
         self.status_grid = self.move_grid = self.time_grid = self.extrusion_grid = None
-        macros = self._printer.get_gcode_macros() # Changes
+        macros = self._printer.get_config_section_list("gcode_macro ") # Changes
         self.neopixels = any("NEOPIXEL_ON" in macro.upper() for macro in macros) # Changes
         self.ledhotend = any("LED_HOTEND_OFF" in macro.upper() for macro in macros) # Changes
 
@@ -414,8 +414,7 @@ class Panel(ScreenPanel):
             #{"name": _("Apply"), "response": Gtk.ResponseType.APPLY},
             #{"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL}
         #]
-        #dialog = self._gtk.Dialog(self._screen, buttons, grid, self.save_confirm, device)
-        #dialog.set_title(_("Save Z"))
+        #self._gtk.Dialog(_("Save Z"), buttons, grid, self.save_confirm, device)
 
     #def save_confirm(self, dialog, response_id, device):
         #self._gtk.remove_dialog(dialog)
@@ -463,8 +462,7 @@ class Panel(ScreenPanel):
         label.set_line_wrap(True)
         label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
-        dialog = self._gtk.Dialog(self._screen, buttons, label, self.cancel_confirm)
-        dialog.set_title(_("Cancel"))
+        self._gtk.Dialog(_("Cancel"), buttons, label, self.cancel_confirm)
 
     def cancel_confirm(self, dialog, response_id):
         self._gtk.remove_dialog(dialog)
@@ -678,6 +676,7 @@ class Panel(ScreenPanel):
             else:
                 # At the begining file and filament are innacurate
                 estimated = slicer_time
+
         if estimated < 1:
             if file_time is None:
                 return
@@ -686,6 +685,10 @@ class Panel(ScreenPanel):
             estimated = file_time
         if estimated < 1:
             return
+        progress = min(max(print_duration / estimated, 0), 1)
+        if progress >= 1:
+            estimated = file_time
+            progress = min(max(print_duration / estimated, 0), 1)
 
         self.labels["est_time"].set_label(self.format_time(estimated))
         self.labels["time_left"].set_label(self.format_eta(estimated, print_duration))
@@ -693,7 +696,7 @@ class Panel(ScreenPanel):
         self.buttons['left'].set_label(remaining_label)
         layer_label = f"{self.labels['layer_lbl'].get_text()} {1 + round((self.pos_z - self.f_layer_h) / self.layer_h)} / {self.labels['total_layers'].get_text()}" # Changes
         self.buttons['layers'].set_label(layer_label) # Changes
-        self.update_progress(min(max(print_duration / estimated, 0), 1))
+        self.update_progress(progress)
 
     def update_progress(self, progress: float):
         self.progress = progress
@@ -807,13 +810,11 @@ class Panel(ScreenPanel):
         buttons = [
             {"name": _("Close"), "response": Gtk.ResponseType.CANCEL}
         ]
-        pixbuf = self.get_file_image(self.filename, self._screen.width * .9, self._screen.height * .6)
+        pixbuf = self.get_file_image(self.filename, self._screen.width * .9, self._screen.height * .5)
         if pixbuf is None:
             return
         image = Gtk.Image.new_from_pixbuf(pixbuf)
-        dialog = self._gtk.Dialog(self._screen, buttons, image, self.close_fullscreen_thumbnail)
-        dialog.set_title(self.filename)
-        return
+        self._gtk.Dialog(self.filename, buttons, image, self.close_fullscreen_thumbnail)
 
     def close_fullscreen_thumbnail(self, dialog, response_id):
         self._gtk.remove_dialog(dialog)
