@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-08-04 17:20+0200\n"
+"PO-Revision-Date: 2023-09-04 09:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -207,6 +207,9 @@ msgstr "Прийняти"
 msgid "Add profile"
 msgstr "Додати профіль"
 
+msgid "All"
+msgstr "Всі"
+
 msgid "Apply"
 msgstr "Застосувати"
 
@@ -218,14 +221,17 @@ msgstr "Застосувати зміщення %s%.3f до кінцевика?"
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "Застосувати зміщення %s%.3f до зонда?"
 
+msgid "Archived"
+msgstr "Архівовано"
+
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Ви впевнені, що бажаєте виключити об’єкт?"
 
 msgid "Are you sure you want to run Emergency Stop?"
-msgstr "Ви впевнені, що хочете запустити аварійну зупинку?"
+msgstr "Ви впевнені, що хочете зробити аварійну зупинку?"
 
 msgid "Are you sure you wish to cancel this print?"
-msgstr "Ви впевнені, що хочете скасувати цей друк?"
+msgstr "Ви впевнені, що хочете скасувати друк?"
 
 msgid "Are you sure you wish to disable motors?"
 msgstr "Ви дійсно бажаєте вимкнути двигуни?"
@@ -270,10 +276,10 @@ msgid "Camera"
 msgstr "Камера"
 
 msgid "Can't set above the maximum:"
-msgstr "Не встановити вище макс.:"
+msgstr "Не можна встановити вище максимум:"
 
 msgid "Cancel"
-msgstr "СКАСУВАТИ"
+msgstr "Скасувати"
 
 msgid "Cancel Print"
 msgstr "Скасувати друк"
@@ -294,7 +300,7 @@ msgid "Check ADXL Wiring"
 msgstr "Перевірте підключення ADXL"
 
 msgid "Checking for updates, please wait..."
-msgstr "Перевірка оновлень, зачекайте…"
+msgstr "Перевірка оновлень, зачекайте..."
 
 msgid "Clear"
 msgstr "Очистити"
@@ -306,7 +312,7 @@ msgid "Complete"
 msgstr "Завершено"
 
 msgid "Confirm Emergency Stop"
-msgstr "Підтверджувати АВАРІЙНУ ЗУПИНКУ"
+msgstr "Підтвердьте АВАРІЙНУ ЗУПИНКУ"
 
 msgid "Connected"
 msgstr "Підключено"
@@ -337,7 +343,7 @@ msgid "Delete File?"
 msgstr "Видалити файл?"
 
 msgid "Deselect"
-msgstr "Відміна"
+msgstr "Скасувати вибір"
 
 msgid "Disable Motors"
 msgstr "Вимкнути мотори"
@@ -367,22 +373,22 @@ msgstr "Дуже Великий"
 msgid "Extrude"
 msgstr ""
 "Заміна\n"
-"nпластику"
+"пластику"
 
 msgid "Extrusion +"
-msgstr "Екструзія+"
+msgstr "Видавити +"
 
 msgid "Extrusion -"
-msgstr "Екструзія -"
+msgstr "Втягнути -"
 
 msgid "Failed, adjust position first"
-msgstr "Помилка, спочатку хоумінг"
+msgstr "Не вдалося, спочатку відрегулюйте положення"
 
 msgid "Fan"
 msgstr "Вентилятор"
 
 msgid "Filament Used"
-msgstr "Філамент"
+msgstr "Використання Прутка"
 
 msgid "Filament total:"
 msgstr "Загальна кількість прутка:"
@@ -399,17 +405,20 @@ msgstr "Файл"
 msgid "File:"
 msgstr "Файл:"
 
+msgid "Filter"
+msgstr "Фільтр"
+
 msgid "Finding ADXL"
 msgstr "Знаходження ADXL"
 
 msgid "Fine Tuning"
-msgstr "Підправити"
+msgstr "Точне налаштування"
 
 msgid "Finish"
 msgstr "Фініш"
 
 msgid "Firmware Restart"
-msgstr "Перезапуск Прошивки"
+msgstr "Перезавантаження прошивки"
 
 msgid "Flow:"
 msgstr "Потік:"
@@ -421,10 +430,9 @@ msgid "Font Size"
 msgstr "Розмір шрифту"
 
 msgid "Full Update"
-msgstr "Повне Оновлення"
-
-msgid "Fullscreen"
-msgstr "Повноекранний режим"
+msgstr ""
+"Повне\n"
+"Оновлення"
 
 msgid "Go Back"
 msgstr "Назад"
@@ -445,7 +453,7 @@ msgid "Hide temp."
 msgstr "Приховати темп."
 
 msgid "Home"
-msgstr "Дім"
+msgstr "Домашня сторінка"
 
 msgid "Home All"
 msgstr "Дім Всі"
@@ -466,7 +474,10 @@ msgid "Host"
 msgstr "Хост"
 
 msgid "Hostname"
-msgstr "Назва хоста"
+msgstr "Ім'я хоста"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Icon Theme"
 msgstr "Тема оформлення"
@@ -502,10 +513,12 @@ msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "Залежно від потужності обігрівача це може зайняти більше 5 хвилин."
 
 msgid "Klipper Restart"
-msgstr "Перезапуск Кліппера"
+msgstr ""
+"Перезапуск\n"
+"Klipper"
 
 msgid "Klipper has disconnected"
-msgstr "Klipper відключився"
+msgstr "Klipper загубив зв'язок"
 
 msgid "Klipper has encountered an error."
 msgstr "У Klipper сталася помилка."
@@ -522,11 +535,19 @@ msgstr "Klipper перезавантажиться"
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen перезавантажиться"
 
+msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and shold be used from extrude"
+msgstr ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT приховані, і їх слід використовувати з меню "
+"Заміна пластику"
+
 msgid "Language"
 msgstr "Мова"
 
 msgid "Large"
 msgstr "Великий"
+
+msgid "Last Used"
+msgstr "Останнє Використання"
 
 msgid "Layer:"
 msgstr "Шар:"
@@ -541,7 +562,7 @@ msgid "Load"
 msgstr "Завантажити"
 
 msgid "Lower Nozzle"
-msgstr "Низ сопла"
+msgstr "Опустити сопло"
 
 msgid "Macro shortcut on sidebar"
 msgstr "Ярлик макросу на бічній панелі"
@@ -550,7 +571,10 @@ msgid "Macros"
 msgstr "Макрос"
 
 msgid "Main Menu"
-msgstr "Main Menu"
+msgstr "Головне Меню"
+
+msgid "Material"
+msgstr "Матеріал"
 
 msgid "Max"
 msgstr "Макс"
@@ -595,7 +619,7 @@ msgid "More"
 msgstr "Більше"
 
 msgid "Move"
-msgstr "Рухатися"
+msgstr "Переміщення"
 
 msgid "Move Distance (mm)"
 msgstr "Переміщення (мм)"
@@ -612,6 +636,9 @@ msgstr "Ніколи"
 msgid "New"
 msgstr "Новий"
 
+msgid "No elegible macros:"
+msgstr "Непридатний макрос:"
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
@@ -620,7 +647,7 @@ msgstr ""
 "klipperscreen.conf"
 
 msgid "Nothing selected"
-msgstr "Не вибрано"
+msgstr "Не обрано"
 
 #, python-format
 msgid "Outdated by %d"
@@ -632,8 +659,8 @@ msgstr "PSK для"
 msgid "Package will be updated"
 msgid_plural "Packages will be updated"
 msgstr[0] "Пакет буде оновлено"
-msgstr[1] "Пакет оновлено"
-msgstr[2] "Пакет оновлено"
+msgstr[1] "Пакети будуть оновлені"
+msgstr[2] "Пакети будуть оновлені"
 
 msgid "Part Fan"
 msgstr "Охолодження моделі"
@@ -642,7 +669,7 @@ msgid "Password saved"
 msgstr "Пароль збережено"
 
 msgid "Pause"
-msgstr "ПАУЗА"
+msgstr "Пауза"
 
 msgid "Paused"
 msgstr "Зупинено"
@@ -695,7 +722,7 @@ msgid "Profile Name:"
 msgstr "Ім'я профілю:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Надайте KlipperScreen.log, коли звертаєтесь по допомогу.\\n\n"
+msgstr "Надайте KlipperScreen.log, коли звертаєтесь по допомогу.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Портальне вирівнювання"
@@ -733,7 +760,9 @@ msgid "Retract"
 msgstr "Ретракт"
 
 msgid "Retraction"
-msgstr "Втягнення"
+msgstr ""
+"Параметри\n"
+"ретракту"
 
 msgid "Retraction Length"
 msgstr "Довжина втягування"
@@ -793,6 +822,9 @@ msgstr "Показати"
 msgid "Show Heater Power"
 msgstr "Показати Потужність Нагрівача"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Показати кнопку смуги прокрутки"
+
 msgid "Shutdown"
 msgstr "Вимкнути"
 
@@ -821,7 +853,7 @@ msgid "Speed:"
 msgstr "Швидкість:"
 
 msgid "Square Corner Velocity"
-msgstr "Квадратна кутова швидкість"
+msgstr "Квадратно кутова швидкість"
 
 msgid "Standby"
 msgstr "Очікування"
@@ -842,7 +874,7 @@ msgid "System"
 msgstr "Системна"
 
 msgid "System Restart"
-msgstr "Рестарт Малини"
+msgstr "Перезавантаження системи"
 
 msgid "System Shutdown"
 msgstr ""
@@ -918,8 +950,14 @@ msgstr "dBm"
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "година"
-msgstr[1] "години"
+msgstr[1] "годин"
 msgstr[2] "години"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "макроси, які використовують 'rename_existing', приховані"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "макроси з назвою, що починається на '_', приховані"
 
 msgid "minute"
 msgid_plural "minutes"
