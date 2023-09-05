@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-09-03 23:43+0200\n"
+"PO-Revision-Date: 2023-09-05 10:36+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -288,6 +288,9 @@ msgstr "Calibration Automatique"
 
 msgid "Auto-close notifications"
 msgstr "Fermeture automatique des notifications"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Ouverture automatique du menu Extrusion lors d’une pause"
 
 msgid "Auto-scroll"
 msgstr ""

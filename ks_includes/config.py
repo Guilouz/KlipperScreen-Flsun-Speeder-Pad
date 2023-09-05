@@ -156,7 +156,7 @@ class KlipperScreenConfig:
                 bools = (
                     'invert_x', 'invert_y', 'invert_z', '24htime', 'only_heaters', 'show_cursor', 'confirm_estop',
                     'autoclose_popups', 'use_dpms', 'use_default_menu', 'side_macro_shortcut', 'use-matchbox-keyboard',
-                    'show_heater_power', 'show_scroll_steppers', 'touch_sound',
+                    'show_heater_power', "show_scroll_steppers", "auto_open_extrude", "touch_sound"
                 ) # Changes
                 strs = (
                     'default_printer', 'language', 'print_sort_dir', 'theme', 'screen_blanking', 'font_size',
@@ -283,6 +283,8 @@ class KlipperScreenConfig:
             # Start Changes
             {"show_scroll_steppers": {"section": "main", "name": _("Show Scrollbars Arrows"), "type": "binary",
                                       "value": "False", "callback": screen.reload_panels}},
+            {"auto_open_extrude": {"section": "main", "name": _("Auto-open Extrude On Pause"), "type": "binary",
+                                   "value": "True", "callback": screen.reload_panels}},
             {"touch_sound": {"section": "main", "name": _("Touch sound (BigTreeTech Pad7)"), "type": "binary",
                                    "value": "False", "callback": screen.restart_ks}},
             # End Changes

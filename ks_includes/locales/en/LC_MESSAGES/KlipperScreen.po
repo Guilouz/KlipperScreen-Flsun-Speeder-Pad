@@ -262,6 +262,9 @@ msgstr ""
 msgid "Auto-close notifications"
 msgstr ""
 
+msgid "Auto-open Extrude On Pause"
+msgstr ""
+
 msgid "Auto-scroll"
 msgstr ""
 
