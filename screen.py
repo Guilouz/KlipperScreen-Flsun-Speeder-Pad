@@ -259,12 +259,6 @@ class KlipperScreen(Gtk.Window):
 
         self._ws.klippy.object_subscription(requested_updates)
 
-    def preload(self):
-        logging.debug("Preloading panels")
-        for panel in ['move', 'temperature', 'extrude', 'job_status']:
-            self.panels[panel] = self._load_panel(panel).Panel(self, title='')
-            self.panels_reinit.append(panel)
-
     @staticmethod
     def _load_panel(panel):
         logging.debug(f"Loading panel: {panel}")
@@ -904,6 +898,7 @@ class KlipperScreen(Gtk.Window):
         config = self.apiclient.send_request("printer/objects/query?configfile")
         if config is False:
             return self._init_printer("Error getting printer configuration")
+        logging.debug(config['result']['status'])
         # Reinitialize printer, in case the printer was shut down and anything has changed.
         self.printer.reinit(printer_info['result'], config['result']['status'])
         self.printer.available_commands = self.apiclient.get_gcode_help()['result']
@@ -931,7 +926,6 @@ class KlipperScreen(Gtk.Window):
         self.reinit_count = 0
         self.initializing = False
         self.printer.process_update(data['result']['status'])
-        self.preload()
         return False
 
     def init_tempstore(self):
