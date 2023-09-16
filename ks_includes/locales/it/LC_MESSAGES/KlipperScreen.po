@@ -685,7 +685,7 @@ msgid "Raise Nozzle"
 msgstr "Alza ugello"
 
 msgid "Recover"
-msgstr "Ripristino "
+msgstr "Ripristino"
 
 msgid "Recover Hard"
 msgstr "Ripristino Hard"

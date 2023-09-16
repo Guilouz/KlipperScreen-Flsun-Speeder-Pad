@@ -57,11 +57,23 @@ cat /var/log/Xorg.0.log
     ```sh
     KlipperScreen-start.sh: (EE) no screens found(EE)
     ```
-    [First check the screen](Troubleshooting/Physical_Install.md)
+    This is usually not the main cause of the error. [Start by checking the screen](Troubleshooting/Physical_Install.md)
 
-    [Maybe it's the wrong framebuffer](Troubleshooting/Framebuffer.md)
+    Drivers not installed or misconfigured can cause this too, continue looking the logs for more clues.
 
-## Screen is always white / black / blank or no 'No signal'
+!!! abstract "If you see this line in the [system logs](#system-logs):"
+    ```sh
+    modprobe: FATAL: Module g2d_23 not found in directory /lib/modules/6.1.21-v8+
+    ```
+    This error is common on RaspberryOS when using FBturbo and it's not a related issue.
+
+[Maybe it's the wrong framebuffer](Troubleshooting/Framebuffer.md)
+
+If you can't fix it, [try using a desktop distro as described here.](Troubleshooting/Last_resort.md)
+
+If you want to contribute a solution: [Contact](Contact.md)
+
+## Screen is always ***white*** / ***black*** or ***`No signal`***
 
 If the screen never shows the console even during startup, Then it's typically an improperly installed screen.
 

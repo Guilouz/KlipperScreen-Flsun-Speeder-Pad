@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-09-03 23:45+0200\n"
+"PO-Revision-Date: 2023-09-16 03:56+0200\n"
 "Last-Translator: alfrix\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -249,6 +249,9 @@ msgstr "Auto-Calibrar"
 msgid "Auto-close notifications"
 msgstr "Auto-cerrar notificaciones"
 
+msgid "Auto-open Extrude On Pause"
+msgstr "Auto-abrir Extruir al pausar"
+
 msgid "Auto-scroll"
 msgstr "Auto-scroll"
 
@@ -321,9 +324,6 @@ msgstr "Conectando a %s"
 
 msgid "Console"
 msgstr "Consola"
-
-msgid "Continue"
-msgstr "Continuar"
 
 msgid "Cooldown"
 msgstr "Enfriar"
@@ -411,7 +411,7 @@ msgid "Fine Tuning"
 msgstr "Ajuste Fino"
 
 msgid "Finish"
-msgstr "Cerrar"
+msgstr "Finalizar"
 
 msgid "Firmware Restart"
 msgstr "Reiniciar Firmware"
@@ -420,7 +420,7 @@ msgid "Flow:"
 msgstr "Flujo:"
 
 msgid "Flowrate:"
-msgstr "Flujo:"
+msgstr "Tasa de Flujo:"
 
 msgid "Font Size"
 msgstr "Tamaño del texto"
@@ -528,7 +528,8 @@ msgstr "Klipper se reiniciará"
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen se reiniciará"
 
-msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and shold be used from extrude"
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT están ocultos y deberían ser usados desde "
 "extruir"
@@ -564,7 +565,7 @@ msgid "Macros"
 msgstr "Macros"
 
 msgid "Main Menu"
-msgstr "Menú"
+msgstr "Menú Principal"
 
 msgid "Material"
 msgstr "Material"
@@ -733,7 +734,7 @@ msgid "Reference"
 msgstr "Referencia"
 
 msgid "Refresh"
-msgstr "Actualizar"
+msgstr "Recargar"
 
 msgid "Rename/Move:"
 msgstr "Renombrar/Mover:"
@@ -911,7 +912,7 @@ msgid "Z Calibrate"
 msgstr "Calibrar Z"
 
 msgid "Z Move Speed (mm/s)"
-msgstr "Velocidad Z  (mm/s)"
+msgstr "Velocidad Z (mm/s)"
 
 msgid "Z Speed (mm/s)"
 msgstr "Z Velocidad (mm/s)"

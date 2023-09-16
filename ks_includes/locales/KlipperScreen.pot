@@ -325,9 +325,6 @@ msgstr ""
 msgid "Console"
 msgstr ""
 
-msgid "Continue"
-msgstr ""
-
 msgid "Cooldown"
 msgstr ""
 
