@@ -36,9 +36,9 @@ class Panel(ScreenPanel):
             or (idx == 3 and 'W' in self.color_order)
         )
 
-    def activate(self):
-        if self.current_led is not None:
-            self.set_title(f"{self.current_led}")
+    #def activate(self): # Changes
+        #if self.current_led is not None: # Changes
+            #self.set_title(f"{self.current_led}") # Changes
 
     def set_title(self, title):
         self._screen.base_panel.set_title(self.prettify(title))
