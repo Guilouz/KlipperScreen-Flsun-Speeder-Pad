@@ -200,6 +200,9 @@ msgstr "Elfogad"
 msgid "Add profile"
 msgstr "Profil hozzáadása"
 
+msgid "All"
+msgstr "Mind"
+
 msgid "Apply"
 msgstr "Alkalmaz"
 
@@ -210,6 +213,9 @@ msgstr "Alkalmazod a %s%.3f végpont eltolást?"
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "Alkalmazod a %s%.3f szonda eltolást?"
+
+msgid "Archived"
+msgstr "Archivált"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Biztosan kizárod az objektumot?"
@@ -237,6 +243,9 @@ msgstr "Automatikus kalibrálás"
 
 msgid "Auto-close notifications"
 msgstr "Értesítések automatikus bezárása"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Automatikus megnyitás adagolás szünetelése után"
 
 msgid "Auto-scroll"
 msgstr "Automatikus görgetés"
@@ -311,9 +320,6 @@ msgstr "Csatlakozás %s"
 msgid "Console"
 msgstr "Konzol"
 
-msgid "Continue"
-msgstr "Folytat"
-
 msgid "Cooldown"
 msgstr "Lehűtés"
 
@@ -361,10 +367,10 @@ msgid "Extrude"
 msgstr "Száladagolás"
 
 msgid "Extrusion +"
-msgstr "Extrudálás +"
+msgstr "Adagolás +"
 
 msgid "Extrusion -"
-msgstr "Extrudálás -"
+msgstr "Adagolás -"
 
 msgid "Failed, adjust position first"
 msgstr "Sikertelen! Előbb állítsd be a pozíciót"
@@ -390,6 +396,9 @@ msgstr "Fájl"
 msgid "File:"
 msgstr "Fájl:"
 
+msgid "Filter"
+msgstr "Szűrő"
+
 msgid "Finding ADXL"
 msgstr "ADXL keresése"
 
@@ -413,9 +422,6 @@ msgstr "Betűméret"
 
 msgid "Full Update"
 msgstr "Teljes Frissítés"
-
-msgid "Fullscreen"
-msgstr "Teljes képernyő"
 
 msgid "Go Back"
 msgstr "Visszalépés"
@@ -458,6 +464,9 @@ msgstr "Gazdagép"
 
 msgid "Hostname"
 msgstr "Gazdanév"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Icon Theme"
 msgstr "Ikon téma"
@@ -513,14 +522,25 @@ msgstr "A Klipper újraindul"
 msgid "KlipperScreen will reboot"
 msgstr "A KlipperScreen újraindul"
 
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT rejtett és az extrudálásból kell használni"
+
 msgid "Language"
 msgstr "Nyelv"
 
 msgid "Large"
 msgstr "Nagy"
 
+msgid "Last Used"
+msgstr "Utoljára használt"
+
 msgid "Layer:"
 msgstr "Réteg:"
+
+msgid "Leds"
+msgstr "LED-ek"
 
 msgid "Left:"
 msgstr "Bal:"
@@ -542,6 +562,9 @@ msgstr "Makrók"
 
 msgid "Main Menu"
 msgstr "Főmenü"
+
+msgid "Material"
+msgstr "Anyag"
 
 msgid "Max"
 msgstr "Max"
@@ -603,12 +626,15 @@ msgstr "Soha"
 msgid "New"
 msgstr "Új"
 
+msgid "No elegible macros:"
+msgstr "Nincs választható makró:"
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
-"Az automatikus felismerés nem támogatott, a KlipperScreen-ben kell beállítani."
-"conf"
+"Az automatikus felismerés nem támogatott, a KlipperScreen-ben kell "
+"beállítani.conf"
 
 msgid "Nothing selected"
 msgstr "Nincs kiválasztva"
@@ -779,6 +805,9 @@ msgstr "Mutat"
 msgid "Show Heater Power"
 msgstr "A fűtésteljesítmény megjelenítése"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Görgetősáv gombok megjelenítése"
+
 msgid "Shutdown"
 msgstr "Leállítás"
 
@@ -902,6 +931,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "óra"
 msgstr[1] "órák"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "a 'rename_existing' használó makrók el vannak rejtve"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "a '_' jellel kezdődő nevű makrók el vannak rejtve"
 
 msgid "minute"
 msgid_plural "minutes"
