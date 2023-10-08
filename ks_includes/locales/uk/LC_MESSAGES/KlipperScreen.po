@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 2022-06-02 14:53-0300\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-09-04 09:42+0200\n"
+"PO-Revision-Date: 2023-10-08 02:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: Andrii Komarovskyi\n"
 "Language: uk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "Show Scrollbars Arrows"
@@ -250,6 +250,9 @@ msgstr "Автоматичне калібрування"
 
 msgid "Auto-close notifications"
 msgstr "Автоматичне закриття сповіщень"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Автоматично відкриває меню Екструзії під час Паузи"
 
 msgid "Auto-scroll"
 msgstr "Автоматична прокрутка"
@@ -551,6 +554,9 @@ msgstr "Останнє Використання"
 
 msgid "Layer:"
 msgstr "Шар:"
+
+msgid "Leds"
+msgstr "Освітлення"
 
 msgid "Left:"
 msgstr "Залишилось:"
