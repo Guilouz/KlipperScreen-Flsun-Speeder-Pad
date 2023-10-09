@@ -83,6 +83,7 @@ class Panel(ScreenPanel):
         elif "bed_screws" in self._printer.get_config_section_list():
             self.screws = self._get_screws("bed_screws")
             logging.info(f"bed_screws: {self.screws}")
+
         nscrews = len(self.screws)
         # KS config
         valid_positions = True
@@ -109,9 +110,6 @@ class Panel(ScreenPanel):
             if nscrews in (3, 5, 7):
                 valid_positions = False
             screw_positions = valid_screws
-        if 'bed_screws' in self._config.get_config():
-            rotation = self._config.get_config()['bed_screws'].getint("rotation", 0)
-            logging.debug(f"Rotation: {rotation}")
 
         # get dimensions
         x_positions = {x[0] for x in self.screws}
