@@ -3,7 +3,7 @@ import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
-from math import pi
+from math import pi, floor
 from ks_includes.KlippyGcodes import KlippyGcodes
 from ks_includes.screen_panel import ScreenPanel
 
@@ -20,10 +20,7 @@ class Panel(ScreenPanel):
         self.preset_list = self._gtk.HomogeneousGrid()
         self.color_data = [0, 0, 0, 0]
         self.color_order = 'RGBW'
-        self.presets = {
-            "on": [1.0, 1.0, 1.0, 1.0],
-            "off": [0.0, 0.0, 0.0, 0.0]
-        }
+        self.presets = {"off": [0.0, 0.0, 0.0, 0.0]}
         self.scales = {}
         self.buttons = []
         self.leds = self._printer.get_leds()
@@ -81,8 +78,13 @@ class Panel(ScreenPanel):
         grid = self._gtk.HomogeneousGrid()
         self.color_order = self._printer.get_led_color_order(led)
         if self.color_order is None:
+            logging.error("Error: Color order is None")
             self.back()
             return
+        on = []
+        for i in range(4):
+            on.append(1 if self.color_available(i) else 0)
+        self.presets["on"] = on
         scale_grid = self._gtk.HomogeneousGrid()
         for idx, col_value in enumerate(self.color_data):
             if not self.color_available(idx):
@@ -142,7 +144,7 @@ class Panel(ScreenPanel):
     def on_draw(self, da, ctx, color=None):
         if color is None:
             color = self.color_data
-        ctx.set_source_rgb(color[0], color[1], color[2])
+        ctx.set_source_rgb(*self.rgbw_to_rgb(color))
         # Set the size of the rectangle
         width = height = da.get_allocated_width() * .9
         x = da.get_allocated_width() * .05
@@ -158,7 +160,7 @@ class Panel(ScreenPanel):
     def update_preview(self, args):
         self.update_color_data()
         self.preview.queue_draw()
-        self.preview_label.set_label(self.rgbw_to_hex(self.color_data))
+        self.preview_label.set_label(self.rgb_to_hex(self.rgbw_to_rgb(self.color_data)))
 
     def process_update(self, action, data):
         if action != 'notify_status_update':
@@ -170,11 +172,11 @@ class Panel(ScreenPanel):
     def update_scales(self, color_data):
         for idx in self.scales:
             self.scales[idx].set_value(int(color_data[idx] * 255))
-            self.color_data[idx] = color_data[idx]
+        self.color_data = color_data
 
     def update_color_data(self):
         for idx in self.scales:
-            self.color_data[idx] = round(self.scales[idx].get_value() / 255, 4)
+            self.color_data[idx] = self.scales[idx].get_value() / 255
 
     def apply_preset(self, widget, color_data):
         self.update_scales(color_data)
@@ -199,15 +201,23 @@ class Panel(ScreenPanel):
                 if color not in preset or preset[color] is None:
                     parsed[name].append(0)
                     continue
-                parsed[name].append(round(preset[color] / 255, 4))
+                parsed[name].append(preset[color] / 255)
         return parsed
 
     @staticmethod
-    def rgbw_to_hex(color):
+    def rgb_to_hex(color):
         hex_color = '#'
-        for value in color[:3]:
+        for value in color:
             int_value = round(value * 255)
             hex_color += hex(int_value)[2:].zfill(2)
-        alpha = round(color[3] * 255)
-        hex_color += hex(alpha)[2:].zfill(2)
         return hex_color.upper()
+
+    @staticmethod
+    def rgbw_to_rgb(color):
+        # The idea here is to use the white channel as a saturation control
+        # The white channel 'washes' the color
+        return (
+            [color[i] + color[3] for i in range(3)]  # Special case of only white channel
+            if color[0] == 0 and color[1] == 0 and color[2] == 0
+            else [color[i] + (1 - color[i]) * color[3] / 3 for i in range(3)]
+        )
