@@ -6,7 +6,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import GLib, Gtk, Pango
 from contextlib import suppress
-from math import pi, sqrt
+from math import pi, sqrt, trunc
 from statistics import median
 from time import time
 from ks_includes.screen_panel import ScreenPanel
@@ -700,7 +700,7 @@ class Panel(ScreenPanel):
 
     def update_progress(self, progress: float):
         self.progress = progress
-        self.labels['progress_text'].set_label(f"{progress * 100:.0f}%")
+        self.labels['progress_text'].set_label(f"{trunc(progress * 100)}%")
         self.labels['darea'].queue_draw()
 
     def set_state(self, state, msg=""):
@@ -795,7 +795,7 @@ class Panel(ScreenPanel):
             width = self._screen.width * 0.9
             height = self._screen.height / 4
         else:
-            width = self._screen.width / 3
+            width = self._screen.width * .25
             height = self._gtk.content_height * 0.47
         pixbuf = self.get_file_image(self.filename, width, height)
         logging.debug(self.filename)

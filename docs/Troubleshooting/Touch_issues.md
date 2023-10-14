@@ -2,15 +2,12 @@
 
 If the screen is connected over USB, issues with the cable may cause similar symptoms. For that, please see [this guide](Physical_Install.md#cable-issues).
 
-## Touch not working
+## Touch not working on RaspberryOS and derivatives
 
-Some DSI screens have issues where touch doesn't work with Debian Bullseye, or even in Debian Buster after an update. There is currently (September 2023) still no fix in upstream Debian.
+Some DSI screens have issues where touch doesn't work with the default configuration.
+The current workaround/temporary fix involves changing the kernel driver module used for these displays.
 
-The current workaround/temporary fix involves changing the kernel driver module used for these displays. 
-
-To apply this fix:
-
-Edit `/boot/config.txt` and change
+Open `/boot/config.txt` for editing using `sudo nano /boot/config.txt` and change
 
 ```sh
 dtoverlay=vc4-kms-v3d
@@ -22,9 +19,11 @@ to
 dtoverlay=vc4-fkms-v3d
 ```
 
+Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
+
 **Reboot** to apply changes.
 
-If that doesn't fix it, you can try commenting these lines out:
+If that doesn't fix it, you can try commenting these lines out, resulting in:
 
 ```sh
 # dtoverlay=vc4-kms-v3d
@@ -63,15 +62,15 @@ DISPLAY=:0 xinput set-prop "<device name>" 'Coordinate Transformation Matrix' <m
 
 Where the matrix can be one of the following options:
 
- | Rotation  | Matrix |
- | - | - |
- | 0° | `1 0 0 0 1 0 0 0 1` |
- | 90° Clockwise | `0 -1 1 1 0 0 0 0 1` |
- | 90° Counter-Clockwise | `0 1 0 -1 0 1 0 0 1` |
- | 180° (Inverts X and Y) | `-1 0 1 0 -1 1 0 0 1` |
- | invert Y | `-1 0 1 1 1 0 0 0 1` |
- | invert X | `-1 0 1 0 1 0 0 0 1` |
- | expand to twice the size horizontally | `0.5 0 0 0 1 0 0 0 1` |
+| Rotation                              | Matrix                |
+| ------------------------------------- | --------------------- |
+| 0°                                    | `1 0 0 0 1 0 0 0 1`   |
+| 90° Clockwise                         | `0 -1 1 1 0 0 0 0 1`  |
+| 90° Counter-Clockwise                 | `0 1 0 -1 0 1 0 0 1`  |
+| 180° (Inverts X and Y)                | `-1 0 1 0 -1 1 0 0 1` |
+| invert Y                              | `-1 0 1 1 1 0 0 0 1`  |
+| invert X                              | `-1 0 1 0 1 0 0 0 1`  |
+| expand to twice the size horizontally | `0.5 0 0 0 1 0 0 0 1` |
 
 For more in-depth guidance on using Coordinate Transformation Matrices:
 
@@ -88,18 +87,31 @@ If this is the case, adding `enable_tvout=0` to `/boot/config.txt` and reboot.
     DISPLAY=:0 xinput set-prop "ADS7846 Touchscreen" 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
     ```
 
-    To make this permanent, modify the file `/etc/udev/rules.d/51-touchscreen.rules` and add following line:
+    To make this permanent, modify the file `/etc/udev/rules.d/51-touchscreen.rules`:
+    
+    ```bash
+    sudo nano /etc/udev/rules.d/51-touchscreen.rules
+    ```
+
+    and add following line
 
     ```sh
     ACTION=="add", ATTRS{name}=="<device name>", ENV{LIBINPUT_CALIBRATION_MATRIX}="<matrix>"
     ```
+    
+    Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
 
     ---
+
     As an alternative **if the above doesn't work**:
 
     edit `/usr/share/X11/xorg.conf.d/40-libinput.conf`
 
-    for example:
+    ```bash
+    sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
+    ```
+
+    With the following contents:
 
     ```sh
     Section "InputClass"
@@ -110,3 +122,4 @@ If this is the case, adding `enable_tvout=0` to `/boot/config.txt` and reboot.
             Option "TransformationMatrix" "0 -1 1 1 0 0 0 0 1"
     EndSection
     ```
+    Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
