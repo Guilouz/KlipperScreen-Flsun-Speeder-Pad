@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 msgid "Show Scrollbars Arrows"
 msgstr ""
@@ -180,7 +180,7 @@ msgid "(default)"
 msgstr "(alapértelmezett)"
 
 msgid "24 Hour Time"
-msgstr "24 Órás Idő"
+msgstr "24 órás idő"
 
 msgid "A FIRMWARE_RESTART may fix the issue."
 msgstr "A FIRMWARE_RESTART javíthatja a problémát."
@@ -208,11 +208,11 @@ msgstr "Alkalmaz"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr "Alkalmazod a %s%.3f végpont eltolást?"
+msgstr "Alkalmazod a(z) %s%.3f végállás eltolást?"
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr "Alkalmazod a %s%.3f szonda eltolást?"
+msgstr "Alkalmazod a(z) %s%.3f szonda eltolást?"
 
 msgid "Archived"
 msgstr "Archivált"
@@ -275,7 +275,7 @@ msgid "Can't set above the maximum:"
 msgstr "Nem állítható a maximum fölé:"
 
 msgid "Cancel"
-msgstr "Mégse"
+msgstr "Mégsem"
 
 msgid "Cancel Print"
 msgstr "Nyomtatás megszakítása"
@@ -324,7 +324,7 @@ msgid "Cooldown"
 msgstr "Lehűtés"
 
 msgid "DPMS has failed to load and has been disabled"
-msgstr "DPMS betöltése nem sikerült, ezért le van tiltva"
+msgstr "A DPMS betöltése nem sikerült, ezért le van tiltva"
 
 msgid "Date"
 msgstr "Dátum"
@@ -409,7 +409,7 @@ msgid "Finish"
 msgstr "Befejezve"
 
 msgid "Firmware Restart"
-msgstr "Firmware Újraindítása"
+msgstr "Firmware újraindítása"
 
 msgid "Flow:"
 msgstr "Folyam:"
@@ -421,7 +421,7 @@ msgid "Font Size"
 msgstr "Betűméret"
 
 msgid "Full Update"
-msgstr "Teljes Frissítés"
+msgstr "Teljes frissítés"
 
 msgid "Go Back"
 msgstr "Visszalépés"
@@ -502,10 +502,10 @@ msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "A fűtés teljesítményétől függően több mint 5 percig tarthat."
 
 msgid "Klipper Restart"
-msgstr "Klipper Újraindítása"
+msgstr "A Klipper újraindítása"
 
 msgid "Klipper has disconnected"
-msgstr "Klipper szétkapcsolt"
+msgstr "A Klipper szétkapcsolt"
 
 msgid "Klipper has encountered an error."
 msgstr "A Klipper hibát észlelt."
@@ -514,7 +514,7 @@ msgid "Klipper has shutdown"
 msgstr "A Klipper leállt"
 
 msgid "Klipper is attempting to start"
-msgstr "Klipper megpróbálja elindítani"
+msgstr "A Klipper megpróbál elindulni"
 
 msgid "Klipper will reboot"
 msgstr "A Klipper újraindul"
@@ -525,7 +525,7 @@ msgstr "A KlipperScreen újraindul"
 msgid ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
-"LOAD_FILAMENT/UNLOAD_FILAMENT rejtett és az extrudálásból kell használni"
+"LOAD_FILAMENT/UNLOAD_FILAMENT rejtett és a száladagolásból kell használni"
 
 msgid "Language"
 msgstr "Nyelv"
@@ -543,7 +543,7 @@ msgid "Leds"
 msgstr "LED-ek"
 
 msgid "Left:"
-msgstr "Bal:"
+msgstr "Marad:"
 
 msgid "Limits"
 msgstr "Korlátok"
@@ -612,7 +612,7 @@ msgid "Move"
 msgstr "Mozgatás"
 
 msgid "Move Distance (mm)"
-msgstr "Mozgási távolság (mm)"
+msgstr "Mozgás távolsága (mm)"
 
 msgid "Name"
 msgstr "Név"
@@ -633,8 +633,8 @@ msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
-"Az automatikus felismerés nem támogatott, a KlipperScreen-ben kell "
-"beállítani.conf"
+"Az automatikus felismerés nem támogatott, a klipperscreen.conf-ban kell "
+"klipperscreen.conf"
 
 msgid "Nothing selected"
 msgstr "Nincs kiválasztva"
@@ -709,7 +709,7 @@ msgid "Profile Name:"
 msgstr "Profil név:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Add meg a KlipperScreen.log-ot, amikor segítséget kérsz.\n"
+msgstr "Csatold a KlipperScreen.log-ot, amikor segítséget kérsz.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Négy állású szint"
@@ -845,7 +845,7 @@ msgid "Start"
 msgstr "Indítás"
 
 msgid "Starting WiFi Association"
-msgstr "A WiFi Egyesület elindítása"
+msgstr "A WiFi társítás elindítása"
 
 msgid "Starting recovery for"
 msgstr "Helyreállítás megkezdése"
@@ -857,10 +857,10 @@ msgid "System"
 msgstr "Rendszer"
 
 msgid "System Restart"
-msgstr "Rendszer Újraindítása"
+msgstr "Rendszer újraindítása"
 
 msgid "System Shutdown"
-msgstr "Rendszer Leállitás"
+msgstr "Rendszer leállitás"
 
 msgid "Temp (°C)"
 msgstr "Hőmérséklet (°C)"
@@ -881,7 +881,7 @@ msgid "Unload"
 msgstr "Kiadás"
 
 msgid "Unretract Extra Length"
-msgstr "Extra hossz visszahúzása"
+msgstr "Extra visszahúzás hossza"
 
 msgid "Unretract Speed"
 msgstr "Visszahúzási sebesség"

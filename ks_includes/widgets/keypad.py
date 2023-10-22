@@ -42,6 +42,7 @@ class Keypad(Gtk.Box):
             else:
                 self.labels[k_id] = Gtk.Button(label=keys[i][0])
             self.labels[k_id].connect('clicked', self.update_entry, keys[i][0])
+            self.labels[k_id].get_style_context().add_class("numpad_key")
             if self.touch_sound_value == True: # Changes
                 self.labels[k_id].connect("pressed", self.screen._button_pressed_feedback) # Changes
             self.labels[k_id].get_style_context().add_class(keys[i][1])

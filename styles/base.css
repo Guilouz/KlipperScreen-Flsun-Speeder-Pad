@@ -395,6 +395,12 @@ trough {
     margin-top: 30px;
 }
 
+.numpad_key {
+    border: .15em;
+    border-style: solid;
+    border-color: #ccc;
+}
+
 .numpad_tleft {
     border: .15em solid white;
     border-bottom: 0;
