@@ -280,6 +280,7 @@ trough {
 
 .distbutton_active {
     background-color: #20303D;
+    font-weight: 600;
 }
 
 .distbutton_top {
@@ -485,7 +486,8 @@ trough {
 .printing-status {
     color: #f0f0f0;
     font-style: italic;
-    margin: 0 0 0 0;
+    margin: 0;
+    font-weight: bold;
 }
 
 .printing-progress-text {
