@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 msgid "Show Scrollbars Arrows"
 msgstr ""
@@ -151,8 +151,8 @@ msgid ""
 "Do you want to start Manual Delta calibration with 'paper test'?\n"
 "\n"
 "It involves placing a piece of 'copy machine paper' between bed and nozzle, and then "
-"moving the nozzle to different Z heights until one feels a small amount of friction "
-"when pushing the paper back and forth.\n"
+"moving the nozzle to different Z heights until one feels a small amount of friction when "
+"pushing the paper back and forth.\n"
 "\n"
 "It's not needed to plug in leveling switch for this calibration."
 msgstr ""
@@ -200,6 +200,9 @@ msgstr "Accetta"
 msgid "Add profile"
 msgstr "Aggiungi profilo"
 
+msgid "All"
+msgstr "Tutto"
+
 msgid "Apply"
 msgstr "Applica"
 
@@ -210,6 +213,9 @@ msgstr "Applicare l'offset %s%.3f a Endstop?"
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "Applicare l'offset %s%.3f a Probe?"
+
+msgid "Archived"
+msgstr "Archiviato"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Sei sicuro di voler escludere l'oggetto?"
@@ -238,6 +244,9 @@ msgstr "Calibrazione automatica"
 msgid "Auto-close notifications"
 msgstr "Chiusura automatica notifiche"
 
+msgid "Auto-open Extrude On Pause"
+msgstr "Apri automaticamente Estrusione quando è in Pausa"
+
 msgid "Auto-scroll"
 msgstr "Scorrimento automatico"
 
@@ -248,7 +257,7 @@ msgid "Bed Mesh"
 msgstr "Bed-Mesh"
 
 msgid "Bed screw configuration:"
-msgstr "configurazione Bed Screw"
+msgstr "Configurazione Bed Screw:"
 
 msgid "Calibrate"
 msgstr "Calibra"
@@ -355,7 +364,7 @@ msgid "Exclude Object"
 msgstr "Escludi oggetto"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra Large"
 
 msgid "Extrude"
 msgstr "Estrudi"
@@ -385,13 +394,16 @@ msgid "Filament:"
 msgstr "Filamento:"
 
 msgid "File"
-msgstr ""
+msgstr "File"
 
 msgid "File:"
-msgstr ""
+msgstr "File:"
+
+msgid "Filter"
+msgstr "Filtro"
 
 msgid "Finding ADXL"
-msgstr "ricerca ADXL..."
+msgstr "Ricerca ADXL"
 
 msgid "Fine Tuning"
 msgstr "Messa a punto"
@@ -456,6 +468,9 @@ msgstr "Host"
 msgid "Hostname"
 msgstr "Hostname"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "Icon Theme"
 msgstr "Tema icone"
 
@@ -466,7 +481,7 @@ msgid "Initiate a PID calibration for:"
 msgstr "Inizia una calibrazione PID per:"
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Input Shaper"
 
 msgid "Interface"
 msgstr "Interfaccia"
@@ -510,14 +525,23 @@ msgstr "Klipper si riavvierà"
 msgid "KlipperScreen will reboot"
 msgstr "KlipperScreen si riavvierà"
 
+msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr "LOAD_FILAMENT/UNLOAD_FILAMENT sono nascosti e dovrebbero essere usati da estrudere"
+
 msgid "Language"
 msgstr "Lingua"
 
 msgid "Large"
 msgstr "Grande"
 
+msgid "Last Used"
+msgstr "Ultimo Utilizzo"
+
 msgid "Layer:"
 msgstr "Layer:"
+
+msgid "Leds"
+msgstr "Leds"
 
 msgid "Left:"
 msgstr "Restante:"
@@ -540,6 +564,9 @@ msgstr "Macros"
 msgid "Main Menu"
 msgstr "Menu principale"
 
+msgid "Material"
+msgstr "Materiale"
+
 msgid "Max"
 msgstr "Max"
 
@@ -547,7 +574,7 @@ msgid "Max Acceleration"
 msgstr "Accel. massima"
 
 msgid "Max Acceleration to Deceleration"
-msgstr "Max Accel. a Decel."
+msgstr "Max Accelerazione a Decelerazione"
 
 msgid "Max Velocity"
 msgstr "Velocità massima"
@@ -600,6 +627,9 @@ msgstr "Mai"
 msgid "New"
 msgstr "Nuovo"
 
+msgid "No elegible macros:"
+msgstr "Nessuna macro elegibile:"
+
 msgid "Not supported for auto-detection, it needs to be configured in klipperscreen.conf"
 msgstr "Non supportato per il rilevamento automatico, configurarlo in klipperscreen.conf"
 
@@ -608,7 +638,7 @@ msgstr "Nessuna selezione"
 
 #, python-format
 msgid "Outdated by %d"
-msgstr "obsoleto da %d"
+msgstr "Obsoleto da %d"
 
 msgid "PSK for"
 msgstr "PSK per"
@@ -676,7 +706,7 @@ msgid "Profile Name:"
 msgstr "Nome profilo:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Fornisci KlipperScreen.log quando chiedi aiuto.\n"
+msgstr "Fornire il KlipperScreen.log quando si chiede aiuto.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Quad Gantry Level"
@@ -771,6 +801,9 @@ msgstr "Mostra"
 
 msgid "Show Heater Power"
 msgstr "Mostra potenza riscaldatore"
+
+msgid "Show Scrollbars Buttons"
+msgstr "Mostra pulsanti delle barre di scorrimento"
 
 msgid "Shutdown"
 msgstr "Spegnimento"
@@ -895,6 +928,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "ora"
 msgstr[1] "ore"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "macro che usano 'rename_existing' sono nascoste"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "macros con nome che inzia con '_' sono nascoste"
 
 msgid "minute"
 msgid_plural "minutes"
