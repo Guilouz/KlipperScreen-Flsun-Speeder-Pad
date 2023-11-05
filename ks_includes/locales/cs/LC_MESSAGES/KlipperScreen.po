@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Czech\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 18:51+0200\n"
+"PO-Revision-Date: 2023-11-05 12:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: Jan Stanka (stanky@email.cz)\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 msgid "Show Scrollbars Arrows"
 msgstr ""
@@ -205,16 +205,22 @@ msgstr "Přijmout"
 msgid "Add profile"
 msgstr "Přidat profil"
 
+msgid "All"
+msgstr "Vše"
+
 msgid "Apply"
 msgstr "Použít"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr "Použít %s%.3f přesah k Endstop?"
+msgstr "Potvrdit %s%.3f offset koncového spínače?"
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr "Použít %s%.3f přesah k Sondě?"
+msgstr "Potvrdit %s%.3f offset sondy?"
+
+msgid "Archived"
+msgstr "Archivováno"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Opravdu chceš vyjmout objekt?"
@@ -243,6 +249,9 @@ msgstr "Auto-kalibrace"
 msgid "Auto-close notifications"
 msgstr "Automaticky zavřít upozornění"
 
+msgid "Auto-open Extrude On Pause"
+msgstr "Automatické otevření Extruze při pauze"
+
 msgid "Auto-scroll"
 msgstr "Auto posun"
 
@@ -265,7 +274,7 @@ msgid "Calibrating"
 msgstr "Kalibruji"
 
 msgid "Camera"
-msgstr ""
+msgstr "Kamera"
 
 msgid "Can't set above the maximum:"
 msgstr "Nemohu nastavit víc než max:"
@@ -316,17 +325,17 @@ msgstr "Připojování k %s"
 msgid "Console"
 msgstr "Konsole"
 
-msgid "Continue"
-msgstr "Pokračuj"
-
 msgid "Cooldown"
 msgstr "Zchladit"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS se nepodařilo načíst a byl deaktivován"
 
 msgid "Date"
 msgstr "Datum"
 
 msgid "Delete Directory?"
-msgstr ""
+msgstr "Smazat adresář?"
 
 msgid "Delete File?"
 msgstr "Smazat soubor?"
@@ -392,6 +401,9 @@ msgstr "Soubor"
 msgid "File:"
 msgstr "Soubor:"
 
+msgid "Filter"
+msgstr "Filtr"
+
 msgid "Finding ADXL"
 msgstr "Hledání ADXL"
 
@@ -416,9 +428,6 @@ msgstr "Velikost fontu"
 msgid "Full Update"
 msgstr "Úplný update"
 
-msgid "Fullscreen"
-msgstr ""
-
 msgid "Go Back"
 msgstr "Zpět"
 
@@ -438,7 +447,7 @@ msgid "Hide temp."
 msgstr "Skrýt teplotu"
 
 msgid "Home"
-msgstr "Zaparkovat"
+msgstr ""
 
 msgid "Home All"
 msgstr "Zaparkovat XYZ"
@@ -461,6 +470,9 @@ msgstr "Host"
 msgid "Hostname"
 msgstr "Hostname"
 
+msgid "ID"
+msgstr ""
+
 msgid "Icon Theme"
 msgstr "Sada ikon"
 
@@ -468,10 +480,10 @@ msgid "Initializing printer..."
 msgstr "Startuji tiskárnu ..."
 
 msgid "Initiate a PID calibration for:"
-msgstr ""
+msgstr "Spustit PID kalibraci"
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Kompenzace rezonancí"
 
 msgid "Interface"
 msgstr "Rozhraní"
@@ -492,7 +504,7 @@ msgid "Invert Z"
 msgstr "Otočit Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
-msgstr ""
+msgstr "V závislosti na výkonu ohřívače to může trvat déle než 5 minut."
 
 msgid "Klipper Restart"
 msgstr "Klipper Restart"
@@ -512,8 +524,9 @@ msgstr "Klipper startuje"
 msgid "Klipper will reboot"
 msgstr "Klipper se restartuje"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen se restartuje"
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
 
 msgid "Language"
 msgstr "Jazyk"
@@ -521,8 +534,14 @@ msgstr "Jazyk"
 msgid "Large"
 msgstr "Velký"
 
+msgid "Last Used"
+msgstr "Munulý"
+
 msgid "Layer:"
 msgstr "Vrstva:"
+
+msgid "Leds"
+msgstr "Ledky"
 
 msgid "Left:"
 msgstr "Zbývá:"
@@ -544,6 +563,9 @@ msgstr "Makra"
 
 msgid "Main Menu"
 msgstr "Hlavní menu"
+
+msgid "Material"
+msgstr "Materiál"
 
 msgid "Max"
 msgstr "Max"
@@ -585,7 +607,7 @@ msgid "Moonraker: connected"
 msgstr "Moonraker: připojen"
 
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 msgid "Move"
 msgstr "Posun"
@@ -604,6 +626,9 @@ msgstr "Nikdy"
 
 msgid "New"
 msgstr "Nový"
+
+msgid "No elegible macros:"
+msgstr "Žádná použitelná makra:"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -684,7 +709,7 @@ msgid "Profile Name:"
 msgstr "Jméno profilu:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Provide KlipperScreen.log when asking for help.\n"
+msgstr ""
 
 msgid "Quad Gantry Level"
 msgstr "Quad Gantry Level"
@@ -708,7 +733,7 @@ msgid "Refresh"
 msgstr "Obnovit"
 
 msgid "Rename/Move:"
-msgstr ""
+msgstr "Přejmenovat/Přesunout"
 
 msgid "Restart"
 msgstr "Restart"
@@ -780,6 +805,9 @@ msgstr "Ukaž"
 msgid "Show Heater Power"
 msgstr "Ukaž odběr topení"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Ukaž rolovací tl."
+
 msgid "Shutdown"
 msgstr "Shutdown"
 
@@ -808,6 +836,9 @@ msgid "Speed:"
 msgstr "Rychlost:"
 
 msgid "Square Corner Velocity"
+msgstr ""
+
+msgid "Standby"
 msgstr ""
 
 msgid "Start"
@@ -890,9 +921,9 @@ msgstr "Z offset:"
 
 msgid "commit"
 msgid_plural "commits"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "potvrzení"
+msgstr[1] "potvrzení"
+msgstr[2] "potvrzení"
 
 msgid "dBm"
 msgstr "dBm"
@@ -903,11 +934,17 @@ msgstr[0] "hodina"
 msgstr[1] "hodiny"
 msgstr[2] "hodin"
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
+
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "minuta"
+msgstr[1] "minuty"
+msgstr[2] "minut"
 
 msgid "mm"
 msgstr "mm"

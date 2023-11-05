@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-29 13:11+0200\n"
+"PO-Revision-Date: 2023-11-05 12:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 msgid "Show Scrollbars Arrows"
 msgstr ""
@@ -205,6 +205,9 @@ msgstr "Kabul et"
 msgid "Add profile"
 msgstr "Profil ekle"
 
+msgid "All"
+msgstr "Tümü"
+
 msgid "Apply"
 msgstr "Uygula"
 
@@ -215,6 +218,9 @@ msgstr "Endstop'a %s%.3f ofset uygulansın mı?"
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "Prob'a %s%.3f ofset uygulansın mı?"
+
+msgid "Archived"
+msgstr "Arşivlenen"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Nesneyi hariç tutmak istediğinizden emin misiniz?"
@@ -242,6 +248,9 @@ msgstr "Otomatik-Kalibrasyon"
 
 msgid "Auto-close notifications"
 msgstr "Bildirimleri otomatik kapat"
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Duraklatıldığında Ekstrüzyonu Otomatik Aç"
 
 msgid "Auto-scroll"
 msgstr "Otomatik kaydırma"
@@ -316,11 +325,11 @@ msgstr "%s'e Bağlanılıyor"
 msgid "Console"
 msgstr "Konsol"
 
-msgid "Continue"
-msgstr "Devam et"
-
 msgid "Cooldown"
 msgstr "Soğutma"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS yüklenemedi ve devre dışı bırakıldı"
 
 msgid "Date"
 msgstr "Tarih"
@@ -392,6 +401,9 @@ msgstr "Dosya"
 msgid "File:"
 msgstr "Dosya:"
 
+msgid "Filter"
+msgstr "Filtre"
+
 msgid "Finding ADXL"
 msgstr "ADXL Bulunuyor"
 
@@ -415,9 +427,6 @@ msgstr "Yazı boyutu"
 
 msgid "Full Update"
 msgstr "Tam Güncelleme"
-
-msgid "Fullscreen"
-msgstr "Tam Ekran"
 
 msgid "Go Back"
 msgstr "Geri git"
@@ -460,6 +469,9 @@ msgstr "Sunucu"
 
 msgid "Hostname"
 msgstr "Ana bilgisayar adı"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Icon Theme"
 msgstr "Simge Teması"
@@ -512,8 +524,9 @@ msgstr "Klipper başlatılmaya çalışılıyor"
 msgid "Klipper will reboot"
 msgstr "Klipper yeniden başlayacak"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen yeniden başlayacak"
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr "FILEMENT_YUKLE/FILEMENT_KALDIR gizlidir ve extrude'dan kullanılmalıdır"
 
 msgid "Language"
 msgstr "Dil"
@@ -521,8 +534,14 @@ msgstr "Dil"
 msgid "Large"
 msgstr "Büyük"
 
+msgid "Last Used"
+msgstr "Son kullanılan"
+
 msgid "Layer:"
 msgstr "Katman:"
+
+msgid "Leds"
+msgstr "Ledler"
 
 msgid "Left:"
 msgstr "Kalan:"
@@ -544,6 +563,9 @@ msgstr "Makrolar"
 
 msgid "Main Menu"
 msgstr "Ana Menü"
+
+msgid "Material"
+msgstr "Malzeme"
 
 msgid "Max"
 msgstr "Maks"
@@ -604,6 +626,9 @@ msgstr "Asla"
 
 msgid "New"
 msgstr "Yeni"
+
+msgid "No elegible macros:"
+msgstr "Uygun makro yok:"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -781,6 +806,9 @@ msgstr "Göster"
 msgid "Show Heater Power"
 msgstr "Isıtıcı Gücünü Göster"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Kaydırma çubuklarında düğmeleri göster"
+
 msgid "Shutdown"
 msgstr "Kapat"
 
@@ -810,6 +838,9 @@ msgstr "Hız:"
 
 msgid "Square Corner Velocity"
 msgstr "Kare Köşe Hızı"
+
+msgid "Standby"
+msgstr "Hazırda Bekle"
 
 msgid "Start"
 msgstr "Başlat"
@@ -901,6 +932,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "saat"
 msgstr[1] "saatler"
+
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "'rename_existing'i kullanan makrolar gizlendi"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "adı '_' ile başlayan makrolar gizlendi"
 
 msgid "minute"
 msgid_plural "minutes"
