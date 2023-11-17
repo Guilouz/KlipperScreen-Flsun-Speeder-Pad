@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-09-05 10:36+0200\n"
+"PO-Revision-Date: 2023-11-17 02:00+0100\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
+
+msgid "Notifications"
+msgstr "Notifications"
 
 msgid "Last Used"
 msgstr "Dernière utilisation"
@@ -367,9 +370,6 @@ msgstr "Connexion à %s"
 msgid "Console"
 msgstr "Console"
 
-msgid "Continue"
-msgstr "Continuer"
-
 msgid "Cooldown"
 msgstr "Refroidir"
 
@@ -567,9 +567,6 @@ msgstr "Klipper tente de démarrer"
 
 msgid "Klipper will reboot"
 msgstr "Klipper va redémarrer"
-
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen va redémarrer"
 
 msgid ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
@@ -992,6 +989,3 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Plein écran"
