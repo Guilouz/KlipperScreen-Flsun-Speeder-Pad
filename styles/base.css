@@ -388,6 +388,10 @@ trough {
     background-color: #9e2f3a;
 }
 
+.numpad{
+    margin-top: 30px;
+}
+
 .numpad_key {
     border: .15em;
     border-style: solid;

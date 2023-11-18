@@ -4,7 +4,7 @@
 
 window {
     background-color: #13181C;
-    background-image: url("./styles/z-bolt/background.png");
+    background-image: url("./styles/z-bolt-red/background.png");
     /* background-size: cover; */
 }
 
@@ -18,12 +18,12 @@ button {
 }
 
 button:active {
-    background-color: #324A5E;
+    background-color: #b82f37;
     border-radius: 0.3em;
 }
 
 .button_active {
-    background-color: #324A5E;
+    background-color: #b82f37;
     border-radius: 0.3em;
 }
 
@@ -40,34 +40,34 @@ button.color4:disabled {
 
 button.color1 {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #ED6500;
+    border-bottom-color: #b82f37;
     border-radius: 0.3em;
 }
 
 button.color2 {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #ED6500;
+    border-bottom-color: #b82f37;
     border-radius: 0.3em;
 }
 
 button.color3 {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #ED6500;
+    border-bottom-color: #b82f37;
     border-radius: 0.3em;
 }
 
 button.color4 {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #ED6500;
+    border-bottom-color: #b82f37;
     border-radius: 0.3em;
 }
 
 button.active {
-    background-color: #324A5E;
+    background-color: #b82f37;
 }
 
 button.update {
-    background: #009384;
+    background: #b82f37;
     border: .1em solid #cccccc;
 }
 
@@ -76,24 +76,9 @@ button.invalid {
     border: .1em solid #cccccc;
 }
 
-button.color1:active {
-    background-color: #ED6500;
-    border-bottom-color: #ED6500;
-}
-
-button.color2:active {
-    background-color: #ED6500;
-    border-bottom-color: #ED6500;
-}
- 
-button.color3:active {
-    background-color: #ED6500;
-    border-bottom-color: #ED6500;
-} 
-
-button.color4:active {
-    background-color: #ED6500;
-    border-bottom-color: #ED6500;
+button.color1:active, button.color2:active, button.color3:active, button.color4:active {
+    background-color: #b82f37;
+    border-bottom-color: #b82f37;
 }
 
 button.update:active, button.invalid:active {
@@ -112,12 +97,12 @@ switch {
 
 treeview.view check:checked,
 switch:checked {
-    background-color: #13181C;
+    background-color: #b82f37;
 }
 
 entry {
     background-color: rgba(0,0,0,0.25);
-    border-color: #13181C;
+    border-color: #b82f37;
     margin-right: 5;
 }
 
@@ -142,7 +127,7 @@ trough {
 }
 
 trough highlight, trough progress {
-    background-color: #3584e4;
+    background-color: #b82f37;
     color: white;
     border-color: black;
 }
@@ -179,16 +164,21 @@ textview .time {
 
 .dialog button:nth-child(1) {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #A7E100;
+    border-bottom-color: #42b82f;
 }
 
 .dialog button:nth-child(2) {
     background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #981E1F;
+    border-bottom-color: #b82f37;
+}
+
+.dialog button:active {
+    background-color: #b82f37;
+    border-bottom-color: #b82f37;
 }
 
 .distbutton_active {
-    background-color: #324A5E;
+    background-color: #b82f37;
 }
 
 .distbutton_top {
