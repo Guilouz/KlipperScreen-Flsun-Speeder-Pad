@@ -20,7 +20,8 @@ class Panel(ScreenPanel):
         self.update_timeout = None
         self.network_interfaces = netifaces.interfaces()
         self.wireless_interfaces = [
-            iface for iface in self.network_interfaces if iface.startswith('w') and not iface.startswith('wwan')
+            iface for iface in self.network_interfaces
+            if iface.startswith('wlan') or iface.startswith('wlp')
         ]
         self.wifi = None
         self.use_network_manager = os.system('systemctl is-active --quiet NetworkManager.service') == 0
@@ -32,7 +33,7 @@ class Panel(ScreenPanel):
             else:
                 logging.info("Using wpa_cli")
                 from ks_includes.wifi import WifiManager
-            self.wifi = WifiManager(self.wireless_interfaces[-1])
+            self.wifi = WifiManager(self.wireless_interfaces[0])
 
         # Get IP Address
         gws = netifaces.gateways()
@@ -398,10 +399,35 @@ class Panel(ScreenPanel):
         if "channel" in netinfo:
             chan = _("Channel") + f' {netinfo["channel"]}'
         if "signal_level_dBm" in netinfo:
-            lvl = f'{netinfo["signal_level_dBm"]} ' + _("dBm")
+            lvl = f'{netinfo["signal_level_dBm"]} '
+            if self.use_network_manager:
+                lvl += '%'
+            else:
+                lvl += _("dBm")
+            icon = self.signal_strength(int(netinfo["signal_level_dBm"]))
+            if 'icon' not in self.labels['networks'][ssid]:
+                self.labels['networks'][ssid]['row'].add(icon)
+                self.labels['networks'][ssid]['row'].reorder_child(icon, 0)
+                self.labels['networks'][ssid]['icon'] = icon
+            self.labels['networks'][ssid]['icon'] = icon
 
         self.labels['networks'][ssid]['info'].set_markup(f"{info} <small>{encr}  {freq}  {chan}  {lvl}</small>")
-        self.labels['networks'][ssid]['info'].show_all()
+        self.labels['networks'][ssid]['row'].show_all()
+
+    def signal_strength(self, signal_level):
+        # networkmanager uses percentage not dbm
+        # the bars of nmcli are aligned near this breakpoints
+        exc = 77 if self.use_network_manager else -50
+        good = 60 if self.use_network_manager else -60
+        fair = 35 if self.use_network_manager else -70
+        if signal_level > exc:
+            return self._gtk.Image('wifi_excellent')
+        elif signal_level > good:
+            return self._gtk.Image('wifi_good')
+        elif signal_level > fair:
+            return self._gtk.Image('wifi_fair')
+        else:
+            return self._gtk.Image('wifi_weak')
 
     def update_single_network_info(self):
 
