@@ -346,6 +346,10 @@ trough {
 }
 
 .heater-grid-temp {
+    min-width: 5.5em;
+}
+
+.heater-grid-temp-power {
     min-width: 8em;
 }
 
