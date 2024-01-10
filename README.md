@@ -35,11 +35,22 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
 ```
 git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
-cd ~/KlipperScreen
-./scripts/KlipperScreen-install.sh
 ```
+```
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
+```
+
 Note: Installation may take several minutes.
+
+> [!WARNING]
+> If you have an issue when installing KlipperScreen, use this command:
+
+```
+./KlipperScreen/scripts/KlipperScreen-install-fix.sh
+```
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
 - Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
