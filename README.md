@@ -82,9 +82,10 @@ managed_services: KlipperScreen
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone https://github.com/KlipperScreen/KlipperScreen.git
-cd ~/KlipperScreen
-./scripts/KlipperScreen-install.sh
+cd ~ && git clone https://github.com/KlipperScreen/KlipperScreen.git
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
 ```
 Note: Installation may take several minutes.
 
