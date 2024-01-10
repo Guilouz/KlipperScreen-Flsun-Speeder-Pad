@@ -34,10 +34,10 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 ```
 ```
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
 ```
 ```
 ./KlipperScreen/scripts/KlipperScreen-install.sh
