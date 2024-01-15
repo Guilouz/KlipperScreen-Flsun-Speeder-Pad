@@ -1,176 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: KlipperScreen\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: \n"
-"Last-Translator: pappicio\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"PO-Revision-Date: 2024-01-08 12:06+0000\n"
+"Last-Translator: Riccardo Babetto <riccardobabetto@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/klipperscreen/"
+"klipperscreen/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the event of an "
-"incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine Tuning' "
-"button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, and then "
-"moving the nozzle to different Z heights until one feels a small amount of friction when "
-"pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -183,7 +25,7 @@ msgid "24 Hour Time"
 msgstr "24 ore"
 
 msgid "A FIRMWARE_RESTART may fix the issue."
-msgstr "un FIRMWARE_RESTART potrebbe risolvere il problema."
+msgstr "Un FIRMWARE_RESTART potrebbe risolvere il problema."
 
 msgid "ADXL Not Configured"
 msgstr "ADXL non configurato"
@@ -351,6 +193,9 @@ msgstr "Vuoi ripristinare %s?"
 msgid "Elapsed:"
 msgstr "Trascorso:"
 
+msgid "Ended official support in June 2023"
+msgstr "Supporto ufficiale terminato in giugno 2023"
+
 msgid "Error"
 msgstr "Errore"
 
@@ -499,7 +344,8 @@ msgid "Invert Z"
 msgstr "Inverti Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
-msgstr "Potrebbero volerci più di 5 min. a seconda della potenza del riscaldatore."
+msgstr ""
+"Potrebbero volerci più di 5 min. a seconda della potenza del riscaldatore."
 
 msgid "Klipper Restart"
 msgstr "Riavvio Klipper"
@@ -519,8 +365,14 @@ msgstr "Klipper sta tentando di avviarsi"
 msgid "Klipper will reboot"
 msgstr "Klipper si riavvierà"
 
-msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
-msgstr "LOAD_FILAMENT/UNLOAD_FILAMENT sono nascosti e dovrebbero essere usati da estrudere"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr "KlipperScreen rilascerà il supporto in giugno 2024"
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT sono nascosti e dovrebbero essere usati da "
+"estrudere"
 
 msgid "Language"
 msgstr "Lingua"
@@ -545,6 +397,9 @@ msgstr "Limiti"
 
 msgid "Load"
 msgstr "Carica"
+
+msgid "Loading..."
+msgstr "Caricamento..."
 
 msgid "Lower Nozzle"
 msgstr "Abbassa Ugello"
@@ -624,11 +479,30 @@ msgstr "Nuovo"
 msgid "No elegible macros:"
 msgstr "Nessuna macro elegibile:"
 
-msgid "Not supported for auto-detection, it needs to be configured in klipperscreen.conf"
-msgstr "Non supportato per il rilevamento automatico, configurarlo in klipperscreen.conf"
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
+msgid ""
+"Not supported for auto-detection, it needs to be configured in klipperscreen."
+"conf"
+msgstr ""
+"Non supportato per il rilevamento automatico, configurarlo in klipperscreen."
+"conf"
+
+msgid "Not working or not configured"
+msgstr "Non funzionante o non configurato"
 
 msgid "Nothing selected"
 msgstr "Nessuna selezione"
+
+msgid "Notification log empty"
+msgstr "Log notifiche vuoto"
+
+msgid "Notifications"
+msgstr "Notifiche"
 
 #, python-format
 msgid "Outdated by %d"
@@ -854,7 +728,7 @@ msgid "System Shutdown"
 msgstr "Spegnimento Sistema"
 
 msgid "Temp (°C)"
-msgstr "Temp (°C)"
+msgstr "Temperatura (°C)"
 
 msgid "Temperature"
 msgstr "Temperatura"
@@ -866,16 +740,16 @@ msgid "Unknown Heater"
 msgstr "Riscaldatore sconosciuto"
 
 msgid "Unknown screw position"
-msgstr "Posizione Screw sconosciuta"
+msgstr "Posizione vite sconosciuta"
 
 msgid "Unload"
 msgstr "Scarica"
 
 msgid "Unretract Extra Length"
-msgstr "Lunghezza Extra Retrazione"
+msgstr "Lunghezza Extra De-Retrazione"
 
 msgid "Unretract Speed"
-msgstr "Velocità Retrazione"
+msgstr "Velocità De-Retrazione"
 
 msgid "Up To Date"
 msgstr "Aggiornato"
@@ -888,6 +762,12 @@ msgstr "Aggiornamento"
 
 msgid "Uploaded"
 msgstr "Caricato"
+
+msgid "Warning"
+msgstr "Attenzione"
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
 
 msgid "XY Move Speed (mm/s)"
 msgstr "Velocità movimento XY (mm/s)"
@@ -927,7 +807,7 @@ msgid "macros that use 'rename_existing' are hidden"
 msgstr "macro che usano 'rename_existing' sono nascoste"
 
 msgid "macros with a name starting with '_' are hidden"
-msgstr "macros con nome che inzia con '_' sono nascoste"
+msgstr "macro con nome che inzia con '_' sono nascoste"
 
 msgid "minute"
 msgid_plural "minutes"
@@ -945,3 +825,162 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Continue"
+#~ msgstr "Continua"
+
+#~ msgid "Actions"
+#~ msgstr "Azioni"
+
+#~ msgid "Configuration"
+#~ msgstr "Impostazioni"
+
+#~ msgid "Homing"
+#~ msgstr "Homing"
+
+#~ msgid "Disable XY"
+#~ msgstr "Disab. XY"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "Correzione tempi Slicer (%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "Calibrato, salva la configurazione per renderla permanente"
+
+#~ msgid "Decrease"
+#~ msgstr "Diminuisci"
+
+#~ msgid "Increase"
+#~ msgstr "Incrementa"
+
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "Invio del segnale di accensione a: %s"
+
+#~ msgid "Sort:"
+#~ msgstr "Ordinare:"
+
+#~ msgid "Calibrating..."
+#~ msgstr "Calibrazione..."
+
+#~ msgid "Z+"
+#~ msgstr "Z+"
+
+#~ msgid "Z-"
+#~ msgstr "Z-"
+
+#~ msgid "X+"
+#~ msgstr "X+"
+
+#~ msgid "X-"
+#~ msgstr "X-"
+
+#~ msgid "Y+"
+#~ msgstr "Y+"
+
+#~ msgid "Y-"
+#~ msgstr "Y-"
+
+#~ msgid "Retry #%s"
+#~ msgstr "Riprova #%s"
+
+#~ msgid "Add Printer"
+#~ msgstr "Aggiungi Stampante"
+
+#~ msgid "Initializing"
+#~ msgstr "Inizializzo"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Off"
+#~ msgstr "Off"
+
+#~ msgid "View Mesh"
+#~ msgstr "Visual. Mesh"
+
+#~ msgid "Sort by: "
+#~ msgstr "Ordina: "
+
+#~ msgid "Bltouch found applied offset"
+#~ msgstr "Bltouch ha trovato l'offset applicato"
+
+#~ msgid ""
+#~ "Check /tmp/KlipperScreen.log for more information.\n"
+#~ "Please submit an issue on GitHub for help."
+#~ msgstr ""
+#~ "Verifica /tmp/KlipperScreen.log per info.\n"
+#~ "Aggiungi un problema sul GitHub."
+
+#~ msgid "Probe found applied offset"
+#~ msgstr "Probe ha trovato l'offset applicato"
+
+#~ msgid "Tool"
+#~ msgstr "Strumenti"
+
+#~ msgid "Displayed Macros"
+#~ msgstr "Mostra/Nascondi Macros"
+
+#~ msgid "Z Position"
+#~ msgstr "Posizione Z"
+
+#~ msgid "IPv4"
+#~ msgstr "IPv4"
+
+#~ msgid "IPv6"
+#~ msgstr "IPv6"
+
+#~ msgid "Disconnect"
+#~ msgstr "Sconnetti"
+
+#~ msgid "Duration Only"
+#~ msgstr "Solo Durata"
+
+#~ msgid "Klipper Version"
+#~ msgstr "Versione Klipper"
+
+#~ msgid ""
+#~ "Klipper has encountered an error with the micro-controller.\n"
+#~ "Please recompile and flash."
+#~ msgstr ""
+#~ "Klipper ha riscontrato un errore con il microcontrollore.\n"
+#~ "Ricompila e flasha."
+
+#~ msgid ""
+#~ "Klipper has encountered an error.\n"
+#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
+#~ msgstr ""
+#~ "Klipper ha riscontrato un errore.\n"
+#~ "esegui un FIRMWARE_RESTART per tentare di risolvere il problema."
+
+#~ msgid "KlipperScreen Version"
+#~ msgstr "Versione KlipperScreen"
+
+#~ msgid "Show Only Heaters in Temp."
+#~ msgstr "Mostra solo riscaldatori in temp."
+
+#~ msgid "Target"
+#~ msgstr "Obiettivo"
+
+#~ msgid "Temp"
+#~ msgstr "Temp"
+
+#~ msgid "Number Pad"
+#~ msgstr "Tastierino"
+
+#~ msgid "Preheat"
+#~ msgstr "Preriscalda"
+
+#~ msgid "Screen will show in less than one second"
+#~ msgstr "Lo schermo verrà visualizzato a breve"
+
+#~ msgid "Medium (default)"
+#~ msgstr "Media (predef.)"
+
+#~ msgid "File Estimation (default)"
+#~ msgstr "Stima file (predef.)"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Change Printer"
+#~ msgstr "Cambia Stampante"

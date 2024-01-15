@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-11-17 02:00+0100\n"
+"PO-Revision-Date: 2024-01-15 15:34+0100\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,22 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.1\n"
-
-msgid "Notifications"
-msgstr "Notifications"
-
-msgid "Last Used"
-msgstr "Dernière utilisation"
-
-msgid "Archived"
-msgstr "Archivé"
-
-msgid "Filter"
-msgstr "Filtre"
-
-msgid "Material"
-msgstr "Matériau"
+"X-Generator: Poedit 3.4.2\n"
 
 msgid "Remaining weight"
 msgstr "Poids restant"
@@ -39,14 +24,8 @@ msgstr "Poids restant"
 msgid "Remaining length"
 msgstr "Longueur restante"
 
-msgid "All"
-msgstr "Tout"
-
 msgid "Configurations"
 msgstr "Configurations"
-
-msgid "Show Scrollbars Arrows"
-msgstr "Afficher les flèches de défilement"
 
 msgid "Touch sound (BigTreeTech Pad7)"
 msgstr "Son des touches (BigTreeTech Pad7)"
@@ -104,51 +83,6 @@ msgstr "Ecran de démarrage"
 
 msgid "Neopixels"
 msgstr "NeoPixels"
-
-msgid "On"
-msgstr "On"
-
-msgid "Blue"
-msgstr "Bleu"
-
-msgid "Red"
-msgstr "Rouge"
-
-msgid "Green"
-msgstr "Vert"
-
-msgid "Yellow"
-msgstr "Jaune"
-
-msgid "Orange"
-msgstr "Orange"
-
-msgid "Violet"
-msgstr "Violet"
-
-msgid "Hotend (All)"
-msgstr "Hotend (Toutes)"
-
-msgid "Hotend (One by One)"
-msgstr "Hotend (1 par 1)"
-
-msgid "Bed (All)"
-msgstr "Plateau (Toutes)"
-
-msgid "Bed (One by One)"
-msgstr "Plateau  (1 par 1)"
-
-msgid "Progress (All)"
-msgstr "Avancée (Toutes)"
-
-msgid "Progress (One by One)"
-msgstr "Avancée (1 par 1)"
-
-msgid "Speed (All)"
-msgstr "Vitesse (Toutes)"
-
-msgid "Speed (One by One)"
-msgstr "Vitesse (1 par 1)"
 
 msgid "Print Status"
 msgstr "Etat d’impression"
@@ -254,6 +188,9 @@ msgstr "Accepter"
 msgid "Add profile"
 msgstr "Ajouter un profil"
 
+msgid "All"
+msgstr "Tout"
+
 msgid "Apply"
 msgstr "Appliquer"
 
@@ -264,6 +201,9 @@ msgstr "Appliquer une compensation de %s%.3f au Endstop ?"
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "Appliquer une compensation de %s%.3f au Z-Offset du palpeur ?"
+
+msgid "Archived"
+msgstr "Archivé"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Êtes-vous sûr de vouloir exclure l’objet ?"
@@ -293,7 +233,7 @@ msgid "Auto-close notifications"
 msgstr "Fermeture automatique des notifications"
 
 msgid "Auto-open Extrude On Pause"
-msgstr "Ouverture automatique du menu Extrusion lors d’une pause"
+msgstr "Ouvrir le menu Extrusion lors d’une pause"
 
 msgid "Auto-scroll"
 msgstr ""
@@ -373,6 +313,9 @@ msgstr "Console"
 msgid "Cooldown"
 msgstr "Refroidir"
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr "DPMS n’a pas pu charger et a été désactivé"
+
 msgid "Date"
 msgstr "Date"
 
@@ -395,11 +338,11 @@ msgstr "Distance (mm)"
 msgid "Do you want to recover %s?"
 msgstr "Voulez-vous récupérer %s ?"
 
-msgid "DPMS has failed to load and has been disabled"
-msgstr "DPMS n’a pas pu se charger et a été désactivé"
-
 msgid "Elapsed:"
 msgstr "Écoulé:"
+
+msgid "Ended official support in June 2023"
+msgstr "Fin du support officiel en juin 2023"
 
 msgid "Error"
 msgstr "Erreur"
@@ -445,6 +388,9 @@ msgstr "Fichier"
 
 msgid "File:"
 msgstr "Fichier:"
+
+msgid "Filter"
+msgstr "Filtre"
 
 msgid "Finding ADXL"
 msgstr "Recherche de l’ADXL"
@@ -568,6 +514,9 @@ msgstr "Klipper tente de démarrer"
 msgid "Klipper will reboot"
 msgstr "Klipper va redémarrer"
 
+msgid "KlipperScreen will drop support in June 2024"
+msgstr "KlipperScreen abandonnera son support en juin 2024"
+
 msgid ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
@@ -580,8 +529,14 @@ msgstr "Langue"
 msgid "Large"
 msgstr "Grande"
 
+msgid "Last Used"
+msgstr "Dernière utilisation"
+
 msgid "Layer:"
 msgstr "Couche:"
+
+msgid "Leds"
+msgstr "Leds"
 
 msgid "Left:"
 msgstr "Restant:"
@@ -591,6 +546,9 @@ msgstr "Limites"
 
 msgid "Load"
 msgstr "Charger"
+
+msgid "Loading..."
+msgstr "Chargement..."
 
 msgid "Lower Nozzle"
 msgstr "Rapprocher la buse"
@@ -603,6 +561,9 @@ msgstr "Macros"
 
 msgid "Main Menu"
 msgstr "Menu principal"
+
+msgid "Material"
+msgstr "Matériau"
 
 msgid "Max"
 msgstr "Max"
@@ -667,6 +628,9 @@ msgstr "Nouveau"
 msgid "No elegible macros:"
 msgstr "Aucune macros éligible :"
 
+msgid "No wireless interface has been found"
+msgstr "Aucune interface sans fil n’a été trouvée"
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
@@ -674,8 +638,17 @@ msgstr ""
 "Non pris en charge pour la détection automatique, il doit être configuré "
 "dans klipperscreen.conf"
 
+msgid "Not working or not configured"
+msgstr "Ne fonctionne pas ou n'est pas configurée"
+
 msgid "Nothing selected"
 msgstr "Rien de sélectionné"
+
+msgid "Notification log empty"
+msgstr "Le journal des notifications est vide"
+
+msgid "Notifications"
+msgstr "Notifications"
 
 #, python-format
 msgid "Outdated by %d"
@@ -843,6 +816,9 @@ msgstr "Afficher"
 msgid "Show Heater Power"
 msgstr "Afficher la puissance de chauffe"
 
+msgid "Show Scrollbars Buttons"
+msgstr "Afficher les flèches de défilement"
+
 msgid "Shutdown"
 msgstr "Arrêter"
 
@@ -932,6 +908,12 @@ msgstr "Mise à jour"
 
 msgid "Uploaded"
 msgstr "Envoyé"
+
+msgid "Warning"
+msgstr "Avertissement"
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr "WebRTC n’est pas pris en charge par le flux d’essai du backend"
 
 msgid "XY Move Speed (mm/s)"
 msgstr "Vitesse de déplacement XY (mm/s)"

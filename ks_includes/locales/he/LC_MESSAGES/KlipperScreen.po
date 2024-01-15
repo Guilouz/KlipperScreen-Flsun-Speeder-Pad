@@ -7,177 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Klipperscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 18:57+0200\n"
-"Last-Translator: Emanuel Sharvit <manu7irl@gmail.com>\n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"PO-Revision-Date: 2022-11-30 18:11-0300\n"
+"Last-Translator: Tal Rahav <talrhv1@gmail.com>\n"
 "Language-Team: \n"
-"Language: he_IL\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.2.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
 
 #, python-format
 msgid "%s will be updated to version"
@@ -207,16 +48,22 @@ msgstr "אשר"
 msgid "Add profile"
 msgstr "הוסף פרופיל"
 
+msgid "All"
+msgstr ""
+
 msgid "Apply"
 msgstr "החל"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr "הוסף %s%.3f לתחנת קצה?"
+msgstr ""
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr "הוסף %s%.3f לפרוב (בודק)?"
+msgstr ""
+
+msgid "Archived"
+msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr ""
@@ -244,6 +91,9 @@ msgstr "כיול אוטומטי"
 
 msgid "Auto-close notifications"
 msgstr "סגירת התראות אוטומטית"
+
+msgid "Auto-open Extrude On Pause"
+msgstr ""
 
 msgid "Auto-scroll"
 msgstr "גלילה אוטומטית"
@@ -318,11 +168,11 @@ msgstr "מתחבר ל- %s"
 msgid "Console"
 msgstr "קונסול"
 
-msgid "Continue"
-msgstr "המשך"
-
 msgid "Cooldown"
 msgstr "הפעל קירור"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
 
 msgid "Date"
 msgstr "תאריך"
@@ -348,6 +198,9 @@ msgstr "האם ברצונך לשחזר %s?"
 
 msgid "Elapsed:"
 msgstr "זמן שעבר:"
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "שגיאה"
@@ -394,6 +247,9 @@ msgstr "קובץ"
 msgid "File:"
 msgstr ""
 
+msgid "Filter"
+msgstr ""
+
 msgid "Finding ADXL"
 msgstr "מחפש ADXL"
 
@@ -417,9 +273,6 @@ msgstr "גודל טקסט"
 
 msgid "Full Update"
 msgstr "עדכון מלא"
-
-msgid "Fullscreen"
-msgstr ""
 
 msgid "Go Back"
 msgstr "חזרה"
@@ -463,6 +316,9 @@ msgstr "שרת"
 msgid "Hostname"
 msgstr "שם שרת"
 
+msgid "ID"
+msgstr ""
+
 msgid "Icon Theme"
 msgstr "ערכת נושא"
 
@@ -497,7 +353,7 @@ msgid "It may take more than 5 minutes depending on the heater power."
 msgstr ""
 
 msgid "Klipper Restart"
-msgstr "אתחול קליפר"
+msgstr "Klipper יאתחל מחדש"
 
 msgid "Klipper has disconnected"
 msgstr "קליפר התנתק"
@@ -514,7 +370,11 @@ msgstr "קליפר מנסה לעלות"
 msgid "Klipper will reboot"
 msgstr "קליפר יבצע אתחול"
 
-msgid "KlipperScreen will reboot"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
 
 msgid "Language"
@@ -523,8 +383,14 @@ msgstr "שפה"
 msgid "Large"
 msgstr "גדול"
 
+msgid "Last Used"
+msgstr ""
+
 msgid "Layer:"
 msgstr "שכבה"
+
+msgid "Leds"
+msgstr ""
 
 msgid "Left:"
 msgstr "זמן שנותר:"
@@ -534,6 +400,9 @@ msgstr "גבולות"
 
 msgid "Load"
 msgstr "טעינה"
+
+msgid "Loading..."
+msgstr ""
 
 msgid "Lower Nozzle"
 msgstr "הנמך דיזה"
@@ -546,6 +415,9 @@ msgstr "מקרואים"
 
 msgid "Main Menu"
 msgstr "תפריט ראשי"
+
+msgid "Material"
+msgstr ""
 
 msgid "Max"
 msgstr "מקסימום"
@@ -607,13 +479,31 @@ msgstr ""
 msgid "New"
 msgstr "חדש"
 
+msgid "No elegible macros:"
+msgstr ""
+
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr "איתור אוטומטי אינו נתמך, זה צריך להיות מוגדר ב klipperscreen"
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "שום דבר לא נבחר"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -696,7 +586,7 @@ msgid "Raise Nozzle"
 msgstr "הגבה דיזה"
 
 msgid "Recover"
-msgstr ""
+msgstr "שחזור"
 
 msgid "Recover Hard"
 msgstr "שחזור מלא"
@@ -783,6 +673,9 @@ msgstr "הצג"
 msgid "Show Heater Power"
 msgstr "הצג זרם מיטה"
 
+msgid "Show Scrollbars Buttons"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "כיבוי"
 
@@ -812,6 +705,9 @@ msgstr "מהירות"
 
 msgid "Square Corner Velocity"
 msgstr "מהירות פינה מרובעת"
+
+msgid "Standby"
+msgstr ""
 
 msgid "Start"
 msgstr "התחל"
@@ -870,6 +766,12 @@ msgstr "מעדכן"
 msgid "Uploaded"
 msgstr "הועלה"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "מהירות תנועה XY (מ\"מ/שנייה)"
 
@@ -908,6 +810,12 @@ msgstr[1] "שעות"
 msgstr[2] "שעות"
 msgstr[3] "שעות"
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
+
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
@@ -925,4 +833,222 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr "mm³/s"
+msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "המשך"
+
+#~ msgid "Actions"
+#~ msgstr "פעולות"
+
+#~ msgid "Configuration"
+#~ msgstr "קונפיגורציה"
+
+#~ msgid "Homing"
+#~ msgstr "איפוס צירים"
+
+#~ msgid "Disable XY"
+#~ msgstr "השבת את XY"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "תיקון זמן פריסה (%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "מכויל, שמור את התצורה כדי שהיא תהיה קבועה"
+
+#~ msgid "Decrease"
+#~ msgstr "הורד"
+
+#~ msgid "Increase"
+#~ msgstr "הגדל"
+
+#, python-format
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "שולח אות הפעלה אל: %s"
+
+#~ msgid "Sort:"
+#~ msgstr "מיין"
+
+#~ msgid "Calibrating..."
+#~ msgstr "מכייל..."
+
+#~ msgid "Z+"
+#~ msgstr "Z+"
+
+#~ msgid "Z-"
+#~ msgstr "Z-"
+
+#~ msgid "X+"
+#~ msgstr "X+"
+
+#~ msgid "X-"
+#~ msgstr "X-"
+
+#~ msgid "Y+"
+#~ msgstr "Y+"
+
+#~ msgid "Y-"
+#~ msgstr "Y-"
+
+#, python-format
+#~ msgid "Retry #%s"
+#~ msgstr "נסה שוב #%s"
+
+#~ msgid "Add Printer"
+#~ msgstr "הוסף מדפסת"
+
+#~ msgid "Initializing"
+#~ msgstr "מאתחל"
+
+#~ msgid "Delete"
+#~ msgstr "מחק"
+
+#~ msgid "Off"
+#~ msgstr "כבוי"
+
+#~ msgid "View Mesh"
+#~ msgstr "צפה ברשת"
+
+#~ msgid "Machine"
+#~ msgstr "מכונה"
+
+#~ msgid "Manual Calibration"
+#~ msgstr "כיול ידני"
+
+#~ msgid "Auto Calibration"
+#~ msgstr "כיול אוטומטי"
+
+#~ msgid "Sort by: "
+#~ msgstr "מיין לפי: "
+
+#~ msgid "Bltouch found applied offset"
+#~ msgstr "Bltouch נמצא היסט מוחל"
+
+#~ msgid ""
+#~ "Check /tmp/KlipperScreen.log for more information.\n"
+#~ "Please submit an issue on GitHub for help."
+#~ msgstr ""
+#~ "בדוק KlipperScreen.log, בתיקית tmp ליותר פרטים.\n"
+#~ "אנא שלח דוח תקלה ב- GITHUB, לעזרה."
+
+#~ msgid "Probe found applied offset"
+#~ msgstr "Probe נמצא היסט מוחל"
+
+#~ msgid "Tool"
+#~ msgstr "כלי"
+
+#~ msgid "Displayed Macros"
+#~ msgstr "מוצגים מאקרו"
+
+#~ msgid "Z Position"
+#~ msgstr "מיקום Z"
+
+#~ msgid "IPv4"
+#~ msgstr "IPv4"
+
+#~ msgid "IPv6"
+#~ msgstr "IPv6"
+
+#~ msgid "Unknown Heater "
+#~ msgstr "מחמם לא ידוע "
+
+#~ msgid "Disconnect"
+#~ msgstr "לְנַתֵק"
+
+#~ msgid "Duration Only"
+#~ msgstr "משך הזמן בלבד"
+
+#~ msgid "Klipper Version"
+#~ msgstr "גרסא של קליפר"
+
+#~ msgid ""
+#~ "Klipper has encountered an error with the micro-controller.\n"
+#~ "Please recompile and flash."
+#~ msgstr ""
+#~ "קליפר נתקל בשגיאה בבקר המיקרו.\n"
+#~ "אנא הידור מחדש והבהב."
+
+#~ msgid ""
+#~ "Klipper has encountered an error.\n"
+#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
+#~ msgstr ""
+#~ "קליפר נתקל בבעיה. \n"
+#~ "נסה להריץ firmware_restart, כדי לפתור את הבעיה."
+
+#~ msgid "KlipperScreen Version"
+#~ msgstr "גרסא של KlipperScreen"
+
+#~ msgid "Show Only Heaters in Temp."
+#~ msgstr "הצג רק מחממים בטמפ'."
+
+#~ msgid "Target"
+#~ msgstr "יַעַד"
+
+#~ msgid "Temp"
+#~ msgstr "טמפ'"
+
+#~ msgid "Number Pad"
+#~ msgstr "פד נומרי"
+
+#~ msgid "Preheat"
+#~ msgstr "חימום מראש"
+
+#~ msgid "Screen will show in less than one second"
+#~ msgstr "המסך יופיע תוך פחות משנייה אחת"
+
+#~ msgid "Medium (default)"
+#~ msgstr "בינוני (ברירת מחדל)"
+
+#~ msgid "File Estimation (default)"
+#~ msgstr "קובץ (ברירת מחדל)"
+
+#~ msgid "Fan Off"
+#~ msgstr "כבה מאוורר"
+
+#~ msgid "Fan On"
+#~ msgstr "הפעל מאוורר"
+
+#~ msgid "Fast"
+#~ msgstr "מהיר"
+
+#~ msgid "Slow"
+#~ msgstr "האט"
+
+#~ msgid "?"
+#~ msgstr "?"
+
+#~ msgid "Cancel Change"
+#~ msgstr "בטל שינוי"
+
+#~ msgid "Control"
+#~ msgstr "שליטה"
+
+#~ msgid "Load Average"
+#~ msgstr "עומס ממוצע"
+
+#~ msgid "Network Info"
+#~ msgstr "מידע על הרשת"
+
+#~ msgid "Back"
+#~ msgstr "חזור"
+
+#~ msgid "Extrusion"
+#~ msgstr "שיחול"
+
+#~ msgid "Fan +"
+#~ msgstr "מאוורר +"
+
+#~ msgid "Fan -"
+#~ msgstr "מאוורר -"
+
+#~ msgid "System Information"
+#~ msgstr "מידע אודות המערכת"
+
+#~ msgid "Time Elapsed"
+#~ msgstr "זמן שעבר"
+
+#~ msgid "Time Left"
+#~ msgstr "זמן שנשאר"
+
+#~ msgid "Tool 1"
+#~ msgstr "כלי 1"

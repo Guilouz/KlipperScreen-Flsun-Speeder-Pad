@@ -24,11 +24,9 @@ class Panel(ScreenPanel):
         self.tb = Gtk.TextBuffer(text=self.empty)
         tv = Gtk.TextView(editable=False, cursor_visible=False, wrap_mode=Gtk.WrapMode.WORD_CHAR)
         tv.set_buffer(self.tb)
-        tv.set_editable(False)
+        tv.connect("size-allocate", self._autoscroll)
 
-        scroll = Gtk.ScrolledWindow()
-        scroll.set_hexpand(True)
-        scroll.set_vexpand(True)
+        scroll = Gtk.ScrolledWindow(hexpand=True, vexpand=True)
         scroll.add(tv)
         self.content.add(scroll)
 

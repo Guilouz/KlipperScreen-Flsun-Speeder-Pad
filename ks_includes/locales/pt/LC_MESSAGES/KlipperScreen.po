@@ -1,7 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Brazilian Portuguese translation improved by
 # Rafael Neuwirth Swierczynski (born and raised in Brazil),
@@ -11,175 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-03 19:01+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"PO-Revision-Date: 2024-01-06 09:08+0000\n"
+"Last-Translator: Henrique Magarotto <magarotto@gmail.com>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/klipperscreen/"
+"klipperscreen/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -209,16 +47,22 @@ msgstr "Aceitar"
 msgid "Add profile"
 msgstr "Adicionar perfil"
 
+msgid "All"
+msgstr "Todos"
+
 msgid "Apply"
 msgstr "Aplicar"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr ""
+msgstr "Aplicar %s%.3f offset no Endstop?"
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr ""
+msgstr "Aplicar %s%.3f offset no Probe?"
+
+msgid "Archived"
+msgstr "Arquivado"
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Tem certeza de que deseja excluir o objeto?"
@@ -245,16 +89,19 @@ msgid "Auto-calibrate"
 msgstr "Calibrar automaticamente"
 
 msgid "Auto-close notifications"
-msgstr "Notificações de fechamento automático"
+msgstr "Fechar notificações autom."
+
+msgid "Auto-open Extrude On Pause"
+msgstr "Abrir Ext. automaticamente em Pausa"
 
 msgid "Auto-scroll"
-msgstr "Auto-scroll"
+msgstr "Acompanhar Conteúdo"
 
 msgid "Bed Level"
 msgstr "Nível da Mesa"
 
 msgid "Bed Mesh"
-msgstr "Nivelamento da Mesa"
+msgstr "Nivelamento"
 
 msgid "Bed screw configuration:"
 msgstr "Configuração da Porca de Mesa:"
@@ -269,7 +116,7 @@ msgid "Calibrating"
 msgstr "Calibrando"
 
 msgid "Camera"
-msgstr ""
+msgstr "Câmera"
 
 msgid "Can't set above the maximum:"
 msgstr "Não é possível definir o Máximo:"
@@ -308,7 +155,7 @@ msgid "Complete"
 msgstr "Completado"
 
 msgid "Confirm Emergency Stop"
-msgstr "Etapa extra ao Parar com Emergência"
+msgstr "Confirmação ao Parar com Emergência"
 
 msgid "Connected"
 msgstr "Conectado"
@@ -320,17 +167,17 @@ msgstr "Conectando %s"
 msgid "Console"
 msgstr "Terminal"
 
-msgid "Continue"
-msgstr "Continuar"
-
 msgid "Cooldown"
 msgstr "Resfriar"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr "Gerenciador de economia de energia não disponível"
 
 msgid "Date"
 msgstr "Data"
 
 msgid "Delete Directory?"
-msgstr ""
+msgstr "Deletar diretório?"
 
 msgid "Delete File?"
 msgstr "Excluir Arquivo?"
@@ -350,6 +197,9 @@ msgstr "Deseja recuperar %s?"
 
 msgid "Elapsed:"
 msgstr "Tempo Corrido:"
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "Erro"
@@ -396,6 +246,9 @@ msgstr "Arquivo"
 msgid "File:"
 msgstr "Arquivo:"
 
+msgid "Filter"
+msgstr "Filtro"
+
 msgid "Finding ADXL"
 msgstr "Encontrar ADXL"
 
@@ -420,9 +273,6 @@ msgstr "Tamanho da fonte"
 msgid "Full Update"
 msgstr "Atualizar Tudo"
 
-msgid "Fullscreen"
-msgstr ""
-
 msgid "Go Back"
 msgstr "Voltar"
 
@@ -439,7 +289,7 @@ msgid "Hide sensors in Temp."
 msgstr "Ocultar sensores na Temperatura."
 
 msgid "Hide temp."
-msgstr "Ocultar temperatura"
+msgstr "Ocultar Temp."
 
 msgid "Home"
 msgstr "Zerar"
@@ -465,6 +315,9 @@ msgstr "Host"
 msgid "Hostname"
 msgstr "Nome do Host"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "Icon Theme"
 msgstr "Tema"
 
@@ -472,10 +325,10 @@ msgid "Initializing printer..."
 msgstr "Inicializando Impressora..."
 
 msgid "Initiate a PID calibration for:"
-msgstr ""
+msgstr "Iniciar calibração do PID para:"
 
 msgid "Input Shaper"
-msgstr ""
+msgstr "Moldagem Assistiva"
 
 msgid "Interface"
 msgstr "Interface"
@@ -497,6 +350,7 @@ msgstr "Inverter Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr ""
+"Isso pode levar mais que 5 minutos dependendo da potencia do aquecedor."
 
 msgid "Klipper Restart"
 msgstr "Reiniciar Klipper"
@@ -516,8 +370,12 @@ msgstr "Klipper está iniciando"
 msgid "Klipper will reboot"
 msgstr "Klipper será reiniciado"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen será reiniciado"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
 
 msgid "Language"
 msgstr "Idioma"
@@ -525,8 +383,14 @@ msgstr "Idioma"
 msgid "Large"
 msgstr "Grande"
 
+msgid "Last Used"
+msgstr "Último Usado"
+
 msgid "Layer:"
 msgstr "Camada:"
+
+msgid "Leds"
+msgstr "Luzes"
 
 msgid "Left:"
 msgstr "Restante:"
@@ -537,17 +401,23 @@ msgstr "Limites"
 msgid "Load"
 msgstr "Carregar"
 
+msgid "Loading..."
+msgstr ""
+
 msgid "Lower Nozzle"
-msgstr "Descer o Bico"
+msgstr "Descer Extrusor"
 
 msgid "Macro shortcut on sidebar"
-msgstr "Macro na barra lateral"
+msgstr "Atalho dedicado para Macros"
 
 msgid "Macros"
 msgstr "Macros"
 
 msgid "Main Menu"
-msgstr "Menu principal"
+msgstr "Menu Principal"
+
+msgid "Material"
+msgstr "Material"
 
 msgid "Max"
 msgstr "Max"
@@ -589,13 +459,13 @@ msgid "Moonraker: connected"
 msgstr "Moonraker: Conectado"
 
 msgid "More"
-msgstr ""
+msgstr "Extras"
 
 msgid "Move"
 msgstr "Mover"
 
 msgid "Move Distance (mm)"
-msgstr "Distancia do movimento (mm)"
+msgstr "Distancia de movimento (mm)"
 
 msgid "Name"
 msgstr "Nome"
@@ -609,6 +479,15 @@ msgstr "Nunca"
 msgid "New"
 msgstr "Novo"
 
+msgid "No elegible macros:"
+msgstr "Sem macros elegíveis:"
+
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
@@ -616,8 +495,17 @@ msgstr ""
 "Não é compatível com detecção automática, precisa ser configurado no "
 "klipperscreen.conf"
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "Nada selecionado"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr "Notificações"
 
 #, python-format
 msgid "Outdated by %d"
@@ -647,7 +535,7 @@ msgid "Perform a full upgrade?"
 msgstr "Realizar uma Atualização Completa?"
 
 msgid "Pins"
-msgstr "Pinos"
+msgstr "Conectores"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Por favor, recompile e atualize o microcontrolador."
@@ -689,13 +577,13 @@ msgid "Profile Name:"
 msgstr "Nome do Perfil:"
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "Forneça um Log do KlipperScreen ao pedir ajuda.\n"
+msgstr "Forneça o KlipperScreen.log quando pedir ajuda.\n"
 
 msgid "Quad Gantry Level"
 msgstr "Nível do pórtico quádruplo"
 
 msgid "Raise Nozzle"
-msgstr "Elevar o Bico"
+msgstr "Elevar Extrusor"
 
 msgid "Recover"
 msgstr "Recuperar"
@@ -713,7 +601,7 @@ msgid "Refresh"
 msgstr "Recarregar"
 
 msgid "Rename/Move:"
-msgstr ""
+msgstr "Renomear/Mover:"
 
 msgid "Restart"
 msgstr "Reiniciar"
@@ -743,7 +631,7 @@ msgid "Save"
 msgstr "Salvar"
 
 msgid "Save Config"
-msgstr "Salvar Configuração"
+msgstr "Salvar Config."
 
 msgid "Save Z"
 msgstr "Salvar Eixo Z"
@@ -752,17 +640,17 @@ msgid "Save configuration?"
 msgstr "Salvar configuração?"
 
 msgid "Saved"
-msgstr "Salvou"
+msgstr "Salvo"
 
 #, python-format
 msgid "Saved offset: %s"
 msgstr "Deslocamento salvo: %s"
 
 msgid "Screen DPMS"
-msgstr "Tela DPMS"
+msgstr "DPMS na Tela"
 
 msgid "Screen Power Off Time"
-msgstr "Tempo de desligamento da tela"
+msgstr "Descanso de Tela"
 
 msgid "Screws Adjust"
 msgstr "Nivelamento Manual"
@@ -783,7 +671,10 @@ msgid "Show"
 msgstr "Mostrar"
 
 msgid "Show Heater Power"
-msgstr "Mostrar Potência do Aquecedor"
+msgstr "Exibir Potência do Aquecedor"
+
+msgid "Show Scrollbars Buttons"
+msgstr "Botões auxiliares de Rolagem"
 
 msgid "Shutdown"
 msgstr "Desligar"
@@ -815,6 +706,9 @@ msgstr "Velocidade:"
 msgid "Square Corner Velocity"
 msgstr "Velocidade do Canto Reto"
 
+msgid "Standby"
+msgstr "Repouso"
+
 msgid "Start"
 msgstr "Iniciar"
 
@@ -831,10 +725,10 @@ msgid "System"
 msgstr "Sistema"
 
 msgid "System Restart"
-msgstr "Reinicialização do sistema"
+msgstr "Reiniciar Sistema"
 
 msgid "System Shutdown"
-msgstr "Desligamento do sistema"
+msgstr "Desligar Sistema"
 
 msgid "Temp (°C)"
 msgstr "Temp (°C)"
@@ -872,6 +766,12 @@ msgstr "Atualizando"
 msgid "Uploaded"
 msgstr "Carregado"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "Velocidade de Movimento XY (mm/s)"
 
@@ -906,10 +806,16 @@ msgid_plural "hours"
 msgstr[0] "hora"
 msgstr[1] "horas"
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr "macros que usam 'rename_existing' são ocultos"
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr "macros que iniciam com '_' são ocultos"
+
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minuto"
+msgstr[1] "minutos"
 
 msgid "mm"
 msgstr "mm"
@@ -921,4 +827,47 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr "mm³/s"
+msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "Continuar"
+
+#~ msgid "Actions"
+#~ msgstr "Ações"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuração"
+
+#~ msgid "Homing"
+#~ msgstr "Zerar"
+
+#~ msgid "Disable XY"
+#~ msgstr "Desabilitar YX"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "Correção do tempo do fatiador (%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "Calibrado, use o comando para salvar"
+
+#~ msgid "Decrease"
+#~ msgstr "Diminuir"
+
+#~ msgid "Filament"
+#~ msgstr "Filamento"
+
+#~ msgid "Feeder"
+#~ msgstr "Alimentador"
+
+#~ msgid "Increase"
+#~ msgstr "Aumentar"
+
+#, python-format
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "Enviando sinal de energia para: %s"
+
+#~ msgid "Sort:"
+#~ msgstr "Ordenar:"
+
+#~ msgid "Calibrating..."
+#~ msgstr "Calibrando..."

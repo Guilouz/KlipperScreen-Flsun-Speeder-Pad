@@ -1,182 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Daviteusz <daviteusz0@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: KlipperScreen\n"
+"Project-Id-Version: Polish (KlipperScreen)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-10-25 22:11+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: pl_PL\n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"PO-Revision-Date: 2023-10-23 14:32+0000\n"
+"Last-Translator: Daviteusz <daviteusz0@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/klipperscreen/"
+"klipperscreen/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
-"|| n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.1.1-dev\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -326,9 +164,6 @@ msgstr "Łączenie z %s"
 msgid "Console"
 msgstr "Konsola"
 
-msgid "Continue"
-msgstr "Kontynuuj"
-
 msgid "Cooldown"
 msgstr "Studzenie"
 
@@ -359,6 +194,9 @@ msgstr "Czy chcesz przywrócić sprawność %s?"
 
 msgid "Elapsed:"
 msgstr "Upłynęło:"
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "Błąd"
@@ -528,10 +366,11 @@ msgstr "Klipper próbuje się uruchomić"
 msgid "Klipper will reboot"
 msgstr "Klipper uruchomi się ponownie"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen uruchomi się ponownie"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
 
-msgid "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and shold be used from extrude"
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT są ukryte i powinny być używane z menu "
 "wytłaczania"
@@ -548,6 +387,9 @@ msgstr "Ostatnie użycie"
 msgid "Layer:"
 msgstr "Warstwa:"
 
+msgid "Leds"
+msgstr "Oświetlenie"
+
 msgid "Left:"
 msgstr "Pozostało:"
 
@@ -556,6 +398,9 @@ msgstr "Limity"
 
 msgid "Load"
 msgstr "Ładuj"
+
+msgid "Loading..."
+msgstr ""
 
 msgid "Lower Nozzle"
 msgstr "Obniż dyszę"
@@ -635,6 +480,12 @@ msgstr "Nowe"
 msgid "No elegible macros:"
 msgstr "Brak odpowiednich makr:"
 
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
@@ -642,8 +493,17 @@ msgstr ""
 "Nieobsługiwany do automatycznego wykrywania, musi być skonfigurowany w pliku "
 "klipperscreen.conf"
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "Nic nie wybrano"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -905,6 +765,12 @@ msgstr "Aktualizowanie"
 msgid "Uploaded"
 msgstr "Przesłane"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "Prędkość ruchu XY (mm/s)"
 
@@ -964,3 +830,24 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Continue"
+#~ msgstr "Kontynuuj"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Pełny ekran"
+
+#~ msgid "Actions"
+#~ msgstr "Akcje"
+
+#~ msgid "Configuration"
+#~ msgstr "Konfiguracja"
+
+#~ msgid "Homing"
+#~ msgstr "Bazowanie"
+
+#~ msgid "Disable XY"
+#~ msgstr "Wyłącz XY"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "Korekta czasu Slicera (%)"

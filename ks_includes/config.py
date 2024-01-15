@@ -276,11 +276,11 @@ class KlipperScreenConfig:
                                   "value": "True"}},
             {"show_heater_power": {"section": "main", "name": _("Show Heater Power"), "type": "binary",
                                    "value": "False", "callback": screen.reload_panels}},
-            # Start Changes
-            {"show_scroll_steppers": {"section": "main", "name": _("Show Scrollbars Arrows"), "type": "binary",
+            {"show_scroll_steppers": {"section": "main", "name": _("Show Scrollbars Buttons"), "type": "binary",
                                       "value": "False", "callback": screen.reload_panels}},
             {"auto_open_extrude": {"section": "main", "name": _("Auto-open Extrude On Pause"), "type": "binary",
                                    "value": "True", "callback": screen.reload_panels}},
+            # Start Changes
             {"touch_sound": {"section": "main", "name": _("Touch sound (BigTreeTech Pad7)"), "type": "binary",
                                    "value": "False", "callback": screen.restart_ks}},
             # End Changes

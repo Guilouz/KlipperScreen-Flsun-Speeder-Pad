@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: boyon\n"
 "Language-Team: \n"
@@ -11,166 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"X-Generator: Poedit 3.2.1\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -200,16 +41,22 @@ msgstr "承諾する"
 msgid "Add profile"
 msgstr "プロファイルの追加"
 
+msgid "All"
+msgstr ""
+
 msgid "Apply"
 msgstr "適用する"
 
 #, python-format
 msgid "Apply %s%.3f offset to Endstop?"
-msgstr "エンドストップにオフセットに  %s%.3f を適用しますか？"
+msgstr ""
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
-msgstr "プローブオフセットに  %s%.3f を適用しますか？"
+msgstr ""
+
+msgid "Archived"
+msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "対象を除外しますか？"
@@ -237,6 +84,9 @@ msgstr "自動校正"
 
 msgid "Auto-close notifications"
 msgstr "自動終了通知"
+
+msgid "Auto-open Extrude On Pause"
+msgstr ""
 
 msgid "Auto-scroll"
 msgstr "自動スクロール"
@@ -311,11 +161,11 @@ msgstr "%s へ接続中・・・"
 msgid "Console"
 msgstr "コンソール"
 
-msgid "Continue"
-msgstr "継続"
-
 msgid "Cooldown"
 msgstr "クールダウン"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
 
 msgid "Date"
 msgstr "日付"
@@ -341,6 +191,9 @@ msgstr "元に戻しますか %s ？"
 
 msgid "Elapsed:"
 msgstr "経過時間:"
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "エラー"
@@ -387,6 +240,9 @@ msgstr "ファイル"
 msgid "File:"
 msgstr "ファイル:"
 
+msgid "Filter"
+msgstr ""
+
 msgid "Finding ADXL"
 msgstr "ADXLを検索中"
 
@@ -411,9 +267,6 @@ msgstr "フォントサイズ"
 msgid "Full Update"
 msgstr "フルアップデート"
 
-msgid "Fullscreen"
-msgstr ""
-
 msgid "Go Back"
 msgstr "戻る"
 
@@ -433,7 +286,7 @@ msgid "Hide temp."
 msgstr "温度を非表示にする"
 
 msgid "Home"
-msgstr "Home"
+msgstr ""
 
 msgid "Home All"
 msgstr ""
@@ -455,6 +308,9 @@ msgstr ""
 
 msgid "Hostname"
 msgstr "Hostname"
+
+msgid "ID"
+msgstr ""
 
 msgid "Icon Theme"
 msgstr "アイコンテーマ"
@@ -507,8 +363,12 @@ msgstr "Klipperは起動中です"
 msgid "Klipper will reboot"
 msgstr "Klipperは再起動します"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreenは再起動します"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
 
 msgid "Language"
 msgstr "言語"
@@ -516,8 +376,14 @@ msgstr "言語"
 msgid "Large"
 msgstr "大"
 
+msgid "Last Used"
+msgstr ""
+
 msgid "Layer:"
 msgstr "レイヤー:"
+
+msgid "Leds"
+msgstr ""
 
 msgid "Left:"
 msgstr "左:"
@@ -526,6 +392,9 @@ msgid "Limits"
 msgstr "制限"
 
 msgid "Load"
+msgstr ""
+
+msgid "Loading..."
 msgstr ""
 
 msgid "Lower Nozzle"
@@ -539,6 +408,9 @@ msgstr "マクロ"
 
 msgid "Main Menu"
 msgstr "メインメニュー"
+
+msgid "Material"
+msgstr ""
 
 msgid "Max"
 msgstr "最大"
@@ -600,13 +472,31 @@ msgstr "未"
 msgid "New"
 msgstr "新"
 
+msgid "No elegible macros:"
+msgstr ""
+
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "未選択"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -773,6 +663,9 @@ msgstr "表示"
 msgid "Show Heater Power"
 msgstr ""
 
+msgid "Show Scrollbars Buttons"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "シャットダウン"
 
@@ -802,6 +695,9 @@ msgstr ""
 
 msgid "Square Corner Velocity"
 msgstr "四隅の速度"
+
+msgid "Standby"
+msgstr ""
 
 msgid "Start"
 msgstr "開始"
@@ -860,6 +756,12 @@ msgstr "更新中"
 msgid "Uploaded"
 msgstr "アップロード済"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "XY移動速度 (mm/s)"
 
@@ -892,6 +794,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
+
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
@@ -907,3 +815,34 @@ msgstr ""
 
 msgid "mm³/s"
 msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "継続"
+
+#~ msgid "Actions"
+#~ msgstr "操作"
+
+#~ msgid "Configuration"
+#~ msgstr "設定"
+
+#~ msgid "Homing"
+#~ msgstr "Homing"
+
+#~ msgid "Disable XY"
+#~ msgstr "XY軸制御の無効化"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "スライサーの補正時間(%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr ""
+#~ "校正完了しました。次回起動時以降も適用するには設定を保存してください"
+
+#~ msgid "Decrease"
+#~ msgstr "減少"
+
+#~ msgid "Increase"
+#~ msgstr "増加"
+
+#~ msgid "Sort:"
+#~ msgstr "ソート順:"

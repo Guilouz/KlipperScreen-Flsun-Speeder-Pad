@@ -11,22 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
-
-msgid "Notifications"
-msgstr ""
-
-msgid "Last Used"
-msgstr ""
-
-msgid "Archived"
-msgstr ""
-
-msgid "Filter"
-msgstr ""
-
-msgid "Material"
-msgstr ""
+"X-Generator: Poedit 3.4.2\n"
 
 msgid "Remaining weight"
 msgstr ""
@@ -34,13 +19,7 @@ msgstr ""
 msgid "Remaining length"
 msgstr ""
 
-msgid "All"
-msgstr ""
-
 msgid "Configurations"
-msgstr ""
-
-msgid "Show Scrollbars Arrows"
 msgstr ""
 
 msgid "Touch sound (BigTreeTech Pad7)"
@@ -89,51 +68,6 @@ msgid "Splash Screen"
 msgstr ""
 
 msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
 msgstr ""
 
 msgid "Print Status"
@@ -227,6 +161,9 @@ msgstr ""
 msgid "Add profile"
 msgstr ""
 
+msgid "All"
+msgstr ""
+
 msgid "Apply"
 msgstr ""
 
@@ -236,6 +173,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
+msgstr ""
+
+msgid "Archived"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -344,6 +284,9 @@ msgstr ""
 msgid "Cooldown"
 msgstr ""
 
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
+
 msgid "Date"
 msgstr ""
 
@@ -366,10 +309,10 @@ msgstr ""
 msgid "Do you want to recover %s?"
 msgstr ""
 
-msgid "DPMS has failed to load and has been disabled"
+msgid "Elapsed:"
 msgstr ""
 
-msgid "Elapsed:"
+msgid "Ended official support in June 2023"
 msgstr ""
 
 msgid "Error"
@@ -415,6 +358,9 @@ msgid "File"
 msgstr ""
 
 msgid "File:"
+msgstr ""
+
+msgid "Filter"
 msgstr ""
 
 msgid "Finding ADXL"
@@ -537,6 +483,9 @@ msgstr ""
 msgid "Klipper will reboot"
 msgstr ""
 
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
 msgid ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
@@ -547,7 +496,13 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
+msgid "Last Used"
+msgstr ""
+
 msgid "Layer:"
+msgstr ""
+
+msgid "Leds"
 msgstr ""
 
 msgid "Left:"
@@ -557,6 +512,9 @@ msgid "Limits"
 msgstr ""
 
 msgid "Load"
+msgstr ""
+
+msgid "Loading..."
 msgstr ""
 
 msgid "Lower Nozzle"
@@ -569,6 +527,9 @@ msgid "Macros"
 msgstr ""
 
 msgid "Main Menu"
+msgstr ""
+
+msgid "Material"
 msgstr ""
 
 msgid "Max"
@@ -634,12 +595,24 @@ msgstr ""
 msgid "No elegible macros:"
 msgstr ""
 
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
+msgstr ""
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
 msgstr ""
 
 #, python-format
@@ -808,6 +781,9 @@ msgstr ""
 msgid "Show Heater Power"
 msgstr ""
 
+msgid "Show Scrollbars Buttons"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -896,6 +872,12 @@ msgid "Updating"
 msgstr ""
 
 msgid "Uploaded"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
 msgstr ""
 
 msgid "XY Move Speed (mm/s)"

@@ -23,7 +23,7 @@ class Panel(ScreenPanel):
         self.tempdelta = self.tempdeltas[-2]
         self.show_preheat = False
         self.preheat_options = self._screen._config.get_preheat_options()
-        self.grid = self._gtk.HomogeneousGrid()
+        self.grid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         self._gtk.reset_temp_color()
         self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
         macros = self._printer.get_config_section_list("gcode_macro ") # Changes
@@ -62,7 +62,7 @@ class Panel(ScreenPanel):
         cooldown.connect("clicked", self.set_temperature, "cooldown")
         adjust.connect("clicked", self.switch_preheat_adjust)
 
-        right = self._gtk.HomogeneousGrid()
+        right = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         right.attach(cooldown, 0, 0, 2, 1)
         right.attach(adjust, 2, 0, 1, 1)
         if self.show_preheat:
@@ -82,7 +82,7 @@ class Panel(ScreenPanel):
         self.grid.show_all()
 
     def preheat(self):
-        self.labels["preheat_grid"] = self._gtk.HomogeneousGrid()
+        self.labels["preheat_grid"] = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         i = 0
         for option in self.preheat_options:
             if option != "cooldown":
@@ -95,7 +95,7 @@ class Panel(ScreenPanel):
         return scroll
 
     def delta_adjust(self):
-        deltagrid = self._gtk.HomogeneousGrid()
+        deltagrid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         self.labels["increase"] = self._gtk.Button("increase", None, "color1")
         self.labels["increase"].connect("clicked", self.change_target_temp_incremental, "+")
         self.labels["decrease"] = self._gtk.Button("decrease", None, "color3")
@@ -106,14 +106,9 @@ class Panel(ScreenPanel):
             self.labels[f'deg{i}'] = self._gtk.Button(label=i)
             self.labels[f'deg{i}'].connect("clicked", self.change_temp_delta, i)
             ctx = self.labels[f'deg{i}'].get_style_context()
-            if j == 0:
-                ctx.add_class("distbutton_top")
-            elif j == len(self.tempdeltas) - 1:
-                ctx.add_class("distbutton_bottom")
-            else:
-                ctx.add_class("distbutton")
+            ctx.add_class("horizontal_togglebuttons")
             if i == self.tempdelta:
-                ctx.add_class("distbutton_active")
+                ctx.add_class("horizontal_togglebuttons_active")
             tempgrid.attach(self.labels[f'deg{i}'], j, 0, 1, 1)
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -128,8 +123,8 @@ class Panel(ScreenPanel):
 
     def change_temp_delta(self, widget, tempdelta):
         logging.info(f"### tempdelta {tempdelta}")
-        self.labels[f"deg{self.tempdelta}"].get_style_context().remove_class("distbutton_active")
-        self.labels[f"deg{tempdelta}"].get_style_context().add_class("distbutton_active")
+        self.labels[f"deg{self.tempdelta}"].get_style_context().remove_class("horizontal_togglebuttons_active")
+        self.labels[f"deg{tempdelta}"].get_style_context().add_class("horizontal_togglebuttons_active")
         self.tempdelta = tempdelta
 
     def change_target_temp_incremental(self, widget, direction):
@@ -417,13 +412,23 @@ class Panel(ScreenPanel):
         max_temp = int(float(self._printer.get_config_section(self.active_heater)['max_temp']))
         logging.debug(f"{temp}/{max_temp}")
         if temp > max_temp:
+            #self._screen.show_popup_message(_("Can't set above the maximum:") + f' {max_temp}') # Changes
             self._screen.show_popup_message(_("Can't set above the maximum:") + f' {max_temp}' + "C°") # Changes
             return False
         return max(temp, 0)
 
     def pid_calibrate(self, temp):
         if self.verify_max_temp(temp):
-            if not self.pid_start or not self.pid_end: # Changes
+            # Start Changes
+            #script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
+            #self._screen._confirm_send_action(
+                #None,
+                #_("Initiate a PID calibration for:") + f" {self.active_heater} @ {temp} ºC"
+                #+ "\n\n" + _("It may take more than 5 minutes depending on the heater power."),
+                #"printer.gcode.script",
+                #script
+            #)
+            if not self.pid_start or not self.pid_end:
                 script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
                     None,
@@ -432,7 +437,6 @@ class Panel(ScreenPanel):
                     "printer.gcode.script",
                     script
                 )
-            # Start Changes
             else:
                 script = {"script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"}
                 self._screen._confirm_send_action(
@@ -446,9 +450,8 @@ class Panel(ScreenPanel):
 
     def create_left_panel(self):
 
-        self.labels['devices'] = Gtk.Grid()
+        self.labels['devices'] = Gtk.Grid(vexpand=False)
         self.labels['devices'].get_style_context().add_class('heater-grid')
-        self.labels['devices'].set_vexpand(False)
 
         name = Gtk.Label()
         temp = Gtk.Label(_("Temp (°C)"))
@@ -458,14 +461,13 @@ class Panel(ScreenPanel):
         self.labels['devices'].attach(temp, 1, 0, 1, 1)
 
         self.labels['da'] = HeaterGraph(self._printer, self._gtk.font_size)
-        self.labels['da'].set_vexpand(True)
 
         scroll = self._gtk.ScrolledWindow(steppers=False)
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scroll.get_style_context().add_class('heater-list')
         scroll.add(self.labels['devices'])
 
-        self.left_panel = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        self.left_panel = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.left_panel.add(scroll)
 
         self.labels['graph_settemp'] = self._gtk.Button(label=_("Set Temp"))

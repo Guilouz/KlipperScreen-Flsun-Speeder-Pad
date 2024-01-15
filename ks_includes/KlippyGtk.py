@@ -111,13 +111,6 @@ class KlippyGtk:
         for key in self.color_list:
             self.color_list[key]['state'] = 0
 
-    @staticmethod
-    def Label(label, style=None):
-        la = Gtk.Label(label)
-        if style is not None:
-            la.get_style_context().add_class(style)
-        return la
-
     def Image(self, image_name=None, width=None, height=None):
         if image_name is None:
             return Gtk.Image()
@@ -159,14 +152,9 @@ class KlippyGtk:
     def Button(self, image_name=None, label=None, style=None, scale=None, position=Gtk.PositionType.TOP, lines=2):
         if self.font_size_type == "max" and label is not None and scale is None:
             image_name = None
-        b = Gtk.Button()
+        b = Gtk.Button(hexpand=True, vexpand=True, can_focus=False, image_position=position, always_show_image=True)
         if label is not None:
             b.set_label(label.replace("\n", " "))
-        b.set_hexpand(True)
-        b.set_vexpand(True)
-        b.set_can_focus(False)
-        b.set_image_position(position)
-        b.set_always_show_image(True)
         if image_name is not None:
             if scale is None:
                 scale = self.button_image_scale
@@ -174,9 +162,7 @@ class KlippyGtk:
                 scale = scale * 1.4
             width = height = self.img_scale * scale
             b.set_image(self.Image(image_name, width, height))
-            spinner = Gtk.Spinner.new()
-            spinner.set_no_show_all(True)
-            spinner.set_size_request(width, height)
+            spinner = Gtk.Spinner(width_request=width, height_request=height, no_show_all=True)
             spinner.hide()
             box = find_widget(b, Gtk.Box)
             if box:
@@ -213,21 +199,31 @@ class KlippyGtk:
             widget.set_sensitive(True)
 
     def Dialog(self, title, buttons, content, callback=None, *args):
-        dialog = Gtk.Dialog(title=title)
-        dialog.set_resizable(False)
-        dialog.set_transient_for(self.screen)
-        dialog.set_modal(True)
-        dialog.set_default_size(self.width, self.height)
+        dialog = Gtk.Dialog(title=title, modal=True, transient_for=self.screen,
+                            default_width=self.width, default_height=self.height)
         if not self.screen.windowed:
             dialog.fullscreen()
 
+        max_buttons = 3 if self.screen.vertical_mode else 4
+        if len(buttons) > max_buttons:
+            buttons = buttons[:max_buttons]
+        if len(buttons) > 2:
+            dialog.get_action_area().set_layout(Gtk.ButtonBoxStyle.EXPAND)
+            button_hsize = -1
+        else:
+            button_hsize = int((self.width / 3))
         for button in buttons:
+            if 'style' in button:
+                style = button['style']
+            else:
+                style = 'dialog-default'
             dialog.add_button(button['name'], button['response'])
             button = dialog.get_widget_for_response(button['response'])
+            button.set_size_request(button_hsize, round(self.height / 5))
             if self.touch_sound_value == True: # Changes
                 button.connect("pressed", self.screen._button_pressed_feedback) # Changes
-            button.set_size_request((self.width - 30) / 3, self.height / 5)
-            format_label(button, 3)
+            button.get_style_context().add_class(style)
+            format_label(button, 2)
 
         dialog.connect("response", self.screen.reset_screensaver_timeout)
         dialog.connect("response", callback, *args)
@@ -238,7 +234,6 @@ class KlippyGtk:
         content_area.set_margin_end(15)
         content_area.set_margin_top(15)
         content_area.set_margin_bottom(15)
-        content.set_valign(Gtk.Align.CENTER)
         content_area.add(content)
 
         dialog.show_all()
@@ -264,32 +259,18 @@ class KlippyGtk:
             return
         logging.debug(f"Cannot remove dialog {dialog}")
 
-    @staticmethod
-    def HomogeneousGrid(width=None, height=None):
-        g = Gtk.Grid()
-        g.set_row_homogeneous(True)
-        g.set_column_homogeneous(True)
-        if width is not None and height is not None:
-            g.set_size_request(width, height)
-        return g
-
     def ToggleButton(self, text):
-        b = Gtk.ToggleButton(text)
-        b.props.relief = Gtk.ReliefStyle.NONE
-        b.set_hexpand(True)
-        b.set_vexpand(True)
+        b = Gtk.ToggleButton(label=text, hexpand=True, vexpand=True)
         b.connect("clicked", self.screen.reset_screensaver_timeout)
         if self.touch_sound_value == True: # Changes
             b.connect("pressed", self.screen._button_pressed_feedback) # Changes
         return b
 
     def ScrolledWindow(self, steppers=True):
-        scroll = Gtk.ScrolledWindow(vexpand=True)
-        scroll.set_property("overlay-scrolling", False)
+        scroll = Gtk.ScrolledWindow(hexpand=True, vexpand=True, overlay_scrolling=False)
         scroll.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
                           Gdk.EventMask.TOUCH_MASK |
                           Gdk.EventMask.BUTTON_RELEASE_MASK)
-        scroll.set_kinetic_scrolling(True)
         if self.screen._config.get_main_config().getboolean("show_scroll_steppers", fallback=False) and steppers:
             scroll.get_vscrollbar().get_style_context().add_class("with-steppers")
         return scroll

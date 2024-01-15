@@ -150,6 +150,7 @@ install_systemd_service()
     sudo systemctl unmask KlipperScreen.service
     sudo systemctl daemon-reload
     sudo systemctl enable KlipperScreen
+    sudo systemctl set-default multi-user.target
 }
 
 create_policy()
@@ -159,6 +160,7 @@ create_policy()
 
     echo_text "Installing KlipperScreen PolicyKit Rules"
     sudo groupadd -f klipperscreen
+    sudo groupadd -f netdev
     sudo groupadd -f tty
     if [ ! -x "$(command -v pkaction)" ]; then
         echo "PolicyKit not installed"
@@ -194,7 +196,7 @@ polkit.addRule(function(action, subject) {
          action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
          action.id == "org.freedesktop.login1.halt" ||
          action.id == "org.freedesktop.login1.halt-multiple-sessions" ||
-         action.id == "org.freedesktop.NetworkManager.wifi.scan" ||
+         action.id == "org.freedesktop.NetworkManager.*" ||
          action.id.startsWith("org.freedesktop.packagekit.")) &&
         subject.user == "$USER") {
         // Only allow processes with the "klipperscreen" supplementary group
@@ -221,7 +223,7 @@ create_policy_legacy()
     ACTIONS="${ACTIONS};org.freedesktop.login1.reboot-multiple-sessions"
     ACTIONS="${ACTIONS};org.freedesktop.login1.halt"
     ACTIONS="${ACTIONS};org.freedesktop.login1.halt-multiple-sessions"
-    ACTIONS="${ACTIONS};org.freedesktop.NetworkManager.wifi.scan"
+    ACTIONS="${ACTIONS};org.freedesktop.NetworkManager.*"
     sudo /bin/sh -c "cat > ${RULE_FILE}" << EOF
 [KlipperScreen]
 Identity=unix-user:$USER
@@ -239,6 +241,21 @@ update_x11()
     else
         echo_text "Adding X11 Xwrapper"
         echo 'allowed_users=anybody' | sudo tee /etc/X11/Xwrapper.config
+    fi
+}
+
+fix_fbturbo()
+{
+    if [ $(dpkg-query -W -f='${Status}' xserver-xorg-video-fbturbo 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        FBCONFIG="/usr/share/X11/xorg.conf.d/99-fbturbo.conf"
+        if [ -e $FBCONFIG ]
+        then
+            echo_text "FBturbo not installed, but the configuration file exists"
+            echo_text "This will fail if the config is not removed or the package installed"
+            echo_text "moving the config to the home folder"
+            sudo mv $FBCONFIG ~/99-fbturbo-backup.conf
+        fi
     fi
 }
 
@@ -264,8 +281,14 @@ install_packages
 check_requirements
 create_virtualenv
 create_policy
-install_systemd_service
 update_x11
-echo_ok "KlipperScreen was installed"
+fix_fbturbo
 add_desktop_file
-start_KlipperScreen
+read -r -e -p "Install as a service? (This will enable boot to console) [Y/n]" choice
+if [[ $choice =~ ^[nN]$ ]]; then
+    echo_text "Not installing the service, KlipperScreen will need to be manually started"
+    echo_ok "KlipperScreen was installed"
+else
+    install_systemd_service
+    start_KlipperScreen
+fi

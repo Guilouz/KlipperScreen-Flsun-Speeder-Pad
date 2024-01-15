@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2023-07-09 12:55+0200\n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"PO-Revision-Date: 2023-07-07 16:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -16,166 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"X-Generator: Poedit 3.3\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -205,6 +46,9 @@ msgstr "接受"
 msgid "Add profile"
 msgstr "新增設定檔案"
 
+msgid "All"
+msgstr ""
+
 msgid "Apply"
 msgstr "應用"
 
@@ -215,6 +59,9 @@ msgstr "將 %s%.3f 偏移量應用於限位？"
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
 msgstr "將 %s%.3f 偏移量應用於探針？"
+
+msgid "Archived"
+msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
 msgstr "你確定要排除該目標嗎？"
@@ -242,6 +89,9 @@ msgstr "自動校準"
 
 msgid "Auto-close notifications"
 msgstr "自動關閉通知"
+
+msgid "Auto-open Extrude On Pause"
+msgstr ""
 
 msgid "Auto-scroll"
 msgstr "自動滾屏"
@@ -316,11 +166,11 @@ msgstr "連線到 %s"
 msgid "Console"
 msgstr "控制台"
 
-msgid "Continue"
-msgstr "繼續"
-
 msgid "Cooldown"
 msgstr "冷卻"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
 
 msgid "Date"
 msgstr "日期"
@@ -346,6 +196,9 @@ msgstr "你想恢復 %s 嗎？"
 
 msgid "Elapsed:"
 msgstr "已用時間："
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "錯誤"
@@ -392,6 +245,9 @@ msgstr "檔案"
 msgid "File:"
 msgstr "檔案："
 
+msgid "Filter"
+msgstr ""
+
 msgid "Finding ADXL"
 msgstr "查詢ADXL"
 
@@ -415,9 +271,6 @@ msgstr "字型大小"
 
 msgid "Full Update"
 msgstr "全部更新"
-
-msgid "Fullscreen"
-msgstr "全螢幕"
 
 msgid "Go Back"
 msgstr "返回"
@@ -460,6 +313,9 @@ msgstr "主機"
 
 msgid "Hostname"
 msgstr "主機名"
+
+msgid "ID"
+msgstr ""
 
 msgid "Icon Theme"
 msgstr "主題"
@@ -512,8 +368,12 @@ msgstr "Klipper正在啟動"
 msgid "Klipper will reboot"
 msgstr "Klipper將重新啟動"
 
-msgid "KlipperScreen will reboot"
-msgstr "KlipperScreen將重新啟動"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
+msgstr ""
 
 msgid "Language"
 msgstr "介面語言"
@@ -521,8 +381,14 @@ msgstr "介面語言"
 msgid "Large"
 msgstr "大"
 
+msgid "Last Used"
+msgstr ""
+
 msgid "Layer:"
 msgstr "層："
+
+msgid "Leds"
+msgstr ""
 
 msgid "Left:"
 msgstr "剩餘時間："
@@ -532,6 +398,9 @@ msgstr "列印機限制"
 
 msgid "Load"
 msgstr "載入耗材"
+
+msgid "Loading..."
+msgstr ""
 
 msgid "Lower Nozzle"
 msgstr "降低噴嘴"
@@ -544,6 +413,9 @@ msgstr "巨集"
 
 msgid "Main Menu"
 msgstr "主選單"
+
+msgid "Material"
+msgstr ""
 
 msgid "Max"
 msgstr "最大"
@@ -605,13 +477,31 @@ msgstr "從不"
 msgid "New"
 msgstr "新的值"
 
+msgid "No elegible macros:"
+msgstr ""
+
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr "不支援自動檢測，需要在klpperscreen.conf中進行設定"
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "未選擇任何內容"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -682,7 +572,7 @@ msgid "Profile Name:"
 msgstr "設定檔名稱："
 
 msgid "Provide KlipperScreen.log when asking for help.\n"
-msgstr "在尋求幫助時，請提供KlipperScreen.log檔案。\n"
+msgstr ""
 
 msgid "Quad Gantry Level"
 msgstr "龍門架調平"
@@ -778,6 +668,9 @@ msgstr "顯示"
 msgid "Show Heater Power"
 msgstr "顯示加熱器功率"
 
+msgid "Show Scrollbars Buttons"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "關閉"
 
@@ -807,6 +700,9 @@ msgstr "速度："
 
 msgid "Square Corner Velocity"
 msgstr "直角速度"
+
+msgid "Standby"
+msgstr ""
 
 msgid "Start"
 msgstr "開始"
@@ -865,6 +761,12 @@ msgstr "正在更新"
 msgid "Uploaded"
 msgstr "上傳於"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "XY軸移動速度(mm/s)"
 
@@ -897,6 +799,12 @@ msgid "hour"
 msgid_plural "hours"
 msgstr[0] "小時"
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
+
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "分"
@@ -912,3 +820,173 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Continue"
+#~ msgstr "繼續"
+
+#~ msgid "Fullscreen"
+#~ msgstr "全螢幕"
+
+#~ msgid "Actions"
+#~ msgstr "控制"
+
+#~ msgid "Configuration"
+#~ msgstr "设置"
+
+#~ msgid "Homing"
+#~ msgstr "归零"
+
+#~ msgid "Disable XY"
+#~ msgstr "关闭 XY 轴电机"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "切片软件时间校正(%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "已校准，保存配置后生效"
+
+#~ msgid "Decrease"
+#~ msgstr "减少"
+
+#~ msgid "Increase"
+#~ msgstr "增加"
+
+#, python-format
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "打开: %s"
+
+#~ msgid "Sort:"
+#~ msgstr "排序:"
+
+#~ msgid "Calibrating..."
+#~ msgstr "校准中..."
+
+#, python-format
+#~ msgid "Retry #%s"
+#~ msgstr "重试 #%s"
+
+#~ msgid "Add Printer"
+#~ msgstr "添加打印机"
+
+#~ msgid "Initializing"
+#~ msgstr "初始化"
+
+#~ msgid "Delete"
+#~ msgstr "删除"
+
+#~ msgid "Off"
+#~ msgstr "关闭"
+
+#~ msgid "View Mesh"
+#~ msgstr "查看热床网格"
+
+#~ msgid "Sort by: "
+#~ msgstr "排序: "
+
+#~ msgid "Bltouch found applied offset"
+#~ msgstr "Bltouch 发现应用的偏移量"
+
+#~ msgid ""
+#~ "Check /tmp/KlipperScreen.log for more information.\n"
+#~ "Please submit an issue on GitHub for help."
+#~ msgstr ""
+#~ "检查/tmp/KlipperScreen.log以获取更多信息。\n"
+#~ "请在GitHub上提交问题以寻求帮助。"
+
+#~ msgid "Probe found applied offset"
+#~ msgstr "找到探头偏移"
+
+#~ msgid "Tool"
+#~ msgstr "工具"
+
+#~ msgid "Displayed Macros"
+#~ msgstr "宏命令显示开关"
+
+#~ msgid "Z Position"
+#~ msgstr "Z 位置"
+
+#~ msgid "IPv4"
+#~ msgstr "IPv4 地址"
+
+#~ msgid "IPv6"
+#~ msgstr "IPv6 地址"
+
+#~ msgid "Disconnect"
+#~ msgstr "断开"
+
+#~ msgid "Duration Only"
+#~ msgstr "持续时间"
+
+#~ msgid "Klipper Version"
+#~ msgstr "Klipper 版本"
+
+#~ msgid ""
+#~ "Klipper has encountered an error with the micro-controller.\n"
+#~ "Please recompile and flash."
+#~ msgstr ""
+#~ "Klipper与MCU通讯错误。\n"
+#~ "请为主板重新烧录固件。"
+
+#~ msgid ""
+#~ "Klipper has encountered an error.\n"
+#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
+#~ msgstr ""
+#~ "Klipper 遇到错误。\n"
+#~ "使用”FIRMWARE_RESTART“命令尝试解决此问题。"
+
+#~ msgid "KlipperScreen Version"
+#~ msgstr "KlipperScreen 版本"
+
+#~ msgid "Show Only Heaters in Temp."
+#~ msgstr "仅显示使用中的加热器."
+
+#~ msgid "Target"
+#~ msgstr "目标"
+
+#~ msgid "Temp"
+#~ msgstr "温度"
+
+#~ msgid "Number Pad"
+#~ msgstr "数字键盘"
+
+#~ msgid "Preheat"
+#~ msgstr "预热"
+
+#~ msgid "Screen will show in less than one second"
+#~ msgstr "屏幕将在1秒内显示"
+
+#~ msgid "Medium (default)"
+#~ msgstr "中 (默认)"
+
+#~ msgid "File Estimation (default)"
+#~ msgstr "文件 (默认)"
+
+#~ msgid "Fan Off"
+#~ msgstr "关闭风扇"
+
+#~ msgid "Fan On"
+#~ msgstr "打开风扇"
+
+#~ msgid "Fast"
+#~ msgstr "加速"
+
+#~ msgid "Slow"
+#~ msgstr "减速"
+
+#~ msgid "?"
+#~ msgstr "?"
+
+#~ msgid "Cancel Change"
+#~ msgstr "取消更改"
+
+#~ msgid "Control"
+#~ msgstr "控制"
+
+#~ msgid "Load Average"
+#~ msgstr "平均负载"
+
+#~ msgid "Network Info"
+#~ msgstr "网络信息"
+
+#~ msgid "Screen Blanking Time"
+#~ msgstr "关闭屏幕时间"

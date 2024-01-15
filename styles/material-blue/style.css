@@ -1,143 +1,165 @@
+@define-color color1 #2196f3;
+@define-color color2 #2196f3;
+@define-color color3 #2196f3;
+@define-color color4 #2196f3;
+@define-color bg #13181C;
+@define-color bg-trans0 rgba(0,0,0,0);
+@define-color bg-trans1 rgba(0,0,0,0.1);
+@define-color bg-trans7 rgba(0,0,0,0.7);
+@define-color bg-trans25 rgba(0,0,0,0.25);
+@define-color bg-slider #404E57;
+@define-color active #2196f3;
+@define-color echo #007D70;
+@define-color error #981E1F;
+@define-color warning #F9A825;
+@define-color warning-text #434343;
+@define-color dialog-error #e31010;
+@define-color dialog-warning #e39210;
+@define-color dialog-info #37e310;
+@define-color text white;
+@define-color text-inv black;
+@define-color lines #cccccc;
+
 * {
-    color: white;
+    color: @text;
 }
 
 window {
-    background-color: #13181C;
-    background-image: url("./styles//material-blue/background.png");
-    /* background-size: cover; */
+    background-color: @bg;
+    background-image: url("./styles/material-blue/background.png");
 }
 
 list row,
 treeview.view {
-    background-color: #13181C;
+    background-color: @bg;
 }
 
 button {
-    background-color: rgba(0,0,0,0);
+    background-color: @bg-trans0;
 }
 
-button:active {
-    background-color: #2196f3;
-    border-radius: 0.3em;
-}
-
-.button_active {
-    background-color: #2196f3;
-    border-radius: 0.3em;
-}
-
-button:disabled {
-    background-color: rgba(0,0,0,0);
-}
-
-button.color1:disabled,
-button.color2:disabled,
-button.color3:disabled,
-button.color4:disabled {
-    border-bottom-color: grey;
+button:active,
+.button_active,
+button.active {
+    background-color: @active;
+    border-radius: 0.1em;
 }
 
 button.color1 {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2196f3;
+    background-color: @bg-trans25;
+    border-bottom-color: @color1;
     border-radius: 0.3em;
 }
 
 button.color2 {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2196f3;
+    background-color: @bg-trans25;
+    border-bottom-color: @color2;
     border-radius: 0.3em;
 }
 
 button.color3 {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2196f3;
+    background-color: @bg-trans25;
+    border-bottom-color: @color3;
     border-radius: 0.3em;
 }
 
 button.color4 {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2196f3;
+    background-color: @bg-trans25;
+    border-bottom-color: @color4;
     border-radius: 0.3em;
 }
 
-button.active {
-    background-color: #2196f3;
-}
-
 button.update {
-    background: #2196f3;
-    border: .1em solid #cccccc;
+    background: @color3;
+    border: .1em solid @lines;
 }
 
 button.invalid {
-    background: #e61e1e;
-    border: .1em solid #cccccc;
+    background: @error;
+    border: .1em solid @lines;
 }
 
-button.color1:active, button.color2:active, button.color3:active, button.color4:active {
-    background-color: #2196f3;
-    border-bottom-color: #2196f3;
+button.color1:active {
+    background-color: @color1;
+    border-bottom-color: @color1;
 }
 
-button.update:active, button.invalid:active {
-    background: rgba(0,0,0,0.25);
-    border: .1em solid #cccccc;
+button.color2:active {
+    background-color: @color2;
+    border-bottom-color: @color2;
+}
+ 
+button.color3:active {
+    background-color: @color3;
+    border-bottom-color: @color3;
+} 
+
+button.color4:active {
+    background-color: @color4;
+    border-bottom-color: @color4;
+}
+
+button.update:active,
+button.invalid:active {
+    background: @bg-trans25;
+    border: .1em solid @lines;
 }
 
 combobox box button {
-    border-color: #cccccc;
+    border-color: @lines;
 }
 
 treeview.view check,
 switch {
-    background-color: #404E57;
+    background-color: @bg-slider;
 }
 
 treeview.view check:checked,
 switch:checked {
-    background-color: #2196f3;
+    background-color: @active;
 }
 
 entry {
-    background-color: rgba(0,0,0,0.25);
-    border-color: #2196f3;
+    background-color: @bg-trans25;
+    border-color: @active;
     margin-right: 5;
 }
 
 label {
-    color: white;
+    color: @text;
 }
 
 menu {
-    background-color: rgba(0,0,0,0.25);
-    border-color: #cccccc;
+    background-color: @bg;
+    border-color: @lines;
 }
 
 menuitem {
-    background-color: rgba(0,0,0,0.25);
-    border-color: #cccccc;
+    background-color: @bg-trans25;
+    border-color: @lines;
 }
 
 trough {
-    background-color: #404E57;
-    color: white;
-    border-color: black;
+    background-color: @bg-slider;
+    color: @text;
+    border-color: @text-inv;
 }
 
-trough highlight, trough progress {
-    background-color: #2196f3;
-    color: white;
-    border-color: black;
+trough highlight,
+trough progress {
+    background-color: @active;
+    color: @text;
+    border-color: @text-inv;
 }
 
 scale-mark {
-    color: white;
+    color: @text;
 }
 
-scrollbar, scrollbar button, scrollbar trough {
-    background-color: rgba(0,0,0,0);
+scrollbar,
+scrollbar button,
+scrollbar trough {
+    background-color: @bg-trans0;
 }
 
 scrollbar slider {
@@ -145,123 +167,130 @@ scrollbar slider {
 }
 
 textview .time {
-    color: grey;
+    color: @lines;
 }
 
-.popup {
-    background-color: black;
+popover {
+    background-color: @lines;
+}
+
+popover button {
+    background-color: @bg-trans7;
+    border-radius: 0.3em;
+    min-height: 4em;
 }
 
 .dialog {
-    border: rgba(255,255,255,0.1);
-    background-color: rgba(255,255,255,0.1);
+    border: 0;
+    padding: 0;
+    background-color: @bg;
+    background-image: url("./styles/material-blue/background.png");
+    margin: 0;
 }
 
 .dialog button {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2fa0b8;
-}
-
-.dialog button:nth-child(1) {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #42b82f;
-}
-
-.dialog button:nth-child(2) {
-    background-color: rgba(0,0,0,0.25);
-    border-bottom-color: #2196f3;
+    background-color: @bg-trans25;
+    border-radius: 0.3em;
 }
 
 .dialog button:active {
-    background-color: #2196f3;
-    border-bottom-color: #2196f3;
+    background-color: @active;
+    border-bottom-color: @active;
+    border-radius: 0.3em;
 }
 
-.distbutton_active {
-    background-color: #2196f3;
+.horizontal_togglebuttons_active {
+    background-color: @active;
 }
 
-.distbutton_top {
-    border-color: white;
-}
-
-.distbutton {
-    border-color: white;
-    border-left-color: #ccc;
-}
-
-.distbutton_bottom {
-    border-color: white;
-    border-left-color: #ccc;
+.horizontal_togglebuttons {
+    border-color: @lines;
 }
 
 .fan_slider {
-    color: white;
+    color: @text;
+}
+
+.popup {
+    background-color: @text-inv;
 }
 
 .message_popup {
-    border-bottom-color: white;
+    border-bottom-color: @text;
 }
 
 .numpad{
     margin-right: 3;
 }
 
-.numpad_tleft, .numpad_top, .numpad_tright, .numpad_left, .numpad_button, .numpad_right, .numpad_bleft, .numpad_bottom, .numpad_bright {
-    border-color: white;
-    background: rgba(0,0,0,0.25);
+.numpad_tleft,
+.numpad_top,
+.numpad_tright,
+.numpad_left,
+.numpad_button,
+.numpad_right,
+.numpad_bleft,
+.numpad_bottom,
+.numpad_bright {
+    border-color: @text;
+    background: @bg-trans25;
 }
 
-popover {
-    background-color: #cccccc;
-}
-
-popover button {
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 0.3em;
-    min-height: 4em;
-}
-
-.printing-status {
-    color: #f0f0f0;
-}
-
-.printing-progress-text {
-    color: white;
-}
-
-.printing-status-label {
-    color: #ccc;
-}
-
-.tempbutton_top {
-    border-color: white;
-}
-
-.tempbutton, .tempbutton_bottom {
-    border-color: white;
-    border-top-color: #ccc;
+.numpad_key {
+    border-color: @lines;
 }
 
 .message {
-    border-color: #981E1F;
-    color: white;
-    background-color: #981E1F;
+    border-color: @error;
+    color: @text;
+    background-color: @error;
 }
 
 .message button {
-    background-color: white;
-    color: black;
+    background-color: @text;
+    color: @text-inv;
 }
 
-.warning {
-    background-color: rgba(30, 204, 39, 0.7);
+.message_popup_echo {
+    background-color: @echo;
 }
 
-.error {
-    background-color: rgba(204, 30, 30, 0.7);
+.message_popup_warning {
+    background-color: @warning;
+}
+
+.message_popup_warning label {
+    color: @warning-text;
+}
+
+.message_popup_error {
+    background-color: @error;
 }
 
 .keyboard_pad {
-    background-color: rgba(0,0,0,0.25);
+    background-color: @bg-trans25;
+}
+
+.dialog-error {
+    border-bottom-color: @dialog-error;
+}
+
+.dialog-warning {
+    border-bottom-color: @dialog-warning;
+}
+
+.dialog-info {
+    border-bottom-color: @dialog-info;
+}
+
+.dialog-default {
+    border-bottom-color: @color3;
+}
+
+.dialog-secondary {
+    border-bottom-color: @color2;
+}
+
+.dialog-primary {
+    border-bottom-color: @color1;
 }

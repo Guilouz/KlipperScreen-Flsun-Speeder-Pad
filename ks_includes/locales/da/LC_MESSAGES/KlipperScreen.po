@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 07:02-0600\n"
+"POT-Creation-Date: 2024-01-12 21:42-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: SRBJ\n"
 "Language-Team: \n"
@@ -11,166 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
-
-msgid "Show Scrollbars Arrows"
-msgstr ""
-
-msgid "Touch sound (BigTreeTech Pad7)"
-msgstr ""
-
-msgid ""
-"not found!\n"
-"Please update your configuration files."
-msgstr ""
-
-msgid "Z Offset Calibration"
-msgstr ""
-
-msgid "EndStops Calibration"
-msgstr ""
-
-msgid "Automatic Delta Calibration"
-msgstr ""
-
-msgid "Manual Delta Calibration"
-msgstr ""
-
-msgid "Apply a safety Offset"
-msgstr ""
-
-msgid ""
-"Do you want to apply a 1mm safety offset?\n"
-"\n"
-"This could prevent the nozzle from scraping or sinking on the bed in the "
-"event of an incorrect adjustment of Z Offset.\n"
-"\n"
-"Then start a print and adjust the first layer using babysteps via the 'Fine "
-"Tuning' button."
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Please wait..."
-msgstr ""
-
-msgid "No mesh has been loaded"
-msgstr ""
-
-msgid "Splash Screen"
-msgstr ""
-
-msgid "Neopixels"
-msgstr ""
-
-msgid "On"
-msgstr ""
-
-msgid "Blue"
-msgstr ""
-
-msgid "Red"
-msgstr ""
-
-msgid "Green"
-msgstr ""
-
-msgid "Yellow"
-msgstr ""
-
-msgid "Orange"
-msgstr ""
-
-msgid "Violet"
-msgstr ""
-
-msgid "Hotend (All)"
-msgstr ""
-
-msgid "Hotend (One by One)"
-msgstr ""
-
-msgid "Bed (All)"
-msgstr ""
-
-msgid "Bed (One by One)"
-msgstr ""
-
-msgid "Progress (All)"
-msgstr ""
-
-msgid "Progress (One by One)"
-msgstr ""
-
-msgid "Speed (All)"
-msgstr ""
-
-msgid "Speed (One by One)"
-msgstr ""
-
-msgid "Print Status"
-msgstr ""
-
-msgid "Reprint"
-msgstr ""
-
-msgid "Auto Calibration"
-msgstr ""
-
-msgid "Manual Calibration"
-msgstr ""
-
-msgid "NOTE: Edit your printer.cfg to save manual calibration changes."
-msgstr ""
-
-msgid "Endstops Calibrate"
-msgstr ""
-
-msgid "Calibrations"
-msgstr ""
-
-msgid "Multiple Calibrations"
-msgstr ""
-
-msgid "Please plug in leveling switch before Delta Calibration."
-msgstr ""
-
-msgid "Please plug in leveling switch before auto-leveling."
-msgstr ""
-
-msgid ""
-"Please plug in leveling switch before mesuring Z-Offset.\n"
-"Once the hotend is up, it can be removed to perform the measurement."
-msgstr ""
-
-msgid "Do you want to start Endstops calibration?"
-msgstr ""
-
-msgid ""
-"Do you want to start Manual Delta calibration with 'paper test'?\n"
-"\n"
-"It involves placing a piece of 'copy machine paper' between bed and nozzle, "
-"and then moving the nozzle to different Z heights until one feels a small "
-"amount of friction when pushing the paper back and forth.\n"
-"\n"
-"It's not needed to plug in leveling switch for this calibration."
-msgstr ""
-
-msgid "LED"
-msgstr ""
-
-msgid "Hotend LED On"
-msgstr ""
-
-msgid "Hotend LED Off"
-msgstr ""
-
-msgid "Logo LED On"
-msgstr ""
-
-msgid "Logo LED Off"
-msgstr ""
+"X-Generator: Poedit 3.2.1\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -200,6 +41,9 @@ msgstr "OK"
 msgid "Add profile"
 msgstr ""
 
+msgid "All"
+msgstr ""
+
 msgid "Apply"
 msgstr ""
 
@@ -209,6 +53,9 @@ msgstr ""
 
 #, python-format
 msgid "Apply %s%.3f offset to Probe?"
+msgstr ""
+
+msgid "Archived"
 msgstr ""
 
 msgid "Are you sure do you want to exclude the object?"
@@ -236,6 +83,9 @@ msgid "Auto-calibrate"
 msgstr "Automatisk kalibrering"
 
 msgid "Auto-close notifications"
+msgstr ""
+
+msgid "Auto-open Extrude On Pause"
 msgstr ""
 
 msgid "Auto-scroll"
@@ -311,11 +161,11 @@ msgstr "Forbinder til %s"
 msgid "Console"
 msgstr "Terminal"
 
-msgid "Continue"
-msgstr "Fortsæt"
-
 msgid "Cooldown"
 msgstr "Afkøling"
+
+msgid "DPMS has failed to load and has been disabled"
+msgstr ""
 
 msgid "Date"
 msgstr "Dato"
@@ -341,6 +191,9 @@ msgstr "Vil du gendanne %s?"
 
 msgid "Elapsed:"
 msgstr "Tid:"
+
+msgid "Ended official support in June 2023"
+msgstr ""
 
 msgid "Error"
 msgstr "Fejl"
@@ -387,6 +240,9 @@ msgstr "Fil"
 msgid "File:"
 msgstr "Fil:"
 
+msgid "Filter"
+msgstr ""
+
 msgid "Finding ADXL"
 msgstr "At finde ADXL"
 
@@ -410,9 +266,6 @@ msgstr "Skriftstørrelse"
 
 msgid "Full Update"
 msgstr "Fuld Opdatering"
-
-msgid "Fullscreen"
-msgstr ""
 
 msgid "Go Back"
 msgstr "Gå tilbage"
@@ -455,6 +308,9 @@ msgstr ""
 
 msgid "Hostname"
 msgstr "Værtsnavn"
+
+msgid "ID"
+msgstr ""
 
 msgid "Icon Theme"
 msgstr "Ikon-tema"
@@ -507,7 +363,11 @@ msgstr "Klipper forsøger at starte"
 msgid "Klipper will reboot"
 msgstr "Klipper vil genstarte"
 
-msgid "KlipperScreen will reboot"
+msgid "KlipperScreen will drop support in June 2024"
+msgstr ""
+
+msgid ""
+"LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
 
 msgid "Language"
@@ -516,7 +376,13 @@ msgstr "Sprog"
 msgid "Large"
 msgstr "Stor"
 
+msgid "Last Used"
+msgstr ""
+
 msgid "Layer:"
+msgstr ""
+
+msgid "Leds"
 msgstr ""
 
 msgid "Left:"
@@ -527,6 +393,9 @@ msgstr "Grænser"
 
 msgid "Load"
 msgstr "Indlæs"
+
+msgid "Loading..."
+msgstr ""
 
 msgid "Lower Nozzle"
 msgstr "Sænk Nozzle"
@@ -539,6 +408,9 @@ msgstr "Makroer"
 
 msgid "Main Menu"
 msgstr "Hovedmenu"
+
+msgid "Material"
+msgstr ""
 
 msgid "Max"
 msgstr ""
@@ -600,13 +472,31 @@ msgstr ""
 msgid "New"
 msgstr "Ny"
 
+msgid "No elegible macros:"
+msgstr ""
+
+msgid "No mesh has been loaded"
+msgstr ""
+
+msgid "No wireless interface has been found"
+msgstr ""
+
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
 "conf"
 msgstr ""
 
+msgid "Not working or not configured"
+msgstr ""
+
 msgid "Nothing selected"
 msgstr "Intet valgt"
+
+msgid "Notification log empty"
+msgstr ""
+
+msgid "Notifications"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -687,7 +577,7 @@ msgid "Raise Nozzle"
 msgstr "Hæv Nozzle"
 
 msgid "Recover"
-msgstr ""
+msgstr "Nulstil"
 
 msgid "Recover Hard"
 msgstr "Nulstil alt"
@@ -774,6 +664,9 @@ msgstr "At vise"
 msgid "Show Heater Power"
 msgstr ""
 
+msgid "Show Scrollbars Buttons"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -803,6 +696,9 @@ msgstr "Hastighed:"
 
 msgid "Square Corner Velocity"
 msgstr "Hastighed for 90° hjørne"
+
+msgid "Standby"
+msgstr ""
 
 msgid "Start"
 msgstr "Start"
@@ -861,6 +757,12 @@ msgstr "Opdatering"
 msgid "Uploaded"
 msgstr "Uploadet"
 
+msgid "Warning"
+msgstr ""
+
+msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
 msgid "XY Move Speed (mm/s)"
 msgstr "XY Flyt hastighed (mm/s)"
 
@@ -895,6 +797,12 @@ msgid_plural "hours"
 msgstr[0] "time"
 msgstr[1] "timer"
 
+msgid "macros that use 'rename_existing' are hidden"
+msgstr ""
+
+msgid "macros with a name starting with '_' are hidden"
+msgstr ""
+
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
@@ -910,4 +818,141 @@ msgid "mm/s²"
 msgstr "mm/s²"
 
 msgid "mm³/s"
-msgstr "mm³/s"
+msgstr ""
+
+#~ msgid "Continue"
+#~ msgstr "Fortsæt"
+
+#~ msgid "Actions"
+#~ msgstr "Muligheder"
+
+#~ msgid "Homing"
+#~ msgstr "Homing"
+
+#~ msgid "Disable XY"
+#~ msgstr "Deaktivér XY"
+
+#~ msgid "Slicer Time correction (%)"
+#~ msgstr "Slicer Tidskorrektion (%)"
+
+#~ msgid "Calibrated, save configuration to make it permanent"
+#~ msgstr "Kalibreret, gem konfiguration for at gøre den permanent"
+
+#~ msgid "Decrease"
+#~ msgstr "Formindsk"
+
+#~ msgid "Increase"
+#~ msgstr "Forøg"
+
+#, python-format
+#~ msgid "Sending Power ON signal to: %s"
+#~ msgstr "Sender Power ON-signal til: %s"
+
+#~ msgid "Sort:"
+#~ msgstr "Sortere: "
+
+#~ msgid "Calibrating..."
+#~ msgstr "Kalibrerer..."
+
+#~ msgid "Z+"
+#~ msgstr "Z+"
+
+#~ msgid "Z-"
+#~ msgstr "Z-"
+
+#~ msgid "X+"
+#~ msgstr "X+"
+
+#~ msgid "X-"
+#~ msgstr "X-"
+
+#~ msgid "Y+"
+#~ msgstr "Y+"
+
+#~ msgid "Y-"
+#~ msgstr "Y-"
+
+#, python-format
+#~ msgid "Retry #%s"
+#~ msgstr "Prøv igen #%s"
+
+#~ msgid "Add Printer"
+#~ msgstr "Tilføj printer"
+
+#~ msgid "Initializing"
+#~ msgstr "Initialiserer"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Off"
+#~ msgstr "Sluk"
+
+#~ msgid "View Mesh"
+#~ msgstr "Vis mesh"
+
+#~ msgid "Sort by: "
+#~ msgstr "Sortér efter: "
+
+#~ msgid "Bltouch found applied offset"
+#~ msgstr "Bltouch fundet anvendt offset"
+
+#~ msgid ""
+#~ "Check /tmp/KlipperScreen.log for more information.\n"
+#~ "Please submit an issue on GitHub for help."
+#~ msgstr ""
+#~ "Tjek /tmp/KlipperScreen.log for mere information.\n"
+#~ "Indsend venligst et \"Issue\" på GitHub for hjælp."
+
+#~ msgid "Probe found applied offset"
+#~ msgstr "Probe fundet anvendt offset"
+
+#~ msgid "Tool"
+#~ msgstr "Ekstruder"
+
+#~ msgid "Displayed Macros"
+#~ msgstr "Viste makroer"
+
+#~ msgid "Z Position"
+#~ msgstr "Z-position"
+
+#~ msgid "IPv4"
+#~ msgstr "IPv4"
+
+#~ msgid "IPv6"
+#~ msgstr "IPv6"
+
+#~ msgid "Disconnect"
+#~ msgstr "Afbryd forbindelse"
+
+#~ msgid "Duration Only"
+#~ msgstr "Kun varighed"
+
+#~ msgid "Klipper Version"
+#~ msgstr "Klipper version"
+
+#~ msgid ""
+#~ "Klipper has encountered an error with the micro-controller.\n"
+#~ "Please recompile and flash."
+#~ msgstr ""
+#~ "Klipper har fundet en fejl med mcu.\n"
+#~ "Kompilér og flash venligst firmware på ny."
+
+#~ msgid ""
+#~ "Klipper has encountered an error.\n"
+#~ "Issue a FIRMWARE_RESTART to attempt fixing the issue."
+#~ msgstr ""
+#~ "Klipper har fundet en fejl.\n"
+#~ "Tryk på \"Genstart alt\" for at forsøge at udbedre fejlen."
+
+#~ msgid "KlipperScreen Version"
+#~ msgstr "KlipperScreen version"
+
+#~ msgid "Show Only Heaters in Temp."
+#~ msgstr "Vis kun varmelegemer i Temp."
+
+#~ msgid "Target"
+#~ msgstr "Mål"
+
+#~ msgid "Temp"
+#~ msgstr "Temp"
