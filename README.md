@@ -40,15 +40,6 @@ cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
 ```
 ```
-./KlipperScreen/scripts/KlipperScreen-install.sh
-```
-
-Note: Installation may take several minutes.
-
-> [!WARNING]
-> If you have an issue when installing KlipperScreen, use this command:
-
-```
 ./KlipperScreen/scripts/KlipperScreen-install-fix.sh
 ```
 
