@@ -24,6 +24,7 @@ SCREEN_BLANKING_OPTIONS = [
 klipperscreendir = pathlib.Path(__file__).parent.resolve().parent
 home = os.path.expanduser("~/")
 printer_data_config = os.path.join(home, "printer_data", "config")
+printer_1_data_config = os.path.join(home, "printer_1_data", "config") # Changes
 xdg_config = os.path.join(home, ".config", "KlipperScreen")
 
 
@@ -411,7 +412,7 @@ class KlipperScreenConfig:
             return file
 
         # List of directories to search for the config file
-        directories = [printer_data_config, printer_1_data, xdg_config, klipperscreendir] # Changes
+        directories = [printer_data_config, printer_1_data_config, xdg_config, klipperscreendir] # Changes
 
         for directory in directories:
             path = self.check_path_exists(directory, self.configfile_name)
