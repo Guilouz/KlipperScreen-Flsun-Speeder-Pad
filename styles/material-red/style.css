@@ -30,7 +30,7 @@ window {
 }
 
 list row,
-treeview.view
+treeview.view,
 combobox arrow, {
     background-color: @bg;
 }
