@@ -13,9 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-msgid "Lost Connection to Moonraker"
-msgstr ""
-
 msgid "Remaining weight"
 msgstr ""
 
@@ -321,6 +318,18 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
+msgid "Error clearing active spool"
+msgstr ""
+
+msgid "Error getting active spool"
+msgstr ""
+
+msgid "Error setting active spool"
+msgstr ""
+
+msgid "Error trying to fetch spools"
+msgstr ""
+
 msgid "Estimated Time Method"
 msgstr ""
 
@@ -331,6 +340,9 @@ msgid "Extra Large"
 msgstr ""
 
 msgid "Extrude"
+msgstr ""
+
+msgid "Extruders"
 msgstr ""
 
 msgid "Extrusion +"
@@ -518,6 +530,9 @@ msgid "Load"
 msgstr ""
 
 msgid "Loading..."
+msgstr ""
+
+msgid "Lost Connection to Moonraker"
 msgstr ""
 
 msgid "Lower Nozzle"

@@ -18,30 +18,30 @@ For that, please see [this guide](Physical_Install.md#cable-issues).
 
     Some DSI screens have issues where touch doesn't work with the default configuration.
     The current workaround/temporary fix involves changing the kernel driver module used for these displays.
-    
+
     `sudo nano /boot/config.txt` and change
-    
+
     ```sh
     dtoverlay=vc4-kms-v3d
     ```
-    
+
     to
-    
+
     ```sh
     dtoverlay=vc4-fkms-v3d
     ```
 
     Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
-    
+
     **Reboot** to apply changes. `sudo reboot`
-    
+
     If that doesn't fix it, you can try commenting these lines out, resulting in:
-    
+
     ```sh
     # dtoverlay=vc4-kms-v3d
     # max_framebuffers=2
     ```
-    
+
     **Reboot** to apply changes. `sudo reboot`
 
 ## Touch rotation and matrix
@@ -53,7 +53,15 @@ First you will need your device name. On a terminal, run:
 ```sh
 DISPLAY=:0 xinput
 ```
-
+??? tip "Alternative"
+    ```
+    libinput list-devices
+    ```
+    !!! note
+        requires libinput-tools
+        ```
+        sudo apt install libinput-tools
+        ```
 Output:
 
 ```text
@@ -101,6 +109,10 @@ ACTION=="add", ATTRS{name}=="<device name>", ENV{LIBINPUT_CALIBRATION_MATRIX}="<
 
 Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
 
+```sh
+sudo reboot
+```
+
 !!! example
 
     Test:
@@ -118,11 +130,14 @@ Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
     ```sh title="51-touchscreen.rules"
     ACTION=="add", ATTRS{name}=="ADS7846 Touchscreen", ENV{LIBINPUT_CALIBRATION_MATRIX}="-1 0 1 0 -1 1 0 0 1"
     ```
-    
+
     Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
+    ```sh
+    sudo reboot
+    ```
 
 
-!!! example "Alternative"
+!!! example "Alternative Example"
 
     As an alternative **if the above doesn't work**:
 
@@ -140,7 +155,9 @@ Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
     EndSection
     ```
     Close the nano editor using `ctrl`+`x` (exit), then `y` for yes (save).
-
+    ```sh
+    sudo reboot
+    ```
 
 ## Touch calibration
 
@@ -162,7 +179,15 @@ First you will need your touchscreen device name. On a terminal, run:
 ```sh
 DISPLAY=:0 xinput
 ```
-
+??? tip "Alternative"
+    ```
+    libinput list-devices
+    ```
+    !!! note
+        requires libinput-tools
+        ```
+        sudo apt install libinput-tools
+        ```
 Output:
 
 ```text
