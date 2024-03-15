@@ -347,7 +347,6 @@ class Panel(ScreenPanel):
         if self.flow_timeout is not None:
             GLib.source_remove(self.flow_timeout)
             self.flow_timeout = None
-        self._files.remove_callback(self._callback_metadata)
 
     def create_buttons(self):
 
@@ -472,12 +471,6 @@ class Panel(ScreenPanel):
         for arg in args:
             self.buttons[arg].set_sensitive(False)
 
-    def _callback_metadata(self, action, item):
-        if action == "update_metadata" and self.filename in item:
-            logging.info("Callback complete")
-            self.update_file_metadata()
-            self._files.remove_callback(self._callback_metadata)
-
     def new_print(self):
         self._screen.close_screensaver()
         self.update_progress(0.0)
@@ -494,6 +487,8 @@ class Panel(ScreenPanel):
             elif "action:resumed" in data:
                 self.set_state("printing")
             return
+        elif action == "notify_metadata_update" and data['filename'] == self.filename:
+            self.update_file_metadata()
         elif action != "notify_status_update":
             return
 
@@ -848,6 +843,5 @@ class Panel(ScreenPanel):
                 self.labels['filament_total'].set_label(f"{float(self.file_metadata['filament_total']) / 1000:.1f} m")
         else:
             logging.debug("Cannot find file metadata. Listening for updated metadata")
-            self._screen.files.add_callback(self._callback_metadata)
             self._files.request_metadata(self.filename)
         self.show_file_thumbnail()
