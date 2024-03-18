@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 21:42-0300\n"
-"PO-Revision-Date: 2023-12-28 12:05+0000\n"
-"Last-Translator: 방영웅 <bangyeongung20@gmail.com>\n"
+"POT-Creation-Date: 2024-03-02 17:39-0300\n"
+"PO-Revision-Date: 2024-03-15 05:29+0000\n"
+"Last-Translator: 이정희 <daemul72@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/klipperscreen/"
 "klipperscreen/ko/>\n"
 "Language: ko\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -75,7 +75,7 @@ msgid "Are you sure you wish to reboot the system?"
 msgstr "시스템을 재시작 하시겠습니까?"
 
 msgid "Are you sure you wish to shutdown the system?"
-msgstr "시스템을 종료 하시겠습니까?"
+msgstr "시스템을 종료하시겠습니까?"
 
 msgid "Auto"
 msgstr "자동"
@@ -199,6 +199,18 @@ msgstr ""
 msgid "Error"
 msgstr "오류"
 
+msgid "Error clearing active spool"
+msgstr ""
+
+msgid "Error getting active spool"
+msgstr ""
+
+msgid "Error setting active spool"
+msgstr ""
+
+msgid "Error trying to fetch spools"
+msgstr ""
+
 msgid "Estimated Time Method"
 msgstr "예상 시간 옵션"
 
@@ -210,6 +222,9 @@ msgstr "매우 크게"
 
 msgid "Extrude"
 msgstr "압출"
+
+msgid "Extruders"
+msgstr ""
 
 msgid "Extrusion +"
 msgstr "압출 +"
@@ -356,7 +371,7 @@ msgid "Klipper has encountered an error."
 msgstr "클리퍼에 오류가 발생했습니다."
 
 msgid "Klipper has shutdown"
-msgstr "클리퍼가 종료되었습니다"
+msgstr "클리퍼가 시스템 종료되었습니다"
 
 msgid "Klipper is attempting to start"
 msgstr "클리퍼 시작하는 중"
@@ -397,6 +412,9 @@ msgid "Load"
 msgstr "필라멘트 로드"
 
 msgid "Loading..."
+msgstr ""
+
+msgid "Lost Connection to Moonraker"
 msgstr ""
 
 msgid "Lower Nozzle"
@@ -454,7 +472,7 @@ msgid "Moonraker: connected"
 msgstr "문래이커: 연결됨"
 
 msgid "More"
-msgstr "더"
+msgstr "더보기"
 
 msgid "Move"
 msgstr "이동"
@@ -669,7 +687,7 @@ msgid "Show Scrollbars Buttons"
 msgstr "스크롤바 버튼 보기"
 
 msgid "Shutdown"
-msgstr "셧다운"
+msgstr "시스템 종료"
 
 msgid "Size"
 msgstr "크기"
@@ -759,7 +777,7 @@ msgid "Uploaded"
 msgstr "업로드됨"
 
 msgid "Warning"
-msgstr ""
+msgstr "경고"
 
 msgid "WebRTC is not supported by the backend trying Stream"
 msgstr ""
