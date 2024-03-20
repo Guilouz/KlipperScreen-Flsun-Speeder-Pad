@@ -23,6 +23,7 @@ class BasePanel(ScreenPanel):
         self.titlebar_name_type = None
         self.current_extruder = None
         self.last_usage_report = datetime.now()
+        self.usage_report = 0
         # Action bar buttons
         abscale = self.bts * 1.1
         self.control['back'] = self._gtk.Button('back', scale=abscale)
@@ -217,16 +218,21 @@ class BasePanel(ScreenPanel):
             memory = (data["system_memory"]["used"] / data["system_memory"]["total"]) * 100
             error = "message_popup_error"
             ctx = self.titlebar.get_style_context()
+            msg = f"CPU: {cpu:2.0f}%    RAM: {memory:2.0f}%"
             if cpu > 80 or memory > 85:
+                if self.usage_report < 3:
+                    self.usage_report += 1
+                    return
                 self.last_usage_report = datetime.now()
                 if not ctx.has_class(error):
                     ctx.add_class(error)
-                msg = f"CPU: {cpu:2.0f}%    RAM: {memory:2.0f}%"
                 self._screen.log_notification(msg, 3)
                 self.titlelbl.set_label(msg)
             elif ctx.has_class(error):
-                if (datetime.now() - self.last_usage_report).seconds < 3:
+                self.titlelbl.set_label(msg)
+                if (datetime.now() - self.last_usage_report).seconds < 5:
                     return
+                self.usage_report = 0
                 ctx.remove_class(error)
                 self.titlelbl.set_label(f"{self._screen.connecting_to_printer}")
             return

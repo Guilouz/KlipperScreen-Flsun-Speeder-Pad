@@ -260,13 +260,6 @@ class KlippyGtk:
             return
         logging.debug(f"Cannot remove dialog {dialog}")
 
-    def ToggleButton(self, text):
-        b = Gtk.ToggleButton(label=text, hexpand=True, vexpand=True)
-        b.connect("clicked", self.screen.reset_screensaver_timeout)
-        if self.touch_sound_value == True: # Changes
-            b.connect("pressed", self.screen._button_pressed_feedback) # Changes
-        return b
-
     def ScrolledWindow(self, steppers=True):
         scroll = Gtk.ScrolledWindow(hexpand=True, vexpand=True, overlay_scrolling=False)
         scroll.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
