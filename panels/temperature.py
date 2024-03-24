@@ -328,7 +328,7 @@ class Panel(ScreenPanel):
         can_target = self._printer.device_has_target(device)
         self.labels['da'].add_object(device, "temperatures", rgb, False, False)
         if can_target:
-            sself.labels['da'].add_object(device, "targets", rgb, False, True)
+            self.labels['da'].add_object(device, "targets", rgb, False, True)
             name.connect('button-press-event', self.name_pressed, device)
             name.connect('button-release-event', self.name_released, device)
         else:
