@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Czech\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"POT-Creation-Date: 2024-04-03 14:35-0300\n"
 "PO-Revision-Date: 2024-02-12 00:05+0000\n"
 "Last-Translator: Mick#6366 <kos.m@post.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/klipperscreen/"
@@ -106,6 +106,9 @@ msgstr "Mapa podložky"
 msgid "Bed screw configuration:"
 msgstr "Vyrovnání šroubů podložky:"
 
+msgid "Both"
+msgstr ""
+
 msgid "Calibrate"
 msgstr "Kalibrace"
 
@@ -198,11 +201,29 @@ msgstr "Obnovit %s?"
 msgid "Elapsed:"
 msgstr "Uplynulo:"
 
+msgid "Emergency Stop"
+msgstr ""
+
 msgid "Ended official support in June 2023"
 msgstr "Oficiální podpora ukončena v červnu 2023"
 
 msgid "Error"
 msgstr "Chyba"
+
+msgid "Error clearing active spool"
+msgstr ""
+
+msgid "Error getting active spool"
+msgstr ""
+
+msgid "Error setting active spool"
+msgstr ""
+
+msgid "Error trying to fetch spools"
+msgstr ""
+
+msgid "Error: Couldn't get a position to probe"
+msgstr ""
 
 msgid "Estimated Time Method"
 msgstr "Výpočet doby tisku"
@@ -215,6 +236,9 @@ msgstr "Extra velký"
 
 msgid "Extrude"
 msgstr "Extruze"
+
+msgid "Extruders"
+msgstr ""
 
 msgid "Extrusion +"
 msgstr "Extruze +"
@@ -404,6 +428,9 @@ msgstr "Zasuň"
 msgid "Loading..."
 msgstr "Načítání...."
 
+msgid "Lost Connection to Moonraker"
+msgstr ""
+
 msgid "Lower Nozzle"
 msgstr "Trysku níž"
 
@@ -424,9 +451,6 @@ msgstr "Max"
 
 msgid "Max Acceleration"
 msgstr "Max. zrychlení"
-
-msgid "Max Acceleration to Deceleration"
-msgstr "Z max. zrychlení do zpomalení"
 
 msgid "Max Velocity"
 msgstr "Max. rychlost"
@@ -451,6 +475,9 @@ msgstr "Menu"
 
 msgid "Mesh calibrate"
 msgstr "Kalibrace sítě"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "Změněno"
@@ -830,6 +857,9 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Z max. zrychlení do zpomalení"
 
 #~ msgid "Continue"
 #~ msgstr "Pokračuj"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"POT-Creation-Date: 2024-04-03 14:35-0300\n"
 "PO-Revision-Date: 2024-02-03 23:01+0000\n"
 "Last-Translator: criscrafter <criscrafter80@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/klipperscreen/"
@@ -106,6 +106,9 @@ msgstr "Druckbett Mesh"
 msgid "Bed screw configuration:"
 msgstr "Bettschraubenkonfiguration:"
 
+msgid "Both"
+msgstr ""
+
 msgid "Calibrate"
 msgstr "Kalibrieren"
 
@@ -198,11 +201,29 @@ msgstr "Möchtest du zurück zu %s?"
 msgid "Elapsed:"
 msgstr "Laufzeit:"
 
+msgid "Emergency Stop"
+msgstr ""
+
 msgid "Ended official support in June 2023"
 msgstr "Offizieller Support endete im Juni 2023"
 
 msgid "Error"
 msgstr "Fehler"
+
+msgid "Error clearing active spool"
+msgstr ""
+
+msgid "Error getting active spool"
+msgstr ""
+
+msgid "Error setting active spool"
+msgstr ""
+
+msgid "Error trying to fetch spools"
+msgstr ""
+
+msgid "Error: Couldn't get a position to probe"
+msgstr ""
 
 msgid "Estimated Time Method"
 msgstr "Verbleibende Zeit"
@@ -215,6 +236,9 @@ msgstr "Extra groß"
 
 msgid "Extrude"
 msgstr "Extrudieren"
+
+msgid "Extruders"
+msgstr ""
 
 msgid "Extrusion +"
 msgstr "Extrudieren +"
@@ -405,6 +429,9 @@ msgstr "Laden"
 msgid "Loading..."
 msgstr "Lädt..."
 
+msgid "Lost Connection to Moonraker"
+msgstr ""
+
 msgid "Lower Nozzle"
 msgstr "Düse absenken"
 
@@ -425,9 +452,6 @@ msgstr "Max"
 
 msgid "Max Acceleration"
 msgstr "Max Beschleunigung"
-
-msgid "Max Acceleration to Deceleration"
-msgstr "Max Verzögerung"
 
 msgid "Max Velocity"
 msgstr "Max Geschwindigkeit"
@@ -452,6 +476,9 @@ msgstr "Menü"
 
 msgid "Mesh calibrate"
 msgstr "Mesh kalibrieren"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "Modifiziert"
@@ -831,6 +858,9 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Max Verzögerung"
 
 #~ msgid "Continue"
 #~ msgstr "Fortsetzen"

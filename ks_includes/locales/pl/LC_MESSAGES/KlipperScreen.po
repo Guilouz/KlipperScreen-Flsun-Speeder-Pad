@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Polish (KlipperScreen)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 21:42-0300\n"
+"POT-Creation-Date: 2024-04-03 14:35-0300\n"
 "PO-Revision-Date: 2024-01-18 13:00+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/klipperscreen/"
@@ -103,6 +103,9 @@ msgstr "Siatka stołu"
 msgid "Bed screw configuration:"
 msgstr "Konfiguracja śrub stołu:"
 
+msgid "Both"
+msgstr ""
+
 msgid "Calibrate"
 msgstr "Kalibruj"
 
@@ -195,11 +198,29 @@ msgstr "Czy chcesz przywrócić sprawność %s?"
 msgid "Elapsed:"
 msgstr "Upłynęło:"
 
+msgid "Emergency Stop"
+msgstr ""
+
 msgid "Ended official support in June 2023"
 msgstr "Oficjalne wsparcie zakończyło się w czerwcu 2023"
 
 msgid "Error"
 msgstr "Błąd"
+
+msgid "Error clearing active spool"
+msgstr ""
+
+msgid "Error getting active spool"
+msgstr ""
+
+msgid "Error setting active spool"
+msgstr ""
+
+msgid "Error trying to fetch spools"
+msgstr ""
+
+msgid "Error: Couldn't get a position to probe"
+msgstr ""
 
 msgid "Estimated Time Method"
 msgstr "Metoda szacowanego czasu"
@@ -212,6 +233,9 @@ msgstr "Bardzo duży"
 
 msgid "Extrude"
 msgstr "Wytłaczaj"
+
+msgid "Extruders"
+msgstr ""
 
 msgid "Extrusion +"
 msgstr "Ekstruzja +"
@@ -402,6 +426,9 @@ msgstr "Ładuj"
 msgid "Loading..."
 msgstr "Ładowanie..."
 
+msgid "Lost Connection to Moonraker"
+msgstr ""
+
 msgid "Lower Nozzle"
 msgstr "Obniż dyszę"
 
@@ -422,9 +449,6 @@ msgstr "Maks"
 
 msgid "Max Acceleration"
 msgstr "Maksymalne przyspieszenie"
-
-msgid "Max Acceleration to Deceleration"
-msgstr "Maks. przyśpieszenie do hamowania"
 
 msgid "Max Velocity"
 msgstr "Maksymalna prędkość"
@@ -449,6 +473,9 @@ msgstr "Menu"
 
 msgid "Mesh calibrate"
 msgstr "Kalibracja siatki"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "Zmodyfikowane"
@@ -830,6 +857,9 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Maks. przyśpieszenie do hamowania"
 
 #~ msgid "Continue"
 #~ msgstr "Kontynuuj"
