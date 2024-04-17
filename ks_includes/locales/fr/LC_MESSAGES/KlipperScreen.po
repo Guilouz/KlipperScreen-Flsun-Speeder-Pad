@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-04-03 22:51+0200\n"
+"PO-Revision-Date: 2024-04-17 23:09+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -205,6 +205,9 @@ msgstr "Appliquer une compensation de %s%.3f au Z-Offset du palpeur ?"
 msgid "Archived"
 msgstr "Archivé"
 
+msgid "Are you sure you want to stop the calibration?"
+msgstr "Êtes-vous sûr de vouloir annuler la calibration ?"
+
 msgid "Are you sure do you want to exclude the object?"
 msgstr "Êtes-vous sûr de vouloir exclure l’objet ?"
 
@@ -239,6 +242,9 @@ msgid "Auto-scroll"
 msgstr ""
 "Défilement\n"
 "automatique"
+
+msgid "Axis Twist Compensation"
+msgstr "Axis Twist Compensation"
 
 msgid "Bed Level"
 msgstr "Nivellement"

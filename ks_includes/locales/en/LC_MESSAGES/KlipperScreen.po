@@ -178,6 +178,9 @@ msgstr ""
 msgid "Archived"
 msgstr ""
 
+msgid "Are you sure you want to stop the calibration?"
+msgstr ""
+
 msgid "Are you sure do you want to exclude the object?"
 msgstr ""
 
@@ -209,6 +212,9 @@ msgid "Auto-open Extrude On Pause"
 msgstr ""
 
 msgid "Auto-scroll"
+msgstr ""
+
+msgid "Axis Twist Compensation"
 msgstr ""
 
 msgid "Bed Level"

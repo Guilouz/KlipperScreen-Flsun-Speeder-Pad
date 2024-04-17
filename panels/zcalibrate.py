@@ -62,7 +62,10 @@ class Panel(ScreenPanel):
         self.buttons['zpos'].connect("clicked", self.move, "+")
         self.buttons['zneg'].connect("clicked", self.move, "-")
         self.buttons['complete'].connect("clicked", self.accept)
-        self.buttons['cancel'].connect("clicked", self.abort)
+        script = {"script": "ABORT\nG28"} # Changes
+        self.buttons['cancel'].connect("clicked", self._screen._confirm_send_action,
+                                       _("Are you sure you want to stop the calibration?"),
+                                       "printer.gcode.script", script)
 
         self.labels['popover'] = Gtk.Popover(position=Gtk.PositionType.BOTTOM)
 
@@ -145,6 +148,9 @@ class Panel(ScreenPanel):
         if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
             self._add_button(_("Apply a safety Offset"), "gcode_offset", pobox) # Changes
             functions.append("gcode_offset") # Changes
+        #if "AXIS_TWIST_COMPENSATION_CALIBRATE" in self._printer.available_commands: # Changes
+            #self._add_button("Axis Twist Compensation", "axis_twist", pobox) # Changes
+            #functions.append("axis_twist") # Changes
 
         self.labels['popover'].add(pobox)
         if len(functions) > 1:
@@ -187,6 +193,8 @@ class Panel(ScreenPanel):
                 #self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE METHOD=manual")
             #elif method == "endstop":
                 #self._screen._ws.klippy.gcode_script("Z_ENDSTOP_CALIBRATE")
+            #elif method == "axis_twist":
+                #self._screen._ws.klippy.gcode_script("AXIS_TWIST_COMPENSATION_CALIBRATE")
         if method == "probe":
             if not self.z_offset_calibration:
                 self._screen.show_popup_message("Macro Z_OFFSET_CALIBRATION " + _("not found!\nPlease update your configuration files."))
@@ -326,13 +334,6 @@ class Panel(ScreenPanel):
 
     def move(self, widget, direction):
         self._screen._ws.klippy.gcode_script(f"TESTZ Z={direction}{self.distance}")
-
-    def abort(self, widget):
-        logging.info("Aborting calibration")
-        self._screen._ws.klippy.gcode_script("ABORT")
-        self.buttons_not_calibrating()
-        #self._screen._menu_go_back() # Changes
-        self._screen._ws.klippy.gcode_script("G28") # Changes
 
     def accept(self, widget):
         logging.info("Accepting Z position")
