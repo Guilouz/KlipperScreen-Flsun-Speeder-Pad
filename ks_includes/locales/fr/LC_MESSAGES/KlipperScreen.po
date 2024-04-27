@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-04-27 04:31+0200\n"
+"PO-Revision-Date: 2024-04-27 12:38+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -254,9 +254,6 @@ msgstr "Nivellement"
 
 msgid "Bed Mesh"
 msgstr "Maillage du plateau"
-
-msgid "Bed screw configuration:"
-msgstr "Configuration des vis:"
 
 msgid "Both"
 msgstr "Les deux"
@@ -550,6 +547,9 @@ msgstr "Inverser l'axe Z"
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "Cela peut prendre plus de 5 minutes selon la puissance de chauffe."
 
+msgid "It's possible that the configuration is not correct"
+msgstr "Il est possible que la configuration ne soit pas correcte"
+
 msgid "Klipper Restart"
 msgstr "Redémarrer Klipper"
 
@@ -691,13 +691,6 @@ msgstr "Aucune interface sans fil n’a été trouvée"
 msgid "Not all screens support this"
 msgstr "Tous les écrans ne sont pas supportés"
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
-msgstr ""
-"Non pris en charge pour la détection automatique, il doit être configuré "
-"dans klipperscreen.conf"
-
 msgid "Not working or not configured"
 msgstr "Ne fonctionne pas ou n'est pas configurée"
 
@@ -830,6 +823,9 @@ msgstr "Réessayer"
 msgid "Retrying"
 msgstr "Réessaye"
 
+msgid "Rotation invalid"
+msgstr "Rotation non valide"
+
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -857,6 +853,9 @@ msgstr "Délai d'extinction de l'écran"
 
 msgid "Screws Adjust"
 msgstr "Ajuster les vis"
+
+msgid "Screws not used:"
+msgstr "Vis non utilisées :"
 
 msgid "Select"
 msgstr "Sélectionner"
@@ -941,6 +940,9 @@ msgstr "Temp (°C)"
 
 msgid "Temperature"
 msgstr "Températures"
+
+msgid "This panel supports up-to 9 screws in a 3x3 Grid"
+msgstr "Ce panneau supporte jusqu'à 9 vis dans une grille de 3x3"
 
 msgid "Timeout for screen black-out or power-off"
 msgstr "Délai pour l’extinction de l’écran"
@@ -1043,6 +1045,3 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
-
-#~ msgid "Max Acceleration to Deceleration"
-#~ msgstr "Accélération à décélération maximale"

@@ -226,9 +226,6 @@ msgstr ""
 msgid "Bed Mesh"
 msgstr ""
 
-msgid "Bed screw configuration:"
-msgstr ""
-
 msgid "Both"
 msgstr ""
 
@@ -519,6 +516,9 @@ msgstr ""
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr ""
 
+msgid "It's possible that the configuration is not correct"
+msgstr ""
+
 msgid "Klipper Restart"
 msgstr ""
 
@@ -658,11 +658,6 @@ msgstr ""
 msgid "Not all screens support this"
 msgstr ""
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
-msgstr ""
-
 msgid "Not working or not configured"
 msgstr ""
 
@@ -795,6 +790,9 @@ msgstr ""
 msgid "Retrying"
 msgstr ""
 
+msgid "Rotation invalid"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
@@ -821,6 +819,9 @@ msgid "Screen Power Off Time"
 msgstr ""
 
 msgid "Screws Adjust"
+msgstr ""
+
+msgid "Screws not used:"
 msgstr ""
 
 msgid "Select"
@@ -905,6 +906,9 @@ msgid "Temp (°C)"
 msgstr ""
 
 msgid "Temperature"
+msgstr ""
+
+msgid "This panel supports up-to 9 screws in a 3x3 Grid"
 msgstr ""
 
 msgid "Timeout for screen black-out or power-off"
