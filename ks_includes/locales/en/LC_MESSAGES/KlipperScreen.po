@@ -199,6 +199,9 @@ msgstr ""
 msgid "Are you sure you wish to shutdown the system?"
 msgstr ""
 
+msgid "Asks for confirmation before stopping"
+msgstr ""
+
 msgid "Auto"
 msgstr ""
 
@@ -259,6 +262,12 @@ msgstr ""
 msgid "Cannot connect to Moonraker"
 msgstr ""
 
+msgid "Changes how the interface looks"
+msgstr ""
+
+msgid "Changes how the time remaining is calculated"
+msgstr ""
+
 msgid "Channel"
 msgstr ""
 
@@ -272,6 +281,9 @@ msgid "Clear"
 msgstr ""
 
 msgid "Close"
+msgstr ""
+
+msgid "Close messages after a timeout"
 msgstr ""
 
 msgid "Complete"
@@ -293,6 +305,9 @@ msgstr ""
 msgid "Cooldown"
 msgstr ""
 
+msgid "Current percentage and graph line"
+msgstr ""
+
 msgid "DPMS has failed to load and has been disabled"
 msgstr ""
 
@@ -306,6 +321,9 @@ msgid "Delete File?"
 msgstr ""
 
 msgid "Deselect"
+msgstr ""
+
+msgid "Disable for 12hs with am / pm"
 msgstr ""
 
 msgid "Disable Motors"
@@ -322,6 +340,9 @@ msgid "Elapsed:"
 msgstr ""
 
 msgid "Emergency Stop"
+msgstr ""
+
+msgid "Enable screen power management"
 msgstr ""
 
 msgid "Ended official support in June 2023"
@@ -483,6 +504,9 @@ msgstr ""
 msgid "Invalid password"
 msgstr ""
 
+msgid "Inversely affects the icon size"
+msgstr ""
+
 msgid "Invert X"
 msgstr ""
 
@@ -629,6 +653,9 @@ msgid "No elegible macros:"
 msgstr ""
 
 msgid "No wireless interface has been found"
+msgstr ""
+
+msgid "Not all screens support this"
 msgstr ""
 
 msgid ""
@@ -814,6 +841,9 @@ msgstr ""
 msgid "Show Heater Power"
 msgstr ""
 
+msgid "Show only devices that are able to be set"
+msgstr ""
+
 msgid "Show Scrollbars Buttons"
 msgstr ""
 
@@ -877,6 +907,9 @@ msgstr ""
 msgid "Temperature"
 msgstr ""
 
+msgid "Timeout for screen black-out or power-off"
+msgstr ""
+
 msgid "Total:"
 msgstr ""
 
@@ -907,10 +940,16 @@ msgstr ""
 msgid "Uploaded"
 msgstr ""
 
+msgid "Useful for un-responsive touchscreens"
+msgstr ""
+
 msgid "Warning"
 msgstr ""
 
 msgid "WebRTC is not supported by the backend trying Stream"
+msgstr ""
+
+msgid "Works only on BigTreeTech Pad7"
 msgstr ""
 
 msgid "XY Move Speed (mm/s)"

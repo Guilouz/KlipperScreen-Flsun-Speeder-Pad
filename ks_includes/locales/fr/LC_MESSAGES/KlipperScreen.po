@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-04-17 23:09+0200\n"
+"PO-Revision-Date: 2024-04-27 04:31+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -226,6 +226,9 @@ msgstr "Êtes-vous sûr de vouloir redémarrer le système ?"
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Êtes-vous sûr de vouloir arrêter le système ?"
 
+msgid "Asks for confirmation before stopping"
+msgstr "Demander une confirmation avant d'arrêter"
+
 msgid "Auto"
 msgstr "Auto"
 
@@ -288,6 +291,12 @@ msgstr "Annulation"
 msgid "Cannot connect to Moonraker"
 msgstr "Impossible de se connecter à Moonraker"
 
+msgid "Changes how the interface looks"
+msgstr "Modifier l’apparence de l'interface"
+
+msgid "Changes how the time remaining is calculated"
+msgstr "Modifier la façon dont le temps restant est calculé"
+
 msgid "Channel"
 msgstr "Canal"
 
@@ -302,6 +311,9 @@ msgstr "Effacer"
 
 msgid "Close"
 msgstr "Fermer"
+
+msgid "Close messages after a timeout"
+msgstr "Fermer les messages après un délai d’attente"
 
 msgid "Complete"
 msgstr "Impression terminée"
@@ -322,6 +334,9 @@ msgstr "Console"
 msgid "Cooldown"
 msgstr "Refroidir"
 
+msgid "Current percentage and graph line"
+msgstr "Pourcentage actuel et ligne graphique"
+
 msgid "DPMS has failed to load and has been disabled"
 msgstr "DPMS n’a pas pu charger et a été désactivé"
 
@@ -336,6 +351,9 @@ msgstr "Supprimer le fichier ?"
 
 msgid "Deselect"
 msgstr "Désélectionner"
+
+msgid "Disable for 12hs with am / pm"
+msgstr "Désactiver pour le format 12 heures avec AM/PM"
 
 msgid "Disable Motors"
 msgstr "Désactiver les moteurs"
@@ -352,6 +370,9 @@ msgstr "Écoulé:"
 
 msgid "Emergency Stop"
 msgstr "Arrêt d'urgence"
+
+msgid "Enable screen power management"
+msgstr "Activer la gestion de l’alimentation de l’écran"
 
 msgid "Ended official support in June 2023"
 msgstr "Fin du support officiel en juin 2023"
@@ -514,6 +535,9 @@ msgstr "Invalide"
 msgid "Invalid password"
 msgstr "Mot de passe incorrect"
 
+msgid "Inversely affects the icon size"
+msgstr "Affecte également la taille des icônes"
+
 msgid "Invert X"
 msgstr "Inverser l'axe X"
 
@@ -663,6 +687,9 @@ msgstr "Aucune macros éligible :"
 
 msgid "No wireless interface has been found"
 msgstr "Aucune interface sans fil n’a été trouvée"
+
+msgid "Not all screens support this"
+msgstr "Tous les écrans ne sont pas supportés"
 
 msgid ""
 "Not supported for auto-detection, it needs to be configured in klipperscreen."
@@ -849,6 +876,9 @@ msgstr "Afficher"
 msgid "Show Heater Power"
 msgstr "Afficher la puissance de chauffe"
 
+msgid "Show only devices that are able to be set"
+msgstr "Afficher uniquement les éléments pouvant être configurés"
+
 msgid "Show Scrollbars Buttons"
 msgstr "Afficher les flèches de défilement"
 
@@ -912,6 +942,9 @@ msgstr "Temp (°C)"
 msgid "Temperature"
 msgstr "Températures"
 
+msgid "Timeout for screen black-out or power-off"
+msgstr "Délai pour l’extinction de l’écran"
+
 msgid "Total:"
 msgstr "Total:"
 
@@ -942,11 +975,17 @@ msgstr "Mise à jour"
 msgid "Uploaded"
 msgstr "Envoyé"
 
+msgid "Useful for un-responsive touchscreens"
+msgstr "Utile pour les écrans tactiles qui ne répondent pas"
+
 msgid "Warning"
 msgstr "Avertissement"
 
 msgid "WebRTC is not supported by the backend trying Stream"
 msgstr "WebRTC n’est pas pris en charge par le flux d’essai du backend"
+
+msgid "Works only on BigTreeTech Pad7"
+msgstr "Fonctionne uniquement sur BigTreeTech Pad7"
 
 msgid "XY Move Speed (mm/s)"
 msgstr "Vitesse de déplacement XY (mm/s)"

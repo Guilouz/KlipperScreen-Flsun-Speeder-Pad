@@ -1,7 +1,7 @@
 import gi
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gdk, Gtk
+from gi.repository import Gtk
 
 
 class PrintListItem(Gtk.FlowBoxChild):
@@ -19,10 +19,7 @@ class PrintListItem(Gtk.FlowBoxChild):
         self.size = size
 
     def set_as_dir(self, is_dir: bool):
-        if is_dir:
-            self.dir = -1
-        else:
-            self.dir = 0
+        self.dir = -1 if is_dir else 00
 
     def set_path(self, path):
         self.path = path
