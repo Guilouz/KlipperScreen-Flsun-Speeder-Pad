@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-04-27 12:38+0200\n"
+"PO-Revision-Date: 2024-04-28 17:55+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -946,6 +946,9 @@ msgstr "Ce panneau supporte jusqu'à 9 vis dans une grille de 3x3"
 
 msgid "Timeout for screen black-out or power-off"
 msgstr "Délai pour l’extinction de l’écran"
+
+msgid "Timeout for screen black-out or power-off during printing"
+msgstr "Délai pour l’extinction de l’écran pendant l’impression"
 
 msgid "Total:"
 msgstr "Total:"

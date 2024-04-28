@@ -903,6 +903,9 @@ msgstr ""
 msgid "Timeout for screen black-out or power-off"
 msgstr ""
 
+msgid "Timeout for screen black-out or power-off during printing"
+msgstr ""
+
 msgid "Total:"
 msgstr ""
 
