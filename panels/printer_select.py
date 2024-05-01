@@ -39,4 +39,4 @@ class Panel(ScreenPanel):
         #GLib.timeout_add(100, self._screen.base_panel.action_bar.hide) # Changes
         GLib.timeout_add(0, self._screen.base_panel.action_bar.hide) # Changes
         if self._screen._ws:
-            self._screen._ws.connecting = False
+            self._screen.close_websocket()
