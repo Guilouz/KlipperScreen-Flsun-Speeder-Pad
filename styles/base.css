@@ -574,7 +574,7 @@ popover {
 
 popover button {
     background-color: @bg;
-    padding: 1em 3.1em;
+    padding: 0em 1.5em;
     margin: 0;
 }
 
