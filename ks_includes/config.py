@@ -268,7 +268,7 @@ class KlipperScreenConfig:
                     {"name": _("Never"), "value": "off"}]
             }},
             {"screen_blanking_printing": {
-                "section": "main", "name": _("Screen Power Off Time Printing") + " (" + _("Printing") + ")",
+                "section": "main", "name": _("Screen Power Off Time") + " (" + _("Printing") + ")",
                 "type": "dropdown",
                 "tooltip": _("Timeout for screen black-out or power-off during printing"),
                 "value": "3600", "callback": screen.set_screenblanking_printing_timeout, "options": [
