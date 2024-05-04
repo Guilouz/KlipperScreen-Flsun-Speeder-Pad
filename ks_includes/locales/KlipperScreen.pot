@@ -27,7 +27,7 @@ msgstr ""
 msgid "Configurations"
 msgstr ""
 
-msgid "Touch sound (BigTreeTech Pad7)"
+msgid "Touch sound"
 msgstr ""
 
 msgid "not found!\nPlease update your configuration files."
