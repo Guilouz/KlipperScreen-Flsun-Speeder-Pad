@@ -311,7 +311,7 @@ class KlipperScreenConfig:
             {"auto_open_extrude": {"section": "main", "name": _("Auto-open Extrude On Pause"), "type": "binary",
                                    "value": "True", "callback": screen.reload_panels}},
             # Start Changes
-            {"touch_sound": {"section": "main", "name": _("Touch sound (BigTreeTech Pad7)"), "type": "binary",
+            {"touch_sound": {"section": "main", "name": _("Touch sound"), "type": "binary",
                                    "tooltip": _("Works only on BigTreeTech Pad7"),
                                    "value": "False", "callback": screen.restart_ks}},
             # End Changes
