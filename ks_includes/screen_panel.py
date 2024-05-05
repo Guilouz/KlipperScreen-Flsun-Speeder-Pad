@@ -176,7 +176,7 @@ class ScreenPanel:
         if dev in self.devices and not self.devices[dev]["can_target"]:
             show_target = False
 
-        show_power = show_target and self._show_heater_power and power is not None
+        show_power = show_target and self._show_heater_power and power
 
         new_label_text = f"{temp:.0f}"
         if show_target:
