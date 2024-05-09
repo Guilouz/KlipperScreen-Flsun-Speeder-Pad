@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-05-04 18:12+0200\n"
+"PO-Revision-Date: 2024-05-09 18:46+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -646,6 +646,9 @@ msgstr "Mesurer l'axe Y"
 msgid "Medium"
 msgstr "Moyenne"
 
+msgid "Memory"
+msgstr "RAM"
+
 msgid "Menu"
 msgstr "Menu"
 
@@ -702,6 +705,9 @@ msgstr "Le journal des notifications est vide"
 
 msgid "Notifications"
 msgstr "Notifications"
+
+msgid "Only for the move panel"
+msgstr "Uniquement pour le panneau Mouvements"
 
 #, python-format
 msgid "Outdated by %d"
@@ -944,6 +950,9 @@ msgstr "Températures"
 msgid "This panel supports up-to 9 screws in a 3x3 Grid"
 msgstr "Ce panneau supporte jusqu'à 9 vis dans une grille de 3x3"
 
+msgid "This will affect screw positions and mesh graph"
+msgstr "Cela affectera les positions des vis et le graphique du maillage"
+
 msgid "Timeout for screen black-out or power-off"
 msgstr "Délai pour l’extinction de l’écran"
 
@@ -973,6 +982,9 @@ msgstr "À jour"
 
 msgid "Update"
 msgstr "Mettre à jour"
+
+msgid "Updates"
+msgstr "Mises à jour"
 
 msgid "Updating"
 msgstr "Mise à jour"

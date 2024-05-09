@@ -41,7 +41,7 @@ class KlipperScreenConfig:
     def __init__(self, configfile, screen=None):
         self.lang_list = None
         self.errors = []
-        self.default_config_path = os.path.join(klipperscreendir, "ks_includes", "defaults.conf")
+        self.default_config_path = os.path.join(klipperscreendir, "config", "defaults.conf")
         self.config = configparser.ConfigParser()
         self.config_path = self.get_config_file_location(configfile)
         logging.debug(f"Config path location: {self.config_path}")
@@ -51,6 +51,9 @@ class KlipperScreenConfig:
 
         try:
             self.config.read(self.default_config_path)
+            includes = [i[8:] for i in self.config.sections() if i.startswith("include ")]
+            for include in includes:
+                self._include_config("/".join(self.default_config_path.split("/")[:-1]), include)
             # In case a user altered defaults.conf
             self.validate_config(self.config)
             if self.config_path != self.default_config_path:
@@ -244,10 +247,6 @@ class KlipperScreenConfig:
     def _create_configurable_options(self, screen):
 
         self.configurable_options = [
-            {"language": {
-                "section": "main", "name": _("Language"), "type": None, "value": "system_lang",
-                "callback": screen.change_language, "options": [
-                    {"name": _("System") + " " + _("(default)"), "value": "system_lang"}]}},
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
                 "tooltip": _("Changes how the interface looks"),
@@ -331,22 +330,24 @@ class KlipperScreenConfig:
 
         self.configurable_options.extend(panel_options)
 
-        t_path = os.path.join(klipperscreendir, 'styles')
-        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "z-bolt")]
-        themes.sort()
-        theme_opt = self.configurable_options[1]['theme']['options']
-
-        for theme in themes:
-            theme_opt.append({"name": theme, "value": theme})
-
-        i1 = i2 = None
+        i0 = i1 = i2 = None
         for i, option in enumerate(self.configurable_options):
-            if list(option)[0] == "screen_blanking":
+            if list(option)[0] == "theme":
+                i0 = i
+            elif list(option)[0] == "screen_blanking":
                 i1 = i
             elif list(option)[0] == "screen_blanking_printing":
                 i2 = i
-            if i1 and i2:
+            if i0 and i1 and i2:
                 break
+
+        t_path = os.path.join(klipperscreendir, 'styles')
+        themes = [d for d in os.listdir(t_path) if (not os.path.isfile(os.path.join(t_path, d)) and d != "z-bolt")]
+        themes.sort()
+
+        for theme in themes:
+            self.configurable_options[i0]['theme']['options'].append({"name": theme, "value": theme})
+
         for num in SCREEN_BLANKING_OPTIONS:
             hour = num // 3600
             minute = num // 60
@@ -373,7 +374,7 @@ class KlipperScreenConfig:
 
     def exclude_from_config(self, config):
         exclude_list = ['preheat']
-        if not self.defined_config.getboolean('main', "use_default_menu", fallback=True):
+        if self.defined_config and not self.defined_config.getboolean('main', "use_default_menu", fallback=True):
             logging.info("Using custom menu, removing default menu entries.")
             exclude_list.extend(('menu __main', 'menu __print', 'menu __splashscreen'))
         for i in exclude_list:

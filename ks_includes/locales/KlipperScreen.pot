@@ -599,6 +599,9 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
+msgid "Memory"
+msgstr ""
+
 msgid "Menu"
 msgstr ""
 
@@ -657,6 +660,9 @@ msgid "Notification log empty"
 msgstr ""
 
 msgid "Notifications"
+msgstr ""
+
+msgid "Only for the move panel"
 msgstr ""
 
 #, python-format
@@ -900,6 +906,9 @@ msgstr ""
 msgid "This panel supports up-to 9 screws in a 3x3 Grid"
 msgstr ""
 
+msgid "This will affect screw positions and mesh graph"
+msgstr ""
+
 msgid "Timeout for screen black-out or power-off"
 msgstr ""
 
@@ -928,6 +937,9 @@ msgid "Up To Date"
 msgstr ""
 
 msgid "Update"
+msgstr ""
+
+msgid "Updates"
 msgstr ""
 
 msgid "Updating"
