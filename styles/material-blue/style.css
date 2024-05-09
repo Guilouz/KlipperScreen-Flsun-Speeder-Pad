@@ -29,9 +29,12 @@ window {
     background-image: url("./styles/material-blue/background.png");
 }
 
-list row,
-treeview.view,
 combobox arrow {
+    background-color: @bg-trans0;
+}
+
+list row,
+treeview.view {
     background-color: @bg;
 }
 
