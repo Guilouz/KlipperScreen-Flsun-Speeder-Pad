@@ -70,7 +70,7 @@ class Panel(ScreenPanel):
                                        _("Are you sure you want to stop the calibration?"),
                                        "printer.gcode.script", script)
 
-        self.labels['popover'] = Gtk.Popover(position=Gtk.PositionType.BOTTOM)
+        self.popover = Gtk.Popover(position=Gtk.PositionType.BOTTOM)
 
         self.set_functions()
 
@@ -163,7 +163,7 @@ class Panel(ScreenPanel):
             #self._add_button("Axis Twist Compensation", "axis_twist", pobox) # Changes
             #functions.append("axis_twist") # Changes
 
-        self.labels['popover'].add(pobox)
+        self.popover.add(pobox)
         if len(functions) > 1:
             self.buttons['start'].connect("clicked", self.on_popover_clicked)
         else:
@@ -181,11 +181,11 @@ class Panel(ScreenPanel):
         pobox.pack_start(popover_button, True, True, 10) # Changes
 
     def on_popover_clicked(self, widget):
-        self.labels['popover'].set_relative_to(widget)
-        self.labels['popover'].show_all()
+        self.popover.set_relative_to(widget)
+        self.popover.show_all()
 
     def start_calibration(self, widget, method):
-        self.labels['popover'].popdown()
+        self.popover.popdown()
         self.buttons['start'].set_sensitive(False)
         # Start Changes
         #if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
