@@ -500,7 +500,7 @@ class Panel(ScreenPanel):
                 #script,
             #)
             if not self.pid_start or not self.pid_end:
-                "script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"
+                script = {"script": f"PID_CALIBRATE HEATER={self.active_heater} TARGET={temp}"}
                 self._screen._confirm_send_action(
                     None,
                     _("Initiate a PID calibration for:")
@@ -511,7 +511,7 @@ class Panel(ScreenPanel):
                     script,
                 )
             else:
-                "script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"
+                script = {"script": f"_PID_KS_START\nPID_CALIBRATE HEATER={self.active_heater} TARGET={temp}\n_PID_KS_END"}
                 self._screen._confirm_send_action(
                     None,
                     _("Initiate a PID calibration for:")
