@@ -824,7 +824,7 @@ class Panel(ScreenPanel):
             self.labels['file'].set_label(self.filename_label['complete'])
         return True
 
-    def update_file_metadata(self, response=False)::
+    def update_file_metadata(self, response=False):
         if self._files.file_metadata_exists(self.filename):
             self.file_metadata = self._files.get_file_info(self.filename)
             logging.info(f"Update Metadata. File: {self.filename} Size: {self.file_metadata['size']}")
