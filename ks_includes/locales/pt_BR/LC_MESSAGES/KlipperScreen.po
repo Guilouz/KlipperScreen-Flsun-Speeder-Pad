@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-26 23:35-0300\n"
-"PO-Revision-Date: 2024-04-13 16:48+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2024-05-23 23:37-0300\n"
+"PO-Revision-Date: 2024-05-07 02:10+0000\n"
+"Last-Translator: Rui Menezes <ruizivo.menezes@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "klipperscreen/klipperscreen/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.4-dev\n"
 
 #, python-format
 msgid "%s will be updated to version"
@@ -71,7 +71,7 @@ msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Tem certeza de que quer executar uma Parada de Emergência?"
 
 msgid "Are you sure you want to stop the calibration?"
-msgstr ""
+msgstr "Tem certeza de que deseja interromper a calibração?"
 
 msgid "Are you sure you wish to cancel this print?"
 msgstr "Tem certeza de que deseja cancelar essa impressão?"
@@ -86,7 +86,7 @@ msgid "Are you sure you wish to shutdown the system?"
 msgstr "Tem certeza de que deseja desligar o sistema?"
 
 msgid "Asks for confirmation before stopping"
-msgstr ""
+msgstr "Pede confirmação antes de parar"
 
 msgid "Auto"
 msgstr "Automático"
@@ -110,7 +110,7 @@ msgid "Bed Mesh"
 msgstr "Malha de Nivelamento da Base"
 
 msgid "Both"
-msgstr ""
+msgstr "Ambos"
 
 msgid "Calibrate"
 msgstr "Calibrar"
@@ -143,10 +143,10 @@ msgid "Cannot connect to Moonraker"
 msgstr "Não é possível se conectar ao Moonraker"
 
 msgid "Changes how the interface looks"
-msgstr ""
+msgstr "Altera como a interface aparece"
 
 msgid "Changes how the time remaining is calculated"
-msgstr ""
+msgstr "Altera como o tempo restante é calculado"
 
 msgid "Channel"
 msgstr "Canal"
@@ -164,7 +164,7 @@ msgid "Close"
 msgstr "Fechar"
 
 msgid "Close messages after a timeout"
-msgstr ""
+msgstr "Fechar mensagens após um tempo limite"
 
 msgid "Complete"
 msgstr "Completo"
@@ -186,7 +186,7 @@ msgid "Cooldown"
 msgstr "Resfriando"
 
 msgid "Current percentage and graph line"
-msgstr ""
+msgstr "Porcentagem atual e linha do gráfico"
 
 msgid "DPMS has failed to load and has been disabled"
 msgstr "O carregamento do DPMS falhou e esse foi desabilitado"
@@ -200,14 +200,11 @@ msgstr "Deletar Diretório?"
 msgid "Delete File?"
 msgstr "Deletar Arquivo?"
 
-msgid "Deselect"
-msgstr "Desselecionar"
-
 msgid "Disable Motors"
 msgstr "Desabilitar Motores"
 
 msgid "Disable for 12hs with am / pm"
-msgstr ""
+msgstr "Desativar por 12 horas com AM/PM"
 
 msgid "Distance (mm)"
 msgstr "Distância (mm)"
@@ -220,10 +217,10 @@ msgid "Elapsed:"
 msgstr "Decorrido:"
 
 msgid "Emergency Stop"
-msgstr ""
+msgstr "Parada de Emergência"
 
 msgid "Enable screen power management"
-msgstr ""
+msgstr "Ativar gerenciamento de energia da tela"
 
 msgid "Ended official support in June 2023"
 msgstr "Suporte oficial finalizado em Junho de 2023"
@@ -232,19 +229,19 @@ msgid "Error"
 msgstr "Erro"
 
 msgid "Error clearing active spool"
-msgstr ""
+msgstr "Erro ao limpar o carretel ativo"
 
 msgid "Error getting active spool"
-msgstr ""
+msgstr "Erro ao obter a fila de impressão ativa"
 
 msgid "Error setting active spool"
-msgstr ""
+msgstr "Erro ao definir a fila de impressão ativa"
 
 msgid "Error trying to fetch spools"
-msgstr ""
+msgstr "Erro ao tentar buscar spools"
 
 msgid "Error: Couldn't get a position to probe"
-msgstr ""
+msgstr "Erro: Não foi possível obter uma posição para sondar"
 
 msgid "Estimated Time Method"
 msgstr "Método de Tempo Estimado"
@@ -259,7 +256,7 @@ msgid "Extrude"
 msgstr "Extrudar"
 
 msgid "Extruders"
-msgstr ""
+msgstr "Extrusoras"
 
 msgid "Extrusion +"
 msgstr "Extrusão +"
@@ -385,7 +382,7 @@ msgid "Invalid password"
 msgstr "Senha Inválida"
 
 msgid "Inversely affects the icon size"
-msgstr ""
+msgstr "Afeta inversamente o tamanho do ícone"
 
 msgid "Invert X"
 msgstr "Inverter X"
@@ -400,7 +397,7 @@ msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "Pode demorar mais de 5 minutos dependendo da potência do aquecedor."
 
 msgid "It's possible that the configuration is not correct"
-msgstr ""
+msgstr "É possível que a configuração não esteja correta"
 
 msgid "Klipper Restart"
 msgstr "Reiniciar Klipper"
@@ -457,7 +454,7 @@ msgid "Loading..."
 msgstr "Carregando..."
 
 msgid "Lost Connection to Moonraker"
-msgstr ""
+msgstr "Conexão perdida com o Moonraker"
 
 msgid "Lower Nozzle"
 msgstr "Baixar Bico de Extrusão"
@@ -498,6 +495,9 @@ msgstr "Medir Y"
 msgid "Medium"
 msgstr "Médio"
 
+msgid "Memory"
+msgstr ""
+
 msgid "Menu"
 msgstr "Menu"
 
@@ -505,7 +505,7 @@ msgid "Mesh calibrate"
 msgstr "Calibração de Malha"
 
 msgid "Minimum Cruise Ratio"
-msgstr ""
+msgstr "Taxa Mínima de Deslocamento"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -544,7 +544,7 @@ msgid "No wireless interface has been found"
 msgstr "Nenhuma interface sem-fio foi encontrada"
 
 msgid "Not all screens support this"
-msgstr ""
+msgstr "Nem todas as telas suportam isso"
 
 msgid "Not working or not configured"
 msgstr "Sem funcionar ou não configurado"
@@ -557,6 +557,9 @@ msgstr "Registro de notificação vazio"
 
 msgid "Notifications"
 msgstr "Notificações"
+
+msgid "Only for the move panel"
+msgstr ""
 
 #, python-format
 msgid "Outdated by %d"
@@ -590,6 +593,9 @@ msgstr "Pinos"
 
 msgid "Please recompile and flash the micro-controller."
 msgstr "Por favor recompile e grave o microcontrolador."
+
+msgid "Please wait"
+msgstr ""
 
 msgid "Power"
 msgstr "Ligar"
@@ -679,7 +685,7 @@ msgid "Retrying"
 msgstr "Tentando Novamente"
 
 msgid "Rotation invalid"
-msgstr ""
+msgstr "Rotação inválida"
 
 msgid "Save"
 msgstr "Salvar"
@@ -710,10 +716,7 @@ msgid "Screws Adjust"
 msgstr "Ajuste de atarraxamento"
 
 msgid "Screws not used:"
-msgstr ""
-
-msgid "Select"
-msgstr "Selecionar"
+msgstr "Parafusos não utilizados:"
 
 msgid "Send"
 msgstr "Enviar"
@@ -734,7 +737,7 @@ msgid "Show Scrollbars Buttons"
 msgstr "Mostrar Botões das Barras de Rolagem"
 
 msgid "Show only devices that are able to be set"
-msgstr ""
+msgstr "Mostrar apenas dispositivos que podem ser configurados"
 
 msgid "Shutdown"
 msgstr "Desligar"
@@ -781,6 +784,9 @@ msgstr "Iniciando recuperação para"
 msgid "Starting update for"
 msgstr "Iniciando atualização para"
 
+msgid "Swaps buttons if they are on top of each other, affects other panels"
+msgstr ""
+
 msgid "System"
 msgstr "Sistema"
 
@@ -797,9 +803,15 @@ msgid "Temperature"
 msgstr "Temperatura"
 
 msgid "This panel supports up-to 9 screws in a 3x3 Grid"
+msgstr "Este painel suporta até 9 parafusos em uma grade 3x3"
+
+msgid "This will affect screw positions and mesh graph"
 msgstr ""
 
 msgid "Timeout for screen black-out or power-off"
+msgstr "Tempo limite para tela apagar ou desligar"
+
+msgid "Timeout for screen black-out or power-off during printing"
 msgstr ""
 
 msgid "Total:"
@@ -830,7 +842,7 @@ msgid "Uploaded"
 msgstr "Carregado"
 
 msgid "Useful for un-responsive touchscreens"
-msgstr ""
+msgstr "Útil para telas sensíveis ao toque não responsivas"
 
 msgid "Warning"
 msgstr "Aviso"
@@ -867,6 +879,11 @@ msgstr[1] "comprometimentos"
 msgid "dBm"
 msgstr "dBm"
 
+msgid "day"
+msgid_plural "days"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "hora"
@@ -894,6 +911,17 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#~ msgid "Deselect"
+#~ msgstr "Desselecionar"
+
+#~ msgid "Select"
+#~ msgstr "Selecionar"
 
 #~ msgid "Bed screw configuration:"
 #~ msgstr "Configuração de atarraxamento da Base:"

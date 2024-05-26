@@ -19,7 +19,7 @@ class PrintListItem(Gtk.FlowBoxChild):
         self.size = size
 
     def set_as_dir(self, is_dir: bool):
-        self.dir = -1 if is_dir else 00
+        self.dir = -1 if is_dir else 0
 
     def set_path(self, path):
         self.path = path

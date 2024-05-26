@@ -1,19 +1,13 @@
 jinja2==3.1.4;python_version>="3.6"
-requests==2.31.0;python_version>="3.7"
-netifaces==0.11.0
-six==1.16.0
-dbus-python==1.3.2
+requests==2.32.2;python_version>="3.7"
+sdbus==0.11.1;python_version>="3.8"
+sdbus_networkmanager==2.0.0;python_version>="3.8"
 
 # libmpv-dev 0.33 is required for 1.0
 python-mpv==0.5.2;python_version<"3.10"
 python-mpv==1.0.6;python_version>="3.10"
 
 backports.zoneinfo;python_version<"3.9"
-
-# Python 3.7 (For Buster until June 2024)
-PyGObject==3.44.1; python_version == '3.7'
-pycairo==1.23.0; python_version == '3.7'
-websocket-client==1.6.1; python_version == '3.7'
 
 PyGObject==3.48.1;python_version>="3.8"
 pycairo==1.26.0;python_version>="3.8"

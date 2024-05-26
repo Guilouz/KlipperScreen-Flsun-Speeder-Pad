@@ -28,18 +28,19 @@ class Panel(MenuPanel):
         stats = self._printer.get_printer_status_data()["printer"]
         if stats["temperature_devices"]["count"] > 0 or stats["extruders"]["count"] > 0:
             self._gtk.reset_temp_color()
-            self.main_menu.attach(self.create_left_panel(), 0, 0, 1, 1)
         if self._screen.vertical_mode:
+            self.main_menu.attach(self.create_left_panel(), 0, 0, 1, 3)
             self.labels['menu'] = self.arrangeMenuItems(items, 3, True)
             scroll.add(self.labels['menu'])
-            self.main_menu.attach(scroll, 0, 1, 1, 1)
+            self.main_menu.attach(scroll, 0, 3, 1, 2)
         else:
+            self.main_menu.attach(self.create_left_panel(), 0, 0, 1, 1)
             self.labels['menu'] = self.arrangeMenuItems(items, 2, True)
             scroll.add(self.labels['menu'])
             self.main_menu.attach(scroll, 1, 0, 1, 1)
         self.content.add(self.main_menu)
 
-    def update_graph_visibility(self):
+    def update_graph_visibility(self, force_hide=False):
         if self.left_panel is None:
             logging.info("No left panel")
             return
@@ -54,7 +55,7 @@ class Panel(MenuPanel):
                 self.devices[device]['name'].get_style_context().add_class("graph_label")
             else:
                 self.devices[device]['name'].get_style_context().remove_class("graph_label")
-        if count > 0:
+        if count > 0 and not force_hide:
             if self.labels['da'] not in self.left_panel:
                 self.left_panel.add(self.labels['da'])
             self.labels['da'].queue_draw()
@@ -266,11 +267,17 @@ class Panel(MenuPanel):
         self.active_heater = None
 
         if self._screen.vertical_mode:
-            self.main_menu.remove_row(1)
-            self.main_menu.attach(self.labels['menu'], 0, 1, 1, 1)
+            if not self._gtk.ultra_tall:
+                self.update_graph_visibility(force_hide=False)
+            top = self.main_menu.get_child_at(0, 0)
+            bottom = self.main_menu.get_child_at(0, 2)
+            self.main_menu.remove(top)
+            self.main_menu.remove(bottom)
+            self.main_menu.attach(top, 0, 0, 1, 3)
+            self.main_menu.attach(self.labels["menu"], 0, 3, 1, 2)
         else:
             self.main_menu.remove_column(1)
-            self.main_menu.attach(self.labels['menu'], 1, 0, 1, 1)
+            self.main_menu.attach(self.labels["menu"], 1, 0, 1, 1)
         self.main_menu.show_all()
         self.numpad_visible = False
         self._screen.base_panel.set_control_sensitive(False, control='back')
@@ -302,8 +309,14 @@ class Panel(MenuPanel):
         self.labels["keypad"].clear()
 
         if self._screen.vertical_mode:
-            self.main_menu.remove_row(1)
-            self.main_menu.attach(self.labels["keypad"], 0, 1, 1, 1)
+            if not self._gtk.ultra_tall:
+                self.update_graph_visibility(force_hide=True)
+            top = self.main_menu.get_child_at(0, 0)
+            bottom = self.main_menu.get_child_at(0, 3)
+            self.main_menu.remove(top)
+            self.main_menu.remove(bottom)
+            self.main_menu.attach(top, 0, 0, 1, 2)
+            self.main_menu.attach(self.labels["keypad"], 0, 2, 1, 2)
         else:
             self.main_menu.remove_column(1)
             self.main_menu.attach(self.labels["keypad"], 1, 0, 1, 1)

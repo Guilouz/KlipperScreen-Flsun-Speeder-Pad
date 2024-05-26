@@ -29,7 +29,6 @@ class Panel(ScreenPanel):
         self.preheat_options = self._screen._config.get_preheat_options()
         self.grid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         self._gtk.reset_temp_color()
-        self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
         macros = self._printer.get_config_section_list("gcode_macro ") # Changes
         self.pid_start = any("_PID_KS_START" in macro.upper() for macro in macros) # Changes
         self.pid_end = any("_PID_KS_END" in macro.upper() for macro in macros) # Changes
@@ -54,8 +53,10 @@ class Panel(ScreenPanel):
                 self.select_heater(None, h)
 
         if self._screen.vertical_mode:
-            self.grid.attach(self.create_right_panel(), 0, 1, 1, 1)
+            self.grid.attach(self.create_left_panel(), 0, 0, 1, 3)
+            self.grid.attach(self.create_right_panel(), 0, 3, 1, 2)
         else:
+            self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
             self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
 
         self.content.add(self.grid)
@@ -74,16 +75,17 @@ class Panel(ScreenPanel):
         right.attach(cooldown, 0, 0, 2, 1)
         right.attach(adjust, 2, 0, 1, 1)
         if self.show_preheat:
-            right.attach(self.preheat(), 0, 1, 3, 3)
+            right.attach(self.preheat(), 0, 1, 3, 2)
         else:
-            right.attach(self.delta_adjust(), 0, 1, 3, 3)
+            right.attach(self.delta_adjust(), 0, 1, 3, 2)
         return right
 
     def switch_preheat_adjust(self, widget):
         self.show_preheat ^= True
         if self._screen.vertical_mode:
-            self.grid.remove_row(1)
-            self.grid.attach(self.create_right_panel(), 0, 1, 1, 1)
+            row = self.grid.get_child_at(0, 3)
+            self.grid.remove(row)
+            self.grid.attach(self.create_right_panel(), 0, 3, 1, 2)
         else:
             self.grid.remove_column(1)
             self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
@@ -109,34 +111,37 @@ class Panel(ScreenPanel):
         return scroll
 
     def delta_adjust(self):
-        deltagrid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
+        # Create buttons for increase and decrease
         self.labels["increase"] = self._gtk.Button("increase", None, "color1")
-        self.labels["increase"].connect(
-            "clicked", self.change_target_temp_incremental, "+"
-        )
+        self.labels["increase"].connect("clicked", self.change_target_temp_incremental, "+")
         self.labels["decrease"] = self._gtk.Button("decrease", None, "color3")
-        self.labels["decrease"].connect(
-            "clicked", self.change_target_temp_incremental, "-"
-        )
+        self.labels["decrease"].connect("clicked", self.change_target_temp_incremental, "-")
 
-        tempgrid = Gtk.Grid()
-        for j, i in enumerate(self.tempdeltas):
+        # Create buttons for temperature deltas
+        for i in self.tempdeltas:
             self.labels[f"deg{i}"] = self._gtk.Button(label=i)
             self.labels[f"deg{i}"].connect("clicked", self.change_temp_delta, i)
             ctx = self.labels[f"deg{i}"].get_style_context()
             ctx.add_class("horizontal_togglebuttons")
             if i == self.tempdelta:
                 ctx.add_class("horizontal_togglebuttons_active")
+
+        # Create grid for temperature deltas
+        tempgrid = Gtk.Grid()
+        for j, i in enumerate(self.tempdeltas):
             tempgrid.attach(self.labels[f"deg{i}"], j, 0, 1, 1)
 
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        vbox.pack_start(Gtk.Label(_("Temperature") + " (°C)"), False, False, 8)
-        vbox.pack_end(tempgrid, True, True, 2)
-
-        vsize = 2 if self._screen.vertical_mode else 3
-        deltagrid.attach(self.labels["decrease"], 0, 0, 1, vsize)
-        deltagrid.attach(self.labels["increase"], 1, 0, 1, vsize)
-        deltagrid.attach(vbox, 0, vsize, 2, 2)
+        # Create grid for decrease button, increase button, temperature labels, and grid
+        deltagrid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
+        if self._screen.vertical_mode:
+            deltagrid.attach(self.labels["decrease"], 0, 1, 1, 1)
+            deltagrid.attach(self.labels["increase"], 1, 1, 1, 1)
+            deltagrid.attach(tempgrid, 0, 2, 2, 1)
+        else:
+            deltagrid.attach(self.labels["decrease"], 0, 1, 1, 3)
+            deltagrid.attach(self.labels["increase"], 1, 1, 1, 3)
+            deltagrid.attach(Gtk.Label(_("Temperature") + " (°C)"), 0, 4, 2, 1)
+            deltagrid.attach(tempgrid, 0, 5, 2, 2)
         return deltagrid
 
     def change_temp_delta(self, widget, tempdelta):
@@ -186,7 +191,7 @@ class Panel(ScreenPanel):
                     self._screen.show_popup_message(_("Unknown Heater") + " " + heater)
                 logging.info(f"Setting {heater} to {target}")
 
-    def update_graph_visibility(self):
+    def update_graph_visibility(self, force_hide=False):
         count = 0
         for device in self.devices:
             visible = self._config.get_config().getboolean(
@@ -203,7 +208,7 @@ class Panel(ScreenPanel):
                 self.devices[device]["name_button"].get_style_context().remove_class(
                     "graph_label"
                 )
-        if count > 0:
+        if count > 0 and not force_hide:
             if self.labels["da"] not in self.left_panel:
                 self.left_panel.add(self.labels["da"])
             self.labels["da"].queue_draw()
@@ -582,8 +587,14 @@ class Panel(ScreenPanel):
             )
 
         if self._screen.vertical_mode:
-            self.grid.remove_row(1)
-            self.grid.attach(self.create_right_panel(), 0, 1, 1, 1)
+            if not self._gtk.ultra_tall:
+                self.update_graph_visibility(force_hide=False)
+            top = self.grid.get_child_at(0, 0)
+            bottom = self.grid.get_child_at(0, 2)
+            self.grid.remove(top)
+            self.grid.remove(bottom)
+            self.grid.attach(top, 0, 0, 1, 3)
+            self.grid.attach(self.create_right_panel(), 0, 3, 1, 2)
         else:
             self.grid.remove_column(1)
             self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
@@ -645,8 +656,14 @@ class Panel(ScreenPanel):
         self.labels["keypad"].clear()
 
         if self._screen.vertical_mode:
-            self.grid.remove_row(1)
-            self.grid.attach(self.labels["keypad"], 0, 1, 1, 1)
+            if not self._gtk.ultra_tall:
+                self.update_graph_visibility(force_hide=True)
+            top = self.grid.get_child_at(0, 0)
+            bottom = self.grid.get_child_at(0, 3)
+            self.grid.remove(top)
+            self.grid.remove(bottom)
+            self.grid.attach(top, 0, 0, 1, 2)
+            self.grid.attach(self.labels["keypad"], 0, 2, 1, 2)
         else:
             self.grid.remove_column(1)
             self.grid.attach(self.labels["keypad"], 1, 0, 1, 1)
