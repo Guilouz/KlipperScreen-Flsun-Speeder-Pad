@@ -343,8 +343,8 @@ class KlipperScreen(Gtk.Window):
         self.notification_log.append(log_entry)
         self.process_update("notify_log", log_entry)
 
-    def show_popup_message(self, message, level=3):
-        if (datetime.now() - self.last_popup_time).seconds < 1:
+    def show_popup_message(self, message, level=3, from_ws=False):
+        if (datetime.now() - self.last_popup_time).seconds < 1 and from_ws:
             return
         self.last_popup_time = datetime.now()
         self.close_screensaver()
@@ -517,20 +517,19 @@ class KlipperScreen(Gtk.Window):
             logging.info("No items in menu")
 
     def _remove_all_panels(self):
-        for _ in self.base_panel.content.get_children():
-            self.base_panel.content.remove(_)
+        logging.debug("Removing all panels")
+        while len(self._cur_panels) > 0:
+            self._remove_current_panel()
+            del self._cur_panels[-1]
+        self._cur_panels.clear()
         for dialog in self.dialogs:
             self.gtk.remove_dialog(dialog)
-        for panel in list(self.panels):
-            if hasattr(self.panels[panel], "deactivate"):
-                self.panels[panel].deactivate()
-        self._cur_panels.clear()
         self.close_screensaver()
 
     def _remove_current_panel(self):
-        self.base_panel.remove(self.panels[self._cur_panels[-1]].content)
         if hasattr(self.panels[self._cur_panels[-1]], "deactivate"):
             self.panels[self._cur_panels[-1]].deactivate()
+        self.base_panel.remove(self.panels[self._cur_panels[-1]].content)
 
     def _menu_go_back(self, widget=None, home=False):
         logging.info(f"#### Menu go {'home' if home else 'back'}")
@@ -804,7 +803,7 @@ class KlipperScreen(Gtk.Window):
         elif action == "notify_update_response":
             if 'message' in data and 'Error' in data['message']:
                 logging.error(f"{action}:{data['message']}")
-                self.show_popup_message(data['message'], 3)
+                self.show_popup_message(data['message'], 3, from_ws=True)
                 if "KlipperScreen" in data['message']:
                     self.restart_ks()
         elif action == "notify_power_changed":
@@ -823,12 +822,12 @@ class KlipperScreen(Gtk.Window):
                         return
                     self.prompt.decode(action)
                 elif data.startswith("echo: "):
-                    self.show_popup_message(data[6:], 1)
+                    self.show_popup_message(data[6:], 1, from_ws=True)
                 elif data.startswith("!! "):
-                    self.show_popup_message(data[3:], 3)
+                    self.show_popup_message(data[3:], 3, from_ws=True)
                 elif "unknown" in data.lower() and \
                         not ("TESTZ" in data or "MEASURE_AXES_NOISE" in data or "ACCELEROMETER_QUERY" in data):
-                    self.show_popup_message(data)
+                    self.show_popup_message(data, from_ws=True)
                 # Start Changes
                 #elif "SAVE_CONFIG" in data and self.printer.state == "ready": # Changes
                 elif "SAVE_CONFIG" in data and self.printer.state == "ready" and not "PID parameters:" in data:

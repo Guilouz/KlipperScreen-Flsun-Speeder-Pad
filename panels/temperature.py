@@ -25,7 +25,7 @@ class Panel(ScreenPanel):
         self.h = self.f = 0
         self.tempdeltas = ["1", "5", "10", "25"]
         self.tempdelta = self.tempdeltas[-2]
-        self.show_preheat = False
+        self.show_preheat = self._printer.state not in ("printing", "paused")
         self.preheat_options = self._screen._config.get_preheat_options()
         self.grid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         self._gtk.reset_temp_color()
@@ -33,10 +33,16 @@ class Panel(ScreenPanel):
         self.pid_start = any("_PID_KS_START" in macro.upper() for macro in macros) # Changes
         self.pid_end = any("_PID_KS_END" in macro.upper() for macro in macros) # Changes
 
-        # When printing start in temp_delta mode and only select tools
+        if self._screen.vertical_mode:
+            self.grid.attach(self.create_left_panel(), 0, 0, 1, 3)
+            self.grid.attach(self.create_right_panel(), 0, 3, 1, 2)
+        else:
+            self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
+            self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
+
+        # When printing start only select tools
         selection = []
         if self._printer.state not in ("printing", "paused"):
-            self.show_preheat = True
             selection.extend(self._printer.get_temp_devices())
         elif extra:
             selection.append(extra)
@@ -51,13 +57,6 @@ class Panel(ScreenPanel):
                 continue
             if h not in self.active_heaters:
                 self.select_heater(None, h)
-
-        if self._screen.vertical_mode:
-            self.grid.attach(self.create_left_panel(), 0, 0, 1, 3)
-            self.grid.attach(self.create_right_panel(), 0, 3, 1, 2)
-        else:
-            self.grid.attach(self.create_left_panel(), 0, 0, 1, 1)
-            self.grid.attach(self.create_right_panel(), 1, 0, 1, 1)
 
         self.content.add(self.grid)
 

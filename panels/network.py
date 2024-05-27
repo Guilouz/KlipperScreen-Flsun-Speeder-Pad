@@ -17,7 +17,20 @@ class Panel(ScreenPanel):
         self.network_list = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, hexpand=True, vexpand=True)
         self.network_rows = {}
         self.networks = {}
-        self.sdbus_nm = SdbusNm()
+        try:
+            self.sdbus_nm = SdbusNm(self.popup_callback)
+        except Exception as e:
+            logging.exception("Failed to initialize")
+            self.sdbus_nm = None
+            self.content.add(
+                Gtk.Label(
+                    label=_("Failed to initialize sdbus") + f"\n{e}",
+                    wrap=True,
+                    wrap_mode=Pango.WrapMode.WORD_CHAR,
+                )
+            )
+            self._screen.panels_reinit.append(self._screen._cur_panels[-1])
+            return
         self.wifi_signal_icons = {
             'excellent': self._gtk.PixbufFromIcon('wifi_excellent'),
             'good': self._gtk.PixbufFromIcon('wifi_good'),
@@ -195,19 +208,21 @@ class Panel(ScreenPanel):
 
     def connect_network(self, widget, ssid, showadd=True):
         self.deactivate()
-        if showadd and not self.sdbus_nm.is_known(ssid) and not self.sdbus_nm.is_open(ssid):
-            self.show_add_network(widget, ssid)
+        if showadd and not self.sdbus_nm.is_known(ssid):
+            if self.sdbus_nm.is_open(ssid):
+                logging.debug("Network is Open do not show psk")
+                result = self.sdbus_nm.add_network(ssid, '')
+                if "error" in result:
+                    self._screen.show_popup_message(result["message"])
+            else:
+                self.show_add_network(widget, ssid)
             self.activate()
             return
         bssid = self.sdbus_nm.get_bssid_from_ssid(ssid)
         if bssid and bssid in self.network_rows:
             self.remove_network_from_list(bssid)
-        msg = f"{ssid}\n" + _("Starting WiFi Association")
-        self._screen.show_popup_message(msg, 1)
-        result = self.sdbus_nm.connect(ssid)
-        logging.debug(result)
-        self.update_all_networks()
-        self.activate()
+        self.sdbus_nm.connect(ssid)
+        self.reload_networks()
 
     def remove_network_from_list(self, bssid):
         if bssid not in self.network_rows:
@@ -228,7 +243,7 @@ class Panel(ScreenPanel):
         if "add_network" in self.labels:
             del self.labels['add_network']
 
-        label = Gtk.Label(label=_("PSK for") + ' ssid', hexpand=False)
+        label = Gtk.Label(label=_("PSK for") + f' {ssid}', hexpand=False)
         self.labels['network_psk'] = Gtk.Entry(hexpand=True)
         self.labels['network_psk'].connect("activate", self.add_new_network, ssid)
         self.labels['network_psk'].connect("focus-in-event", self._screen.show_keyboard)
@@ -322,8 +337,10 @@ class Panel(ScreenPanel):
         self.activate()
 
     def activate(self):
+        if self.sdbus_nm is None:
+            return
         if self.update_timeout is None:
-            if self.sdbus_nm is not None and self.sdbus_nm.wifi:
+            if self.sdbus_nm.wifi:
                 if self.reload_button.get_sensitive():
                     self._gtk.Button_busy(self.reload_button, True)
                     self.sdbus_nm.rescan()
