@@ -393,7 +393,6 @@ class Panel(ScreenPanel):
             #if saved_z_offset:
                 #msg += "\n\n" + _("Saved offset: %s") % saved_z_offset
             #label.set_label(msg)
-
         #buttons = [
             #{"name": _("Apply"), "response": Gtk.ResponseType.APPLY, "style": 'dialog-default'},
             #{"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL, "style": 'dialog-error'}
@@ -473,10 +472,10 @@ class Panel(ScreenPanel):
 
     def new_print(self):
         self._screen.close_screensaver()
-        self.update_progress(0.0)
         if "virtual_sdcard" in self._printer.data:
             logging.info("reseting progress")
             self._printer.data["virtual_sdcard"]["progress"] = 0
+        self.update_progress(0.0)
 
     def process_update(self, action, data):
         if action == "notify_gcode_response":
@@ -499,6 +498,7 @@ class Panel(ScreenPanel):
                     self._printer.get_stat(x, "temperature"),
                     self._printer.get_stat(x, "target"),
                     self._printer.get_stat(x, "power"),
+                    digits=0
                 )
                 if x in self.buttons['extruder']:
                     self.buttons['extruder'][x].set_label(self.labels[x].get_text())
