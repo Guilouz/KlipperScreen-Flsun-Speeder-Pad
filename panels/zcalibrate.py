@@ -136,9 +136,12 @@ class Panel(ScreenPanel):
                 #if 'mesh_origin' in mesh: # Changes
                     #self.mesh_origin = self._csv_to_array(mesh['mesh_origin']) # Changes
                 #logging.info(f"Mesh Radius: {self.mesh_radius} Origin: {self.mesh_origin}") # Changes
-            #else: # Changes
+            #elif 'mesh_min' in mesh and 'mesh_max' in mesh: # Changes
                 #self.mesh_min = self._csv_to_array(mesh['mesh_min']) # Changes
                 #self.mesh_max = self._csv_to_array(mesh['mesh_max']) # Changes
+            #elif 'min_x' in mesh and 'min_y' in mesh and 'max_x' in mesh and 'max_y' in mesh:
+                #self.mesh_min = [float(mesh['min_x']), float(mesh['min_y'])]
+                #self.mesh_max = [float(mesh['max_x']), float(mesh['max_y'])]
             #if 'zero_reference_position' in self._printer.get_config_section("bed_mesh"): # Changes
                 #self.zero_ref = self._csv_to_array(mesh['zero_reference_position']) # Changes
             #if "probe" not in functions: # Changes
