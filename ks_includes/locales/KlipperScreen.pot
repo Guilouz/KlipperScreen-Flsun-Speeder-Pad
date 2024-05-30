@@ -18,6 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Do you want to forget or disconnect %s?"
+msgstr ""
+
+msgid "Forget"
+msgstr ""
+
+msgid "Failed to initialize sdbus"
+msgstr ""
+
+msgid "Disconnect"
+msgstr ""
+
+msgid "Remove network"
+msgstr ""
+
+msgid "Max:"
+msgstr ""
+
+msgid "Network not found"
+msgstr ""
+
+msgid "Unknown security type"
+msgstr ""
+
+msgid "Insufficient privileges"
+msgstr ""
+
+msgid "Couldn't add network"
+msgstr ""
+
+msgid "Failed to delete connection"
+msgstr ""
+
+msgid "Connecting"
+msgstr ""
+
+msgid "Getting IP address"
+msgstr ""
+
+msgid "Connection established successfully"
+msgstr ""
+
+msgid "Connection disconnected"
+msgstr ""
+
+msgid "Connection failed"
+msgstr ""
+
 msgid "Remaining weight"
 msgstr ""
 

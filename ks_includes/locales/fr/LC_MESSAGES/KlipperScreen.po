@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-05-09 18:59+0200\n"
+"PO-Revision-Date: 2024-05-31 01:28+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
+
+msgid "Do you want to forget or disconnect %s?"
+msgstr "Voulez-vous oublier ou déconnecter le réseau %s ?"
+
+msgid "Forget"
+msgstr "Oublier"
+
+msgid "Failed to initialize sdbus"
+msgstr "Échec de l'initialisation de sdbus"
+
+msgid "Disconnect"
+msgstr "Déconnecter"
+
+msgid "Remove network"
+msgstr "Supprimer le réseau"
+
+msgid "Max:"
+msgstr "Max:"
+
+msgid "Network not found"
+msgstr "Réseau non trouvé"
+
+msgid "Unknown security type"
+msgstr "Type de sécurité inconnu"
+
+msgid "Insufficient privileges"
+msgstr "Privilèges insuffisants"
+
+msgid "Couldn't add network"
+msgstr "Impossible d’ajouter le réseau"
+
+msgid "Failed to delete connection"
+msgstr "Échec de la suppression de la connexion"
+
+msgid "Connecting"
+msgstr "Connexion…"
+
+msgid "Getting IP address"
+msgstr "Obtention de l’adresse IP"
+
+msgid "Connection established successfully"
+msgstr "Connexion établie avec succès"
+
+msgid "Connection disconnected"
+msgstr "Connexion déconnectée"
+
+msgid "Connection failed"
+msgstr "Connexion échouée"
 
 msgid "Remaining weight"
 msgstr "Poids restant"
