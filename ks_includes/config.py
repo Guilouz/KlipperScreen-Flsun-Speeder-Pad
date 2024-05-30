@@ -462,7 +462,8 @@ class KlipperScreenConfig:
         directories = [printer_data_config, printer_1_data_config, xdg_config, klipperscreendir] # Changes
 
         for directory in directories:
-            if path := self.check_path_exists(directory, self.configfile_name):
+            path = self.check_path_exists(directory, self.configfile_name)
+            if path:
                 return path
 
         # fallback

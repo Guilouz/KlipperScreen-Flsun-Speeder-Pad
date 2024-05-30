@@ -79,6 +79,8 @@ class Panel(ScreenPanel):
             self.labels['main_box'].pack_start(sbox, False, False, 5)
             GLib.idle_add(self.load_networks)
             scroll.add(self.network_list)
+            self.sdbus_nm.enable_monitoring(True)
+            self.conn_status = GLib.timeout_add_seconds(1, self.sdbus_nm.monitor_connection_status)
         else:
             self._screen.show_popup_message(_("No wireless interface has been found"), level=2)
             self.labels['networkinfo'] = Gtk.Label()
@@ -132,7 +134,7 @@ class Panel(ScreenPanel):
                          halign=Gtk.Align.START, valign=Gtk.Align.CENTER)
         labels.add(name)
         labels.add(info)
-        icon = self._gtk.Image('wifi_weak')
+        icon = self._gtk.Image()
 
         self.network_rows[bssid] = Gtk.Box(spacing=5, hexpand=True, vexpand=False)
         self.network_rows[bssid].get_style_context().add_class("frame-item")
@@ -345,14 +347,18 @@ class Panel(ScreenPanel):
                     self._gtk.Button_busy(self.reload_button, True)
                     self.sdbus_nm.rescan()
                     self.load_networks()
+                self.update_all_networks()
                 self.update_timeout = GLib.timeout_add_seconds(5, self.update_all_networks)
             else:
+                self.update_single_network_info()
                 self.update_timeout = GLib.timeout_add_seconds(5, self.update_single_network_info)
 
     def deactivate(self):
         if self.update_timeout is not None:
             GLib.source_remove(self.update_timeout)
             self.update_timeout = None
+        if self.sdbus_nm.wifi:
+            self.sdbus_nm.enable_monitoring(False)
 
     def toggle_wifi(self, switch, gparams):
         enable = switch.get_active()
