@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-05-31 01:28+0200\n"
+"PO-Revision-Date: 2024-06-02 22:40+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,14 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.4\n"
 
+msgid "Estimated Time"
+msgstr "Durée estimée"
+
+msgid "Insufficient priviledges detected"
+msgstr "Privilèges insuffisants détectés"
+
+msgid "Do you want to let KlipperScreen try to solve the issue?"
+msgstr "Voulez-vous laisser KlipperScreen essayer de résoudre le problème ?"
+
 msgid "Do you want to forget or disconnect %s?"
 msgstr "Voulez-vous oublier ou déconnecter le réseau %s ?"
 
 msgid "Forget"
 msgstr "Oublier"
 
-msgid "Failed to initialize sdbus"
-msgstr "Échec de l'initialisation de sdbus"
+msgid "Failed to initialize"
+msgstr "Échec de l'initialisation"
 
 msgid "Disconnect"
 msgstr "Déconnecter"
@@ -57,11 +66,11 @@ msgstr "Connexion…"
 msgid "Getting IP address"
 msgstr "Obtention de l’adresse IP"
 
-msgid "Connection established successfully"
-msgstr "Connexion établie avec succès"
+msgid "Network connected"
+msgstr "Réseau connecté"
 
-msgid "Connection disconnected"
-msgstr "Connexion déconnectée"
+msgid "Network disconnected"
+msgstr "Réseau déconnecté"
 
 msgid "Connection failed"
 msgstr "Connexion échouée"
@@ -419,9 +428,6 @@ msgstr "Arrêt d'urgence"
 msgid "Enable screen power management"
 msgstr "Activer la gestion de l’alimentation de l’écran"
 
-msgid "Ended official support in June 2023"
-msgstr "Fin du support officiel en juin 2023"
-
 msgid "Error"
 msgstr "Erreur"
 
@@ -466,6 +472,9 @@ msgstr "Échec, ajustez d'abord la position"
 
 msgid "Fan"
 msgstr "Ventilation"
+
+msgid "Filament"
+msgstr "Filament"
 
 msgid "Filament Used"
 msgstr "Filament utilisé"
@@ -512,14 +521,14 @@ msgstr "Taille de la police"
 msgid "Full Update"
 msgstr "Tout mettre à jour"
 
+msgid "Gcodes"
+msgstr "Gcodes"
+
 msgid "Go Back"
 msgstr "Retour"
 
 msgid "Height:"
 msgstr "Hauteur:"
-
-msgid "Hidden"
-msgstr "Masqué"
 
 msgid "Hide"
 msgstr "Masquer"
@@ -616,9 +625,6 @@ msgstr "Klipper tente de démarrer"
 msgid "Klipper will reboot"
 msgstr "Klipper va redémarrer"
 
-msgid "KlipperScreen will drop support in June 2024"
-msgstr "KlipperScreen abandonnera son support en juin 2024"
-
 msgid ""
 "LOAD_FILAMENT/UNLOAD_FILAMENT are hidden and should be used from extrude"
 msgstr ""
@@ -633,6 +639,9 @@ msgstr "Grande"
 
 msgid "Last Used"
 msgstr "Dernière utilisation"
+
+msgid "Layer Height"
+msgstr "Hauteur de couche"
 
 msgid "Layer:"
 msgstr "Couche:"
@@ -705,6 +714,9 @@ msgstr "Calibration du maillage"
 
 msgid "Minimum Cruise Ratio"
 msgstr "Rapport de déplacement minimum"
+
+msgid "Minimum:"
+msgstr "Minimum:"
 
 msgid "Modified"
 msgstr "Modifié"
@@ -804,9 +816,6 @@ msgstr "Imprimer"
 
 msgid "Print Control"
 msgstr "Paramètres"
-
-msgid "Print Time"
-msgstr "Durée d'impression"
 
 msgid "Printer"
 msgstr "Imprimante"
@@ -971,9 +980,6 @@ msgstr "En veille"
 msgid "Start"
 msgstr "Démarrer"
 
-msgid "Starting WiFi Association"
-msgstr "Démarrage de l'association Wi-Fi"
-
 msgid "Starting recovery for"
 msgstr "Démarrage de la récupération pour"
 
@@ -989,11 +995,17 @@ msgstr "Redémarrer le système"
 msgid "System Shutdown"
 msgstr "Arrêter le système"
 
+msgid "System:"
+msgstr "Système:"
+
 msgid "Temp (°C)"
 msgstr "Temp (°C)"
 
 msgid "Temperature"
 msgstr "Températures"
+
+msgid "The system doesn't meet the minimum requirement"
+msgstr "Le système ne répond pas aux exigences minimales"
 
 msgid "This panel supports up-to 9 screws in a 3x3 Grid"
 msgstr "Ce panneau supporte jusqu'à 9 vis dans une grille de 3x3"
@@ -1043,9 +1055,6 @@ msgstr "Envoyé"
 msgid "Useful for un-responsive touchscreens"
 msgstr "Utile pour les écrans tactiles qui ne répondent pas"
 
-msgid "Warning"
-msgstr "Avertissement"
-
 msgid "WebRTC is not supported by the backend trying Stream"
 msgstr "WebRTC n’est pas pris en charge par le flux d’essai du backend"
 
@@ -1077,9 +1086,6 @@ msgid "commit"
 msgid_plural "commits"
 msgstr[0] "changement "
 msgstr[1] "changements "
-
-msgid "dBm"
-msgstr "dBm"
 
 msgid "hour"
 msgid_plural "hours"

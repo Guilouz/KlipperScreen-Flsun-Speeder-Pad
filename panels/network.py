@@ -1,3 +1,4 @@
+import subprocess
 import logging
 import os
 import gi
@@ -12,25 +13,38 @@ class Panel(ScreenPanel):
 
     def __init__(self, screen, title):
         super().__init__(screen, title)
-        self.show_add = False
-        self.update_timeout = None
-        self.network_list = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, hexpand=True, vexpand=True)
-        self.network_rows = {}
-        self.networks = {}
         try:
             self.sdbus_nm = SdbusNm(self.popup_callback)
         except Exception as e:
             logging.exception("Failed to initialize")
             self.sdbus_nm = None
-            self.content.add(
+            self.error_box = Gtk.Box(
+                orientation=Gtk.Orientation.VERTICAL,
+                hexpand=True,
+                vexpand=True
+            )
+            message = (
+                _("Failed to initialize") + "\n"
+                + "This panel needs NetworkManager installed into the system\n"
+                + "And the apropriate permissions, without them it will not function.\n"
+                + f"\n{e}\n"
+            )
+            self.error_box.add(
                 Gtk.Label(
-                    label=_("Failed to initialize sdbus") + f"\n{e}",
+                    label=message,
                     wrap=True,
                     wrap_mode=Pango.WrapMode.WORD_CHAR,
                 )
             )
+            self.error_box.set_valign(Gtk.Align.CENTER)
+            self.content.add(self.error_box)
             self._screen.panels_reinit.append(self._screen._cur_panels[-1])
             return
+        self.show_add = False
+        self.update_timeout = None
+        self.network_list = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, hexpand=True, vexpand=True)
+        self.network_rows = {}
+        self.networks = {}
         self.wifi_signal_icons = {
             'excellent': self._gtk.PixbufFromIcon('wifi_excellent'),
             'good': self._gtk.PixbufFromIcon('wifi_good'),
@@ -182,12 +196,42 @@ class Panel(ScreenPanel):
         self._screen.remove_keyboard()
         result = self.sdbus_nm.add_network(ssid, self.labels['network_psk'].get_text())
         if "error" in result:
+            if result["error"] == "insufficient_privileges":
+                self.permissions_fix_dialog()
+                return
             self._screen.show_popup_message(result["message"])
             if result["error"] == "psk_invalid":
                 return
         else:
             self.connect_network(widget, ssid, showadd=False)
         self.close_add_network()
+
+    def permissions_fix_dialog(self):
+
+        label = Gtk.Label(wrap=True, vexpand=True)
+        label.set_markup(
+            _("Insufficient priviledges detected") + "\n"
+            + _("Do you want to let KlipperScreen try to solve the issue?")
+        )
+        buttons = [
+            {"name": _("Accept"), "response": Gtk.ResponseType.OK, "style": 'dialog-warning'},
+            {"name": _("Cancel"), "response": Gtk.ResponseType.CANCEL, "style": 'dialog-error'},
+        ]
+        self._gtk.Dialog(_("Insufficient privileges"), buttons, label, self.confirm_permission_fix)
+
+    def confirm_permission_fix(self, dialog, response_id):
+        self._gtk.remove_dialog(dialog)
+        if response_id == Gtk.ResponseType.CANCEL:
+            return
+        if response_id == Gtk.ResponseType.OK:
+            conf_d_path = "/etc/NetworkManager/conf.d"
+            if not os.path.exists(conf_d_path):
+                subprocess.run(["sudo", "mkdir", "-p", conf_d_path])
+            with open("/tmp/any-user.conf", "w") as f:
+                f.write("[main]\nauth-polkit=false\n")
+            subprocess.run(["sudo", "mv", "/tmp/any-user.conf", "/etc/NetworkManager/conf.d/any-user.conf"])
+            subprocess.run(["sudo", "systemctl", "restart", "NetworkManager.service"])
+            subprocess.run(["sudo", "systemctl", "restart", "KlipperScreen.service"])
 
     def back(self):
         if self.show_add:
@@ -354,6 +398,8 @@ class Panel(ScreenPanel):
                 self.update_timeout = GLib.timeout_add_seconds(5, self.update_single_network_info)
 
     def deactivate(self):
+        if self.sdbus_nm is None:
+            return
         if self.update_timeout is not None:
             GLib.source_remove(self.update_timeout)
             self.update_timeout = None

@@ -7,8 +7,8 @@ KSENV="${KLIPPERSCREEN_VENV:-${HOME}/.KlipperScreen-env}"
 XSERVER="xinit xinput x11-xserver-utils xserver-xorg-input-evdev xserver-xorg-input-libinput xserver-xorg-legacy xserver-xorg-video-fbdev"
 CAGE="cage seatd xwayland"
 PYGOBJECT="libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0"
-MISC="librsvg2-common libopenjp2-7 wireless-tools libdbus-glib-1-dev autoconf python3-venv"
-OPTIONAL="fonts-nanum fonts-ipafont libmpv-dev policykit-1 network-manager"
+MISC="librsvg2-common libopenjp2-7 libdbus-glib-1-dev autoconf python3-venv"
+OPTIONAL="fonts-nanum fonts-ipafont libmpv-dev"
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -39,7 +39,8 @@ install_graphical_backend()
       echo_ok "Default is Xserver"
       echo_text "Wayland is EXPERIMENTAL needs kms/drm drivers doesn't support DPMS and may need autologin"
       echo_text ""
-      read -r -e -p "Backend Xserver or Wayland (cage), Press enter for default (Xserver)? [X/w]" BACKEND
+      echo "Press enter for default (Xserver)"
+      read -r -e -p "Backend Xserver or Wayland (cage)? [X/w]" BACKEND
       if [[ "$BACKEND" =~ ^[wW]$ ]]; then
         echo_text "Installing Wayland Cage Kiosk"
         if sudo apt install -y $CAGE; then
@@ -118,7 +119,7 @@ create_virtualenv()
         echo_text "Removing old virtual environment"
         rm -rf ${KSENV}
     fi
-
+    
     echo_text "Creating virtual environment"
     python3 -m venv ${KSENV}
 
@@ -289,6 +290,21 @@ start_KlipperScreen()
     sudo systemctl restart KlipperScreen
 }
 
+install_network_manager()
+{
+    if [ -z "$NETOWRK" ]; then
+        echo "Press enter for default (Yes)"
+        read -r -e -p "Insall NetworkManager for the network panel [Y/n]" NETOWRK
+        if [[ $NETOWRK =~ ^[nN]$ ]]; then
+            echo_error "Not insalling NetworkManager for the network panel"
+        else
+            echo_ok "Insalling NetworkManager for the network panel"
+            sudo apt install network-manager
+            sudo systemctl start NetworkManager
+            sudo systemctl enable NetworkManager
+        fi
+    fi
+}
 
 # Script start
 if [ "$EUID" == 0 ]
@@ -299,10 +315,12 @@ check_requirements
 
 if [ -z "$SERVICE" ]; then
     echo_text "Install standalone?"
-    echo_text "it will create a service, enable boot to console and install the graphical dependencies."
+    echo_text "It will create a service, enable boot to console and install the graphical dependencies."
+    echo_text ""
     echo_text "Say no to install as a regular desktop app that will not start automatically"
     echo_text ""
-    read -r -e -p "Install standalone? Press enter for default (standalone) [Y/n]" SERVICE
+    echo "Press enter for default (Yes)"
+    read -r -e -p "[Y/n]" SERVICE
     if [[ $SERVICE =~ ^[nN]$ ]]; then
         echo_text "Not installing the service"
         echo_text "The graphical backend will NOT be installed"
@@ -320,6 +338,7 @@ create_virtualenv
 create_policy
 fix_fbturbo
 add_desktop_file
+install_network_manager
 if [ -z "$START" ] || [ "$START" -eq 0 ]; then
     echo_ok "KlipperScreen was installed"
 else

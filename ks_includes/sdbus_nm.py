@@ -121,8 +121,8 @@ class SdbusNm:
             if status.returncode != 0:
                 raise RuntimeError("Failed to start NetworkManager service")
         except FileNotFoundError as e:
-            logging.error("NetworkManager might not be installed")
-            raise RuntimeError(f"{e}\n" "it might not be installed?\n") from e
+            logging.exception(f"{e}")
+            raise RuntimeError(f"{e}") from e
 
     def is_wifi_enabled(self):
         return self.nm.wireless_enabled
@@ -280,14 +280,14 @@ class SdbusNm:
         elif "802.1x" in security_type:
             properties["802-11-wireless-security"] = {
                 "key-mgmt": ("s", "ieee8021x"),
-                "wep-key-type": ("s", 2),
+                "wep-key-type": ("u", 2),
                 "wep-key0": ("s", psk),
                 "auth-alg": ("s", "shared"),
             }
         elif "WEP" in security_type:
             properties["802-11-wireless-security"] = {
                 "key-mgmt": ("s", "none"),
-                "wep-key-type": ("s", 2),
+                "wep-key-type": ("u", 2),
                 "wep-key0": ("s", psk),
                 "auth-alg": ("s", "shared"),
             }
@@ -385,12 +385,12 @@ class SdbusNm:
             elif state in [
                 enums.DeviceState.ACTIVATED,
             ]:
-                self.popup(_("Connection established successfully"), 1)
+                self.popup(_("Network connected"), 1)
             elif state in [
                 enums.DeviceState.DISCONNECTED,
                 enums.DeviceState.DEACTIVATING,
             ]:
-                self.popup(_("Connection disconnected"))
+                self.popup(_("Network disconnected"))
             elif state == enums.DeviceState.FAILED:
                 self.popup(_("Connection failed"))
             self.wifi_state = state
