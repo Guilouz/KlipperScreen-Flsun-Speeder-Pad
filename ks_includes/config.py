@@ -205,7 +205,7 @@ class KlipperScreenConfig:
                             msg + "\n\n"
                             + "KlipperScreen menu uses different options than Klipper\n"
                             + "Syntax meant for text/graphical LCDs (usually blue)\n"
-                            + "will not work with KlipperScreen,\n"
+                            + "will not work with KlipperScreen\n"
                             + "please consult KlipperScreen documentation."
                         )
                     if key == "camera_url":
