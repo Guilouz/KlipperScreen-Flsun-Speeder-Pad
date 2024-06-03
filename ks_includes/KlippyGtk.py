@@ -45,7 +45,6 @@ class KlippyGtk:
         self.button_image_scale = 1.38
         self.bsidescale = .65  # Buttons with image at the side
         self.dialog_buttons_height = round(self.height / 5)
-        self.touch_sound_value = screen._config.get_main_config().getboolean("touch_sound", None) # Changes
 
         if self.font_size_type == "max":
             self.font_size = self.font_size * 1.2
@@ -119,6 +118,9 @@ class KlippyGtk:
         pixbuf = self.PixbufFromIcon(image_name, width, height)
         return Gtk.Image.new_from_pixbuf(pixbuf) if pixbuf is not None else Gtk.Image()
 
+    def update_themedir(self, theme):
+        self.themedir = os.path.join(pathlib.Path(__file__).parent.resolve().parent, "styles", theme, "images")
+
     def PixbufFromIcon(self, filename, width=None, height=None):
         width = width if width is not None else self.img_width
         height = height if height is not None else self.img_height
@@ -159,6 +161,7 @@ class KlippyGtk:
         if label is not None:
             b.set_label(label.replace("\n", " "))
         if image_name is not None:
+            b.set_name(image_name)
             if scale is None:
                 scale = self.button_image_scale
             if label is None:
@@ -176,8 +179,6 @@ class KlippyGtk:
         if style is not None:
             b.get_style_context().add_class(style)
         b.connect("clicked", self.screen.reset_screensaver_timeout)
-        if self.touch_sound_value == True: # Changes
-            b.connect("pressed", self.screen._button_pressed_feedback) # Changes
         return b
 
     @staticmethod
