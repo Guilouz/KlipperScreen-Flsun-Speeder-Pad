@@ -525,6 +525,10 @@ class KlipperScreen(Gtk.Window):
         self.update_style_provider(theme_css)
         self.reload_icon_theme()
 
+    def reload_icon_theme(self):
+        self.panels_reinit = list(self.panels)
+        self.base_panel.reload_icons()
+
     # Start Changes
     def _button_pressed_feedback(self, widget=None):
         os.system('/etc/scripts/ks_click.sh')
