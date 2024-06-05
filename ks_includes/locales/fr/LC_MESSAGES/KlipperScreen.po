@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 07:02-0600\n"
-"PO-Revision-Date: 2024-06-02 22:40+0200\n"
+"PO-Revision-Date: 2024-06-05 02:13+0200\n"
 "Last-Translator: Cyril Guislain\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.4\n"
+
+msgid "Current"
+msgstr "Actuel"
+
+msgid "Smooth time"
+msgstr "Durée de lissage"
 
 msgid "Estimated Time"
 msgstr "Durée estimée"
@@ -810,6 +816,9 @@ msgstr "Allumer l'imprimante"
 
 msgid "Pressure Advance:"
 msgstr "Pressure Advance:"
+
+msgid "Pressure Advance"
+msgstr "Pressure Advance"
 
 msgid "Print"
 msgstr "Imprimer"

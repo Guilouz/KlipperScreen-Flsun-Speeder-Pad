@@ -12,6 +12,7 @@ class Panel(ScreenPanel):
     distance = distances[-2]
 
     def __init__(self, screen, title):
+        title = title or _("Z Calibrate")
         super().__init__(screen, title)
         macros = self._printer.get_config_section_list("gcode_macro ") # Changes
         self.z_offset_calibration = any("Z_OFFSET_CALIBRATION" in macro.upper() for macro in macros) # Changes

@@ -180,7 +180,9 @@ create_policy()
 
     echo_text "Installing KlipperScreen PolicyKit Rules"
     sudo groupadd -f klipperscreen
+    sudo groupadd -f network
     sudo adduser "$USER" netdev
+    sudo adduser "$USER" network
     if [ ! -x "$(command -v pkaction)" ]; then
         echo "PolicyKit not installed"
         return
@@ -208,10 +210,8 @@ create_policy()
 
     KS_GID=$( getent group klipperscreen | awk -F: '{printf "%d", $3}' )
     sudo tee ${RULE_FILE} > /dev/null << EOF
-// Allow KlipperScreen to reboot, shutdown, etc
 polkit.addRule(function(action, subject) {
-    if (action.id == "org.freedesktop.NetworkManager.settings.modify.system" &&
-        subject.isInGroup("network")) {
+    if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
         return polkit.Result.YES;
     }
 });
@@ -224,15 +224,7 @@ polkit.addRule(function(action, subject) {
          action.id == "org.freedesktop.login1.halt-multiple-sessions" ||
          action.id.startsWith("org.freedesktop.NetworkManager.")) &&
         subject.user == "$USER") {
-        // Only allow processes with the "klipperscreen" supplementary group
-        // access
-        var regex = "^Groups:.+?\\\s$KS_GID[\\\s\\\0]";
-        var cmdpath = "/proc/" + subject.pid.toString() + "/status";
-        try {
-            polkit.spawn(["grep", "-Po", regex, cmdpath]);
-            return polkit.Result.YES;
-        } catch (error) {
-            return polkit.Result.NOT_HANDLED;
+        return polkit.Result.YES;
         }
     }
 });
@@ -292,14 +284,19 @@ start_KlipperScreen()
 
 install_network_manager()
 {
-    if [ -z "$NETOWRK" ]; then
+    if [ -z "$NETWORK" ]; then
         echo "Press enter for default (Yes)"
-        read -r -e -p "Insall NetworkManager for the network panel [Y/n]" NETOWRK
-        if [[ $NETOWRK =~ ^[nN]$ ]]; then
-            echo_error "Not insalling NetworkManager for the network panel"
+        read -r -e -p "Install NetworkManager for the network panel [Y/n]" NETWORK
+        if [[ $NETWORK =~ ^[nN]$ ]]; then
+            echo_error "Not installing NetworkManager for the network panel"
         else
-            echo_ok "Insalling NetworkManager for the network panel"
+            echo_ok "Installing NetworkManager for the network panel"
             sudo apt install network-manager
+            sudo mkdir -p /etc/NetworkManager/conf.d
+            sudo tee /etc/NetworkManager/conf.d/any-user.conf > /dev/null << EOF
+[main]
+auth-polkit=false
+EOF
             sudo systemctl -q disable dhcpcd 2> /dev/null
             sudo systemctl -q stop dhcpcd 2> /dev/null
             sudo systemctl enable NetworkManager

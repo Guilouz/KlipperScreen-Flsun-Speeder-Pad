@@ -13,6 +13,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.4\n"
 
+msgid "Current"
+msgstr ""
+
+msgid "Smooth time"
+msgstr ""
+
 msgid "Estimated Time"
 msgstr ""
 
@@ -776,6 +782,9 @@ msgid "Power On Printer"
 msgstr ""
 
 msgid "Pressure Advance:"
+msgstr ""
+
+msgid "Pressure Advance"
 msgstr ""
 
 msgid "Print"

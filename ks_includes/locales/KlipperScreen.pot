@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Current"
+msgstr ""
+
+msgid "Smooth time"
+msgstr ""
+
 msgid "Estimated Time"
 msgstr ""
 
@@ -765,6 +771,9 @@ msgid "Power On Printer"
 msgstr ""
 
 msgid "Pressure Advance:"
+msgstr ""
+
+msgid "Pressure Advance"
 msgstr ""
 
 msgid "Print"
