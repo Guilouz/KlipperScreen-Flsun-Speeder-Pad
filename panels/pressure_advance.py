@@ -10,7 +10,7 @@ from ks_includes.screen_panel import ScreenPanel
 
 class Panel(ScreenPanel):
     def __init__(self, screen, title):
-        title = title or _("Pressure advance")
+        title = title or _("Pressure Advance") # Changes
         super().__init__(screen, title)
         self.current_extruder = "extruder"
         self.current_extruder_label = Gtk.Label(

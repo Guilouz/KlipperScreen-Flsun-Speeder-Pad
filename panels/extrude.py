@@ -43,9 +43,9 @@ class Panel(ScreenPanel):
             'retract': self._gtk.Button("retract", _("Retract"), "color1"),
             'temperature': self._gtk.Button("heat-up", _("Temperature"), "color4"),
             'spoolman': self._gtk.Button("spoolman", "Spoolman", "color3"),
-            'pressure': self._gtk.Button("settings", _("Pressure Advance"), "color2"),
-            'retraction': self._gtk.Button("settings", _("Retraction"), "color1")
-        }
+            'pressure': self._gtk.Button("fine-tune", _("Pressure Advance"), "color2"),
+            'retraction': self._gtk.Button("retract", _("Retraction"), "color1")
+        } # Changes
         self.buttons['extrude'].connect("clicked", self.extrude, "+")
         self.buttons['load'].connect("clicked", self.load_unload, "+")
         self.buttons['unload'].connect("clicked", self.load_unload, "-")
