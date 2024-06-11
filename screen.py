@@ -309,8 +309,13 @@ class KlipperScreen(Gtk.Window):
             panel_name = panel
         try:
             if remove_all:
-                self._remove_all_panels()
                 self.panels_reinit = list(self.panels)
+                if panel in self._cur_panels:
+                    self._menu_go_back(home=True)
+                else:
+                    self._remove_all_panels()
+                    for dialog in self.dialogs:
+                        self.gtk.remove_dialog(dialog)
             else:
                 self._remove_current_panel()
             if panel_name not in self.panels:
@@ -320,13 +325,16 @@ class KlipperScreen(Gtk.Window):
                     self.show_error_modal(f"Unable to load panel {panel}", f"{e}\n\n{traceback.format_exc()}")
                     return
             elif panel_name in self.panels_reinit:
-                logging.info("Reinitializing panel")
+                logging.info(f"Reinitializing panel {panel}")
                 self.panels[panel_name].__init__(self, title, **kwargs)
                 self.panels_reinit.remove(panel_name)
             self._cur_panels.append(panel_name)
             self.attach_panel(panel_name)
         except Exception as e:
             logging.exception(f"Error attaching panel:\n{e}\n\n{traceback.format_exc()}")
+
+    def set_panel_title(self, title):
+        self.base_panel.set_title(title)
 
     def attach_panel(self, panel):
         if panel in self.panels_reinit:
@@ -401,11 +409,12 @@ class KlipperScreen(Gtk.Window):
 
     def close_popup_message(self, widget=None):
         if self.popup_message is None:
-            return
+            return False
         self.popup_message.popdown()
         if self.popup_timeout is not None:
             GLib.source_remove(self.popup_timeout)
-        self.popup_message = self.popup_timeout = None
+            self.popup_timeout = None
+        self.popup_message = None
         return False
 
     def show_error_modal(self, title_msg, description="", help_msg=None):
@@ -558,12 +567,12 @@ class KlipperScreen(Gtk.Window):
             self._remove_current_panel()
             del self._cur_panels[-1]
         self._cur_panels.clear()
-        for dialog in self.dialogs:
-            self.gtk.remove_dialog(dialog)
         self.close_screensaver()
         gc.collect()
 
     def _remove_current_panel(self):
+        if not self._cur_panels:
+            return
         if hasattr(self.panels[self._cur_panels[-1]], "deactivate"):
             self.panels[self._cur_panels[-1]].deactivate()
         self.base_panel.remove(self.panels[self._cur_panels[-1]].content)
@@ -576,9 +585,6 @@ class KlipperScreen(Gtk.Window):
             del self._cur_panels[-1]
             if not home:
                 break
-        if len(self._cur_panels) < 1:
-            self.reload_panels()
-            return
         self.attach_panel(self._cur_panels[-1])
 
     def reset_screensaver_timeout(self, *args):
@@ -598,6 +604,9 @@ class KlipperScreen(Gtk.Window):
         logging.debug("Showing Screensaver")
         if self.screensaver is not None:
             self.close_screensaver()
+        if self.screensaver_timeout is not None:
+            GLib.source_remove(self.screensaver_timeout)
+            self.screensaver_timeout = None
         if self.blanking_time == 0:
             return False
         self.remove_keyboard()
@@ -762,8 +771,6 @@ class KlipperScreen(Gtk.Window):
             self.show_panel("extrude")
 
     def state_printing(self):
-        for dialog in self.dialogs:
-            self.gtk.remove_dialog(dialog)
         self.show_panel("job_status", remove_all=True)
 
     def state_ready(self, wait=True):
@@ -808,9 +815,13 @@ class KlipperScreen(Gtk.Window):
         if "printer_select" in self._cur_panels:
             self.show_printer_select()
             return
+        home = self._cur_panels[0]
+        self.panels_reinit = list(self.panels)
         self._remove_all_panels()
-        if self.printer is not None:
-            self.printer.change_state(self.printer.state)
+        if home == "main_menu":
+            self.show_panel(home, items=self._config.get_menu_items("__main"))
+        else:
+            self.show_panel(home)
 
     def _websocket_callback(self, action, data):
         if self.connecting:

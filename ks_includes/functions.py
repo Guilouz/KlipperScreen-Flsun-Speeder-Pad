@@ -27,76 +27,56 @@ try:
     def get_DPMS_state(display_name_in_byte_string=b':0'):
         state = DPMS_State.Fail
         if not isinstance(display_name_in_byte_string, bytes):
-            raise TypeError
-        display_name = ctypes.c_char_p()
-        display_name.value = display_name_in_byte_string
+            raise TypeError("display_name_in_byte_string must be of type bytes")
+
+        display_name = ctypes.c_char_p(display_name_in_byte_string)
         libXext.XOpenDisplay.restype = ctypes.c_void_p
         display = ctypes.c_void_p(libXext.XOpenDisplay(display_name))
-        dummy1_i_p = ctypes.create_string_buffer(8)
-        dummy2_i_p = ctypes.create_string_buffer(8)
+
+        major_opcode_p = ctypes.create_string_buffer(8)
+        first_event_p = ctypes.create_string_buffer(8)
+
         if display.value:
-            if libXext.DPMSQueryExtension(display, dummy1_i_p, dummy2_i_p) \
-                    and libXext.DPMSCapable(display):
-                onoff_p = ctypes.create_string_buffer(1)
-                state_p = ctypes.create_string_buffer(2)
-                if libXext.DPMSInfo(display, state_p, onoff_p):
-                    onoff = struct.unpack('B', onoff_p.raw)[0]
-                    if onoff:
-                        state = struct.unpack('H', state_p.raw)[0]
-            libXext.XCloseDisplay(display)
+            try:
+                if libXext.DPMSQueryExtension(display, major_opcode_p, first_event_p) \
+                        and libXext.DPMSCapable(display):
+                    onoff_p = ctypes.create_string_buffer(1)
+                    state_p = ctypes.create_string_buffer(2)
+                    if libXext.DPMSInfo(display, state_p, onoff_p):
+                        onoff = struct.unpack('B', onoff_p.raw)[0]
+                        if onoff:
+                            state = struct.unpack('H', state_p.raw)[0]
+            finally:
+                libXext.XCloseDisplay(display)
         return state
 
     dpms_loaded = True
-except Exception as msg:
-    logging.error(f"Couldn't load DPMS: {msg}")
-
-
-def get_network_interfaces():
-    stream = os.popen("ip addr | grep ^'[0-9]' | cut -d ' ' -f 2 | grep -o '[a-zA-Z0-9\\.]*'")
-    return [i for i in stream.read().strip().split('\n') if not i.startswith('lo')]
-
-
-def get_wireless_interfaces():
-    p = subprocess.Popen(["which", "iwconfig"], stdout=subprocess.PIPE)
-
-    while p.poll() is None:
-        time.sleep(.1)
-    if p.poll() != 0:
-        return None
-
-    try:
-        p = subprocess.Popen(["iwconfig"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        result = p.stdout.read().decode('ascii').split('\n')
-    except Exception as e:
-        logging.critical(e, exc_info=True)
-        logging.info("Error with running iwconfig command")
-        return None
-    interfaces = []
-    for line in result:
-        match = re.search('^(\\S+)\\s+.*$', line)
-        if match:
-            interfaces.append(match[1])
-
-    return interfaces
+except OSError as e:
+    logging.error(f"Couldn't load DPMS library: {e}")
+except Exception as e:
+    logging.error(f"An unexpected error occurred: {e}")
 
 
 def get_software_version():
-    prog = ('git', '-C', os.path.dirname(__file__), 'describe', '--always',
-            '--tags', '--long', '--dirty')
+    prog = ('git', '-C', os.path.dirname(__file__), 'describe', '--always', '--tags', '--long', '--dirty')
     try:
-        process = subprocess.Popen(prog, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE)
+        process = subprocess.Popen(prog, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         ver, err = process.communicate()
         retcode = process.wait()
         if retcode == 0:
             version = ver.strip()
             if isinstance(version, bytes):
                 version = version.decode()
+            # Remove the 'g' at the start of the hash
+            parts = version.split('-')
+            if len(parts) > 2 and parts[-2].startswith('g'):
+                parts[-2] = parts[-2][1:]  # Remove the 'g'
+            version = '-'.join(parts)
             return version
         else:
             logging.debug(f"Error getting git version: {err}")
     except OSError:
-        logging.exception("Error runing git describe")
+        logging.exception("Error running git describe")
     return "?"
 
 

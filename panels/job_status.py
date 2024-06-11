@@ -14,7 +14,7 @@ from ks_includes.KlippyGtk import find_widget
 
 class Panel(ScreenPanel):
     def __init__(self, screen, title):
-        title = title or (_("Printing") if self._printer.extrudercount > 0 else _("Job Status"))
+        title = title or _("Job Status")
         super().__init__(screen, title)
         self.grid = Gtk.Grid(column_homogeneous=True)
         self.pos_z = 0.0
@@ -85,8 +85,6 @@ class Panel(ScreenPanel):
 
         self.labels['file'] = Gtk.Label(label="Filename", hexpand=True)
         self.labels['file'].get_style_context().add_class("printing-filename")
-        self.labels['status'] = Gtk.Label(label="Status")
-        self.labels['status'].get_style_context().add_class("printing-status")
         self.labels['lcdmessage'] = Gtk.Label()
         self.labels['lcdmessage'].get_style_context().add_class("printing-status")
 
@@ -94,9 +92,8 @@ class Panel(ScreenPanel):
             self.labels[label].set_halign(Gtk.Align.START)
             self.labels[label].set_ellipsize(Pango.EllipsizeMode.END)
 
-        fi_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        fi_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, valign=Gtk.Align.CENTER)
         fi_box.add(self.labels['file'])
-        fi_box.add(self.labels['status'])
         fi_box.add(self.labels['lcdmessage'])
         self.grid.attach(fi_box, 1, 0, 3, 1)
 
@@ -109,6 +106,7 @@ class Panel(ScreenPanel):
         box.add(self.labels['progress_text'])
 
         overlay = Gtk.Overlay(hexpand=True)
+        overlay.set_size_request(*(self._gtk.font_size * 5,) * 2)
         overlay.add(self.labels['darea'])
         overlay.add_overlay(box)
         self.grid.attach(overlay, 0, 0, 1, 1)
@@ -686,25 +684,27 @@ class Panel(ScreenPanel):
 
     def set_state(self, state, msg=""):
         if state == "printing":
-            self.labels["status"].set_label(_("Printing"))
+            self._screen.set_panel_title(
+                _("Printing") if self._printer.extrudercount > 0 else _("Working")
+            )
         elif state == "complete":
             self.update_progress(1)
-            self.labels["status"].set_label(_("Complete"))
+            self._screen.set_panel_title(_("Complete"))
             self.buttons['left'].set_label("-")
             self._add_timeout(self._config.get_main_config().getint("job_complete_timeout", 0))
         elif state == "error":
-            self.labels['status'].set_label(_("Error"))
+            self._screen.set_panel_title(_("Error"))
             self._screen.show_popup_message(msg)
             self._add_timeout(self._config.get_main_config().getint("job_error_timeout", 0))
         elif state == "cancelling":
-            self.labels["status"].set_label(_("Cancelling"))
+            self._screen.set_panel_title(_("Cancelling"))
         elif state == "cancelled" or (state == "standby" and self.state == "cancelled"):
-            self.labels["status"].set_label(_("Cancelled"))
+            self._screen.set_panel_title(_("Cancelled"))
             self._add_timeout(self._config.get_main_config().getint("job_cancelled_timeout", 0))
         elif state == "paused":
-            self.labels["status"].set_label(_("Paused"))
+            self._screen.set_panel_title(_("Paused"))
         elif state == "standby":
-            self.labels["status"].set_label(_("Standby"))
+            self._screen.set_panel_title(_("Standby"))
         if self.state != state:
             logging.debug(f"Changing job_status state from '{self.state}' to '{state}'")
             self.state = state
@@ -814,10 +814,12 @@ class Panel(ScreenPanel):
         ellipsized = self.labels['file'].get_layout().is_ellipsized()
         if ellipsized:
             self.animation_timeout = GLib.timeout_add_seconds(1, self.animate_label)
+        else:
+            self.animation_timeout = None
         self.update_file_metadata()
 
     def animate_label(self):
-        if not self.filename_label:
+        if not self.filename_label or not self.animation_timeout:
             return False
         ellipsized = self.labels['file'].get_layout().is_ellipsized()
         if ellipsized:
