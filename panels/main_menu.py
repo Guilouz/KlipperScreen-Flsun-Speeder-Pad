@@ -6,6 +6,7 @@ from gi.repository import Gtk, GLib
 from panels.menu import Panel as MenuPanel
 from ks_includes.widgets.heatergraph import HeaterGraph
 from ks_includes.widgets.keypad import Keypad
+from ks_includes.KlippyGtk import find_widget
 
 
 class Panel(MenuPanel):
@@ -144,6 +145,7 @@ class Panel(MenuPanel):
         self.labels['da'].set_showing(device, visible)
 
         temp = self._gtk.Button(label="", lines=1)
+        find_widget(temp, Gtk.Label).set_ellipsize(False)
         if can_target:
             temp.connect("clicked", self.show_numpad, device)
 
@@ -242,7 +244,10 @@ class Panel(MenuPanel):
 
         name = Gtk.Label()
         temp = Gtk.Label(label=_("Temp (°C)"))
-        temp.get_style_context().add_class("heater-grid-temp")
+        if self._show_heater_power:
+            temp.get_style_context().add_class("heater-grid-temp-power")
+        else:
+            temp.get_style_context().add_class("heater-grid-temp")
 
         self.labels['devices'].attach(name, 0, 0, 1, 1)
         self.labels['devices'].attach(temp, 1, 0, 1, 1)

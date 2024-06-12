@@ -6,6 +6,7 @@ import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gdk, GdkPixbuf, Gio, Gtk, Pango
+from ks_includes.widgets.scroll import CustomScrolledWindow
 
 
 def find_widget(widget, wanted_type):
@@ -39,7 +40,7 @@ class KlippyGtk:
         self.width = screen.width
         self.height = screen.height
         self.ultra_tall = (self.height / self.width) >= 3
-        self.font_ratio = [31, 47] if self.screen.vertical_mode else [43, 29]
+        self.font_ratio = [28, 42] if self.screen.vertical_mode else [40, 27]
         self.font_size = min(self.width / self.font_ratio[0], self.height / self.font_ratio[1])
         self.img_scale = self.font_size * 2
         self.button_image_scale = 1.38
@@ -48,15 +49,16 @@ class KlippyGtk:
         self.touch_sound_value = screen._config.get_main_config().getboolean("touch_sound", None) # Changes
 
         if self.font_size_type == "max":
-            self.font_size = self.font_size * 1.2
+            self.font_size = self.font_size * 1.06
+            self.img_scale = self.img_scale * 0.7
             self.bsidescale = .7
         elif self.font_size_type == "extralarge":
-            self.font_size = self.font_size * 1.14
+            self.font_size = self.font_size * 1.05
             self.img_scale = self.img_scale * 0.7
-            self.bsidescale = 1
+            self.bsidescale = 1.0
         elif self.font_size_type == "large":
-            self.font_size = self.font_size * 1.09
-            self.img_scale = self.img_scale * 0.9
+            self.font_size = self.font_size * 1.025
+            self.img_scale = self.img_scale * 0.85
             self.bsidescale = .8
         elif self.font_size_type == "small":
             self.font_size = self.font_size * 0.91
@@ -156,7 +158,7 @@ class KlippyGtk:
         return pixbuf
 
     def Button(self, image_name=None, label=None, style=None, scale=None, position=Gtk.PositionType.TOP, lines=2):
-        if self.font_size_type == "max" and label is not None and scale is None:
+        if self.font_size_type == "max" and label is not None:
             image_name = None
         b = Gtk.Button(hexpand=True, vexpand=True, can_focus=False, image_position=position, always_show_image=True)
         if label is not None:
@@ -243,10 +245,10 @@ class KlippyGtk:
         dialog.get_style_context().add_class("dialog")
 
         content_area = dialog.get_content_area()
-        content_area.set_margin_start(15)
-        content_area.set_margin_end(15)
-        content_area.set_margin_top(15)
-        content_area.set_margin_bottom(15)
+        content_area.set_margin_start(10)
+        content_area.set_margin_end(5)
+        content_area.set_margin_top(5)
+        content_area.set_margin_bottom(0)
         content_area.add(content)
 
         dialog.show_all()
@@ -272,11 +274,6 @@ class KlippyGtk:
             return
         logging.debug(f"Cannot remove dialog {dialog}")
 
-    def ScrolledWindow(self, steppers=True):
-        scroll = Gtk.ScrolledWindow(hexpand=True, vexpand=True, overlay_scrolling=False)
-        scroll.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
-                          Gdk.EventMask.TOUCH_MASK |
-                          Gdk.EventMask.BUTTON_RELEASE_MASK)
-        if self.screen._config.get_main_config().getboolean("show_scroll_steppers", fallback=False) and steppers:
-            scroll.get_vscrollbar().get_style_context().add_class("with-steppers")
-        return scroll
+    def ScrolledWindow(self, steppers=True, **kwargs):
+        steppers = steppers and self.screen._config.get_main_config().getboolean("show_scroll_steppers", fallback=False)
+        return CustomScrolledWindow(steppers, **kwargs)
