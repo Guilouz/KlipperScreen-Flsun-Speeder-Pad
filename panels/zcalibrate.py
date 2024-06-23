@@ -2,8 +2,10 @@ import logging
 import gi
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Pango
+from gi.repository import Gtk, Pango, GLib
 from ks_includes.screen_panel import ScreenPanel
+from ks_includes.KlippyGtk import find_widget
+from datetime import datetime
 
 
 class Panel(ScreenPanel):
@@ -12,24 +14,47 @@ class Panel(ScreenPanel):
     distance = distances[-2]
 
     def __init__(self, screen, title):
-        title = title or _("Z Calibrate")
+        title = title or _("Multiple Calibrations") # Changes
         super().__init__(screen, title)
         macros = self._printer.get_config_section_list("gcode_macro ") # Changes
         self.z_offset_calibration = any("Z_OFFSET_CALIBRATION" in macro.upper() for macro in macros) # Changes
         self.endstops_calibration = any("ENDSTOPS_CALIBRATION" in macro.upper() for macro in macros) # Changes
         self.delta_calibration = any("DELTA_CALIBRATION" in macro.upper() for macro in macros) # Changes
         self.security_offset = any("SECURITY_OFFSET" in macro.upper() for macro in macros) # Changes
+        self.last_drop_time = datetime.now()
+        self.initialize_mesh_params()
+        self.initialize_probe_params()
+        self.setup_ui()
+
+    def initialize_mesh_params(self):
         self.mesh_min = []
         self.mesh_max = []
         self.mesh_radius = None
         self.mesh_origin = [0, 0]
         self.zero_ref = []
+        if "BED_MESH_CALIBRATE" not in self._printer.available_commands:
+            return
+        mesh = self._printer.get_config_section("bed_mesh")
+        if 'mesh_radius' in mesh:
+            self.mesh_radius = float(mesh['mesh_radius'])
+            if 'mesh_origin' in mesh:
+                self.mesh_origin = self._csv_to_array(mesh['mesh_origin'])
+        elif 'mesh_min' in mesh and 'mesh_max' in mesh:
+            self.mesh_min = self._csv_to_array(mesh['mesh_min'])
+            self.mesh_max = self._csv_to_array(mesh['mesh_max'])
+        elif 'min_x' in mesh and 'min_y' in mesh and 'max_x' in mesh and 'max_y' in mesh:
+            self.mesh_min = [float(mesh['min_x']), float(mesh['min_y'])]
+            self.mesh_max = [float(mesh['max_x']), float(mesh['max_y'])]
+        if 'zero_reference_position' in self._printer.get_config_section("bed_mesh"):
+            self.zero_ref = self._csv_to_array(mesh['zero_reference_position'])
+
+    def initialize_probe_params(self):
         self.z_hop_speed = 15.0
         self.z_hop = 5.0
         self.probe = self._printer.get_probe()
         if self.probe:
-            self.x_offset = float(self.probe['x_offset']) if "x_offset" in self.probe else 0.0
-            self.y_offset = float(self.probe['y_offset']) if "y_offset" in self.probe else 0.0
+            self.x_offset = float(self.probe.get('x_offset', 0.0))
+            self.y_offset = float(self.probe.get('y_offset', 0.0))
             self.z_offset = float(self.probe['z_offset'])
             if "sample_retract_dist" in self.probe:
                 self.z_hop = float(self.probe['sample_retract_dist'])
@@ -40,22 +65,25 @@ class Panel(ScreenPanel):
             self.y_offset = 0.0
             self.z_offset = 0.0
         logging.info(f"Offset X:{self.x_offset} Y:{self.y_offset} Z:{self.z_offset}")
-        #self.widgets['zposition'] = Gtk.Label(label="Z: ?") # Changes
-        self.widgets['zposition'] = Gtk.Label(label="Z : ?") # Changes
 
+    def setup_ui(self):
+        self.widgets['zposition'] = Gtk.Label(label="Z: ?")
         self.widgets['zoffset'] = Gtk.Label(label="?")
+
         pos = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         pos.attach(self.widgets['zposition'], 0, 1, 2, 1)
+
         if self.probe:
-            #pos.attach(Gtk.Label(label=_("Probe Offset") + ": "), 0, 2, 2, 1) # Changes
-            pos.attach(Gtk.Label(label=_("Probe Offset") + " : "), 0, 2, 2, 1) # Changes
+            pos.attach(Gtk.Label(label=_("Probe Offset") + ": "), 0, 2, 2, 1)
             pos.attach(Gtk.Label(label=_("Saved")), 0, 3, 1, 1)
             pos.attach(Gtk.Label(label=_("New")), 1, 3, 1, 1)
             pos.attach(Gtk.Label(label=f"{self.z_offset:.3f}"), 0, 4, 1, 1)
             pos.attach(self.widgets['zoffset'], 1, 4, 1, 1)
+
         for label in pos.get_children():
             if isinstance(label, Gtk.Label):
                 label.set_ellipsize(Pango.EllipsizeMode.END)
+
         self.buttons = {
             'zpos': self._gtk.Button('z-farther', _("Raise Nozzle"), 'color4'),
             'zneg': self._gtk.Button('z-closer', _("Lower Nozzle"), 'color1'),
@@ -63,17 +91,28 @@ class Panel(ScreenPanel):
             'complete': self._gtk.Button('complete', _('Accept'), 'color3'),
             'cancel': self._gtk.Button('cancel', _('Abort'), 'color2'),
         }
+
         self.buttons['zpos'].connect("clicked", self.move, "+")
         self.buttons['zneg'].connect("clicked", self.move, "-")
         self.buttons['complete'].connect("clicked", self.accept)
         script = {"script": "ABORT\nG28"} # Changes
-        self.buttons['cancel'].connect("clicked", self._screen._confirm_send_action,
-                                       _("Are you sure you want to stop the calibration?"),
-                                       "printer.gcode.script", script)
+        self.buttons['cancel'].connect(
+            "clicked",
+            self._screen._confirm_send_action,
+            ("Are you sure you want to stop the calibration?"),
+            "printer.gcode.script",
+            script
+        )
+        self.buttons['start'].connect("clicked", self.start_calibration)
 
-        self.popover = Gtk.Popover(position=Gtk.PositionType.BOTTOM)
-
-        self.set_functions()
+        self.dropdown = Gtk.ComboBox.new_with_model(self.set_commands())
+        self.dropdown.connect("changed", self.on_dropdown_change)
+        self.dropdown.connect("notify::popup-shown", self.on_popup_shown)
+        renderer_text = Gtk.CellRendererText()
+        renderer_text.set_property("ellipsize", Pango.EllipsizeMode.END)
+        self.dropdown.pack_start(renderer_text, True)
+        self.dropdown.add_attribute(renderer_text, "text", 0)
+        self.dropdown.set_active(0)
 
         distgrid = Gtk.Grid()
         for j, i in enumerate(self.distances):
@@ -91,152 +130,131 @@ class Panel(ScreenPanel):
         distances.pack_start(self.widgets['move_dist'], True, True, 0)
         distances.pack_start(distgrid, True, True, 0)
 
+        start_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        start_box.pack_start(self.buttons['start'], True, True, 0)
+        start_box.pack_start(self.dropdown, True, True, 0)
+
         grid = Gtk.Grid(column_homogeneous=True)
         if self._screen.vertical_mode:
-            if self._config.get_config()["main"].getboolean("invert_z", False):
-                grid.attach(self.buttons['zpos'], 0, 2, 1, 1)
-                grid.attach(self.buttons['zneg'], 0, 1, 1, 1)
-            else:
-                grid.attach(self.buttons['zpos'], 0, 1, 1, 1)
-                grid.attach(self.buttons['zneg'], 0, 2, 1, 1)
-            grid.attach(self.buttons['start'], 0, 0, 1, 1)
+            zpos_row, zneg_row = (2, 1) if self._config.get_config()["main"].getboolean("invert_z", False) else (1, 2)
+            grid.attach(self.buttons['zpos'], 0, zpos_row, 1, 1)
+            grid.attach(self.buttons['zneg'], 0, zneg_row, 1, 1)
+            grid.attach(start_box, 0, 0, 1, 1)
             grid.attach(pos, 1, 0, 1, 1)
             grid.attach(self.buttons['complete'], 1, 1, 1, 1)
             grid.attach(self.buttons['cancel'], 1, 2, 1, 1)
             grid.attach(distances, 0, 3, 2, 1)
         else:
-            if self._config.get_config()["main"].getboolean("invert_z", False):
-                grid.attach(self.buttons['zpos'], 0, 1, 1, 1)
-                grid.attach(self.buttons['zneg'], 0, 0, 1, 1)
-            else:
-                grid.attach(self.buttons['zpos'], 0, 0, 1, 1)
-                grid.attach(self.buttons['zneg'], 0, 1, 1, 1)
-            grid.attach(self.buttons['start'], 1, 0, 1, 1)
+            zpos_row, zneg_row = (1, 0) if self._config.get_config()["main"].getboolean("invert_z", False) else (0, 1)
+            grid.attach(self.buttons['zpos'], 0, zpos_row, 1, 1)
+            grid.attach(self.buttons['zneg'], 0, zneg_row, 1, 1)
+            grid.attach(start_box, 1, 0, 1, 1)
             grid.attach(pos, 1, 1, 1, 1)
             grid.attach(self.buttons['complete'], 2, 0, 1, 1)
             grid.attach(self.buttons['cancel'], 2, 1, 1, 1)
             grid.attach(distances, 0, 2, 3, 1)
+
         self.content.add(grid)
 
-    def set_functions(self):
-        functions = []
-        pobox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+    def on_dropdown_change(self, dropdown):
+        iterable = dropdown.get_active_iter()
+        if iterable is None:
+            self._screen.show_popup_message("Unknown error with dropdown")
+            return
+        model = dropdown.get_model()
+        logging.debug(f"Selected {model[iterable][0]}")
 
-        #if "Z_ENDSTOP_CALIBRATE" in self._printer.available_commands: # Changes
-            #self._add_button("Endstop", "endstop", pobox) # Changes
-            #functions.append("endstop") # Changes
-        if "PROBE_CALIBRATE" in self._printer.available_commands:
-            #self._add_button("Probe", "probe", pobox) # Changes
-            self._add_button(_("Z Offset Calibration"), "probe", pobox) # Changes
-            functions.append("probe")
-        #if "BED_MESH_CALIBRATE" in self._printer.available_commands: # Changes
-            #mesh = self._printer.get_config_section("bed_mesh") # Changes
-            #logging.info(f"Mesh: {mesh}") # Changes
-            #if 'mesh_radius' in mesh: # Changes
-                #self.mesh_radius = float(mesh['mesh_radius']) # Changes
-                #if 'mesh_origin' in mesh: # Changes
-                    #self.mesh_origin = self._csv_to_array(mesh['mesh_origin']) # Changes
-                #logging.info(f"Mesh Radius: {self.mesh_radius} Origin: {self.mesh_origin}") # Changes
-            #elif 'mesh_min' in mesh and 'mesh_max' in mesh: # Changes
-                #self.mesh_min = self._csv_to_array(mesh['mesh_min']) # Changes
-                #self.mesh_max = self._csv_to_array(mesh['mesh_max']) # Changes
-            #elif 'min_x' in mesh and 'min_y' in mesh and 'max_x' in mesh and 'max_y' in mesh:
-                #self.mesh_min = [float(mesh['min_x']), float(mesh['min_y'])]
-                #self.mesh_max = [float(mesh['max_x']), float(mesh['max_y'])]
-            #if 'zero_reference_position' in self._printer.get_config_section("bed_mesh"): # Changes
-                #self.zero_ref = self._csv_to_array(mesh['zero_reference_position']) # Changes
-            #if "probe" not in functions: # Changes
-                ## This is used to do a manual bed mesh if there is no probe # Changes
-                #self._add_button("Bed mesh", "mesh", pobox) # Changes
-                #functions.append("mesh") # Changes
-        if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
-            self._add_button(_("EndStops Calibration"), "endstop", pobox) # Changes
-            functions.append("endstop") # Changes
-        if "DELTA_CALIBRATE" in self._printer.available_commands:
-            if "probe" in functions:
-                #self._add_button("Delta Automatic", "delta", pobox) # Changes
-                self._add_button(_("Automatic Delta Calibration"), "delta", pobox) # Changes
-                functions.append("delta")
-            ## Since probes may not be accturate enough for deltas, always show the manual method
-            #self._add_button("Delta Manual", "delta_manual", pobox) # Changes
-            #functions.append("delta_manual") # Changes
-        if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
-            self._add_button(_("Apply a safety Offset"), "gcode_offset", pobox) # Changes
-            functions.append("gcode_offset") # Changes
-        #if "AXIS_TWIST_COMPENSATION_CALIBRATE" in self._printer.available_commands: # Changes
-            #self._add_button("Axis Twist Compensation", "axis_twist", pobox) # Changes
-            #functions.append("axis_twist") # Changes
-
-        self.popover.add(pobox)
-        if len(functions) > 1:
-            self.buttons['start'].connect("clicked", self.on_popover_clicked)
+    def on_popup_shown(self, combo_box, param):
+        if combo_box.get_property("popup-shown"):
+            logging.debug("Dropdown popup show")
+            self.last_drop_time = datetime.now()
         else:
-            self.buttons['start'].connect("clicked", self.start_calibration, functions[0])
-        logging.info(f"Available functions for calibration: {functions}")
+            elapsed = (datetime.now() - self.last_drop_time).total_seconds()
+            if elapsed < 0.2:
+                logging.debug(f"Dropdown closed too fast ({elapsed}s)")
+                GLib.timeout_add(50, self.dropdown_keep_open)
+                return
+            logging.debug("Dropdown popup close")
+
+    def dropdown_keep_open(self):
+        self.dropdown.popup()
+        return False
+
+    def set_commands(self):
+        commands = Gtk.ListStore(str)
+
+        if "PROBE_CALIBRATE" in self._printer.available_commands:
+            commands.append({"Z_OFFSET_CALIBRATION"}) # Changes
+        if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
+            commands.append({"ENDSTOPS_CALIBRATION"}) # Changes
+        #if "BED_MESH_CALIBRATE" in self._printer.available_commands: # Changes
+            #commands.append({"BED_MESH_CALIBRATE METHOD=manual"}) # Changes
+        if "DELTA_CALIBRATE" in self._printer.available_commands:
+            commands.append({"DELTA_CALIBRATION"}) # Changes
+        if "DELTA_CALIBRATE" in self._printer.available_commands: # Changes
+            commands.append({"SECURITY_OFFSET"}) # Changes
+            #commands.append({"DELTA_CALIBRATE METHOD=manual"}) # Changes
+        #if "AXIS_TWIST_COMPENSATION_CALIBRATE" in self._printer.available_commands: # Changes
+            #commands.append({"AXIS_TWIST_COMPENSATION_CALIBRATE"}) # Changes
+
+        # Custom commands
+        if self.ks_printer_cfg is not None:
+            if custom_config := self.ks_printer_cfg.get("zcalibrate_custom_commands", None):
+                custom_commands = [str(i.strip()) for i in custom_config.split(',')]
+                for command in custom_commands:
+                    commands.append({f"{command}"})
+
+        logging.info(f"Available commands for calibration: {[row[0] for row in commands]}")
+        return commands
 
     @staticmethod
     def _csv_to_array(string):
         return [float(i.strip()) for i in string.split(',')]
 
-    def _add_button(self, label, method, pobox):
-        popover_button = self._gtk.Button(label=label)
-        popover_button.connect("clicked", self.start_calibration, method)
-        #pobox.pack_start(popover_button, True, True, 5) # Changes
-        pobox.pack_start(popover_button, True, True, 10) # Changes
+    def start_calibration(self, widget):
+        iterable = self.dropdown.get_active_iter()
+        if iterable is None:
+            self._screen.show_popup_message("Unknown error with dropdown")
+            return
+        model = self.dropdown.get_model()
+        command = model[iterable][0]
 
-    def on_popover_clicked(self, widget):
-        self.popover.set_relative_to(widget)
-        self.popover.show_all()
-
-    def start_calibration(self, widget, method):
-        self.popover.popdown()
         self.buttons['start'].set_sensitive(False)
+        self.dropdown.set_sensitive(False)
+
+        #self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0") # Changes
+        #self._screen._ws.klippy.gcode_script("BED_MESH_CLEAR") # Changes
+        #if self._printer.get_stat("toolhead", "homed_axes") != "xyz": # Changes
+            #self._screen._ws.klippy.gcode_script("G28") # Changes
+        #self._move_to_position(*self._get_calibration_location()) # Changes
+        
         # Start Changes
-        #if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
-            #self._screen._ws.klippy.gcode_script("G28")
-        #self._screen._ws.klippy.gcode_script("SET_GCODE_OFFSET Z=0")
-        #if method == "mesh":
-            #self._screen._ws.klippy.gcode_script("BED_MESH_CALIBRATE")
-        #else:
-            #self._screen._ws.klippy.gcode_script("BED_MESH_CLEAR")
-            #if method == "probe":
-                #self._move_to_position(*self._get_probe_location())
-                #self._screen._ws.klippy.gcode_script("PROBE_CALIBRATE")
-            #elif method == "delta":
-                #self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE")
-            #elif method == "delta_manual":
-                #self._screen._ws.klippy.gcode_script("DELTA_CALIBRATE METHOD=manual")
-            #elif method == "endstop":
-                #self._screen._ws.klippy.gcode_script("Z_ENDSTOP_CALIBRATE")
-            #elif method == "axis_twist":
-                #self._screen._ws.klippy.gcode_script("AXIS_TWIST_COMPENSATION_CALIBRATE")
-        if method == "probe":
+        if command == "Z_OFFSET_CALIBRATION":
             if not self.z_offset_calibration:
                 self._screen.show_popup_message("Macro Z_OFFSET_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "Z_OFFSET_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Please plug in leveling switch before mesuring Z-Offset.\nOnce the hotend is up, it can be removed to perform the measurement."), "printer.gcode.script", script)
-        elif method == "endstop":
+        elif command == "ENDSTOPS_CALIBRATION":
             if not self.endstops_calibration:
                 self._screen.show_popup_message("Macro ENDSTOPS_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "ENDSTOPS_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Do you want to start Endstops calibration?"), "printer.gcode.script", script)
-        elif method == "delta":
+        elif command == "DELTA_CALIBRATION":
             if not self.delta_calibration:
                 self._screen.show_popup_message("Macro DELTA_CALIBRATION " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "DELTA_CALIBRATION"}
                 self._screen._confirm_send_action(None, _("Please plug in leveling switch before Delta Calibration."), "printer.gcode.script", script)
-        #elif method == "delta_manual":
-            #script = {"script": "G28\nM400\nDELTA_CALIBRATE METHOD=manual"}
-            #self._screen._confirm_send_action(None, _("Do you want to start Manual Delta calibration with 'paper test'?\n\nIt involves placing a piece of 'copy machine paper' between bed and nozzle, and then moving the nozzle to different Z heights until one feels a small amount of friction when pushing the paper back and forth.\n\nIt's not needed to plug in leveling switch for this calibration."), "printer.gcode.script", script)
-        elif method == "gcode_offset":
+        elif command == "SECURITY_OFFSET":
             if not self.security_offset:
                 self._screen.show_popup_message("Macro SECURITY_OFFSET " + _("not found!\nPlease update your configuration files."))
             else:
                 script = {"script": "SECURITY_OFFSET"}
                 self._screen._confirm_send_action(None, _("Do you want to apply a 1mm safety offset?\n\nThis could prevent the nozzle from scraping or sinking on the bed in the event of an incorrect adjustment of Z Offset.\n\nThen start a print and adjust the first layer using babysteps via the 'Fine Tuning' button."), "printer.gcode.script", script)
+        else:
+            self._screen._ws.klippy.gcode_script(command)
         # End Changes
 
     def _move_to_position(self, x, y):
@@ -248,7 +266,7 @@ class Panel(ScreenPanel):
         logging.info(f"Moving to X:{x} Y:{y}")
         self._screen._ws.klippy.gcode_script(f'G90\nG0 X{x} Y{y} F3000')
 
-    def _get_probe_location(self):
+    def _get_calibration_location(self):
         if self.ks_printer_cfg is not None:
             x = self.ks_printer_cfg.getfloat("calibrate_x_position", None)
             y = self.ks_printer_cfg.getfloat("calibrate_y_position", None)
@@ -318,8 +336,7 @@ class Panel(ScreenPanel):
             return # Changes
         if action == "notify_status_update":
             if self._printer.get_stat("toolhead", "homed_axes") != "xyz":
-                #self.widgets['zposition'].set_text("Z: ?") # Changes
-                self.widgets['zposition'].set_text("Z : ?") # Changes
+                self.widgets['zposition'].set_text("Z: ?")
             elif "gcode_move" in data and "gcode_position" in data['gcode_move']:
                 self.update_position(data['gcode_move']['gcode_position'])
             if "manual_probe" in data:
@@ -337,8 +354,7 @@ class Panel(ScreenPanel):
         return
 
     def update_position(self, position):
-        #self.widgets['zposition'].set_text(f"Z: {position[2]:.3f}") # Changes
-        self.widgets['zposition'].set_text(f"Z : {position[2]:.3f}") # Changes
+        self.widgets['zposition'].set_text(f"Z: {position[2]:.3f}")
         self.widgets['zoffset'].set_text(f"{abs(position[2] - self.z_offset):.3f}")
 
     def change_distance(self, widget, distance):
@@ -358,6 +374,7 @@ class Panel(ScreenPanel):
     def buttons_calibrating(self):
         self.buttons['start'].get_style_context().remove_class('color3')
         self.buttons['start'].set_sensitive(False)
+        self.dropdown.set_sensitive(False)
 
         self.buttons['zpos'].set_sensitive(True)
         self.buttons['zpos'].get_style_context().add_class('color4')
@@ -371,6 +388,7 @@ class Panel(ScreenPanel):
     def buttons_not_calibrating(self):
         self.buttons['start'].get_style_context().add_class('color3')
         self.buttons['start'].set_sensitive(True)
+        self.dropdown.set_sensitive(True)
 
         self.buttons['zpos'].set_sensitive(False)
         self.buttons['zpos'].get_style_context().remove_class('color4')
