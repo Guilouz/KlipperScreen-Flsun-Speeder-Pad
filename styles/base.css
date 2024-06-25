@@ -494,7 +494,7 @@ trough {
 .printing-filename {
     font-size: 1.4em;
     font-weight: bold;
-    margin: .25em .25em 0 0;
+    margin-right: .25em;
 }
 
 .printing-info {
@@ -512,7 +512,7 @@ trough {
 
 .printing-status {
     font-style: italic;
-    margin: 0;
+    margin-right: .25em;
     font-weight: bold;
 }
 
@@ -622,7 +622,7 @@ trough progress {
 
 .graph_label {border-left-width: .4em; border-left-style: solid;}
 
-button.graph_label {padding-left: 0.15em;}
+button.graph_label {padding-left: 0.25em;}
 
 .dialog-error {
     border-bottom: .4em solid @error;
