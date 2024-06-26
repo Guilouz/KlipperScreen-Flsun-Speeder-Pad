@@ -313,7 +313,7 @@ class BasePanel(ScreenPanel):
 
     def set_title(self, title):
         self.titlebar.get_style_context().remove_class("message_popup_error")
-        f self._screen.connecting_to_printer != "Printer":
+        if self._screen.connecting_to_printer != "Printer":
             printer = self._screen.connecting_to_printer
         else:
             printer = ""
