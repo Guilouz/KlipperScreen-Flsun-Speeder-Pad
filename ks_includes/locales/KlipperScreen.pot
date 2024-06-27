@@ -36,12 +36,6 @@ msgstr ""
 msgid "Estimated Time"
 msgstr ""
 
-msgid "Insufficient priviledges detected"
-msgstr ""
-
-msgid "Do you want to let KlipperScreen try to solve the issue?"
-msgstr ""
-
 msgid "Do you want to forget or disconnect %s?"
 msgstr ""
 
@@ -370,6 +364,9 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
+msgid "Delete"
+msgstr ""
+
 msgid "Delete Directory?"
 msgstr ""
 
@@ -420,6 +417,9 @@ msgid "Error: Couldn't get a position to probe"
 msgstr ""
 
 msgid "Estimated Time Method"
+msgstr ""
+
+msgid "Example"
 msgstr ""
 
 msgid "Exclude Object"
@@ -605,6 +605,9 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
+msgid "Last Duration"
+msgstr ""
+
 msgid "Last Used"
 msgstr ""
 
@@ -677,9 +680,6 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-msgid "Mesh calibrate"
-msgstr ""
-
 msgid "Minimum Cruise Ratio"
 msgstr ""
 
@@ -714,6 +714,9 @@ msgid "New"
 msgstr ""
 
 msgid "No elegible macros:"
+msgstr ""
+
+msgid "No info available"
 msgstr ""
 
 msgid "No mesh has been loaded"
@@ -1026,9 +1029,6 @@ msgstr ""
 msgid "Updating"
 msgstr ""
 
-msgid "Uploaded"
-msgstr ""
-
 msgid "Useful for un-responsive touchscreens"
 msgstr ""
 
@@ -1064,6 +1064,9 @@ msgid_plural "commits"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "g"
+msgstr ""
+
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
@@ -1091,3 +1094,11 @@ msgstr ""
 
 msgid "mm³/s"
 msgstr ""
+
+msgid "s"
+msgstr ""
+
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] ""
+msgstr[1] ""
