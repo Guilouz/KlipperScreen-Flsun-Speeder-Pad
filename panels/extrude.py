@@ -276,22 +276,22 @@ class Panel(ScreenPanel):
         self.speed = speed
 
     def check_min_temp(self, widget, method, direction):
-        temp = float(self._printer.get_stat(self.current_extruder, 'temperature'))
-        target = float(self._printer.get_stat(self.current_extruder, 'target'))
-        min_extrude_temp = float(self._printer.config[self.current_extruder]['min_extrude_temp'])
-        if temp < min_extrude_temp:
-            if target > min_extrude_temp:
-                self._screen._send_action(
-                    widget, "printer.gcode.script",
-                    {"script": f"M109 S{target}"}
-                )
-            else:
-                self._screen.show_popup_message(_("Temperature too low to extrude"))
-                self.menu_item_clicked(
-                    widget,
-                    {"panel": "temperature", 'extra': self.current_extruder}
-                )
-                return
+        #temp = float(self._printer.get_stat(self.current_extruder, 'temperature'))
+        #target = float(self._printer.get_stat(self.current_extruder, 'target'))
+        #min_extrude_temp = float(self._printer.config[self.current_extruder]['min_extrude_temp'])
+        #if temp < min_extrude_temp:
+            #if target > min_extrude_temp:
+                #self._screen._send_action(
+                    #widget, "printer.gcode.script",
+                    #{"script": f"M109 S{target}"}
+                #)
+            #else:
+                #self._screen.show_popup_message(_("Temperature too low to extrude"))
+                #self.menu_item_clicked(
+                    #widget,
+                    #{"panel": "temperature", 'extra': self.current_extruder}
+                #)
+                #return # Changes
         if method == "extrude":
             self.extrude(widget, direction)
         elif method == "load_unload":
