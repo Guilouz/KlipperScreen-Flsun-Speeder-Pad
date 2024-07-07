@@ -17,6 +17,7 @@ class Keypad(Gtk.Box):
         self.labels['entry'] = Gtk.Entry(hexpand=True, xalign=0.5, max_length=5)
         self.labels['entry'].connect("activate", self.keypad_clicked, "E")
         self.labels['entry'].connect('changed', self.on_changed)
+        self.touch_sound_value = screen._config.get_main_config().getboolean("touch_sound", None) # Changes
 
         close = self._gtk.Button('cancel', scale=.66)
         close.set_hexpand(False)
@@ -52,9 +53,9 @@ class Keypad(Gtk.Box):
             else:
                 self.labels[k_id] = self._gtk.Button(label=keys[i][0], style="numpad_key")
             self.labels[k_id].connect('clicked', self.keypad_clicked, keys[i][0])
-            self.labels[k_id].get_style_context().add_class(keys[i][1])
             if self.touch_sound_value == True: # Changes
                 self.labels[k_id].connect("pressed", self.screen._button_pressed_feedback) # Changes
+            self.labels[k_id].get_style_context().add_class(keys[i][1])
             numpad.attach(self.labels[k_id], i % 3, i // 3, 1, 1)
 
         self.labels["keypad"] = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
