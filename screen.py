@@ -176,6 +176,8 @@ class KlipperScreen(Gtk.Window):
             self.set_screenblanking_timeout(self._config.get_main_config().get('screen_blanking_printing'))
         else:
             self.set_screenblanking_timeout(self._config.get_main_config().get('screen_blanking'))
+            for warning in self.printer.warnings:
+                self.show_popup_message(f"Klipper:\n{warning['message']}", level=2)
         callback()
         return False
 
@@ -257,7 +259,7 @@ class KlipperScreen(Gtk.Window):
         requested_updates = {
             "objects": {
                 "bed_mesh": ["profile_name", "mesh_max", "mesh_min", "probed_matrix", "profiles"],
-                "configfile": ["config"],
+                "configfile": ["config", "warnings"],
                 "display_status": ["progress", "message"],
                 "fan": ["speed"],
                 "gcode_move": ["extrude_factor", "gcode_position", "homing_origin", "speed_factor", "speed"],
@@ -330,6 +332,8 @@ class KlipperScreen(Gtk.Window):
                 self.panels[panel_name].__init__(self, title, **kwargs)
                 self.panels_reinit.remove(panel_name)
             self._cur_panels.append(panel_name)
+            if 'extra' in kwargs and hasattr(self.panels[panel], "set_extra"):
+                self.panels[panel].set_extra(**kwargs)
             self.attach_panel(panel_name)
         except Exception as e:
             logging.exception(f"Error attaching panel:\n{e}\n\n{traceback.format_exc()}")
@@ -359,6 +363,9 @@ class KlipperScreen(Gtk.Window):
             del self.notification_log[0]
         self.notification_log.append(log_entry)
         self.process_update("notify_log", log_entry)
+
+    def notification_log_clear(self):
+        self.notification_log.clear()
 
     def show_popup_message(self, message, level=3, from_ws=False):
         if from_ws:
@@ -1194,7 +1201,7 @@ class KlipperScreen(Gtk.Window):
     def update_size(self, *args):
         width, height = self.get_size()
         if width != self.width or height != self.height:
-            logging.info(f"Size changed: {self.width}x{self.height}")
+            logging.info(f"Size changed: {width}x{height}")
         self.width, self.height = width, height
         new_ratio = self.width / self.height
         new_mode = new_ratio < 1.0
