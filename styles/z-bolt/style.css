@@ -33,6 +33,7 @@ combobox arrow {
     background-color: @bg-trans0;
 }
 
+junction,
 list row,
 treeview.view {
     background-color: @bg;
