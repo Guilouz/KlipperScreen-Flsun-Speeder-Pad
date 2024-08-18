@@ -40,7 +40,7 @@ cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
 ```
 ```
-./KlipperScreen/scripts/KlipperScreen-install-fix.sh
+./KlipperScreen/scripts/KlipperScreen-install.sh
 ```
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
