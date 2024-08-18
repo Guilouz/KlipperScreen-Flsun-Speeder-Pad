@@ -33,38 +33,38 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
-```
-cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-```
-```
-sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
-```
-```
-./KlipperScreen/scripts/KlipperScreen-install.sh
-```
+  ```
+  cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+  ```
+  ```
+  sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
+  ```
+  ```
+  ./KlipperScreen/scripts/KlipperScreen-install.sh
+  ```
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
 - Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
 
-```
-[update_manager KlipperScreen]
-type: git_repo
-path: ~/KlipperScreen
-origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-virtualenv: ~/.KlipperScreen-env
-requirements: scripts/KlipperScreen-requirements.txt
-system_dependencies: scripts/system-dependencies.json
-managed_services: KlipperScreen
-```
+  ```
+  [update_manager KlipperScreen]
+  type: git_repo
+  path: ~/KlipperScreen
+  origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+  virtualenv: ~/.KlipperScreen-env
+  requirements: scripts/KlipperScreen-requirements.txt
+  system_dependencies: scripts/system-dependencies.json
+  managed_services: KlipperScreen
+  ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
 - You will see a new KlipperScreen update appear, if you see a ⚠️DIRTY update, just select `Hard Recovery` to update.
 
-![Update Manager](https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg)
+  ![Update Manager](https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg)
 
 - Once installed you will have the new version of KlipperScreen and future updates will point directly to my repo like this:
 
-![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
+  ![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
 
 <br />
 
@@ -72,27 +72,27 @@ managed_services: KlipperScreen
 
 - Make sure previous installation of KlipperScreen is removed (with Kiauh).
 - In SSH, enter the following commands (one at a time) to install KlipperScreen:
-```
-cd ~ && git clone https://github.com/KlipperScreen/KlipperScreen.git
-```
-```
-./KlipperScreen/scripts/KlipperScreen-install.sh
-```
+  ```
+  cd ~ && git clone https://github.com/KlipperScreen/KlipperScreen.git
+  ```
+  ```
+  ./KlipperScreen/scripts/KlipperScreen-install.sh
+  ```
 Note: Installation may take several minutes.
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
 - Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
 
-```
-[update_manager KlipperScreen]
-type: git_repo
-path: ~/KlipperScreen
-origin: https://github.com/KlipperScreen/KlipperScreen.git
-virtualenv: ~/.KlipperScreen-env
-requirements: scripts/KlipperScreen-requirements.txt
-system_dependencies: scripts/system-dependencies.json
-managed_services: KlipperScreen
-```
+  ```
+  [update_manager KlipperScreen]
+  type: git_repo
+  path: ~/KlipperScreen
+  origin: https://github.com/KlipperScreen/KlipperScreen.git
+  virtualenv: ~/.KlipperScreen-env
+  requirements: scripts/KlipperScreen-requirements.txt
+  system_dependencies: scripts/system-dependencies.json
+  managed_services: KlipperScreen
+  ```
 
 <br />
 
@@ -115,73 +115,73 @@ managed_services: KlipperScreen
 <br />
 
 - To use `M600` Macro, you need to change `[filament_switch_sensor filament_sensor]` section in your `printer.cfg` file like this:
-```
-[filament_switch_sensor filament_sensor]
-pause_on_runout: True
-runout_gcode: M600
-...
-```
+  ```
+  [filament_switch_sensor filament_sensor]
+  pause_on_runout: True
+  runout_gcode: M600
+  ...
+  ```
 
 <br />
 
 - To have screen notifications, add this in your `printer.cfg` file:
-```
-[respond]
-```
+  ```
+  [respond]
+  ```
 
 <br />
 
 - To use Endstops Calibrate function, it's needed to have this in your `printer.cfg` file:
-```
-[endstop_phase stepper_a]
-endstop_align_zero: false
+  ```
+  [endstop_phase stepper_a]
+  endstop_align_zero: false
 
-[endstop_phase stepper_b]
-endstop_align_zero: false
+  [endstop_phase stepper_b]
+  endstop_align_zero: false
 
-[endstop_phase stepper_c]
-endstop_align_zero: false
-```
+  [endstop_phase stepper_c]
+  endstop_align_zero: false
+  ```
 
 <br />
 
 - This version of KlipperScreen save Z-Offset in real time. This is needed:
 
 - Add this in your `printer.cfg` file:
-```
-[save_variables]
-filename: ~/printer_data/config/variables.cfg
-```
+  ```
+  [save_variables]
+  filename: ~/printer_data/config/variables.cfg
+  ```
 - And must be used with this Macros:
-```
-[gcode_macro SET_GCODE_OFFSET]
-description: Saving Z-Offset
-rename_existing: _SET_GCODE_OFFSET
-gcode:
-  {% if printer.save_variables.variables.gcode_offsets %}
-  {% set offsets = printer.save_variables.variables.gcode_offsets %}
-  {% else %}
-  {% set offsets = {'z': None} %}
-  {% endif %}
-  {% set ns = namespace(offsets={'z': offsets.z}) %}
-  _SET_GCODE_OFFSET {% for p in params %}{'%s=%s '% (p, params[p])}{% endfor %}
-  {%if 'Z' in params %}{% set null = ns.offsets.update({'z': params.Z}) %}{% endif %}
-  {%if 'Z_ADJUST' in params %}
-  {%if ns.offsets.z == None %}{% set null = ns.offsets.update({'z': 0}) %}{% endif %}
-  {% set null = ns.offsets.update({'z': (ns.offsets.z | float) + (params.Z_ADJUST | float)}) %}
-  {% endif %}
-  SAVE_VARIABLE VARIABLE=gcode_offsets VALUE="{ns.offsets}"
-```
-```
-[delayed_gcode LOAD_GCODE_OFFSETS]
-initial_duration: 2
-gcode:
-  {% if printer.save_variables.variables.gcode_offsets %}
-  {% set offsets = printer.save_variables.variables.gcode_offsets %}
-  _SET_GCODE_OFFSET {% for axis, offset in offsets.items() if offsets[axis] %}{ "%s=%s " % (axis, offset) }{% endfor %}
-  { action_respond_info("Loaded Z-Offset from variables.cfg file: %s" % (offsets)) }
-  {% endif %}
-```
+  ```
+  [gcode_macro SET_GCODE_OFFSET]
+  description: Saving Z-Offset
+  rename_existing: _SET_GCODE_OFFSET
+  gcode:
+    {% if printer.save_variables.variables.gcode_offsets %}
+    {% set offsets = printer.save_variables.variables.gcode_offsets %}
+    {% else %}
+    {% set offsets = {'z': None} %}
+    {% endif %}
+    {% set ns = namespace(offsets={'z': offsets.z}) %}
+    _SET_GCODE_OFFSET {% for p in params %}{'%s=%s '% (p, params[p])}{% endfor %}
+    {%if 'Z' in params %}{% set null = ns.offsets.update({'z': params.Z}) %}{% endif %}
+    {%if 'Z_ADJUST' in params %}
+    {%if ns.offsets.z == None %}{% set null = ns.offsets.update({'z': 0}) %}{% endif %}
+    {% set null = ns.offsets.update({'z': (ns.offsets.z | float) + (params.Z_ADJUST | float)}) %}
+    {% endif %}
+    SAVE_VARIABLE VARIABLE=gcode_offsets VALUE="{ns.offsets}"
+  ```
+  ```
+  [delayed_gcode LOAD_GCODE_OFFSETS]
+  initial_duration: 2
+  gcode:
+    {% if printer.save_variables.variables.gcode_offsets %}
+    {% set offsets = printer.save_variables.variables.gcode_offsets %}
+    _SET_GCODE_OFFSET {% for axis, offset in offsets.items() if offsets[axis] %}{ "%s=%s " % (axis, offset) }{% endfor %}
+    { action_respond_info("Loaded Z-Offset from variables.cfg file: %s" % (offsets)) }
+    {% endif %}
+  ```
 
 <br />
 
