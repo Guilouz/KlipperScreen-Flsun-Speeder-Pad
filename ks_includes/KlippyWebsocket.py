@@ -30,7 +30,9 @@ class KlippyWebsocket(threading.Thread):
         self.closing = False
         self.host = host
         self.port = port
-        self.header = {"x-api-key": api_key} if api_key else {}
+        self.header = {"User-Agent": "KlipperScreen"}
+        if api_key:
+            self.header["x-api-key"] = api_key
         self.api_key = api_key
 
     @property
@@ -60,7 +62,7 @@ class KlippyWebsocket(threading.Thread):
         logging.debug("Attempting to connect")
         self.reconnect_count += 1
 
-        self.ws_url = f"{self.ws_proto}://{self._url}/websocket?token={self.api_key}"
+        self.ws_url = f"{self.ws_proto}://{self._url}/websocket"
         self.ws = websocket.WebSocketApp(
             self.ws_url,
             on_close=self.on_close,
@@ -333,13 +335,15 @@ class MoonrakerApi:
 
     def identify_client(self, version, api_key):
         logging.debug("Sending server.connection.identify")
+        params = {
+            "client_name": "KlipperScreen",
+            "version": f"{version}",
+            "type": "display",
+            "url": "https://github.com/KlipperScreen/KlipperScreen",
+        }
+        if api_key:
+            params["api_key"] = f"{api_key}"
         return self._ws.send_method(
             "server.connection.identify",
-            {
-                "client_name": "KlipperScreen",
-                "version": f"{version}",
-                "type": "display",
-                "url": "https://github.com/KlipperScreen/KlipperScreen",
-                "api_key": f"{api_key}"
-            },
+            params,
         )

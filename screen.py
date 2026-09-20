@@ -234,10 +234,13 @@ class KlipperScreen(Gtk.Window):
             0,
         )
         self.printer = self.printers[ind]["data"]
+        api_key = self.printers[ind][name]["moonraker_api_key"]
+        if api_key == "False":
+            api_key = ""
         self.apiclient = KlippyRest(
             self.printers[ind][name]["moonraker_host"],
             self.printers[ind][name]["moonraker_port"],
-            self.printers[ind][name]["moonraker_api_key"],
+            api_key,
         )
         self._ws = KlippyWebsocket(
             {
@@ -248,7 +251,7 @@ class KlipperScreen(Gtk.Window):
             },
             self.printers[ind][name]["moonraker_host"],
             self.printers[ind][name]["moonraker_port"],
-            self.printers[ind][name]["moonraker_api_key"],
+            api_key,
         )
         if self.files is None:
             self.files = KlippyFiles(self)
